@@ -82,13 +82,12 @@ public class TreasureBonanza_Balance_InsufficiantBalance_Validation {
 		String expected1 = "10";
 		Assert.assertEquals(actual1, expected1);
 		Thread.sleep(2000);
-		String betValue = actual1;
 		
 		//Clicking on Spin button
 		driver.findElement(By.id("hud_btnSpin")).click();
 		Thread.sleep(4000);
 		
-		String actual2 = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[3]/android.view.View")).getText();
+		String actual2 = driver.findElement(By.xpath("")).getText();
 		String expected2 = "Insufficient Balance.";
 		Assert.assertEquals(actual2, expected2);
 		Thread.sleep(2000);
