@@ -22,6 +22,8 @@ AppiumDriver<MobileElement> driver;
 	
 	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, transfer button, spin button and win amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Soccer_Mania_slot_game_balance_transfer_button_spin_button_and_win_amount() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
 		Thread.sleep(1000);

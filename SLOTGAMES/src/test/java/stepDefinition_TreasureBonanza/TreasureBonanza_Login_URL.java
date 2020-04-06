@@ -22,7 +22,7 @@ public class TreasureBonanza_Login_URL {
 
 private static AppiumDriver<MobileElement> driver;
 	
-	@Before
+	//@Before
 	public static void  TreasureBonanza_Login_URL() throws InterruptedException, MalformedURLException, FindFailed {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");

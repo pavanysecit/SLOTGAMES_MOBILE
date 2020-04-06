@@ -16,7 +16,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class SoccerMania_Login_URL {
 private static AppiumDriver<MobileElement> driver;
 	
-	@Before
+	//@Before
 	public static void  SoccerMania_Login_URL() throws InterruptedException, MalformedURLException {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");

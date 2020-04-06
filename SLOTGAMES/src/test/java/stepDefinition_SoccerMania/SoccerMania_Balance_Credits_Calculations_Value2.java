@@ -24,6 +24,8 @@ public class SoccerMania_Balance_Credits_Calculations_Value2 {
 	
 	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, credits, denomination drop down and denomination as (\\d+)\\.(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Soccer_Mania_slot_game_balance_credits_denomination_drop_down_and_denomination_as(int arg1, int arg2) throws Throwable {	
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
 		Thread.sleep(1000);
