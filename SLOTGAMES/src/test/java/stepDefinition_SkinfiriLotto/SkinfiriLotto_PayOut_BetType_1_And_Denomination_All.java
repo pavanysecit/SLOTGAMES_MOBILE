@@ -12,10 +12,10 @@ import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class SkinfiriLotto_PayOut_BetType_1_And_Denomination_1 {
+public class SkinfiriLotto_PayOut_BetType_1_And_Denomination_All {
 	AppiumDriver<MobileElement> driver;
 
-	public SkinfiriLotto_PayOut_BetType_1_And_Denomination_1() throws InterruptedException {
+	public SkinfiriLotto_PayOut_BetType_1_And_Denomination_All() throws InterruptedException {
 		this.driver = SkinfiriLotto_URL_Login.getDriver();
 		}
 	

@@ -46,7 +46,4 @@ public class SkinfiriLotto_Transfer_Validation_ZeroBalance {
 	public void an_error_should_be_displayed_if_balance_entered_was_zero_and_player_should_be_blocked_from_loading_the_Skinfiri_Lotto_game() throws Throwable {
 		driver.quit();
 	}
-
-	
-	
 }

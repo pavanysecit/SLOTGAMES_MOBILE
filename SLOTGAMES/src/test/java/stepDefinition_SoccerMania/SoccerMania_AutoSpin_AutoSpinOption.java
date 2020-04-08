@@ -68,37 +68,37 @@ public class SoccerMania_AutoSpin_AutoSpinOption {
 //		wait.until(ExpectedConditions.elementToBeClickable(By.id("AutoSpinListItem_10")));
 		
 		
-		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "9 SPINS LEFT"));
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
 	    String actual = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected = "GOOD LUCK!";
 	    System.out.println(actual);
 	    Assert.assertEquals(actual, expected);
  
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "8 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
 	    String actual1 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected1 = "GOOD LUCK!";
 	    System.out.println(actual1);
 	    Assert.assertEquals(actual1, expected1);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "7 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
 	    String actual2 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected2 = "GOOD LUCK!";
 	    System.out.println(actual2);
 	    Assert.assertEquals(actual2, expected2);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "6 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
 	    String actual3 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected3 = "GOOD LUCK!";
 	    System.out.println(actual3);
 	    Assert.assertEquals(actual3, expected3);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "5 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
 	    String actual4 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected4 = "GOOD LUCK!";
 	    System.out.println(actual4);
 	    Assert.assertEquals(actual4, expected4);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "4 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
 	    String actual5 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected5 = "GOOD LUCK!";
 	    System.out.println(actual5);

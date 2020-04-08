@@ -1,36 +1,36 @@
-package stepDefinition_TreasureBonanza;
+package stepDefinition_TikiIsle;
 
 import java.util.Set;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class TreasureBonanza_AutoSpin_AutoSpins {
+public class TikiIsle_AutoSpin_AutoSpinOption {
 	AppiumDriver<MobileElement> driver;
 
-	public TreasureBonanza_AutoSpin_AutoSpins() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+	public TikiIsle_AutoSpin_AutoSpinOption() throws InterruptedException {
+		this.driver = TikiIsle_URL_Login.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game, balance, spin button, auto spin button, auto spins option and number of spins left message$")
-	public void chrome_browser_valid_URL_valid_login_details_Treasure_Bonanza_slot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_number_of_spins_left_message() throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Tiki Isle slot game, balance, spin button, auto spin button, auto spins option and number of spins left message$")
+	public void chrome_browser_valid_URL_valid_login_details_Tiki_Isle_slot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_number_of_spins_left_message() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
 		Thread.sleep(1000);
 		balT.sendKeys("300");
 		Thread.sleep(2000);
 		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(15000);
+		Thread.sleep(20000);
 
 		String parent1=driver.getWindowHandle();
 		Set<String>s1=driver.getWindowHandles();
@@ -47,8 +47,8 @@ public class TreasureBonanza_AutoSpin_AutoSpins {
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Treasure Bonanza slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check the player instruction message$")
-	public void open_the_Treasure_Bonanza_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_the_player_instruction_message() throws Throwable {
+	@When("^Open the Tiki Isle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check the player instruction message$")
+	public void open_the_Tiki_Isle_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_the_player_instruction_message() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 6);
 		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[6]/android.view.View[1]/android.view.View/android.view.View[1]")).click();
 		Thread.sleep(3000);
@@ -104,9 +104,9 @@ public class TreasureBonanza_AutoSpin_AutoSpins {
 	    Assert.assertEquals(actual5, expected5);
 	}
 
-	@Then("^System should keep performing the spins in Treasure Bonanza slot game$")
-	public void system_should_keep_performing_the_spins_in_Treasure_Bonanza_slot_game() throws Throwable {
-		Thread.sleep(3000);
-	    driver.quit();
+	@Then("^System should keep performing the spins in Tiki Isle slot game$")
+	public void system_should_keep_performing_the_spins_in_Tiki_Isle_slot_game() throws Throwable {
+		Thread.sleep(2000);
+		driver.quit();
 	}
 }
