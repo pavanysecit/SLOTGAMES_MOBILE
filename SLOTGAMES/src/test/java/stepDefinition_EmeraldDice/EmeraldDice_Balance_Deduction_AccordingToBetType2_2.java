@@ -1,26 +1,28 @@
-package stepDefinition_TreasureBonanza;
+package stepDefinition_EmeraldDice;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import java.util.List;
 import java.util.Set;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class TreasureBonanza_Balance_Deduction_AccordingToBetType4_2 {
-AppiumDriver<MobileElement> driver;
+public class EmeraldDice_Balance_Deduction_AccordingToBetType2_2 {
+	AppiumDriver<MobileElement> driver;
 
-	public TreasureBonanza_Balance_Deduction_AccordingToBetType4_2() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+	public EmeraldDice_Balance_Deduction_AccordingToBetType2_2() throws InterruptedException {
+		this.driver = EmeraldDice_URL_Login.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game, bet type as (\\d+)\\.(\\d+), bet value as twenty, balance and spin button$")
-	public void chrome_browser_valid_URL_valid_login_details_Treasure_Bonanza_slot_game_bet_type_as_bet_value_as_twenty_balance_and_spin_button(int arg1, int arg2) throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Emerald Dice slot game, bet type drop down, bet type as (\\d+)\\.(\\d+), bet value as TWO, balance and spin button$")
+	public void chrome_browser_valid_URL_valid_login_details_Emerald_Dice_slot_game_bet_type_drop_down_bet_type_as_bet_value_as_TWO_balance_and_spin_button(int arg1, int arg2) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
@@ -45,23 +47,23 @@ AppiumDriver<MobileElement> driver;
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Treasure Bonanza slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) & bet value as twenty, click on spin button and check the balance$")
-	public void open_the_Treasure_Bonanza_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_bet_value_as_twenty_click_on_spin_button_and_check_the_balance(int arg1, int arg2) throws Throwable {
+	@When("^Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) from drop down, bet value to TWO click on spin button and check the balance$")
+	public void open_the_Emerald_Dice_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_from_drop_down_bet_value_to_TWO_click_on_spin_button_and_check_the_balance(int arg1, int arg2) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 90);
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));    
 		//Storing the value before spin
 		String preSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Current balance of the account Before spin: " +preSpin);
 		
-		//Selecting the credit as 0.5 from the drop down
+		//Selecting the credit as 0.02 from the drop down
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		driver.findElement(By.id("hud_btnCredit")).click();
 		Thread.sleep(2000);
 		for(MobileElement be:balance)
 		{
 			
-			if(be.getText().equals("0.5")){
+			if(be.getText().equals("0.02")){
 				be.click();
 				Thread.sleep(3000);
 				break;
@@ -69,24 +71,24 @@ AppiumDriver<MobileElement> driver;
 		}
 		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
 		System.out.println("Selected credit value is : " +actual);
-		String expected = "0.5";
+		String expected = "0.02";
 		Assert.assertEquals(actual, expected);
 		
-		//Selecting bet amount as 20	
+		//Selecting bet amount as 0.8	
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be1:balance)
+		for(MobileElement be:balance)
 		{
 			
-			if(be1.getText().equals("20")){
-				be1.click();
+			if(be.getText().equals("0.8")){
+				be.click();
 				Thread.sleep(2000);
 				break;
 			}	
 		}
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		System.out.println("Selected bet amount is: " +actual1);
-		String expected1 = "20";
+		String expected1 = "0.8";
 		Assert.assertEquals(actual1, expected1);
 		Thread.sleep(2000);
 		String betValue = actual1;
@@ -105,11 +107,12 @@ AppiumDriver<MobileElement> driver;
 		System.out.println("Final balance after deducting bet amount from the balance : "+dbi);
 		
 		Assert.assertEquals(dbi,postSpin); 
+		Thread.sleep(2000);
 	}
 
-	@Then("^Balance should get deducted by twenty as bet type is selected as (\\d+)\\.(\\d+) in Treasure Bonanza game$")
-	public void balance_should_get_deducted_by_twenty_as_bet_type_is_selected_as_in_Treasure_Bonanza_game(int arg1, int arg2) throws Throwable {
-		Thread.sleep(2000);
+	@Then("^Balance should get deducted by TWO if the bet type is selected as (\\d+)\\.(\\d+) in Emerald Dice hot game$")
+	public void balance_should_get_deducted_by_TWO_if_the_bet_type_is_selected_as_in_Emerald_Dice_hot_game(int arg1, int arg2) throws Throwable {
+		Thread.sleep(3000);
 		driver.quit();
 	}
 }

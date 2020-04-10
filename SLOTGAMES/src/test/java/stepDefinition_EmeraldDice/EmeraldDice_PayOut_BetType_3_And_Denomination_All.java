@@ -1,4 +1,4 @@
-package stepDefinition_TreasureBonanza;
+package stepDefinition_EmeraldDice;
 
 import java.util.List;
 import java.util.Set;
@@ -12,15 +12,15 @@ import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class TreasureBonanza_PayOut_BetType_1_And_Denomination_3 {
+public class EmeraldDice_PayOut_BetType_3_And_Denomination_All {
 	AppiumDriver<MobileElement> driver;
 
-	public TreasureBonanza_PayOut_BetType_1_And_Denomination_3() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+	public EmeraldDice_PayOut_BetType_3_And_Denomination_All() throws InterruptedException {
+		this.driver = EmeraldDice_URL_Login.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game, icon to open payout table, all symbols, max amount on each symbol like Q, K, (\\d+) n etc, back button, bet type (\\d+)\\.(\\d+) and all denomination values  on mobile$")
-	public void chrome_browser_valid_URL_valid_login_details_Treasure_Bonanza_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_Q_K_n_etc_back_button_bet_type_and_all_denomination_values_on_mobile(int arg1, int arg2, int arg3) throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Emerald Dice slot game, icon to open payout table, all symbols, max amount on each symbol like Q, K, (\\d+) n etc, back button, bet type (\\d+)\\.(\\d+) and all denomination values  on mobile$")
+	public void chrome_browser_valid_URL_valid_login_details_Emerald_Dice_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_Q_K_n_etc_back_button_bet_type_and_all_denomination_values_on_mobile(int arg1, int arg2, int arg3) throws Throwable {
 		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[18]/div[1]")).click();
 		Thread.sleep(2000);
 		
@@ -46,9 +46,9 @@ public class TreasureBonanza_PayOut_BetType_1_And_Denomination_3 {
 		driver.context("NATIVE_APP");
 		Thread.sleep(4000);
 	}
-	
-	@When("^Open the Treasure Bonanza slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like Q, K, (\\d+) n etc, click on back button, select bet type as (\\d+)\\.(\\d+) & all denomination  values and check payout amount on mobile$")
-	public void open_the_Treasure_Bonanza_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_icon_to_open_payout_table_check_payout_amount_on_each_symbol_like_Q_K_n_etc_click_on_back_button_select_bet_type_as_all_denomination_values_and_check_payout_amount_on_mobile(int arg1, int arg2, int arg3) throws Throwable {
+
+	@When("^Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like Q, K, (\\d+) n etc, click on back button, select bet type as (\\d+)\\.(\\d+) & all denomination  values and check payout amount on mobile$")
+	public void open_the_Emerald_Dice_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_icon_to_open_payout_table_check_payout_amount_on_each_symbol_like_Q_K_n_etc_click_on_back_button_select_bet_type_as_all_denomination_values_and_check_payout_amount_on_mobile(int arg1, int arg2, int arg3) throws Throwable {
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		//Getting the bet value and Bet amount
 		String creditValue = driver.findElement(By.id("hud_txtCreditValue")).getText();
@@ -299,8 +299,8 @@ public class TreasureBonanza_PayOut_BetType_1_And_Denomination_3 {
 		}
 	}
 
-	@Then("^System should display the Payout max amount on each symbol like Q, K, (\\d+) n etc and payout max amount should get changed whenever player changes the bet type to (\\d+)\\.(\\d+) and all denomination values in Treasure Bonanza slot game on mobile$")
-	public void system_should_display_the_Payout_max_amount_on_each_symbol_like_Q_K_n_etc_and_payout_max_amount_should_get_changed_whenever_player_changes_the_bet_type_to_and_all_denomination_values_in_Treasure_Bonanza_slot_game_on_mobile(int arg1, int arg2, int arg3) throws Throwable {
+	@Then("^System should display the Payout max amount on each symbol like Q, K, (\\d+) n etc and payout max amount should get changed whenever player changes the bet type to (\\d+)\\.(\\d+) and all denomination values in Emerald Dice slot game on mobile$")
+	public void system_should_display_the_Payout_max_amount_on_each_symbol_like_Q_K_n_etc_and_payout_max_amount_should_get_changed_whenever_player_changes_the_bet_type_to_and_all_denomination_values_in_Emerald_Dice_slot_game_on_mobile(int arg1, int arg2, int arg3) throws Throwable {
 		Thread.sleep(2000);
 		driver.quit();
 	}

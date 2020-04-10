@@ -12,10 +12,10 @@ import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class TreasureBonanza_PayOut_BetType_1_And_Denomination_2 {
+public class TreasureBonanza_PayOut_BetType_2_And_Denomination_All {
 	AppiumDriver<MobileElement> driver;
 
-	public TreasureBonanza_PayOut_BetType_1_And_Denomination_2() throws InterruptedException {
+	public TreasureBonanza_PayOut_BetType_2_And_Denomination_All() throws InterruptedException {
 		this.driver = TreasureBonanza_Login_URL.getDriver();
 		}
 	

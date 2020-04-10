@@ -1,25 +1,31 @@
 Feature: Test all the functionalities of Emerald Dice Slot Game
    
 
- 	Scenario: To check the transferred amount is added to Emerald Dice game
-    Given Chrome browser, valid URL, valid login details, Emerald Dice game, balance, text field to transfer balance and Ok button
-    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, click on Play button, enter the valid amount to transfer and click on Ok butotn
-    Then The exact amount entered in the transfer page should transfer to Emerald Dice game and same amount should get displayed on the balance section
+		Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination 0.2 in Emerald Dice game
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, bet type as 0.01, denomination as 0.2, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type as 0.01 & denomination as 0.2, click on spin button till player wins, click on gamble button and check the gamble count
+    Then Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type 0.01 & denomination 0.2 in Emerald Dice game
 	
 	
-	Scenario: Check whether the player is able to transfer the amount more than the available balance
-    Given Chrome browser, valid URL, valid login details, Emerald Dice game, balance greater than available balance, text field to transfer balance, Ok button and validation message
-    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, enter the amount greater than available balance and click on Ok butotn
-    Then Player should be blocked from loading the Emerald Dice game when the amount entered in the transfer page is more than the available balance
+	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 and denomination 0.4 in Emerald Dice game
+    Given Chrome browser, valid URL, valid login details, godlen hot slot game, bet type as 0.01, denomination as 0.4, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Emerald Dice slot game, select bet type as 0.01 & denomination as 0.4, click on spin button till player wins, click on gamble button and check the gamble count in gamble page
+    Then Gamble count should be displayed on gamble page based on win amount and gamble max amount configured on the game info page for bet type 0.01 & denomination 0.4 Emerald Dice game
 	
 	
-	Scenario: Check whether balance field is accepting null valuess in the transfer page of Emerald Dice game in mobile
-    Given Chrome browser, valid URL, valid login details, Emerald Dice game, empty balance, text field to transfer balance, Ok button and validation message in mobile
-    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details,  do not enter the amount in the balance field and click on Ok butotn in mobile
-    Then An error should be displayed if the balance field is empty and player should be blocked from loading the Emerald Dice game in mobile
+	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination ONE in Emerald Dice game
+    Given Chrome browser, valid URL, valid login details, Emerald Dice hot slot game, bet type as 0.01, denomination as ONE, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page of slot game
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Emerald Dice slot game, select bet type as 0.01 & denomination as ONE, click on spin button till player wins, click on gamble button and check the gamble count in gamble page of slot game
+    Then Gamble count should be displayed  on gamble page of slot game based on win amount and gamble max amount configured on the game info page for bet type 0.01 & denomination ONE in Emerald Dice game
 	
 	
-	Scenario: Check whether balance field is accepting amount as Zero SRD in the transfer amount page of Emerald Dice game
-    Given Chrome browser, valid URL, valid login details, Emerald Dice game, zero balance, text field to transfer balance, Ok button and validation message
-    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, enter the amount as zero SRD and click on Ok butotn
-    Then An error should be displayed if balance entered was zero and player should be blocked from loading the Emerald Dice game
+	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination TWO in Emerald Dice game
+    Given Chrome browser, valid URL, valid login details, Emerald Dice hot slot game, transfer button, bet type as 0.01, denomination as TWO, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Emerald Dice slot game, transfer the amount, select bet type as 0.01 & denomination as TWO, click on spin button till player wins, click on gamble button and check the gamble count
+    Then Gamble count should be displayed based on winning amount and max amount of the gamble configured on the game info page for bet type 0.01 and denomination TWO in Emerald Dice game
+	
+	
+	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination FOUR in Emerald Dice game
+    Given Chrome browser, valid URL, valid login details, Emerald Dice hot slot game, bet type as 0.01, denomination as FOUR, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Emerald Dice slot game, select bet type as 0.01 & denomination as FOUR, click on spin button till player wins, click on gamble button and check the gamble count
+    Then Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type 0.01 & denomination FOUR in Emerald Dice game
