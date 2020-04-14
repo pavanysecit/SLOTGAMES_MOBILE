@@ -1,4 +1,4 @@
-package stepDefinition_EmeraldDice;
+package stepDefinition_SkinfiriMysterious;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -15,15 +15,15 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class EmeraldDice_Balance_Check_WinAmount_AddedToBalance {
+public class SkinfiriMysterious_Balance_Check_WinAmount_AddedToBalance {
 	AppiumDriver<MobileElement> driver;
 
-	public EmeraldDice_Balance_Check_WinAmount_AddedToBalance() throws InterruptedException {
-		this.driver = EmeraldDice_URL_Login.getDriver();
+	public SkinfiriMysterious_Balance_Check_WinAmount_AddedToBalance() throws InterruptedException {
+		this.driver = SkinfiriMysterious_URL_Login.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, transfer button, spin button and win amount$")
-	public void chrome_browser_valid_URL_valid_login_details_Emerald_Dice_slot_game_balance_transfer_button_spin_button_and_win_amount() throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Skinfiri Mysterious slot game, balance, transfer button, spin button and win amount$")
+	public void chrome_browser_valid_URL_valid_login_details_Skinfiri_Mysterious_slot_game_balance_transfer_button_spin_button_and_win_amount() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
@@ -48,8 +48,8 @@ public class EmeraldDice_Balance_Check_WinAmount_AddedToBalance {
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on spin button till user win and check the balance after win in Emerald Dice slot game$")
-	public void open_the_Emerald_Dice_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_amount_click_on_spin_button_till_user_win_and_check_the_balance_after_win_in_Emerald_Dice_slot_game() throws Throwable {
+	@When("^Open the Skinfiri Mysterious slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on spin button till user win and check the balance after win in Skinfiri Mysterious slot game$")
+	public void open_the_Skinfiri_Mysterious_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_amount_click_on_spin_button_till_user_win_and_check_the_balance_after_win_in_Skinfiri_Mysterious_slot_game() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 90);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
@@ -124,9 +124,9 @@ public class EmeraldDice_Balance_Check_WinAmount_AddedToBalance {
 		Assert.assertEquals(dbi, Balance);
 		Thread.sleep(2000);
 	}
-	
-	@Then("^Win amount should get added to the balance after win and balance should get increased with win amount in Emerald Dice slot game$")
-	public void win_amount_should_get_added_to_the_balance_after_win_and_balance_should_get_increased_with_win_amount_in_Emerald_Dice_slot_game() throws Throwable {
+
+	@Then("^Win amount should get added to the balance after win and balance should get increased with win amount in Skinfiri Mysterious slot game$")
+	public void win_amount_should_get_added_to_the_balance_after_win_and_balance_should_get_increased_with_win_amount_in_Skinfiri_Mysterious_slot_game() throws Throwable {
 		Thread.sleep(2000);
 		driver.quit();
 	}

@@ -1,4 +1,4 @@
-package stepDefinition_EmeraldDice;
+package stepDefinition_SkinfiriMysterious;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -15,15 +15,15 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class EmeraldDice_Balance_Deduction_AccordingToBetType1_4 {
+public class SkinfiriMysterious_Balance_Deduction_AccordingToBetType1_3 {
 	AppiumDriver<MobileElement> driver;
 
-	public EmeraldDice_Balance_Deduction_AccordingToBetType1_4() throws InterruptedException {
-		this.driver = EmeraldDice_URL_Login.getDriver();
+	public SkinfiriMysterious_Balance_Deduction_AccordingToBetType1_3() throws InterruptedException {
+		this.driver = SkinfiriMysterious_URL_Login.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Emerald Dice slot game, bet type as (\\d+)\\.(\\d+), bet value as FOUR, balance and spin button$")
-	public void chrome_browser_valid_URL_valid_login_details_Emerald_Dice_slot_game_bet_type_as_bet_value_as_FOUR_balance_and_spin_button(int arg1, int arg2) throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Skinfiri Mysterious slot game, bet type as (\\d+)\\.(\\d+), bet value as TWO, balance, spin button and win amount$")
+	public void chrome_browser_valid_URL_valid_login_details_Skinfiri_Mysterious_slot_game_bet_type_as_bet_value_as_TWO_balance_spin_button_and_win_amount(int arg1, int arg2) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
@@ -47,9 +47,9 @@ public class EmeraldDice_Balance_Deduction_AccordingToBetType1_4 {
 		driver.context("NATIVE_APP");
 		Thread.sleep(4000);
 	}
-	
-	@When("^Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+), select the bet value as FOUR, click on spin button and check the balance$")
-	public void open_the_Emerald_Dice_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_select_the_bet_value_as_FOUR_click_on_spin_button_and_check_the_balance(int arg1, int arg2) throws Throwable {
+
+	@When("^Open the Skinfiri Mysterious slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+), select the bet value as TWO, click on spin button, check the win amount and check the balance$")
+	public void open_the_Skinfiri_Mysterious_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_select_the_bet_value_as_TWO_click_on_spin_button_check_the_win_amount_and_check_the_balance(int arg1, int arg2) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 90);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));     
@@ -60,14 +60,14 @@ public class EmeraldDice_Balance_Deduction_AccordingToBetType1_4 {
 		//Getting the bet value and Bet amount
 		String creditValue = driver.findElement(By.id("hud_txtCreditValue")).getText();
 		System.out.println("Selected credit value is: " +creditValue);
-		//Selecting bet amount as 2
+		//Selecting bet amount as 1.5
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		for(MobileElement be:balance)
 		{
 			
-			if(be.getText().equals("2")){
+			if(be.getText().equals("1")){
 				be.click();
 				Thread.sleep(2000);
 				break;
@@ -75,7 +75,7 @@ public class EmeraldDice_Balance_Deduction_AccordingToBetType1_4 {
 		}
 		String actual = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		System.out.println("Selected bet amount is: " +actual);
-		String expected = "2";
+		String expected = "1";
 		Assert.assertEquals(actual, expected);
 		Thread.sleep(2000);
 			
@@ -95,8 +95,8 @@ public class EmeraldDice_Balance_Deduction_AccordingToBetType1_4 {
 		Assert.assertEquals(dbi,postSpin);
 	}
 
-	@Then("^Current Balance should get deducted by FOUR as bet type is selected as (\\d+)\\.(\\d+) and bet value as (\\d+) in Emerald Dice game$")
-	public void current_Balance_should_get_deducted_by_FOUR_as_bet_type_is_selected_as_and_bet_value_as_in_Emerald_Dice_game(int arg1, int arg2, int arg3) throws Throwable {
+	@Then("^Current Balance should get deducted by TWO as bet type is selected as (\\d+)\\.(\\d+) and bet value as TWO in Skinfiri Mysterious game$")
+	public void current_Balance_should_get_deducted_by_TWO_as_bet_type_is_selected_as_and_bet_value_as_TWO_in_Skinfiri_Mysterious_game(int arg1, int arg2) throws Throwable {
 		Thread.sleep(3000);
 		driver.quit();
 	}

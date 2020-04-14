@@ -1,9 +1,8 @@
-package stepDefinition_EmeraldDice;
+package stepDefinition_SkinfiriMysterious;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
@@ -15,15 +14,15 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class EmeraldDice_Balance_Deduction_AccordingToBetType1_4 {
+public class SkinfiriMysterious_Balance_Deduction_AccordingToBetType1_1 {
 	AppiumDriver<MobileElement> driver;
 
-	public EmeraldDice_Balance_Deduction_AccordingToBetType1_4() throws InterruptedException {
-		this.driver = EmeraldDice_URL_Login.getDriver();
+	public SkinfiriMysterious_Balance_Deduction_AccordingToBetType1_1() throws InterruptedException {
+		this.driver = SkinfiriMysterious_URL_Login.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Emerald Dice slot game, bet type as (\\d+)\\.(\\d+), bet value as FOUR, balance and spin button$")
-	public void chrome_browser_valid_URL_valid_login_details_Emerald_Dice_slot_game_bet_type_as_bet_value_as_FOUR_balance_and_spin_button(int arg1, int arg2) throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Skinfiri Mysterious slot game, bet type as (\\d+)\\.(\\d+), bet value as (\\d+)\\.(\\d+), balance and spin button$")
+	public void chrome_browser_valid_URL_valid_login_details_Skinfiri_Mysterious_slot_game_bet_type_as_bet_value_as_balance_and_spin_button(int arg1, int arg2, int arg3, int arg4) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
@@ -47,56 +46,41 @@ public class EmeraldDice_Balance_Deduction_AccordingToBetType1_4 {
 		driver.context("NATIVE_APP");
 		Thread.sleep(4000);
 	}
-	
-	@When("^Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+), select the bet value as FOUR, click on spin button and check the balance$")
-	public void open_the_Emerald_Dice_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_select_the_bet_value_as_FOUR_click_on_spin_button_and_check_the_balance(int arg1, int arg2) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
 
+	@When("^Open the Skinfiri Mysterious slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+), select the bet value as (\\d+)\\.(\\d+), click on spin button and check the balance$")
+	public void open_the_Skinfiri_Mysterious_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_select_the_bet_value_as_click_on_spin_button_and_check_the_balance(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));     
-	   //Storing the value before spin
+		
+		//Storing the value before spin
 		String preSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Current balance of the account Before spin: " +preSpin);
 		
 		//Getting the bet value and Bet amount
 		String creditValue = driver.findElement(By.id("hud_txtCreditValue")).getText();
 		System.out.println("Selected credit value is: " +creditValue);
-		//Selecting bet amount as 2
-		driver.findElement(By.id("hud_txtBetAmount")).click();
+		String betValue = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		System.out.println("Selected credit value is: " +betValue);
 		Thread.sleep(2000);
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("2")){
-				be.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
-		String actual = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		System.out.println("Selected bet amount is: " +actual);
-		String expected = "2";
-		Assert.assertEquals(actual, expected);
-		Thread.sleep(2000);
-			
+		
 		//Clicking on Spin button
 		driver.findElement(By.id("hud_btnSpin")).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		
 		//Storing the value after spin
 		String postSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Current balance of the account After spin: " +postSpin);
 		
 		//Deducting bet value from the preSpin and formating string to double
-		double fValue = Double.parseDouble(preSpin) - Double.parseDouble(actual);
+		double fValue = Double.parseDouble(preSpin) - Double.parseDouble(betValue);
 		String dbi = String.format("%.2f", fValue);  
 		System.out.println("Final balance after deducting bet amount from the balance : "+dbi);
 		
 		Assert.assertEquals(dbi,postSpin);
 	}
 
-	@Then("^Current Balance should get deducted by FOUR as bet type is selected as (\\d+)\\.(\\d+) and bet value as (\\d+) in Emerald Dice game$")
-	public void current_Balance_should_get_deducted_by_FOUR_as_bet_type_is_selected_as_and_bet_value_as_in_Emerald_Dice_game(int arg1, int arg2, int arg3) throws Throwable {
+	@Then("^Balance should get deducted by (\\d+)\\.(\\d+) as bet type is selected as (\\d+)\\.(\\d+) and bet value as (\\d+)\\.(\\d+) in Skinfiri Mysterious game$")
+	public void balance_should_get_deducted_by_as_bet_type_is_selected_as_and_bet_value_as_in_Skinfiri_Mysterious_game(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) throws Throwable {
 		Thread.sleep(3000);
 		driver.quit();
 	}
