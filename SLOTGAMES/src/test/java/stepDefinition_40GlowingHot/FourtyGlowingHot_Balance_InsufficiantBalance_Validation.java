@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -15,14 +18,13 @@ AppiumDriver<MobileElement> driver;
 	
 	public FourtyGlowingHot_Balance_InsufficiantBalance_Validation() throws InterruptedException {
 		this.driver = SlotGames_URL_Login.getDriver();
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div/span")).click();
-		Thread.sleep(2000);
+		
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) glowing hot slot game, balance, spin button and validation message$")
 	public void chrome_browser_valid_URL_valid_login_details_glowing_hot_slot_game_balance_spin_button_and_validation_message(int arg1) throws Throwable {
-	    driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div/span")).click();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		MobileElement trs = driver.findElement(By.id("transferInput"));
 		trs.sendKeys("6");
@@ -47,6 +49,8 @@ AppiumDriver<MobileElement> driver;
 	
 	@When("^Open the (\\d+) Glowing hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message$")
 	public void open_the_Glowing_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_spin_button_till_balance_turns_to_zero_and_check_the_validation_message(int arg1) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		//Method to click on the play/start button
 		//MobileElement prq= driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View[1]/android.view.View[22]/android.view.View[1]"));

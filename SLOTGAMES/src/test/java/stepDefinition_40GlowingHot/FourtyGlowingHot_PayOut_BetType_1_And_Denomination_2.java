@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -15,14 +18,13 @@ AppiumDriver<MobileElement> driver;
 	
 	public FourtyGlowingHot_PayOut_BetType_1_And_Denomination_2() throws InterruptedException {
 		this.driver = SlotGames_URL_Login.getDriver();
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div/span")).click();
-		Thread.sleep(2000);
+		
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) glowing hot slot game, icon to open payout table, all symbols, max amount on each symbol like cherry n etc, back button, bet type (\\d+)\\.(\\d+) and denomination value (\\d+)\\.(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_glowing_hot_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_cherry_n_etc_back_button_bet_type_and_denomination_value(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
-	    driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div/span")).click();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		MobileElement trs = driver.findElement(By.id("transferInput"));
 		trs.sendKeys("9");
@@ -47,6 +49,8 @@ AppiumDriver<MobileElement> driver;
 
 	@When("^Open the (\\d+) Glowing hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, click on icon to open payout table, check payout amount on each symbol like cherry n etc, click on back button, select bet type as (\\d+)\\.(\\d+) & denomination  value (\\d+)\\.(\\d+) and check payout amount$")
 	public void open_the_Glowing_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_golden_hot_slot_game_click_on_icon_to_open_payout_table_check_payout_amount_on_each_symbol_like_cherry_n_etc_click_on_back_button_select_bet_type_as_denomination_value_and_check_payout_amount(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		for(MobileElement be:balance)
 		{

@@ -3,6 +3,9 @@ package stepDefinition_40GlowingHot;
 import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -14,14 +17,13 @@ AppiumDriver<MobileElement> driver;
 	
 	public FourtyGlowingHot_Check_MaximizeAndMinimize_Buttons() throws InterruptedException {
 		this.driver = SlotGames_URL_Login.getDriver();
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div/span")).click();
-		Thread.sleep(2000);
+		
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) glowing hot slot game, maximize button and minimize button$")
 	public void chrome_browser_valid_URL_valid_login_details_glowing_hot_slot_game_maximize_button_and_minimize_button(int arg1) throws Throwable {
-	    driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div/span")).click();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		MobileElement trs = driver.findElement(By.id("transferInput"));
 		trs.sendKeys("6");

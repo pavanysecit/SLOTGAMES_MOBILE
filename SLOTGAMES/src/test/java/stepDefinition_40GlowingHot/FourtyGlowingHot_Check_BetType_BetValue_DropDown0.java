@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -15,14 +18,13 @@ AppiumDriver<MobileElement> driver;
 	
 	public FourtyGlowingHot_Check_BetType_BetValue_DropDown0() throws InterruptedException {
 		this.driver = SlotGames_URL_Login.getDriver();
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div/span")).click();
-		Thread.sleep(2000);
+		
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) glowing hot slot game, bet type as (\\d+)\\.(\\d+) and bet value$")
 	public void chrome_browser_valid_URL_valid_login_details_glowing_hot_slot_game_bet_type_as_and_bet_value(int arg1, int arg2, int arg3) throws Throwable {
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div/span")).click();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		MobileElement trs = driver.findElement(By.id("transferInput"));
 		trs.sendKeys("110");
@@ -47,6 +49,8 @@ AppiumDriver<MobileElement> driver;
 
 	@When("^Open the (\\d+) glowing hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) and check the bet value$")
 	public void open_the_glowing_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_and_check_the_bet_value(int arg1, int arg2, int arg3) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		List<MobileElement> BetValue = driver.findElementsByClassName("android.view.View");
 		//Checking the bet text and thier value
 		for(MobileElement me1:BetValue)

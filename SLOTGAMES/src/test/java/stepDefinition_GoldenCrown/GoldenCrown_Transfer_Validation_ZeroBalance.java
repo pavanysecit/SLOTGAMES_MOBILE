@@ -1,16 +1,16 @@
 package stepDefinition_GoldenCrown;
 
-import java.util.Set;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
-import io.appium.java_client.android.nativekey.PressesKey;
 
 
 public class GoldenCrown_Transfer_Validation_ZeroBalance {
@@ -19,14 +19,13 @@ AppiumDriver<MobileElement> driver;
 	
 	public GoldenCrown_Transfer_Validation_ZeroBalance() throws InterruptedException {
 		this.driver = GoldenCrown_URL_Login.getDriver();
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[18]/div[1]")).click();
-		Thread.sleep(2000);
+		
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Golden Crown game, zero balance, text field to transfer balance, Ok button and validation message$")
 	public void chrome_browser_valid_URL_valid_login_details_Golden_Crown_game_zero_balance_text_field_to_transfer_balance_Ok_button_and_validation_message() throws Throwable {
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[18]/div[1]")).click();
-		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		//Clearing value from balance field and sending value as Zero
 		MobileElement transfer = driver.findElement(By.id("transferInput"));

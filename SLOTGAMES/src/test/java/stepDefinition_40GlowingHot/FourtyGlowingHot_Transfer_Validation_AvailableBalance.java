@@ -3,6 +3,9 @@ package stepDefinition_40GlowingHot;
 import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -18,14 +21,13 @@ AppiumDriver<MobileElement> driver;
 	
 	public FourtyGlowingHot_Transfer_Validation_AvailableBalance() throws InterruptedException {
 		this.driver = SlotGames_URL_Login.getDriver();
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div/span")).click();
-		Thread.sleep(2000);
+	
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, fourty glowing hot game, balance greater than available balance, text field to transfer balance, Ok button and validation message$")
 	public void chrome_browser_valid_URL_valid_login_details_fourty_glowing_hot_game_balance_greater_than_available_balance_text_field_to_transfer_balance_Ok_button_and_validation_message() throws Throwable {
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div/span")).click();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		MobileElement TargetElement =driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/div[7]/div/div[1]/label[1]"));
 		String getValue1 = TargetElement.getText();

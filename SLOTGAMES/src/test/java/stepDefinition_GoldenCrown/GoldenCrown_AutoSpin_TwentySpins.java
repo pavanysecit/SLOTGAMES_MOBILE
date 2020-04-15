@@ -18,14 +18,13 @@ AppiumDriver<MobileElement> driver;
 
 	public GoldenCrown_AutoSpin_TwentySpins() throws InterruptedException {
 		this.driver = GoldenCrown_URL_Login.getDriver();
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[19]/div[1]")).click();
-		Thread.sleep(2000);
+		
 		}	
 	
 	@Given("^Chrome browser, valid URL, valid login details, Golden Crown slot game, balance, spin button, auto spin button, twenty spins option and number of spins left message$")
 	public void chrome_browser_valid_URL_valid_login_details_Golden_Crown_slot_game_balance_spin_button_auto_spin_button_twenty_spins_option_and_number_of_spins_left_message() throws Throwable {
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[19]/div[1]")).click();
-		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();

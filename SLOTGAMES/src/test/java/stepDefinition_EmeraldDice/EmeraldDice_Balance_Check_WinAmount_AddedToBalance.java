@@ -51,7 +51,6 @@ public class EmeraldDice_Balance_Check_WinAmount_AddedToBalance {
 	@When("^Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on spin button till user win and check the balance after win in Emerald Dice slot game$")
 	public void open_the_Emerald_Dice_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_amount_click_on_spin_button_till_user_win_and_check_the_balance_after_win_in_Emerald_Dice_slot_game() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 90);
-
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		
 		//Storing the value before spin or win
