@@ -1,20 +1,16 @@
 package stepDefinition_GoldenHot1;
 
-
 import java.util.List;
 import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-
 
 public class GoldenHot_Balance_Check_WinAmount_AddedToBalance {
 	AppiumDriver<MobileElement> driver;
@@ -55,11 +51,6 @@ public class GoldenHot_Balance_Check_WinAmount_AddedToBalance {
 		driver.context("NATIVE_APP");
 		Thread.sleep(4000);
 	
-	
-		//driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View[12]")).click();
-		//Thread.sleep(2000);
-		//driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View[12]")).click();
-		//Thread.sleep(3000);
 		WebDriverWait wait1 = new WebDriverWait(driver, 60);
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		//String balance = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View[22]/android.view.View[1]")).getText();
@@ -148,24 +139,9 @@ public class GoldenHot_Balance_Check_WinAmount_AddedToBalance {
 		double fValue = Double.parseDouble(winTex)+Double.parseDouble(currtbal);
 		System.out.println("finalvalue is equal to: "+fValue);
 
-//		DecimalFormat df = new DecimalFormat("##.##");
-//	    //df.setRoundingMode(RoundingMode.DOWN);
-//	    Double dbi =Double.parseDouble(df.format(fValue));
-	    
-//		Double dbi =Double.parseDouble(df.format(fValue));
-//		System.out.println("dbi:" +dbi);
-//		DecimalFormat df2 = new DecimalFormat("#.##");
-//		Double dbi1 =Double.parseDouble(df2.format(fValue));
-//		System.out.println("df2:" +dbi1);
-//		DecimalFormat df4 = new DecimalFormat("#.##");
-//		String formatted = df4.format(fValue); 
-//		System.out.println("DF4" +formatted);
 		String dbi = String.format("%.2f", fValue);  
 		System.out.println("Final Win amount is: "+dbi);
 	
-//	    String pq="";
-//	    String paq=pq+dbi;
-//	    System.out.println("Fin Win Amount: "+paq);
 	    System.out.println(dbi.equals(postwin));
 		Assert.assertEquals(dbi, postwin);
 		
