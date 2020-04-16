@@ -4,6 +4,8 @@ import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -28,9 +30,8 @@ AppiumDriver<MobileElement> driver;
 
 	@When("^Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, do not enter the amount in the balance field and click on Ok butotn$")
 	public void open_the_Golded_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_do_not_enter_the_amount_in_the_balance_field_and_click_on_Ok_butotn() throws Throwable {
-		driver.findElement(By.className("mb")).click();
-		Thread.sleep(10000);
-		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));	
 		//Clearing value from balance field and sending null values
 		MobileElement transfer = driver.findElement(By.id("transferInput"));
 		transfer.clear();

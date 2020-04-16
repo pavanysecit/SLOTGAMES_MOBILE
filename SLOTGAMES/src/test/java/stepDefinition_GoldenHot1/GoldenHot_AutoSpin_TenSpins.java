@@ -28,8 +28,8 @@ AppiumDriver<MobileElement> driver;
 	
 	@Given("^Chrome browser, valid URL, valid login details, godlen hot slot game, balance, spin button, auto spin button, ten spins option and number of spins left message$")
 	public void chrome_browser_valid_URL_valid_login_details_godlen_hot_slot_game_balance_spin_button_auto_spin_button_ten_spins_option_and_number_of_spins_left_message() throws Throwable {
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[6]/div[1]/div")).click();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		driver.findElement(By.id("transferInput")).sendKeys("200");
 		//Thread.sleep(2000);

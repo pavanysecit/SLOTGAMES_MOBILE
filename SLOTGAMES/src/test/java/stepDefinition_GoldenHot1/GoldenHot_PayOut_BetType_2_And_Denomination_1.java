@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -15,13 +18,13 @@ AppiumDriver<MobileElement> driver;
 	
 	public GoldenHot_PayOut_BetType_2_And_Denomination_1() throws InterruptedException {
 		this.driver = SlotGames_URL_Login.getDriver();
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[6]/div[1]/div")).click();
+		
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, godlen hot slot game, icon to open payout table, all symbols, max amount on each symbol like bell n etc, back button, bet type (\\d+)\\.(\\d+) and denomination value (\\d+)\\.(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_godlen_hot_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_bell_n_etc_back_button_bet_type_and_denomination_value(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[6]/div[1]/div")).click();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		driver.findElement(By.id("transferInput")).sendKeys("22");
 		Thread.sleep(1000);

@@ -48,7 +48,6 @@ public class EmeraldDice_Balance_Credits_Calculations_Value1 {
 	@When("^Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, click on balance, multiply credit by (\\d+)\\.(\\d+) and check the balance$")
 	public void open_the_Emerald_Dice_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_click_on_balance_multiply_credit_by_and_check_the_balance(int arg1, int arg2) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));   
 	
 		//Storing the value before converting the balance into credits

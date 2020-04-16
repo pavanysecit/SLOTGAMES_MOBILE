@@ -6,6 +6,8 @@ import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -15,12 +17,13 @@ import io.appium.java_client.MobileElement;
 
 
 public class GoldenHot_Balance_Check_WinAmount_AddedToBalance {
-AppiumDriver<MobileElement> driver;
-private MobileElement prq;
+	AppiumDriver<MobileElement> driver;
+	private MobileElement prq;
 
 	public GoldenHot_Balance_Check_WinAmount_AddedToBalance() {
 		this.driver = SlotGames_URL_Login.getDriver();
 	}
+	
 	@Given("^Chrome browser, valid URL, valid login details, godlen hot slot game, balance, transfer button, spin button and win amount$")
 	public void chrome_browser_valid_URL_valid_login_details_godlen_hot_slot_game_balance_transfer_button_spin_button_and_win_amount() throws Throwable {
 		Thread.sleep(1000);
@@ -29,8 +32,8 @@ private MobileElement prq;
 	@SuppressWarnings("deprecation")
 	@When("^Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on spin button till user win and check the balance after win$")
 	public void open_the_Golded_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_amount_click_on_spin_button_till_user_win_and_check_the_balance_after_win() throws Throwable {
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[6]/div[1]/div")).click();
-		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		driver.findElement(By.id("transferInput")).sendKeys("500");
 		Thread.sleep(2000);
@@ -57,7 +60,8 @@ private MobileElement prq;
 		//Thread.sleep(2000);
 		//driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View[12]")).click();
 		//Thread.sleep(3000);
-		
+		WebDriverWait wait1 = new WebDriverWait(driver, 60);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		//String balance = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View[22]/android.view.View[1]")).getText();
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 	

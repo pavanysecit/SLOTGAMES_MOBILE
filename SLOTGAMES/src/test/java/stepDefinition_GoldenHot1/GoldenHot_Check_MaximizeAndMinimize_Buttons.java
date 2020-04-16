@@ -3,6 +3,9 @@ package stepDefinition_GoldenHot1;
 import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -18,8 +21,8 @@ AppiumDriver<MobileElement> driver;
 	
 	@Given("^Chrome browser, valid URL, valid login details, godlen hot slot game, maximize button and minimize button$")
 	public void chrome_browser_valid_URL_valid_login_details_godlen_hot_slot_game_maximize_button_and_minimize_button() throws Throwable {
-		driver.findElement(By.className("mb")).click();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		driver.findElement(By.id("transferInput")).sendKeys("5");
 		Thread.sleep(2000);

@@ -7,6 +7,9 @@ import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -18,14 +21,13 @@ AppiumDriver<MobileElement> driver;
 	
 	public GoldenHot_Balance_Credits_Calculations_Value1() throws InterruptedException {
 		this.driver = SlotGames_URL_Login.getDriver();
-		driver.findElement(By.className("mb")).click();
-		Thread.sleep(5000);
+	
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, godlen hot slot game, balance, credits and denomination as (\\d+)\\.(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_godlen_hot_slot_game_balance_credits_and_denomination_as(int arg1, int arg2) throws Throwable {
-		driver.findElement(By.className("mb")).click();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		driver.findElement(By.id("transferInput")).sendKeys("8");
 		Thread.sleep(2000);
@@ -51,6 +53,8 @@ AppiumDriver<MobileElement> driver;
 	@SuppressWarnings("deprecation")
 	@When("^Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, click on balance, multiply credit by (\\d+)\\.(\\d+) and check the balance$")
 	public void open_the_Golded_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_click_on_balance_multiply_credit_by_and_check_the_balance(int arg1, int arg2) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		
 		//Storing the balance and converting balance in credits

@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -21,8 +24,8 @@ AppiumDriver<MobileElement> driver;
 	
 	@Given("^Chrome browser, valid URL, valid login details, golden hot slot game, bet type as ONE, bet value as twenty five, balance and spin button$")
 	public void chrome_browser_valid_URL_valid_login_details_golden_hot_slot_game_bet_type_as_ONE_bet_value_as_twenty_five_balance_and_spin_button() throws Throwable {
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[6]/div[1]/div")).click();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
 		driver.findElement(By.id("transferInput")).sendKeys("77.55");
 		Thread.sleep(2000);
@@ -47,7 +50,9 @@ AppiumDriver<MobileElement> driver;
 
 	@When("^Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as ONE & bet value as twenty five, click on spin button and check the balance$")
 	public void open_the_Golded_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_ONE_bet_value_as_twenty_five_click_on_spin_button_and_check_the_balance() throws Throwable {
-	List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		
 		//Storing the balance before spin
 		String prewin1="";
