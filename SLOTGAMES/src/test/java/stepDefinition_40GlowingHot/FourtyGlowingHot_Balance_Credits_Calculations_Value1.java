@@ -31,6 +31,7 @@ AppiumDriver<MobileElement> driver;
 		Thread.sleep(30000);
 		 
 		 String parent1=driver.getWindowHandle();
+	
 		 Set<String>s1=driver.getWindowHandles();
 
 		 System.out.println("Window for slot game is"+" "+s1);

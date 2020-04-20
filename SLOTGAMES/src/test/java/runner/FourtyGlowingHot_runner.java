@@ -8,8 +8,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="E:/SLOTGAMES_AUTOMATION/SLOTGAMES/features/40GlowingHot_AllUsecases.feature", glue={"stepDefinition_40GlowingHot"}, plugin ={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"})
-public class FourtyGlowingHot_runner {
+@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/40GlowingHot_AllUsecases.feature", glue={"stepDefinition_40GlowingHot"}, plugin ={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"})
+public class FourtyGlowingHot_runner { 
 
 
 @AfterClass
