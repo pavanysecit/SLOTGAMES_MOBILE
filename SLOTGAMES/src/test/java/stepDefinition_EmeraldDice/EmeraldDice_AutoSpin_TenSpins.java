@@ -60,13 +60,7 @@ public class EmeraldDice_AutoSpin_TenSpins {
 			break;
 		 }
 		
-//		MobileElement element = driver.findElement(By.id("AutoSpinListItem_10"));
-//		wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSearch")));
-//		JavascriptExecutor executor = (JavascriptExecutor)driver;
-//		executor.executeScript("arguments[0].click();", element);
-//		wait.until(ExpectedConditions.elementToBeClickable(By.id("AutoSpinListItem_10")));
-		
-		
+
 		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "9 SPINS LEFT"));
 	    String actual = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected = "9 SPINS LEFT";

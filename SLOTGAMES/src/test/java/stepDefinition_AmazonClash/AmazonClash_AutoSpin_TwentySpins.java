@@ -1,4 +1,4 @@
-package stepDefinition_EmeraldDice;
+package stepDefinition_AmazonClash;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -14,15 +14,15 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class EmeraldDice_AutoSpin_TwentySpins {
+public class AmazonClash_AutoSpin_TwentySpins {
 	AppiumDriver<MobileElement> driver;
 
-	public EmeraldDice_AutoSpin_TwentySpins() throws InterruptedException {
-		this.driver = EmeraldDice_URL_Login.getDriver();
+	public AmazonClash_AutoSpin_TwentySpins() throws InterruptedException {
+		this.driver = AmazonClash_URL_Login.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, spin button, auto spin button, twenty spins option and number of spins left message$")
-	public void chrome_browser_valid_URL_valid_login_details_Emerald_Dice_slot_game_balance_spin_button_auto_spin_button_twenty_spins_option_and_number_of_spins_left_message() throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Amazon Clash slot game, balance, spin button, auto spin button, twenty spins option and number of spins left message$")
+	public void chrome_browser_valid_URL_valid_login_details_Amazon_Clash_slot_game_balance_spin_button_auto_spin_button_twenty_spins_option_and_number_of_spins_left_message() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
@@ -47,8 +47,8 @@ public class EmeraldDice_AutoSpin_TwentySpins {
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on twenty spin option under auto spin drop down and check the number of spins left message$")
-	public void open_the_Emerald_Dice_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_twenty_spin_option_under_auto_spin_drop_down_and_check_the_number_of_spins_left_message() throws Throwable {
+	@When("^Open the Amazon Clash slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on twenty spin option under auto spin drop down and check the number of spins left message$")
+	public void open_the_Amazon_Clash_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_twenty_spin_option_under_auto_spin_drop_down_and_check_the_number_of_spins_left_message() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 6);
 		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[6]/android.view.View[1]/android.view.View/android.view.View[1]")).click();
 		Thread.sleep(3000);
@@ -121,9 +121,9 @@ public class EmeraldDice_AutoSpin_TwentySpins {
 	    Assert.assertEquals(actual9, expected9);
 	}
 
-	@Then("^Number of spin left should start from (\\d+) to (\\d+) after clicking twenty spins option and should perform (\\d+) spins from (\\d+) to (\\d+) in Emerald Dice slot game$")
-	public void number_of_spin_left_should_start_from_to_after_clicking_twenty_spins_option_and_should_perform_spins_from_to_in_Emerald_Dice_slot_game(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
+	@Then("^Number of spin left should start from (\\d+) to (\\d+) after clicking twenty spins option and should perform (\\d+) spins from (\\d+) to (\\d+) in Amazon Clash slot game$")
+	public void number_of_spin_left_should_start_from_to_after_clicking_twenty_spins_option_and_should_perform_spins_from_to_in_Amazon_Clash_slot_game(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
 		Thread.sleep(2000);
-		driver.quit();
+	    driver.quit();
 	}
 }
