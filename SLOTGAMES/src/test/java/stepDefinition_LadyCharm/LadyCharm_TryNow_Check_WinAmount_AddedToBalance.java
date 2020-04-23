@@ -1,4 +1,4 @@
-package stepDefinition_AmazonClash;
+package stepDefinition_LadyCharm;
 
 import java.net.URL;
 import java.util.List;
@@ -16,12 +16,12 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class AmazonClash_TryNow_Check_WinAmount_AddedToBalance {
+public class LadyCharm_TryNow_Check_WinAmount_AddedToBalance {
 	AppiumDriver<MobileElement> driver;
 	private MobileElement prq;
 	
-	@Given("^Chrome browser, valid URL, valid login details, Amazon Clash slot game, try now button, balance to play, spin button and win amount$")
-	public void chrome_browser_valid_URL_valid_login_details_Amazon_Clash_slot_game_try_now_button_balance_to_play_spin_button_and_win_amount() throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Lady Charm slot game, try now button, balance to play, spin button and win amount$")
+	public void chrome_browser_valid_URL_valid_login_details_Lady_Charm_slot_game_try_now_button_balance_to_play_spin_button_and_win_amount() throws Throwable {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
 		cap.setCapability("udid", "J9AAGF10J33379E");
@@ -58,8 +58,8 @@ public class AmazonClash_TryNow_Check_WinAmount_AddedToBalance {
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Amazon Clash slot game by entering the valid URL in browser, click on try now button, click on spin button till player win and check the balance after win$")
-	public void open_the_Amazon_Clash_slot_game_by_entering_the_valid_URL_in_browser_click_on_try_now_button_click_on_spin_button_till_player_win_and_check_the_balance_after_win() throws Throwable {
+	@When("^Open the Lady Charm slot game by entering the valid URL in browser, click on try now button, click on spin button till player win and check the balance after win$")
+	public void open_the_Lady_Charm_slot_game_by_entering_the_valid_URL_in_browser_click_on_try_now_button_click_on_spin_button_till_player_win_and_check_the_balance_after_win() throws Throwable {
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		
 		
@@ -143,9 +143,9 @@ public class AmazonClash_TryNow_Check_WinAmount_AddedToBalance {
 		}
 	}
 
-	@Then("^Win amount should get added to the balance when the player wins in try now page of Amazon Clash slot game$")
-	public void win_amount_should_get_added_to_the_balance_when_the_player_wins_in_try_now_page_of_Amazon_Clash_slot_game() throws Throwable {
-		Thread.sleep(2000);
+	@Then("^Win amount should get added to the balance when the player wins in try now page of Lady Charm slot game$")
+	public void win_amount_should_get_added_to_the_balance_when_the_player_wins_in_try_now_page_of_Lady_Charm_slot_game() throws Throwable {
+	    Thread.sleep(2000);
 	    driver.quit();
 	}
 }
