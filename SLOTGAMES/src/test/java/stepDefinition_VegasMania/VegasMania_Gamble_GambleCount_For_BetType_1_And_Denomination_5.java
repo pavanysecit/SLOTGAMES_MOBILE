@@ -58,7 +58,7 @@ public class VegasMania_Gamble_GambleCount_For_BetType_1_And_Denomination_5 {
 		for(MobileElement be:balanc)
 		{
 			
-			if(be.getText().equals("4")){
+			if(be.getText().equals("2")){
 				be.click();
 				Thread.sleep(2000);
 				break;
@@ -67,7 +67,7 @@ public class VegasMania_Gamble_GambleCount_For_BetType_1_And_Denomination_5 {
 		String betValue = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		System.out.println("Selected bet amount is: " +betValue);
 		String actualB = betValue;
-		String expectedB = "4";
+		String expectedB = "2";
 		Assert.assertEquals(expectedB, actualB);
 		Thread.sleep(2000);
 
@@ -87,15 +87,15 @@ public class VegasMania_Gamble_GambleCount_For_BetType_1_And_Denomination_5 {
 			System.out.println(winTex.isEmpty());		
 		}
 		System.out.println("Win amount is: " +prewin);	
-		System.out.println("Maximum gamble win amount for bet amount 4 and credit value 0.01 is : 140 SRD");	                                                                                                                             
+		System.out.println("Maximum gamble win amount for bet amount 2 and credit value 0.01 is : 70 SRD");	                                                                                                                             
 		Double maxV = Double.parseDouble(prewin);
-		if(maxV < 140)
+		if(maxV < 70)
 		   {
-			   System.out.println("Win amount less than Gamble max value 140 i.e : "+" " +maxV +". Test Case Passed");
+			   System.out.println("Win amount less than Gamble max value 70 i.e : "+" " +maxV +". Test Case Passed");
 		   }
 		else
 		{
-			System.out.println("Win amount greater than Gamble max value 140 : i.e "+" " +maxV +". Test Case Failed");
+			System.out.println("Win amount greater than Gamble max value 70 : i.e "+" " +maxV +". Test Case Failed");
 			boolean uy =! driver.findElement(By.id("hud_btnGamble")).isDisplayed();
 			System.out.println(uy);
 			Thread.sleep(2000);
@@ -110,27 +110,27 @@ public class VegasMania_Gamble_GambleCount_For_BetType_1_And_Denomination_5 {
 		MobileElement attempts = driver.findElement(By.id("gamble_txtAttemptsLeft"));
 		
 		System.out.println("No. of attempts left :"+" "+attempts.getText());
-		if(monty>=0.1 && monty<=8.725)
+		if(monty>=2 && monty<=4)
 		{
 			System.out.println("The no. of attempts should be : "+" "+"5"+" "+" & no. of actual attempts are :"+attempts.getText());
 			Assert.assertEquals("5",attempts.getText());
 		}
-	   else if(monty>8.725 && monty<=17.45){
+	   else if(monty>4 && monty<=8){
 		  System.out.println("The no. of attempts should be : "+" "+"4"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("4", attempts.getText());
 		}
-	   else if(monty>17.45 && monty<=35){
+	   else if(monty>8 && monty<=16){
 		  System.out.println("The no. of attempts should be :"+" "+"3"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("3",attempts.getText());
 	   }
-	   else if(monty>35 && monty<=70){
+	   else if(monty>16 && monty<=32){
 		  System.out.println("The no. of attempts should be :"+" "+"2"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("2",attempts.getText());
 	   }
-	   else if(monty>70 && monty<=140){
+	   else if(monty>32 && monty<=70){
 		  System.out.println("The no. of attempts should be :"+" "+"1"+" "+"& no. of actual attempts are:"+attempts.getText());  
 		  
 		  Assert.assertEquals("1", attempts.getText());

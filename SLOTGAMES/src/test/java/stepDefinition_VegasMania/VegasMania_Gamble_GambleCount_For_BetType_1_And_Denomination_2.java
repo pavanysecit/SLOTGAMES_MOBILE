@@ -86,15 +86,15 @@ public class VegasMania_Gamble_GambleCount_For_BetType_1_And_Denomination_2 {
 			System.out.println(winTex.isEmpty());		
 		}
 		System.out.println("Win amount is: " +prewin);	
-		System.out.println("Maximum gamble win amount for bet amount 0.4 and credit value 0.01 is : 14 SRD");	                                                                                                                             
+		System.out.println("Maximum gamble win amount for bet amount 0.2 and credit value 0.01 is : 7 SRD");	                                                                                                                             
 		Double maxV = Double.parseDouble(prewin);
-		if(maxV < 14)
+		if(maxV < 7)
 		   {
-			   System.out.println("Win amount less than Gamble max value 14 i.e : "+" " +maxV +". Test Case Passed");
+			   System.out.println("Win amount less than Gamble max value 7 i.e : "+" " +maxV +". Test Case Passed");
 		   }
 		else
 		{
-			System.out.println("Win amount greater than Gamble max value 14 : i.e "+" " +maxV +". Gamble link is not visible");
+			System.out.println("Win amount greater than Gamble max value 7 : i.e "+" " +maxV +". Gamble link is not visible");
 			boolean uy =! driver.findElement(By.id("hud_btnGamble")).isDisplayed();
 			System.out.println(uy);
 			Thread.sleep(2000);
@@ -110,27 +110,27 @@ public class VegasMania_Gamble_GambleCount_For_BetType_1_And_Denomination_2 {
 		MobileElement attempts = driver.findElement(By.id("gamble_txtAttemptsLeft"));
 		
 		System.out.println("No. of attempts left :"+" "+attempts.getText());
-		if(monty>=0.1 && monty<=0.85)
+		if(monty>=0.2 && monty<=0.4)
 		{
 			System.out.println("The no. of attempts should be : "+" "+"5"+" "+" & no. of actual attempts are :"+attempts.getText());
 			Assert.assertEquals("5",attempts.getText());
 		}
-	   else if(monty>0.85 && monty<=1.7){
+	   else if(monty>0.4 && monty<=0.8){
 		  System.out.println("The no. of attempts should be : "+" "+"4"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("4", attempts.getText());
 		}
-	   else if(monty>1.7 && monty<=3.45){
+	   else if(monty>0.8 && monty<=1.6){
 		  System.out.println("The no. of attempts should be :"+" "+"3"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("3",attempts.getText());
 	   }
-	   else if(monty>3.45 && monty<=6.9){
+	   else if(monty>1.6 && monty<=3.2){
 		  System.out.println("The no. of attempts should be :"+" "+"2"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("2",attempts.getText());
 	   }
-	   else if(monty>6.9 && monty<=14){
+	   else if(monty>3.2 && monty<=7){
 		  System.out.println("The no. of attempts should be :"+" "+"1"+" "+"& no. of actual attempts are:"+attempts.getText());  
 		  
 		  Assert.assertEquals("1", attempts.getText());

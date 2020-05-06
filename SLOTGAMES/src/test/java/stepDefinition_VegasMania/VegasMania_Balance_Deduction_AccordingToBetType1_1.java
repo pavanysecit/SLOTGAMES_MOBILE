@@ -20,9 +20,9 @@ public class VegasMania_Balance_Deduction_AccordingToBetType1_1 {
 		this.driver = VegasMania_URL_Login.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Vegas Mania slot game, bet type as (\\d+)\\.(\\d+), bet value as (\\d+)\\.(\\d+), balance and spin button$")
-	public void chrome_browser_valid_URL_valid_login_details_Vegas_Mania_slot_game_bet_type_as_bet_value_as_balance_and_spin_button(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+	@Given("^Chrome browser, valid URL, valid login details, Vegas Mania game, credit type as (\\d+)\\.(\\d+), bet value as (\\d+)\\.(\\d+), balance and spin button$")
+	public void chrome_browser_valid_URL_valid_login_details_Vegas_Mania_game_credit_type_as_bet_value_as_balance_and_spin_button(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+	    WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
@@ -46,9 +46,9 @@ public class VegasMania_Balance_Deduction_AccordingToBetType1_1 {
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Vegas Mania slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+), select the bet value as (\\d+)\\.(\\d+), click on spin button and check the balance$")
-	public void open_the_Vegas_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_select_the_bet_value_as_click_on_spin_button_and_check_the_balance(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
+	@When("^Open the Vegas Mania slot game by entering the valid URL in browser, enter the valid login details, select the credit value as (\\d+)\\.(\\d+), select the bet value as (\\d+)\\.(\\d+), click on spin button and check the balance$")
+	public void open_the_Vegas_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_credit_value_as_select_the_bet_value_as_click_on_spin_button_and_check_the_balance(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+	    WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));     
 		
 		//Storing the value before spin
@@ -78,9 +78,9 @@ public class VegasMania_Balance_Deduction_AccordingToBetType1_1 {
 		Assert.assertEquals(dbi,postSpin);
 	}
 
-	@Then("^Balance should get deducted by (\\d+)\\.(\\d+) as bet type is selected as (\\d+)\\.(\\d+) and bet value as (\\d+)\\.(\\d+) in Vegas Mania game$")
-	public void balance_should_get_deducted_by_as_bet_type_is_selected_as_and_bet_value_as_in_Vegas_Mania_game(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) throws Throwable {
-		Thread.sleep(2000);
+	@Then("^Balance should get deducted by (\\d+)\\.(\\d+) as credit type is selected as (\\d+)\\.(\\d+) and bet value as (\\d+)\\.(\\d+) in Vegas Mania game$")
+	public void balance_should_get_deducted_by_as_credit_type_is_selected_as_and_bet_value_as_in_Vegas_Mania_game(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) throws Throwable {
+	    Thread.sleep(2000);
 		driver.quit();
 	}
 }

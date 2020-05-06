@@ -57,18 +57,29 @@ public class SeaPearl_PayOut_BetType_1_And_Denomination_2 {
 		Assert.assertEquals(expectedC, actualC);
 		Thread.sleep(1000);
 		
-		String betValue = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		System.out.println("Selected bet amount is: " +betValue);
-		String actualB = betValue;
-		String expectedB = "0.4";
-		Assert.assertEquals(expectedB, actualB);
+		//Selecting bet amount as 0.4
+		driver.findElement(By.id("hud_txtBetAmount")).click();
+		Thread.sleep(2000);
+		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
+		for(MobileElement be:balance)
+		{
+			
+			if(be.getText().equals("0.4")){
+				be.click();
+				Thread.sleep(2000);
+				break;
+			}	
+		}
+		String actual = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		System.out.println("Selected bet amount is: " +actual);
+		String expected = "0.4";
+		Assert.assertEquals(actual, expected);
 		Thread.sleep(2000);
 		
 		//Clicking on icon to open the PayOut table
 		driver.findElement(By.id("hud_btnMenu")).click();
 		Thread.sleep(2000);
 		
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		
 		String Fsymbol="", F1symbol="", F2symbol="", F3symbol="", pearl="",pearl1="",pearl2="",pearl3="", crab="",crab1="",crab2="",crab3="",sfish="",sfish1="",sfish2="",nfish="",nfish1="",
 				nfish2="", sfish3="", Shorse="", Shorse1="", Shorse2="", Q="",Q1="",Q2="",A="",A1="",A2="",K="",K1="",K2="",J="",J1="",J2="",nine="",nine1="",nine2="",nine3="",Ten="",Ten1="",Ten2="";
@@ -79,10 +90,10 @@ public class SeaPearl_PayOut_BetType_1_And_Denomination_2 {
 		//Check for Dolphin symbol
 		if(me.getId().equals("26")){
 			Fsymbol = me.getText();
-			String expected = Fsymbol;
-			String actual = "400 YSI";
+			String expected11 = Fsymbol;
+			String actual11 = "400 YSI";
 			System.out.println("Max Payout Value of 5 Dolphin symbols for denomination 0.4 is : " +Fsymbol);
-			Assert.assertEquals(actual, expected);
+			Assert.assertEquals(actual11, expected11);
 			Thread.sleep(1000);
 		}
 		if(me.getId().equals("27")){
