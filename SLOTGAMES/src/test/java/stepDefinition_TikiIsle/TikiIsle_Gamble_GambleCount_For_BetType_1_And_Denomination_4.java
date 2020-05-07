@@ -18,9 +18,9 @@ public class TikiIsle_Gamble_GambleCount_For_BetType_1_And_Denomination_4 {
 		this.driver = TikiIsle_URL_Login.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, godlen hot slot game, transfer button, bet type as (\\d+)\\.(\\d+), denomination as TWO, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count$")
-	public void chrome_browser_valid_URL_valid_login_details_godlen_hot_slot_game_transfer_button_bet_type_as_denomination_as_TWO_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count(int arg1, int arg2) throws Throwable {
-		MobileElement balT = driver.findElement(By.id("transferInput"));
+	@Given("^Chrome browser, valid URL, valid login details, tiki isle slot game, bet type as (\\d+)\\.(\\d+), denomination as (\\d+), balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count$")
+	public void chrome_browser_valid_URL_valid_login_details_tiki_isle_slot_game_bet_type_as_denomination_as_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count(int arg1, int arg2, int arg3) throws Throwable {
+	    MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
 		Thread.sleep(1000);
 		balT.sendKeys("300");
@@ -43,9 +43,9 @@ public class TikiIsle_Gamble_GambleCount_For_BetType_1_And_Denomination_4 {
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Tiki Isle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, transfer the amount, select bet type as (\\d+)\\.(\\d+) & denomination as TWO, click on spin button till player wins, click on gamble button and check the gamble count$")
-	public void open_the_Tiki_Isle_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_golden_hot_slot_game_transfer_the_amount_select_bet_type_as_denomination_as_TWO_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count(int arg1, int arg2) throws Throwable {
-		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+	@When("^Open the Tiki Isle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as (\\d+)\\.(\\d+) & denomination as FO(\\d+)UR, click on spin button till player wins, click on gamble button and check the gamble count$")
+	public void open_the_Tiki_Isle_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_golden_hot_slot_game_select_bet_type_as_denomination_as_FO_UR_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count(int arg1, int arg2, int arg3) throws Throwable {
+	    String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The current balance of the account :" +balance);
 		List<MobileElement> balanc = driver.findElementsByClassName("android.view.View");
 		driver.findElement(By.id("hud_txtBetAmount")).click();
@@ -53,7 +53,7 @@ public class TikiIsle_Gamble_GambleCount_For_BetType_1_And_Denomination_4 {
 		for(MobileElement be:balanc)
 		{
 			
-			if(be.getText().equals("2")){
+			if(be.getText().equals("4")){
 				be.click();
 				Thread.sleep(2000);
 				break;
@@ -62,7 +62,7 @@ public class TikiIsle_Gamble_GambleCount_For_BetType_1_And_Denomination_4 {
 		String betValue = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		System.out.println("Selected bet amount is: " +betValue);
 		String actualB = betValue;
-		String expectedB = "2";
+		String expectedB = "4";
 		Assert.assertEquals(expectedB, actualB);
 		Thread.sleep(2000);
 
@@ -82,15 +82,15 @@ public class TikiIsle_Gamble_GambleCount_For_BetType_1_And_Denomination_4 {
 			System.out.println(winTex.isEmpty());		
 		}
 		System.out.println("Win amount is: " +prewin);	
-		System.out.println("Maximum gamble win amount for bet amount 2 and credit value 0.01 is : 70 SRD");	                                                                                                                             
+		System.out.println("Maximum gamble win amount for bet amount 4 and credit value 0.02 is : 140 SRD");	                                                                                                                             
 		Double maxV = Double.parseDouble(prewin);
-		if(maxV < 70)
+		if(maxV < 140)
 		   {
-			   System.out.println("Win amount less than Gamble max value 70 i.e : "+" " +maxV +". Test Case Passed");
+			   System.out.println("Win amount less than Gamble max value 140 i.e : "+" " +maxV +". Test Case Passed");
 		   }
 		else
 		{
-			System.out.println("Win amount greater than Gamble max value 70 : i.e "+" " +maxV +". Test Case Failed");
+			System.out.println("Win amount greater than Gamble max value 140 : i.e "+" " +maxV +". Test Case Failed");
 			boolean uy =! driver.findElement(By.id("hud_btnGamble")).isDisplayed();
 			System.out.println(uy);
 			Thread.sleep(2000);
@@ -105,27 +105,27 @@ public class TikiIsle_Gamble_GambleCount_For_BetType_1_And_Denomination_4 {
 		MobileElement attempts = driver.findElement(By.id("gamble_txtAttemptsLeft"));
 		
 		System.out.println("No. of attempts left :"+" "+attempts.getText());
-		if(monty>=0.1 && monty<=4.35)
+		if(monty>=4 && monty<=8.72)
 		{
 			System.out.println("The no. of attempts should be : "+" "+"5"+" "+" & no. of actual attempts are :"+attempts.getText());
 			Assert.assertEquals("5",attempts.getText());
 		}
-	   else if(monty>4.35 && monty<=8.72){
+	   else if(monty>8.72 && monty<=17.45){
 		  System.out.println("The no. of attempts should be : "+" "+"4"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("4", attempts.getText());
 		}
-	   else if(monty>8.72 && monty<=17.45){
+	   else if(monty>17.45 && monty<=34.9){
 		  System.out.println("The no. of attempts should be :"+" "+"3"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("3",attempts.getText());
 	   }
-	   else if(monty>17.45 && monty<=34.9){
+	   else if(monty>34.9 && monty<=69.99){
 		  System.out.println("The no. of attempts should be :"+" "+"2"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("2",attempts.getText());
 	   }
-	   else if(monty>34.9 && monty<=70){
+	   else if(monty>70 && monty<=140){
 		  System.out.println("The no. of attempts should be :"+" "+"1"+" "+"& no. of actual attempts are:"+attempts.getText());  
 		  
 		  Assert.assertEquals("1", attempts.getText());
@@ -136,8 +136,8 @@ public class TikiIsle_Gamble_GambleCount_For_BetType_1_And_Denomination_4 {
 		 System.out.println("The testcase has passed");
 	}
 
-	@Then("^Gamble count should be displayed based on winning amount and max amount of the gamble configured on the game info page for bet type (\\d+)\\.(\\d+) and denomination TWO in Tiki Isle game$")
-	public void gamble_count_should_be_displayed_based_on_winning_amount_and_max_amount_of_the_gamble_configured_on_the_game_info_page_for_bet_type_and_denomination_TWO_in_Tiki_Isle_game(int arg1, int arg2) throws Throwable {
+	@Then("^Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type (\\d+)\\.(\\d+) & denomination (\\d+) in Tiki Isle game$")
+	public void gamble_count_should_be_displayed_based_on_win_amount_and_gamble_max_amount_configured_on_the_game_info_page_for_bet_type_denomination_in_Tiki_Isle_game(int arg1, int arg2, int arg3) throws Throwable {
 	    Thread.sleep(3000);
 	    driver.quit();
 	}

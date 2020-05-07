@@ -1,18 +1,7 @@
 Feature: Test all the functionalities of Tiki Isle Slot Game
    
 
-			
-	Scenario: Check whether system is providing balance in try now feature of Tiki Isle slot game
-    Given Chrome browser, valid URL, valid login details, Tiki Isle slot game, try now button and balance to play
-    When Open the Tiki Isle slot game by entering the valid URL in browser, click on try now button
-    Then System should provide five thousand as balance on click on try now button in Tiki Isle slot game
-	
-	Scenario: Check whether amount is deducting from the balance after clicking on spin button in try now page of Tiki Isle slot game
-    Given Chrome browser, valid URL, valid login details, Tiki Isle slot game, try now button, balance to play and spin button
-    When Open the Tiki Isle slot game by entering the valid URL in browser, click on try now button and click on spin button
-    Then Amount should get deducted from balance on click on spin button in try now page of Tiki Isleslot game
-	
-	Scenario: Check whether winning amount is gettting added to the balance when the player wins in try now page of Tiki Isle slot game
-    Given Chrome browser, valid URL, valid login details, Tiki Isle slot game, try now button, balance to play, spin button and win amount
-    When Open the Tiki Isle slot game by entering the valid URL in browser, click on try now button, click on spin button till player win and check the balance after win
-    Then Win amount should get added to the balance when the player wins in try now page of Tiki Isle slot game
+		Scenario: Check whether the max payout amount for each symbol like J, Wild as per the bet type 0.02 and denomination EIGHT in Tiki Isle slot game on mobile
+    Given Chrome browser, valid URL, valid login details, Tiki Isle slot game, icon to open payout table, all symbols, max amount on each symbol like J, Wild n etc, back button, bet type 0.02 and denomination as EIGHT on mobile
+    When Open the Tiki Isle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like J, Wild n etc, click on back button, select bet type as 0.02 & denomination value as EIGHT and check payout amount on mobile
+    Then System should display the Payout max amount on each symbol like J, Wild n etc and payout max amount should get changed whenever player changes the bet type to 0.02 and denomination value to EIGHT in Tiki Isle slot game on mobile
