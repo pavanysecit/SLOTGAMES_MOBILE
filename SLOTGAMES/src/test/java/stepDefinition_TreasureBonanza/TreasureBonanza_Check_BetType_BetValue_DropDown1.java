@@ -86,7 +86,7 @@ AppiumDriver<MobileElement> driver;
 		System.out.println("Available bet amounts under credit 0.01 are : " +"\n" +actual1);
 		Assert.assertEquals(actual1, expected1);
 		
-		//Selecting bet amount as 0.6
+		//Selecting bet amount as 0.4
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
 		for(MobileElement be2:balance)
@@ -103,7 +103,7 @@ AppiumDriver<MobileElement> driver;
 		System.out.println("\n" +actual2);
 		Assert.assertEquals(actual2, expected2);
 		
-		//Selecting bet amount as 1.5
+		//Selecting bet amount as 1
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
 		for(MobileElement be3:balance)
@@ -120,7 +120,7 @@ AppiumDriver<MobileElement> driver;
 		System.out.println("\n" +actual3);
 		Assert.assertEquals(actual3, expected3);
 		
-		//Selecting bet amount as 3
+		//Selecting bet amount as 2
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
 		for(MobileElement be4:balance)
@@ -137,7 +137,7 @@ AppiumDriver<MobileElement> driver;
 		System.out.println("\n" +actual4);
 		Assert.assertEquals(actual4, expected4);
 
-		//Selecting bet amount as 6
+		//Selecting bet amount as 4
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
 		for(MobileElement be5:balance)
