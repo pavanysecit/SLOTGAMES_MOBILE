@@ -96,7 +96,7 @@ AppiumDriver<MobileElement> driver;
 
 	@Then("^Balance should get deducted by (\\d+)\\.(\\d+) as bet type is selected as (\\d+)\\.(\\d+) in Soccer Mania game$")
 	public void balance_should_get_deducted_by_as_bet_type_is_selected_as_in_Soccer_Mania_game(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		Thread.sleep(2000);
+	    Thread.sleep(2000);
 	    driver.quit();
 	}
 }

@@ -23,7 +23,7 @@ AppiumDriver<MobileElement> driver;
 	
 	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania slot game, bet type as (\\d+)\\.(\\d+), bet value as (\\d+)\\.(\\d+), balance, spin button and win amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Soccer_Mania_slot_game_bet_type_as_bet_value_as_balance_spin_button_and_win_amount(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+	    WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();

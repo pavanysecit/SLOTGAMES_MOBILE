@@ -19,8 +19,8 @@ public class SoccerMania_Balance_Deduction_AccordingToBetType2_1 {
 		this.driver = SoccerMania_Login_URL.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania game, (\\d+)\\.(\\d+) as bet type , (\\d+)\\.(\\d+) as bet value, balance, spin button and win amount$")
-	public void chrome_browser_valid_URL_valid_login_details_Soccer_Mania_game_as_bet_type_as_bet_value_balance_spin_button_and_win_amount(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania game, (\\d+)\\.(\\d+) as bet type , (\\d+)\\.(\\d+) as bet value, balance, spin button and balance after spin$")
+	public void chrome_browser_valid_URL_valid_login_details_Soccer_Mania_game_as_bet_type_as_bet_value_balance_spin_button_and_balance_after_spin(int arg1, int arg2, int arg3, int arg4) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
@@ -46,9 +46,9 @@ public class SoccerMania_Balance_Deduction_AccordingToBetType2_1 {
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select the bet value to (\\d+)\\.(\\d+), click on spin button and check the balance$")
-	public void open_the_Soccer_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_value_to_click_on_spin_button_and_check_the_balance(int arg1, int arg2) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
+	@When("^Open the Soccer Mania game by entering the valid URL in browser, enter the valid login details, select the bet value to (\\d+)\\.(\\d+), click on spin button and check the balance$")
+	public void open_the_Soccer_Mania_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_value_to_click_on_spin_button_and_check_the_balance(int arg1, int arg2) throws Throwable {
+	 	WebDriverWait wait = new WebDriverWait(driver, 90);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));    
 		
@@ -109,9 +109,9 @@ public class SoccerMania_Balance_Deduction_AccordingToBetType2_1 {
 			Assert.assertEquals(dbi,postSpin); 
 	}
 
-	@Then("^Balance should get deducted by (\\d+)\\.(\\d+) as bet type is selected as (\\d+)\\.(\\d+) in Soccer Mania slot game$")
-	public void balance_should_get_deducted_by_as_bet_type_is_selected_as_in_Soccer_Mania_slot_game(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		Thread.sleep(2000);
+	@Then("^Balance should get deducted by (\\d+)\\.(\\d+) as bet type is selected as (\\d+)\\.(\\d+) and bet value as (\\d+)\\.(\\d+) in Soccer Mania game$")
+	public void balance_should_get_deducted_by_as_bet_type_is_selected_as_and_bet_value_as_in_Soccer_Mania_game(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) throws Throwable {
+	    Thread.sleep(2000);
 	    driver.quit();  
 	}
 }

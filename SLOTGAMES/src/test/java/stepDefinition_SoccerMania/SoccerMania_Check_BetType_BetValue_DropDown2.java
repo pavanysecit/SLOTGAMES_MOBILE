@@ -20,15 +20,15 @@ public class SoccerMania_Check_BetType_BetValue_DropDown2 {
 		this.driver = SoccerMania_Login_URL.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania game, bet type as (\\d+)\\.(\\d+) and bet value as (\\d+)\\.(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+),(\\d+)$")
+	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania game, bet type as (\\d+)\\.(\\d+) and bet value as (\\d+)\\.(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+) & (\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Soccer_Mania_game_bet_type_as_and_bet_value_as(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+	    WebDriverWait wait = new WebDriverWait(driver, 60);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));   
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
 		Thread.sleep(1000);
-		balT.sendKeys("5");
+		balT.sendKeys("300");
 		Thread.sleep(2000);
 		driver.findElement(By.className("Transfer_Ok_but")).click();
 
@@ -47,9 +47,9 @@ public class SoccerMania_Check_BetType_BetValue_DropDown2 {
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) and check the bet value should be (\\d+)\\.(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+),(\\d+)$")
+	@When("^Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) and check the bet value should be (\\d+)\\.(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+) & (\\d+)$")
 	public void open_the_Soccer_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_and_check_the_bet_value_should_be(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+	    WebDriverWait wait = new WebDriverWait(driver, 60);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
@@ -157,9 +157,9 @@ public class SoccerMania_Check_BetType_BetValue_DropDown2 {
 		Thread.sleep(2000);
 	}
 
-	@Then("^Bet value should get changed to (\\d+)\\.(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+),(\\d+) if the bet type selected as (\\d+)\\.(\\d+) from the drop down (\\d+) in Soccer Mania slot game$")
+	@Then("^Bet value should get changed to (\\d+)\\.(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+) & (\\d+) if the bet type selected as (\\d+)\\.(\\d+) from the drop down (\\d+) in Soccer Mania slot game$")
 	public void bet_value_should_get_changed_to_if_the_bet_type_selected_as_from_the_drop_down_in_Soccer_Mania_slot_game(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) throws Throwable {
-		Thread.sleep(3000);
+	    Thread.sleep(3000);
 		driver.quit();
 	}
 }

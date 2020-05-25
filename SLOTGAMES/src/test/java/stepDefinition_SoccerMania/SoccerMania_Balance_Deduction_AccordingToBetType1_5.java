@@ -50,7 +50,7 @@ AppiumDriver<MobileElement> driver;
 
 	@When("^Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+), select the bet value to SIX, click on spin button and check the slot game balance$")
 	public void open_the_Soccer_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_select_the_bet_value_to_SIX_click_on_spin_button_and_check_the_slot_game_balance(int arg1, int arg2) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
+	    WebDriverWait wait = new WebDriverWait(driver, 90);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));     
 	   //Storing the value before spin
@@ -95,9 +95,9 @@ AppiumDriver<MobileElement> driver;
 		Assert.assertEquals(dbi,postSpin);
 	}
 
-	@Then("^Existing Balance should get deducted by FOUR as bet type is selected as (\\d+)\\.(\\d+) and bet value as SIX in Soccer Mania slot game$")
-	public void existing_Balance_should_get_deducted_by_FOUR_as_bet_type_is_selected_as_and_bet_value_as_SIX_in_Soccer_Mania_slot_game(int arg1, int arg2) throws Throwable {
-		Thread.sleep(2000);
+	@Then("^Existing Balance should get deducted by SIX as bet type is selected as (\\d+)\\.(\\d+) and bet value as SIX in Soccer Mania slot game$")
+	public void existing_Balance_should_get_deducted_by_SIX_as_bet_type_is_selected_as_and_bet_value_as_SIX_in_Soccer_Mania_slot_game(int arg1, int arg2) throws Throwable {
+	    Thread.sleep(2000);
 	    driver.quit();
 	}
 
