@@ -1,25 +1,31 @@
 Feature: Test all the functionalities of Sapphire Heart Slot Game
    
 
- 	Scenario: To check the transferred amount is added to Sapphire Heart game
-    Given Chrome browser, valid URL, valid login details, Sapphire Heart game, balance, text field to transfer balance and Ok button
-    When Open the Sapphire Heart slot game by entering the valid URL in browser, enter the valid login details, click on Play button, enter the valid amount to transfer and click on Ok butotn
-    Then The exact amount entered in the transfer page should transfer to Sapphire Heart game and same amount should get displayed on the balance section
+	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination ONE in Sapphire Heart game
+    Given Chrome browser, valid URL, valid login details, Sapphire Heart slot game, bet type as 0.01, denomination as ONE, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
+    When Open the Sapphire Heart slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type as 0.01 & denomination as ONE, click on spin button till player wins, click on gamble button and check the gamble count
+    Then Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type 0.01 & denomination ONE in Sapphire Heart game
 	
 	
-	Scenario: Check whether the player is able to transfer the amount more than the available balance
-    Given Chrome browser, valid URL, valid login details, Sapphire Heart game, balance greater than available balance, text field to transfer balance, Ok button and validation message
-    When Open the Sapphire Heart slot game by entering the valid URL in browser, enter the valid login details, enter the amount greater than available balance and click on Ok butotn
-    Then Player should be blocked from loading the Sapphire Heart game when the amount entered in the transfer page is more than the available balance
+	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 and denomination TWO in Sapphire Heart game
+    Given Chrome browser, valid URL, valid login details, Sapphire Heart slot game, bet type as 0.01, denomination as TWO, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page
+    When Open the Sapphire Heart slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as 0.01 & denomination as TWO, click on spin button till player wins, click on gamble button and check the gamble count in gamble page
+    Then Gamble count should be displayed on gamble page based on win amount and gamble max amount configured on the game info page for bet type 0.01 & denomination TWO Sapphire Heart game
 	
 	
-	Scenario: Check whether balance field is accepting null valuess in the transfer page of Sapphire Heart game
-    Given Chrome browser, valid URL, valid login details, Sapphire Heart game, empty balance, text field to transfer balance, Ok button and validation message
-    When Open the Sapphire Heart slot game by entering the valid URL in browser, enter the valid login details,  do not enter the amount in the balance field and click on Ok butotn
-    Then An error should be displayed if the balance field is empty and player should be blocked from loading the Sapphire Heart game
+	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination THREE in Sapphire Heart game
+    Given Chrome browser, valid URL, valid login details, Sapphire Heart slot game, bet type as 0.01, denomination as THREE, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page of slot game
+    When Open the Sapphire Heart slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as 0.01 & denomination as THREE, click on spin button till player wins, click on gamble button and check the gamble count in gamble page of slot game
+    Then Gamble count should be displayed  on gamble page of slot game based on win amount and gamble max amount configured on the game info page for bet type 0.01 & denomination THREE in Sapphire Heart game
 	
 	
-	Scenario: Check whether balance field is accepting amount as Zero SRD in the transfer amount page of Sapphire Heart game
-    Given Chrome browser, valid URL, valid login details, Sapphire Heart game, zero balance, text field to transfer balance, Ok button and validation message
-    When Open the Sapphire Heart slot game by entering the valid URL in browser, enter the valid login details, enter the amount as zero SRD and click on Ok butotn
-    Then An error should be displayed if balance entered was zero and player should be blocked from loading the Sapphire Heart game
+	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination one point FOUR in Sapphire Heart slot game
+    Given Chrome browser, valid URL, valid login details, Sapphire Heart slot game, transfer button, bet type as 0.01, denomination as one point FOUR, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
+    When Open the Sapphire Heart slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, transfer the amount, select bet type as 0.01 & denomination as one point FOUR, click on spin button till player wins, click on gamble button and check the gamble count
+    Then Gamble count should be displayed based on winning amount and max amount of the gamble configured on the game info page for bet type 0.01 and denomination one point FOUR in Sapphire Heart game
+	
+	
+	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination FIVE in Sapphire Heart game
+    Given Chrome browser, valid URL, valid login details, Sapphire Heart slot game, bet type as 0.01, denomination as FIVE, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
+    When Open the Sapphire Heart slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as 0.01 & denomination as FIVE, click on spin button till player wins, click on gamble button and check the gamble count
+    Then Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type 0.01 & denomination FIVE in Sapphire Heart game
