@@ -1,4 +1,10 @@
-package stepDefinition_SeaMermaid;
+package stepDefinition_BlazingHot;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.android.nativekey.PressesKey;
 
 import java.util.Set;
 
@@ -10,21 +16,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
-import io.appium.java_client.android.nativekey.PressesKey;
 
-public class SeaMermaid_Transfer_Validation_AvailableBalance {
+public class BlazingHot_Transfer_Validation_AvailableBalance {
 	AppiumDriver<MobileElement> driver;
 
-	public SeaMermaid_Transfer_Validation_AvailableBalance() throws InterruptedException {
-		this.driver = SeaMermaid_URL_Login.getDriver();
+	public BlazingHot_Transfer_Validation_AvailableBalance() throws InterruptedException {
+		this.driver = BlazingHot_URL_Login.getDriver();
 		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Sea Mermaid game, balance greater than available balance, text field to transfer balance, Ok button and validation message$")
-	public void chrome_browser_valid_URL_valid_login_details_Sea_Mermaid_game_balance_greater_than_available_balance_text_field_to_transfer_balance_Ok_button_and_validation_message() throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot game, balance greater than available balance, text field to transfer balance, Ok button and validation message$")
+	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_game_balance_greater_than_available_balance_text_field_to_transfer_balance_Ok_button_and_validation_message() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		
@@ -77,8 +78,8 @@ public class SeaMermaid_Transfer_Validation_AvailableBalance {
 		Thread.sleep(3000);
 	}
 
-	@When("^Open the Sea Mermaid slot game by entering the valid URL in browser, enter the valid login details, enter the amount greater than available balance and click on Ok butotn$")
-	public void open_the_Sea_Mermaid_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_enter_the_amount_greater_than_available_balance_and_click_on_Ok_butotn() throws Throwable {
+	@When("^Open the Blazing Hot slot game by entering the valid URL in browser, enter the valid login details, enter the amount greater than available balance and click on Ok butotn$")
+	public void open_the_Blazing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_enter_the_amount_greater_than_available_balance_and_click_on_Ok_butotn() throws Throwable {
 		String parentWindow = driver.getWindowHandle();
 		Set<String> handles =  driver.getWindowHandles();
 		for(String windowHandle  : handles)
@@ -95,8 +96,8 @@ public class SeaMermaid_Transfer_Validation_AvailableBalance {
 		}
 	}
 
-	@Then("^Player should be blocked from loading the Sea Mermaid game when the amount entered in the transfer page is more than the available balance$")
-	public void player_should_be_blocked_from_loading_the_Sea_Mermaid_game_when_the_amount_entered_in_the_transfer_page_is_more_than_the_available_balance() throws Throwable {
+	@Then("^Player should be blocked from loading the Blazing Hot game when the amount entered in the transfer page is more than the available balance$")
+	public void player_should_be_blocked_from_loading_the_Blazing_Hot_game_when_the_amount_entered_in_the_transfer_page_is_more_than_the_available_balance() throws Throwable {
 	    
 	}
 }
