@@ -1,7 +1,4 @@
-package stepDefinition_DeluxeFruits;
-
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+package stepDefinition_CircusMania;
 
 import java.util.List;
 import java.util.Set;
@@ -14,17 +11,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 
-public class DeluxeFruits_Balance_Credits_Calculations_Value2 {
+public class CircusMania_Balance_Credits_Calculations_Value4 {
 	AppiumDriver<MobileElement> driver;
 
-	public DeluxeFruits_Balance_Credits_Calculations_Value2() throws InterruptedException {
-		this.driver = DeluxeFruits_URL_Login.getDriver();
-		}	
+	public CircusMania_Balance_Credits_Calculations_Value4() throws InterruptedException {
+		this.driver = CircusMania_URL_Login.getDriver();
+		}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Deluxe Fruits slot game, balance, credits, denomination drop down and denomination as (\\d+)\\.(\\d+)$")
-	public void chrome_browser_valid_URL_valid_login_details_Deluxe_Fruits_slot_game_balance_credits_denomination_drop_down_and_denomination_as(int arg1, int arg2) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+	@Given("^Chrome browser, valid URL, valid login details, Circus Mania slot game, balance, credits and denomination drop down & value as (\\d+)\\.(\\d+)$")
+	public void chrome_browser_valid_URL_valid_login_details_Circus_Mania_slot_game_balance_credits_and_denomination_drop_down_value_as(int arg1, int arg2) throws Throwable {
+	    WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
@@ -48,8 +47,8 @@ public class DeluxeFruits_Balance_Credits_Calculations_Value2 {
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Deluxe Fruits slot game by entering the valid URL in browser, enter the valid login details, click on balance, select the denomination from drop down, multiply credit by (\\d+)\\.(\\d+) and check the balance$")
-	public void open_the_Deluxe_Fruits_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_click_on_balance_select_the_denomination_from_drop_down_multiply_credit_by_and_check_the_balance(int arg1, int arg2) throws Throwable {
+	@When("^Open the Circus Mania slot game by entering the valid URL in browser, enter the valid login details, click on balance, multiply credit by denomination (\\d+)\\.(\\d+) manually with and check the balance$")
+	public void open_the_Circus_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_click_on_balance_multiply_credit_by_denomination_manually_with_and_check_the_balance(int arg1, int arg2) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));      
@@ -57,14 +56,14 @@ public class DeluxeFruits_Balance_Credits_Calculations_Value2 {
 		String preConvert = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Current balance of the account Before Converting into credits: " +preConvert);
 		
-		//Selecting the credit as 0.02 from the drop down and bet amount
+		//Selecting the credit as 0.5 from the drop down and bet amount
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		driver.findElement(By.id("hud_btnCredit")).click();
 		Thread.sleep(2000);
 		for(MobileElement be:balance)
 		{
 			
-			if(be.getText().equals("0.02")){
+			if(be.getText().equals("0.5")){
 				be.click();
 				Thread.sleep(3000);
 				break;
@@ -73,7 +72,7 @@ public class DeluxeFruits_Balance_Credits_Calculations_Value2 {
 		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
 		String creditValue = actual;
 		System.out.println("Selected credit value is : " +actual);
-		String expected = "0.02";
+		String expected = "0.5";
 		Assert.assertEquals(actual, expected);
 		Thread.sleep(1000);
 		
@@ -90,7 +89,7 @@ public class DeluxeFruits_Balance_Credits_Calculations_Value2 {
 		System.out.println("Balance of the account after Converting into credits: " +postConvert);
 		Thread.sleep(2000);
 		
-		//Multiplying the credit by bet value 0.03 and comparing the balance
+		//Multiplying the credit by bet value 0.2 and comparing the balance
 		double conValue = Double.parseDouble(postConvert) * Double.parseDouble(creditValue);
 		//System.out.println("After deducting the bet value after spin: " +secSpin3);
 		String dbi = String.format("%.2f", conValue);  
@@ -99,8 +98,8 @@ public class DeluxeFruits_Balance_Credits_Calculations_Value2 {
 		Assert.assertEquals(dbi,preConvert);
 	}
 
-	@Then("^Balance amound should be same as denomination (\\d+)\\.(\\d+) multiplies by credit in Deluxe Fruits game$")
-	public void balance_amound_should_be_same_as_denomination_multiplies_by_credit_in_Deluxe_Fruits_game(int arg1, int arg2) throws Throwable {
+	@Then("^Balance amount should be same after multiplying denomination (\\d+)\\.(\\d+) by credit in Circus Mania slot game$")
+	public void balance_amount_should_be_same_after_multiplying_denomination_by_credit_in_Circus_Mania_slot_game(int arg1, int arg2) throws Throwable {
 		Thread.sleep(2000);
 	    driver.quit();
 	}
