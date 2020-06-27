@@ -302,7 +302,6 @@ public class FrizzlingHot_PayOut_BetType_1_And_Denomination_5 {
 			Assert.assertEquals(actual24, expected24);
 			Thread.sleep(1000);
 			}
-		
 		if(me.getId().equals("50")){
 			Cherry2 = me.getText();
 			String expected25 = Cherry2;
