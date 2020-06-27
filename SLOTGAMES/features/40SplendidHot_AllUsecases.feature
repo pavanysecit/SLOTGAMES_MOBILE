@@ -1,25 +1,19 @@
 Feature: Test all the functionalities of 40 Splendid Hot Slot Game
    
 
- 	Scenario: To check the transferred amount is added to 40 Splendid Hot game
-    Given Chrome browser, valid URL, valid login details, 40 Splendid Hot game, balance, text field to transfer balance and Ok button
-    When Open the 40 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, click on Play button, enter the valid amount to transfer and click on Ok butotn
-    Then The exact amount entered in the transfer page should transfer to 40 Splendid Hot game and same amount should get displayed on the balance section
+		Scenario: Check whether system is providing balance in try now feature of 40 Splendid Hot slot game
+    Given Chrome browser, valid URL, valid login details, 40 Splendid Hot slot game, try now button and balance to play
+    When Open the 40 Splendid Hot slot game by entering the valid URL in browser, click on try now button
+    Then System should provide five thousand as balance on click on try now button in 40 Splendid Hot slot game
 	
 	
-	Scenario: Check whether the player is able to transfer the amount more than the available balance
-    Given Chrome browser, valid URL, valid login details, 40 Splendid Hot game, balance greater than available balance, text field to transfer balance, Ok button and validation message
-    When Open the 40 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, enter the amount greater than available balance and click on Ok butotn
-    Then Player should be blocked from loading the 40 Splendid Hot game when the amount entered in the transfer page is more than the available balance
+	Scenario: Check whether amount is deducting from the balance after clicking on spin button in try now page of 40 Splendid Hot slot game
+    Given Chrome browser, valid URL, valid login details, 40 Splendid Hot slot game, try now button, balance to play and spin button
+    When Open the 40 Splendid Hot slot game by entering the valid URL in browser, click on try now button and click on spin button
+    Then Amount should get deducted from balance on click on spin button in try now page of 40 Splendid Hotslot game
 	
 	
-	Scenario: Check whether balance field is accepting null valuess in the transfer page of 40 Splendid Hot game
-    Given Chrome browser, valid URL, valid login details, 40 Splendid Hot game, empty balance, text field to transfer balance, Ok button and validation message
-    When Open the 40 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details,  do not enter the amount in the balance field and click on Ok butotn
-    Then An error should be displayed if the balance field is empty and player should be blocked from loading the 40 Splendid Hot game
-	
-	
-	Scenario: Check whether balance field is accepting amount as Zero SRD in the transfer amount page of 40 Splendid Hot game
-    Given Chrome browser, valid URL, valid login details, 40 Splendid Hot game, zero balance, text field to transfer balance, Ok button and validation message
-    When Open the 40 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, enter the amount as zero SRD and click on Ok butotn
-    Then An error should be displayed if balance entered was zero and player should be blocked from loading the 40 Splendid Hot game
+	Scenario: Check whether winning amount is gettting added to the balance when the player wins in try now page of 40 Splendid Hot slot game
+    Given Chrome browser, valid URL, valid login details, 40 Splendid Hot slot game, try now button, balance to play, spin button and win amount
+    When Open the 40 Splendid Hot slot game by entering the valid URL in browser, click on try now button, click on spin button till player win and check the balance after win
+    Then Win amount should get added to the balance when the player wins in try now page of 40 Splendid Hot slot game
