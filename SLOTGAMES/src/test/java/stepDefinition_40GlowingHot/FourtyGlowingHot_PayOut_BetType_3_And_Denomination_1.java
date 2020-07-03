@@ -49,39 +49,45 @@ AppiumDriver<MobileElement> driver;
 
 	@When("^Open the (\\d+) Glowing hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like seven, click on back button, select bet type as (\\d+)\\.(\\d+) & denomination  value (\\d+)\\.(\\d+) and check payout amount$")
 	public void open_the_Glowing_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_icon_to_open_payout_table_check_payout_amount_on_each_symbol_like_seven_click_on_back_button_select_bet_type_as_denomination_value_and_check_payout_amount(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+		//Selecting the credit as 0.03 from the drop down
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-		for(MobileElement me7:balance)
+		driver.findElement(By.id("hud_btnCredit")).click();
+		Thread.sleep(2000);
+		for(MobileElement be:balance)
 		{
-			if(me7.getText().equals("1 Cr ="))
-			{
-				me7.click();
-			Thread.sleep(3000);
-			}
-			 if(me7.getText().equals("0.03"))
-			 {
-				 me7.click();
-			 Thread.sleep(1000);
-			 }
-			 //System.out.println(me1.getId()+"  "+me1.getText());	 
+			
+			if(be.getText().equals("0.03")){
+				be.click();
+				Thread.sleep(3000);
+				break;
+			}	
 		}
-			 
-//		// Selecting the bet value 16
-//		for(MobileElement be:balance)
-//		{
-//			if(be.getId().equals("33")){
-//				be.click();
-//				Thread.sleep(1000);
-//			}
-//			if(be.getText().equals("16")){
-//				be.click();
-//				Thread.sleep(1000);
-//			}
-//		}
+		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		System.out.println("Selected credit value is : " +actual);
+		String expected = "0.03";
+		Assert.assertEquals(actual, expected);
+		
+		//Selecting bet amount as 1.2
+		driver.findElement(By.id("hud_txtBetAmount")).click();
+		Thread.sleep(2000);
+		List<MobileElement> balance1 = driver.findElementsByClassName("android.view.View");
+		for(MobileElement be1:balance1)
+		{
+			
+			if(be1.getText().equals("1.2")){
+				be1.click();
+				Thread.sleep(2000);
+				break;
+			}	
+		}
+		String actual111 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		System.out.println("Selected bet amount is: " +actual);
+		String expected111 = "1.2";
+		Assert.assertEquals(actual111, expected111);
+		Thread.sleep(2000);
 		
 		//Clicking on icon to open the PayOut table
-		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[7]")).click();
+		driver.findElement(By.id("hud_btnMenu")).click();
 		Thread.sleep(2000);
 		
 		String Fsymbol="", F1symbol="", F2symbol="", F3symbol="", wmelon="",wmelon1="",wmelon2="",wmelon3="", grape="",grape1="",grape2="",bell="",bell1="",bell2="",cherry="",cherry1="",cherry2="",
@@ -92,10 +98,10 @@ AppiumDriver<MobileElement> driver;
 		//Check for 777 symbol
 		if(me.getId().equals("16")){
 			Fsymbol = me.getText();
-			String expected = Fsymbol;
-			String actual = "90 YSI";
+			String expected33 = Fsymbol;
+			String actual33 = "90 YSI";
 			System.out.println("Max Payout Value of 77777 symbols for bet type 0.03 & denomination 1.2 is : " +Fsymbol);
-			Assert.assertEquals(actual, expected);
+			Assert.assertEquals(actual33, expected33);
 			Thread.sleep(1000);
 		}
 		

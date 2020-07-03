@@ -49,23 +49,35 @@ AppiumDriver<MobileElement> driver;
 
 	@When("^Open the (\\d+) Glowing hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, click on icon to open payout table, check payout amount on each symbol like cherry n etc, click on back button, select bet type as (\\d+)\\.(\\d+) & denomination  value (\\d+)\\.(\\d+) and check payout amount$")
 	public void open_the_Glowing_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_golden_hot_slot_game_click_on_icon_to_open_payout_table_check_payout_amount_on_each_symbol_like_cherry_n_etc_click_on_back_button_select_bet_type_as_denomination_value_and_check_payout_amount(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+		//Getting the bet value and Bet amount
+		String creditValue = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		System.out.println("Selected credit value is: " +creditValue);
+		String actualC = creditValue;
+		String expectedC = "0.01";
+		Assert.assertEquals(expectedC, actualC);
+		Thread.sleep(1000);
+		
+		//Selecting bet amount as 0.8
+		driver.findElement(By.id("hud_txtBetAmount")).click();
+		Thread.sleep(2000);
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		for(MobileElement be:balance)
 		{
-			if(be.getId().equals("33")){
-				be.click();
-				Thread.sleep(1000);
-			}
+			
 			if(be.getText().equals("0.8")){
 				be.click();
-				Thread.sleep(1000);
-			}
+				Thread.sleep(2000);
+				break;
+			}	
 		}
+		String actual = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		System.out.println("Selected bet amount is: " +actual);
+		String expected = "0.8";
+		Assert.assertEquals(actual, expected);
+		Thread.sleep(2000);
 		
 		//Clicking on icon to open the PayOut table
-		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[7]")).click();
+		driver.findElement(By.id("hud_btnMenu")).click();
 		Thread.sleep(2000);
 		
 		String Fsymbol="", F1symbol="", F2symbol="", F3symbol="", wmelon="",wmelon1="",wmelon2="",wmelon3="", grape="",grape1="",grape2="",bell="",bell1="",bell2="",cherry="",cherry1="",cherry2="",
@@ -76,10 +88,10 @@ AppiumDriver<MobileElement> driver;
 		//Check for 777 symbol
 		if(me.getId().equals("16")){
 			Fsymbol = me.getText();
-			String expected = Fsymbol;
-			String actual = "60 YSI";
-			System.out.println("Max Payout Value of 77777 symbols for denomination 0.8 is : " +Fsymbol);
-			Assert.assertEquals(actual, expected);
+			String expected33 = Fsymbol;
+			String actual33 = "60 YSI";
+			System.out.println("Max Payout Value of 5 77777 symbols for denomination 0.8 is : " +Fsymbol);
+			Assert.assertEquals(actual33, expected33);
 			Thread.sleep(1000);
 		}
 		
@@ -87,7 +99,7 @@ AppiumDriver<MobileElement> driver;
 			F1symbol = me.getText();
 			String expected1 = F1symbol;
 			String actual1 = "4 YSI";
-			System.out.println("Max Payout Value of 7777 symbols for denomination 0.8 is : " +F1symbol);
+			System.out.println("Max Payout Value of 4 7777 symbols for denomination 0.8 is : " +F1symbol);
 			Assert.assertEquals(actual1, expected1);
 			Thread.sleep(1000);
 		}
@@ -96,7 +108,7 @@ AppiumDriver<MobileElement> driver;
 			F2symbol = me.getText();
 			String expected2 = F2symbol;
 			String actual2 = "1 YSI";
-			System.out.println("Max Payout Value of 777 symbols for denomination 0.8 is : " +F2symbol);
+			System.out.println("Max Payout Value of 3 777 symbols for denomination 0.8 is : " +F2symbol);
 			Assert.assertEquals(actual2, expected2);
 			Thread.sleep(1000);
 		}
@@ -105,7 +117,7 @@ AppiumDriver<MobileElement> driver;
 			F3symbol = me.getText();
 			String expected3 = F3symbol;
 			String actual3 = "0.2 YSI";
-			System.out.println("Max Payout Value of 77 symbols for denomination 0.8 is : " +F3symbol);
+			System.out.println("Max Payout Value of 2 77 symbols for denomination 0.8 is : " +F3symbol);
 			Assert.assertEquals(actual3, expected3);
 			Thread.sleep(1000);
 		}

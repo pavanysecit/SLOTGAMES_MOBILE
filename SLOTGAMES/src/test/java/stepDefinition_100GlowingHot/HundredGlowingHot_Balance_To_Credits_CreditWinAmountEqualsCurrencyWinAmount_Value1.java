@@ -1,0 +1,5 @@
+package stepDefinition_100GlowingHot;
+
+public class HundredGlowingHot_Balance_To_Credits_CreditWinAmountEqualsCurrencyWinAmount_Value1 {
+
+}
