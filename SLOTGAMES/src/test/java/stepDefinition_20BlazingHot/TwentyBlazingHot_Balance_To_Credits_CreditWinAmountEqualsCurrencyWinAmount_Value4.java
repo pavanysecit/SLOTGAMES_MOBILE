@@ -1,0 +1,5 @@
+package stepDefinition_20BlazingHot;
+
+public class TwentyBlazingHot_Balance_To_Credits_CreditWinAmountEqualsCurrencyWinAmount_Value4 {
+
+}
