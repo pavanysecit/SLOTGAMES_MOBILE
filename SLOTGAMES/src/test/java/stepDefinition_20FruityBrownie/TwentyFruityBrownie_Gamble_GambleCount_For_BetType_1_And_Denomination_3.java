@@ -1,7 +1,9 @@
 package stepDefinition_20FruityBrownie;
 
+import java.util.List;
 import java.util.Set;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,8 +49,93 @@ public class TwentyFruityBrownie_Gamble_GambleCount_For_BetType_1_And_Denominati
 
 	@When("^Open the (\\d+) Fruity Brownie slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as (\\d+)\\.(\\d+) & denomination as ONE, click on spin button till player wins, click on gamble button and check the gamble count in gamble page of slot game$")
 	public void open_the_Fruity_Brownie_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_golden_hot_slot_game_select_bet_type_as_denomination_as_ONE_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count_in_gamble_page_of_slot_game(int arg1, int arg2, int arg3) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		System.out.println("The current balance of the account :" +balance);
+		List<MobileElement> balanc = driver.findElementsByClassName("android.view.View");
+		driver.findElement(By.id("hud_txtBetAmount")).click();
+		Thread.sleep(2000);
+		for(MobileElement be:balanc)
+		{
+			
+			if(be.getText().equals("1")){
+				be.click();
+				Thread.sleep(2000);
+				break;
+			}	
+		}
+		String betValue = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		System.out.println("Selected bet amount is: " +betValue);
+		String actualB = betValue;
+		String expectedB = "1";
+		Assert.assertEquals(expectedB, actualB);
+		Thread.sleep(2000);
+
+		MobileElement start = driver.findElement(By.id("hud_btnSpin"));
+		start.click();
+		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
+
+		String prewin = winE.getText();
+		//System.out.println("Balance before win is"+" "+prewin);                    
+		String winTex= winE.getText();
+		                       
+		while(prewin.isEmpty()){
+			start.click();	
+			Thread.sleep(4000);	
+			winTex = winE.getText();
+			prewin= prewin+winTex;
+			System.out.println(winTex.isEmpty());		
+		}
+		System.out.println("Win amount is: " +prewin);	
+		System.out.println("Maximum gamble win amount for bet amount 1 and credit value 0.01 is : 35 SRD");	                                                                                                                             
+		Double maxV = Double.parseDouble(prewin);
+		if(maxV < 35)
+		   {
+			   System.out.println("Win amount less than Gamble max value 35 i.e : "+" " +maxV +". Test Case Passed");
+		   }
+		else
+		{
+			System.out.println("Win amount greater than Gamble max value 35 : i.e "+" " +maxV +". Test Case Failed");
+			driver.findElement(By.id("hud_btnGamble")).isDisplayed();
+			Thread.sleep(2000);
+			driver.quit();
+		}
+		Thread.sleep(2000);
+		driver.findElement(By.id("hud_btnGamble")).click();	
+		Thread.sleep(3000);
+		Double monty = Double.parseDouble(prewin);
+		System.out.println("Gamble amount is equal to win amount & the amount is :"+" "+monty);
+		MobileElement attempts = driver.findElement(By.id("gamble_txtAttemptsLeft"));
+		
+		System.out.println("No. of attempts left :"+" "+attempts.getText());
+		if(monty>=1 && monty<=2)
+		{
+			System.out.println("The no. of attempts should be : "+" "+"5"+" "+" & no. of actual attempts are :"+attempts.getText());
+			Assert.assertEquals("5",attempts.getText());
+		}
+	   else if(monty>2 && monty<=4){
+		  System.out.println("The no. of attempts should be : "+" "+"4"+" "+"& no. of actual attempts are :"+attempts.getText());
+		  
+		  Assert.assertEquals("4", attempts.getText());
+		}
+	   else if(monty>4 && monty<=8){
+		  System.out.println("The no. of attempts should be :"+" "+"3"+" "+"& no. of actual attempts are :"+attempts.getText());
+		  
+		  Assert.assertEquals("3",attempts.getText());
+	   }
+	   else if(monty>8 && monty<=16){
+		  System.out.println("The no. of attempts should be :"+" "+"2"+" "+"& no. of actual attempts are :"+attempts.getText());
+		  
+		  Assert.assertEquals("2",attempts.getText());
+	   }
+	   else if(monty>16 && monty<=35){
+		  System.out.println("The no. of attempts should be :"+" "+"1"+" "+"& no. of actual attempts are:"+attempts.getText());  
+		  
+		  Assert.assertEquals("1", attempts.getText());
+	   }
+
+		 driver.findElement(By.id("gamble_btnCollect")).click();
+		 
+		 System.out.println("The testcase has passed");
 	}
 
 	@Then("^Gamble count should be displayed  on gamble page of slot game based on win amount and gamble max amount configured on the game info page for bet type (\\d+)\\.(\\d+) & denomination ONE in (\\d+) Fruity Brownie game$")

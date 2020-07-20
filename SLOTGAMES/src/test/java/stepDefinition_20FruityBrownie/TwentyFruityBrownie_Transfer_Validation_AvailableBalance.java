@@ -79,22 +79,21 @@ public class TwentyFruityBrownie_Transfer_Validation_AvailableBalance {
 
 	@When("^Open the (\\d+) Fruity Brownie slot game by entering the valid URL in browser, enter the valid login details, enter the amount greater than available balance and click on Ok butotn$")
 	public void open_the_Fruity_Brownie_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_enter_the_amount_greater_than_available_balance_and_click_on_Ok_butotn(int arg1) throws Throwable {
-		public void open_the_Blazing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_enter_the_amount_greater_than_available_balance_and_click_on_Ok_butotn(int arg1) throws Throwable {
-			String parentWindow = driver.getWindowHandle();
-			Set<String> handles =  driver.getWindowHandles();
-			for(String windowHandle  : handles)
-			{
-			    if(!windowHandle.equals(parentWindow))
-			   {
-			     driver.switchTo().window(windowHandle);
-					String expected = driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/div[7]/div/span")).getText();
-				    String actual = "Transfer Amount should be smaller than  balance";
-				    Assert.assertEquals(expected, actual);
-				    Thread.sleep(2000);
-			   }
-			driver.quit();
-			}
+		String parentWindow = driver.getWindowHandle();
+		Set<String> handles =  driver.getWindowHandles();
+		for(String windowHandle  : handles)
+		{
+		    if(!windowHandle.equals(parentWindow))
+		   {
+		     driver.switchTo().window(windowHandle);
+				String expected = driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/div[7]/div/span")).getText();
+			    String actual = "Transfer Amount should be smaller than  balance";
+			    Assert.assertEquals(expected, actual);
+			    Thread.sleep(2000);
+		   }
+		driver.quit();
 		}
+	}
 
 	@Then("^Player should be blocked from loading the (\\d+) Fruity Brownie game when the amount entered in the transfer page is more than the available balance$")
 	public void player_should_be_blocked_from_loading_the_Fruity_Brownie_game_when_the_amount_entered_in_the_transfer_page_is_more_than_the_available_balance(int arg1) throws Throwable {

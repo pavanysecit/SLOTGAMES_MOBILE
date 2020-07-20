@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jul 20, 2020 04:10:00 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Jul 20, 2020 04:24:08 PM</span>
 				</a>
 			</li>
 			<li>
@@ -154,10 +154,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='16.667%'><span class='strong'>1</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='33.333%'><span class='strong'>2</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='33.333%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='50%'>3</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='33.333%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='33.333%'>2</span> others
 				</div>
 			</div>
 		</div>
@@ -174,12 +174,12 @@
 				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Test all the functionalities of Glowing Hot Slot Game</span>
-						<span class='test-time'>Jul 20, 2020 04:10:00 PM</span>
+						<span class='test-time'>Jul 20, 2020 04:24:08 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='fail'>
-	<span class='duration right label'>0h 1m 51s+861ms</span>
+	<span class='duration right label'>0h 8m 19s+61ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">Select the bet type as 0.03 from the drop down and check the bet value should be 0.15,0.3,0.75,1.5,3 in Glowing Hot game</span>
@@ -198,20 +198,15 @@
 			<b>When</b>
 			
 			<span class="bdd-step-name">When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 and check the bet value should be 0.15,0.3,0.75,1.5,3</span>
-				<div class='pre'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: hud_Hud_txtBalance1 (tried for 60 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown1.open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_and_check_the_bet_value_should_be(GlowingHot_Check_BetType_BetValue_DropDown1.java:54)
-	at ✽.When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 and check the bet value should be 0.15,0.3,0.75,1.5,3(C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:6)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+				<div class='pre'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PAVAN-78', ip: '10.10.13.84', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {browserName: Chrome, databaseEnabled: false, desired: {browserName: Chrome, deviceName: ASUS X00TD, platformName: android, platformVersion: 9, udid: J9AAGF10J33379E}, deviceManufacturer: asus, deviceModel: ASUS_X00TD, deviceName: J9AAGF10J33379E, deviceScreenSize: 1080x2160, deviceUDID: J9AAGF10J33379E, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, platform: LINUX, platformName: Android, platformVersion: 9, takesScreenshot: true, udid: J9AAGF10J33379E, warnings: {}, webStorageEnabled: false}
-Session ID: 19706ce3-6e26-4d86-bb07-7bd48ad4354c
-*** Element info: {Using=id, value=hud_Hud_txtBalance1}
-	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
+Session ID: af70100e-f7c0-46aa-8a9d-c03c2c1557df
+*** Element info: {Using=id, value=hud_btnCredit}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
 	at java.lang.reflect.Constructor.newInstance(Unknown Source)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
@@ -236,49 +231,8 @@ Session ID: 19706ce3-6e26-4d86-bb07-7bd48ad4354c
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	at stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown1.open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_and_check_the_bet_value_should_be(GlowingHot_Check_BetType_BetValue_DropDown1.java:54)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at cucumber.runtime.Utils$1.call(Utils.java:37)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-	at cucumber.runtime.Utils.invoke(Utils.java:31)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)
-	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
-	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
-	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
-	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
-	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
-	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+	at stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown1.open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_and_check_the_bet_value_should_be(GlowingHot_Check_BetType_BetValue_DropDown1.java:57)
+	at ✽.When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 and check the bet value should be 0.15,0.3,0.75,1.5,3(C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:6)
 </pre></div>
 			
 		</li>
@@ -293,36 +247,61 @@ Session ID: 19706ce3-6e26-4d86-bb07-7bd48ad4354c
 	</ul>
 </div>
 <div class='scenario node' test-id='6' status='fail'>
-	<span class='duration right label'>0h 1m 0s+72ms</span>
+	<span class='duration right label'>0h 5m 47s+266ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">Select the bet type as ONE from the drop down and check the bet value should be 5,10,25,50 & 100 in Glowing Hot slot game</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='7' class='node given fail' status='fail'>
+		<li test-id='7' class='node given pass' status='pass'>
 			
 			<b>Given</b>
 			
 			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Glowing Hot game, bet type as ONE and bet value as 5,10,25,50 & 100</span>
-				<div class='pre'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: transferInput (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'PAVAN-78', ip: '10.10.13.84', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {browserName: Chrome, databaseEnabled: false, desired: {browserName: Chrome, deviceName: ASUS X00TD, platformName: android, platformVersion: 9, udid: J9AAGF10J33379E}, deviceManufacturer: asus, deviceModel: ASUS_X00TD, deviceName: J9AAGF10J33379E, deviceScreenSize: 1080x2160, deviceUDID: J9AAGF10J33379E, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, platform: LINUX, platformName: Android, platformVersion: 9, takesScreenshot: true, udid: J9AAGF10J33379E, warnings: {}, webStorageEnabled: false}
-Session ID: 685195d3-e2b2-400b-bee7-b89b0950295d
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown4.chrome_browser_valid_URL_valid_login_details_Glowing_Hot_game_bet_type_as_ONE_and_bet_value_as(GlowingHot_Check_BetType_BetValue_DropDown4.java:27)
-	at ✽.Given Chrome browser, valid URL, valid login details, Glowing Hot game, bet type as ONE and bet value as 5,10,25,50 & 100(C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:23)
-</pre></div>
+				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='8' class='node when skip' status='skip'>
+		<li test-id='8' class='node when fail' status='fail'>
 			
 			<b>When</b>
 			
 			<span class="bdd-step-name">When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as ONE and check the bet value should be 5,10,25,50 & 100</span>
-				<div class='pre'>skipped</div>
+				<div class='pre'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PAVAN-78', ip: '10.10.13.84', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {browserName: Chrome, databaseEnabled: false, desired: {browserName: Chrome, deviceName: ASUS X00TD, platformName: android, platformVersion: 9, udid: J9AAGF10J33379E}, deviceManufacturer: asus, deviceModel: ASUS_X00TD, deviceName: J9AAGF10J33379E, deviceScreenSize: 1080x2160, deviceUDID: J9AAGF10J33379E, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, platform: LINUX, platformName: Android, platformVersion: 9, takesScreenshot: true, udid: J9AAGF10J33379E, warnings: {}, webStorageEnabled: false}
+Session ID: 093fdc08-1e0d-495d-b5d0-4418f739e711
+*** Element info: {Using=id, value=hud_btnCredit}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
+	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown4.open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_ONE_and_check_the_bet_value_should_be(GlowingHot_Check_BetType_BetValue_DropDown4.java:57)
+	at ✽.When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as ONE and check the bet value should be 5,10,25,50 & 100(C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:24)
+</pre></div>
 			
 		</li>
 		<li test-id='9' class='node then skip' status='skip'>
@@ -390,7 +369,7 @@ Session ID: 685195d3-e2b2-400b-bee7-b89b0950295d
 
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
-                                <span class='exception-name'>org.openqa.selenium.TimeoutException</span>
+                                <span class='exception-name'>org.openqa.selenium.NoSuchSessionException</span>
                                 <span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
                             </div>
                             <div class='exception-content hide'>
@@ -405,22 +384,17 @@ Session ID: 685195d3-e2b2-400b-bee7-b89b0950295d
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Jul 20, 2020 04:10:52 PM</td>
+                                                        <td>Jul 20, 2020 04:25:00 PM</td>
                                                         <td class='linked' test-id='4'>Test all the functionalities of Glowing Hot Slot Game.Select the bet type as 0.03 from the drop down and check the bet value should be 0.15,0.3,0.75,1.5,3 in Glowing Hot game.When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 and check the bet value should be 0.15,0.3,0.75,1.5,3</td>
-                                                        <td><pre><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: hud_Hud_txtBalance1 (tried for 60 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown1.open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_and_check_the_bet_value_should_be(GlowingHot_Check_BetType_BetValue_DropDown1.java:54)
-	at ✽.When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 and check the bet value should be 0.15,0.3,0.75,1.5,3(C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:6)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PAVAN-78', ip: '10.10.13.84', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {browserName: Chrome, databaseEnabled: false, desired: {browserName: Chrome, deviceName: ASUS X00TD, platformName: android, platformVersion: 9, udid: J9AAGF10J33379E}, deviceManufacturer: asus, deviceModel: ASUS_X00TD, deviceName: J9AAGF10J33379E, deviceScreenSize: 1080x2160, deviceUDID: J9AAGF10J33379E, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, platform: LINUX, platformName: Android, platformVersion: 9, takesScreenshot: true, udid: J9AAGF10J33379E, warnings: {}, webStorageEnabled: false}
-Session ID: 19706ce3-6e26-4d86-bb07-7bd48ad4354c
-*** Element info: {Using=id, value=hud_Hud_txtBalance1}
-	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
+Session ID: af70100e-f7c0-46aa-8a9d-c03c2c1557df
+*** Element info: {Using=id, value=hud_btnCredit}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
 	at java.lang.reflect.Constructor.newInstance(Unknown Source)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
@@ -445,64 +419,48 @@ Session ID: 19706ce3-6e26-4d86-bb07-7bd48ad4354c
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	at stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown1.open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_and_check_the_bet_value_should_be(GlowingHot_Check_BetType_BetValue_DropDown1.java:54)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at cucumber.runtime.Utils$1.call(Utils.java:37)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-	at cucumber.runtime.Utils.invoke(Utils.java:31)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)
-	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
-	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
-	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
-	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
-	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
-	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+	at stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown1.open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_and_check_the_bet_value_should_be(GlowingHot_Check_BetType_BetValue_DropDown1.java:57)
+	at ✽.When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 and check the bet value should be 0.15,0.3,0.75,1.5,3(C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:6)
 </pre></pre></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Jul 20, 2020 04:12:42 PM</td>
-                                                        <td class='linked' test-id='7'>Test all the functionalities of Glowing Hot Slot Game.Select the bet type as ONE from the drop down and check the bet value should be 5,10,25,50 & 100 in Glowing Hot slot game.Given Chrome browser, valid URL, valid login details, Glowing Hot game, bet type as ONE and bet value as 5,10,25,50 & 100</td>
-                                                        <td><pre><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: transferInput (tried for 10 second(s) with 500 milliseconds interval)
+                                                        <td>Jul 20, 2020 04:33:17 PM</td>
+                                                        <td class='linked' test-id='8'>Test all the functionalities of Glowing Hot Slot Game.Select the bet type as ONE from the drop down and check the bet value should be 5,10,25,50 & 100 in Glowing Hot slot game.When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as ONE and check the bet value should be 5,10,25,50 & 100</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PAVAN-78', ip: '10.10.13.84', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {browserName: Chrome, databaseEnabled: false, desired: {browserName: Chrome, deviceName: ASUS X00TD, platformName: android, platformVersion: 9, udid: J9AAGF10J33379E}, deviceManufacturer: asus, deviceModel: ASUS_X00TD, deviceName: J9AAGF10J33379E, deviceScreenSize: 1080x2160, deviceUDID: J9AAGF10J33379E, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, platform: LINUX, platformName: Android, platformVersion: 9, takesScreenshot: true, udid: J9AAGF10J33379E, warnings: {}, webStorageEnabled: false}
-Session ID: 685195d3-e2b2-400b-bee7-b89b0950295d
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown4.chrome_browser_valid_URL_valid_login_details_Glowing_Hot_game_bet_type_as_ONE_and_bet_value_as(GlowingHot_Check_BetType_BetValue_DropDown4.java:27)
-	at ✽.Given Chrome browser, valid URL, valid login details, Glowing Hot game, bet type as ONE and bet value as 5,10,25,50 & 100(C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:23)
+Session ID: 093fdc08-1e0d-495d-b5d0-4418f739e711
+*** Element info: {Using=id, value=hud_btnCredit}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
+	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown4.open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_ONE_and_check_the_bet_value_should_be(GlowingHot_Check_BetType_BetValue_DropDown4.java:57)
+	at ✽.When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as ONE and check the bet value should be 5,10,25,50 & 100(C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:24)
 </pre></pre></td>
                                                     </tr>
                                         </tbody>
@@ -547,19 +505,19 @@ Session ID: 685195d3-e2b2-400b-bee7-b89b0950295d
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jul 20, 2020 04:10:00 PM</div>
+					<div class='panel-lead'>Jul 20, 2020 04:24:08 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jul 20, 2020 04:12:52 PM</div>
+			 		<div class='panel-lead'>Jul 20, 2020 04:38:14 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>172,048ms</div>
+					<div class='panel-lead'>846,452ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -626,14 +584,14 @@ Session ID: 685195d3-e2b2-400b-bee7-b89b0950295d
 				infoChild: 0,
 				exceptionsChild: 2,
 				
-				passGrandChild: 1,
+				passGrandChild: 2,
 				failGrandChild: 2,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 3,
+				skipGrandChild: 2,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 5,
+				exceptionsGrandChild: 4,
 			};
 		</script>
 		

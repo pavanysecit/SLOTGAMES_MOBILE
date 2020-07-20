@@ -1,7 +1,9 @@
 package stepDefinition_20FruityBrownie;
 
+import java.util.List;
 import java.util.Set;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,8 +49,66 @@ public class TwentyFruityBrownie_Balance_Deduction_AccordingToBetType2_1 {
 
 	@When("^Open the (\\d+) Fruity Brownie slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) from drop down, bet value to (\\d+)\\.(\\d+) click on spin button and check the balance after spin$")
 	public void open_the_Fruity_Brownie_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_from_drop_down_bet_value_to_click_on_spin_button_and_check_the_balance_after_spin(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));    
+		
+		//Storing the value before spin
+		String preSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		System.out.println("Current balance of the account Before spin: " +preSpin);
+		
+		//Selecting the credit as 0.02 from the drop down
+		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
+		driver.findElement(By.id("hud_btnCredit")).click();
+		Thread.sleep(2000);
+		for(MobileElement be:balance)
+		{
+			
+			if(be.getText().equals("0.02")){
+				be.click();
+				Thread.sleep(3000);
+				break;
+			}	
+		}
+		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		System.out.println("Selected credit value is : " +actual);
+		String expected = "0.02";
+		Assert.assertEquals(actual, expected);
+		
+		//Selecting bet amount as 0.4	
+		driver.findElement(By.id("hud_txtBetAmount")).click();
+		Thread.sleep(2000);
+		for(MobileElement be:balance)
+		{
+			
+			if(be.getText().equals("0.4")){
+				be.click();
+				Thread.sleep(2000);
+				break;
+			}	
+		}
+		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		System.out.println("Selected bet amount is: " +actual1);
+		String expected1 = "0.4";
+		Assert.assertEquals(actual1, expected1);
+		Thread.sleep(2000);
+		String betValue = actual1;
+		
+		//Clicking on Spin button
+		driver.findElement(By.id("hud_btnSpin")).click();
+		Thread.sleep(5000);
+		
+		//Storing the value after spin
+		String postSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		System.out.println("Current balance of the account After spin: " +postSpin);
+		
+		//Deducting bet value from the preSpin and formating string to double
+		double fValue = Double.parseDouble(preSpin) - Double.parseDouble(betValue);
+		String dbi = String.format("%.2f", fValue);  
+		System.out.println("Final balance after deducting bet amount from the balance : "+dbi);
+		
+		Assert.assertEquals(dbi,postSpin); 
+		Thread.sleep(2000);
 	}
 
 	@Then("^Balance should get deducted by (\\d+)\\.(\\d+) if the bet type is selected as (\\d+)\\.(\\d+) and bet value as (\\d+)\\.(\\d+) in (\\d+) Fruity Brownie hot game$")

@@ -24,10 +24,8 @@ Feature: Test all the functionalities of Glowing Hot Slot Game
     When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as ONE and check the bet value should be 5,10,25,50 & 100
     Then Bet value should get changed to 5,10,25,50 & 100 if the bet type selected as ONE from the drop down 1 in Glowing Hot slot game
 	
-#	
-#	
-#	
-#	
+
+
 #	Scenario: Change the bet value as 0.15, do the spin and check whether balance is deducting according to the changed bet type in Glowing Hot slot game
     #Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, bet type as 0.03, bet value as 0.15, balance and spin button, balance after spin
     #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03, select the bet value as 0.15, click on spin button and check the balance after spin
