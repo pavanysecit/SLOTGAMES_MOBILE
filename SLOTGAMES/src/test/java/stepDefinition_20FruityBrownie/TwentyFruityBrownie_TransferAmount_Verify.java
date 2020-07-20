@@ -2,6 +2,7 @@ package stepDefinition_20FruityBrownie;
 
 import java.util.Set;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,8 +48,10 @@ public class TwentyFruityBrownie_TransferAmount_Verify {
 
 	@When("^Open the (\\d+) Fruity Brownie slot game by entering the valid URL in browser, enter the valid login details, click on Play button, enter the valid amount to transfer and click on Ok butotn$")
 	public void open_the_Fruity_Brownie_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_click_on_Play_button_enter_the_valid_amount_to_transfer_and_click_on_Ok_butotn(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		String actual = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		System.out.println("Balance of the Treasure Bonanza slot game is : "+actual);
+	    String expected = "300.00";
+	    Assert.assertEquals(actual, expected);
 	}
 
 	@Then("^The exact amount entered in the transfer page should transfer to (\\d+) Fruity Brownie game and same amount should get displayed on the balance section$")

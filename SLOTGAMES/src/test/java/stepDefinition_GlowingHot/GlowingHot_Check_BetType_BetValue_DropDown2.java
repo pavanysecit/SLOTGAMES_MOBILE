@@ -137,7 +137,8 @@ public class GlowingHot_Check_BetType_BetValue_DropDown2 {
 		String expected4 = "2.5";
 		System.out.println("\n" +actual4);
 		Assert.assertEquals(actual4, expected4);
-
+		Thread.sleep(2000);
+		
 		//Selecting bet amount as 5
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);

@@ -69,23 +69,7 @@ public class GlowingHot_Check_BetType_BetValue_DropDown3 {
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.1";
 		Assert.assertEquals(actual, expected);
-		
-		//Selecting the bet amount as 0.5 from the drop down
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		for(MobileElement be1:balance)
-		{
-			
-			if(be1.getText().equals("0.5")){
-				be1.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
-		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		String expected1 = "0.5";
-		System.out.println("Available bet amounts under credit 0.1 are : " +"\n" +actual1);
-		Assert.assertEquals(actual1, expected1);
+
 		
 		//Selecting bet amount as 1
 		driver.findElement(By.id("hud_txtBetAmount")).click();
@@ -101,6 +85,7 @@ public class GlowingHot_Check_BetType_BetValue_DropDown3 {
 		}
 		String actual2 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected2 = "1";
+		System.out.println("Available bet amounts under credit 0.1 are : " +"\n" +actual2);
 		System.out.println("\n" +actual2);
 		Assert.assertEquals(actual2, expected2);
 		
@@ -137,7 +122,8 @@ public class GlowingHot_Check_BetType_BetValue_DropDown3 {
 		String expected4 = "5";
 		System.out.println("\n" +actual4);
 		Assert.assertEquals(actual4, expected4);
-
+		Thread.sleep(2000);
+		
 		//Selecting bet amount as 10
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);

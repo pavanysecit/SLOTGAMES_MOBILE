@@ -87,20 +87,20 @@ public class GlowingHot_Check_BetType_BetValue_DropDown1 {
 		System.out.println("Available bet amounts under credit 0.03 are : " +"\n" +actual1);
 		Assert.assertEquals(actual1, expected1);
 		
-		//Selecting bet amount as 0.30
+		//Selecting bet amount as 0.3
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
 		for(MobileElement be2:balance)
 		{
 			
-			if(be2.getText().equals("0.30")){
+			if(be2.getText().equals("0.3")){
 				be2.click();
 				Thread.sleep(2000);
 				break;
 			}	
 		}
 		String actual2 = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		String expected2 = "0.30";
+		String expected2 = "0.3";
 		System.out.println("\n" +actual2);
 		Assert.assertEquals(actual2, expected2);
 		

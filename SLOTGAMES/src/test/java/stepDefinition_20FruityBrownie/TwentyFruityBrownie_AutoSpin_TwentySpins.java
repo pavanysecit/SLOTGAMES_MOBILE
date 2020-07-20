@@ -2,6 +2,7 @@ package stepDefinition_20FruityBrownie;
 
 import java.util.Set;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,8 +48,76 @@ public class TwentyFruityBrownie_AutoSpin_TwentySpins {
 
 	@When("^Open the (\\d+) Fruity Brownie slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on twenty spin option under auto spin drop down and check the number of spins left message$")
 	public void open_the_Fruity_Brownie_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_twenty_spin_option_under_auto_spin_drop_down_and_check_the_number_of_spins_left_message(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		WebDriverWait wait = new WebDriverWait(driver, 6);
+		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[6]/android.view.View[1]/android.view.View/android.view.View[1]")).click();
+		Thread.sleep(3000);
+		
+		while(true)
+		 {
+			driver.findElement(By.id("AutoSpinListItem_20")).click();
+			Thread.sleep(0500);
+			break;
+		 }
+		
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "9 SPINS LEFT"));
+	    String actual = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected = "19 SPINS LEFT";
+	    System.out.println(actual);
+	    Assert.assertEquals(actual, expected);
+ 
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "8 SPINS LEFT"));
+	    String actual1 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected1 = "18 SPINS LEFT";
+	    System.out.println(actual1);
+	    Assert.assertEquals(actual1, expected1);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "7 SPINS LEFT"));
+	    String actual2 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected2 = "17 SPINS LEFT";
+	    System.out.println(actual2);
+	    Assert.assertEquals(actual2, expected2);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "6 SPINS LEFT"));
+	    String actual3 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected3 = "16 SPINS LEFT";
+	    System.out.println(actual3);
+	    Assert.assertEquals(actual3, expected3);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "5 SPINS LEFT"));
+	    String actual4 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected4 = "15 SPINS LEFT";
+	    System.out.println(actual4);
+	    Assert.assertEquals(actual4, expected4);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "4 SPINS LEFT"));
+	    String actual5 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected5 = "14 SPINS LEFT";
+	    System.out.println(actual5);
+	    Assert.assertEquals(actual5, expected5);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "3 SPINS LEFT"));
+	    String actual6 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected6 = "13 SPINS LEFT";
+	    System.out.println(actual6);
+	    Assert.assertEquals(actual6, expected6);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "2 SPINS LEFT"));
+	    String actual7 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected7 = "12 SPINS LEFT";
+	    System.out.println(actual7);
+	    Assert.assertEquals(actual7, expected7);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "1 SPINS LEFT"));
+	    String actual8 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected8 = "10 SPINS LEFT";
+	    System.out.println(actual8);
+	    Assert.assertEquals(actual8, expected8);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "LAST SPIN"));
+	    String actual9 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected9 = "9 SPINS LEFT";
+	    System.out.println(actual9);
+	    Assert.assertEquals(actual9, expected9);
 	}
 
 	@Then("^Number of spin left should start from (\\d+) to (\\d+) after clicking twenty spins option and should perform (\\d+) spins from (\\d+) to (\\d+) in (\\d+) Fruity Brownie slot game$")

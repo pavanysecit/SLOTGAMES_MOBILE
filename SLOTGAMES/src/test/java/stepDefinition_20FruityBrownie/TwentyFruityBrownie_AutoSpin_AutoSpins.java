@@ -2,6 +2,7 @@ package stepDefinition_20FruityBrownie;
 
 import java.util.Set;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,8 +48,59 @@ public class TwentyFruityBrownie_AutoSpin_AutoSpins {
 
 	@When("^Open the (\\d+) Fruity Brownie slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check the player instruction message$")
 	public void open_the_Fruity_Brownie_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_the_player_instruction_message(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		WebDriverWait wait = new WebDriverWait(driver, 6);
+		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[6]/android.view.View[1]/android.view.View/android.view.View[1]")).click();
+		Thread.sleep(3000);
+		
+		while(true)
+		 {
+			driver.findElement(By.id("AutoSpinListItem_Auto")).click();
+			Thread.sleep(0500);
+			break;
+		 }
+		
+//		MobileElement element = driver.findElement(By.id("AutoSpinListItem_10"));
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSearch")));
+//		JavascriptExecutor executor = (JavascriptExecutor)driver;
+//		executor.executeScript("arguments[0].click();", element);
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("AutoSpinListItem_10")));
+		
+		
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
+	    String actual = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected = "GOOD LUCK!";
+	    System.out.println(actual);
+	    Assert.assertEquals(actual, expected);
+ 
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
+	    String actual1 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected1 = "GOOD LUCK!";
+	    System.out.println(actual1);
+	    Assert.assertEquals(actual1, expected1);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
+	    String actual2 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected2 = "GOOD LUCK!";
+	    System.out.println(actual2);
+	    Assert.assertEquals(actual2, expected2);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
+	    String actual3 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected3 = "GOOD LUCK!";
+	    System.out.println(actual3);
+	    Assert.assertEquals(actual3, expected3);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
+	    String actual4 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected4 = "GOOD LUCK!";
+	    System.out.println(actual4);
+	    Assert.assertEquals(actual4, expected4);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
+	    String actual5 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected5 = "GOOD LUCK!";
+	    System.out.println(actual5);
+	    Assert.assertEquals(actual5, expected5);
 	}
 
 	@Then("^System should keep performing the spins in (\\d+) Fruity Brownie slot game$")

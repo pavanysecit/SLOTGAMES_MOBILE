@@ -1,7 +1,9 @@
 package stepDefinition_20FruityBrownie;
 
+import java.util.List;
 import java.util.Set;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,8 +49,78 @@ public class TwentyFruityBrownie_Balance_Check_WinAmount_AddedToBalance {
 
 	@When("^Open the (\\d+) Fruity Brownie slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on spin button till user win and check the balance after win in (\\d+) Fruity Brownie slot game$")
 	public void open_the_Fruity_Brownie_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_amount_click_on_spin_button_till_user_win_and_check_the_balance_after_win_in_Fruity_Brownie_slot_game(int arg1, int arg2) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+		
+		//Storing the value before spin or win
+		String preWin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		System.out.println("Current balance of the account: " +preWin);
+		
+		//Getting the bet value and Bet amount	
+		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
+		driver.findElement(By.id("hud_btnCredit")).click();
+		Thread.sleep(2000);
+		for(MobileElement be:balance)
+		{
+			
+			if(be.getText().equals("4")){
+				be.click();
+				Thread.sleep(3000);
+				break;
+			}	
+		}
+		
+		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		String creditValue = actual;
+		String expected = "4";
+		Assert.assertEquals(expected, actual);
+		Thread.sleep(1000);
+		
+		String betValue = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		System.out.println("Bet amount is: " +betValue);
+		Thread.sleep(2000);
+		System.out.println("Credit Value is: " +creditValue);
+		
+		//Clicking on start button
+		MobileElement start = driver.findElement(By.id("hud_btnSpin"));
+		start.click();
+		Thread.sleep(2000);
+
+		
+		//Getting win amount
+		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
+		
+		String winTex = winE.getText();
+		while(winTex.isEmpty())
+		 {
+			start.click();
+			Thread.sleep(4000);
+			winTex=	winE.getText();
+			System.out.println(winTex.isEmpty());
+		 }
+		Thread.sleep(2000);
+		System.out.println("The Win is : "+"  "+winTex);
+		System.out.println(winTex.isEmpty());
+		
+		String postWin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		System.out.println("Balance before adding win amount is: "+"  "+postWin);
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("hud_btnGamble")).click();
+		Thread.sleep(3000);
+
+		//Clicking on Collect button
+		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[4]")).click();
+		Thread.sleep(4000);
+		String Balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		Thread.sleep(2000);
+		//Converted win amount into credits and multiplying with credit value and it should equal to win amount in currency
+		double conValue = Double.parseDouble(winTex) + Double.parseDouble(postWin);
+		String dbi = String.format("%.2f", conValue);  
+		System.out.println("Balance after adding win amount: "+dbi);
+		Thread.sleep(2000);
+		Assert.assertEquals(dbi, Balance);
+		Thread.sleep(2000);
 	}
 
 	@Then("^Win amount should get added to the balance after win and balance should get increased with win amount in (\\d+) Fruity Brownie slot game$")

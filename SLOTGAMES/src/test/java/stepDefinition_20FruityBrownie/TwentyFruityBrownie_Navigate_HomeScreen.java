@@ -2,6 +2,7 @@ package stepDefinition_20FruityBrownie;
 
 import java.util.Set;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,8 +48,13 @@ public class TwentyFruityBrownie_Navigate_HomeScreen {
 
 	@When("^Open the (\\d+) Fruity Brownie slot game by entering the valid URL in browser, enter the valid login details, transfer the balance and click on home button$")
 	public void open_the_Fruity_Brownie_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_and_click_on_home_button(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		driver.findElement(By.xpath("hud_btnHome")).click();
+		Thread.sleep(4000);
+		
+		
+		String expected = driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/h3")).getText();
+		String actual = "Slot Games";
+		Assert.assertEquals(expected, actual);
 	}
 
 	@Then("^System should take the player to Home page after clicking on home button from (\\d+) Fruity Brownie game$")
