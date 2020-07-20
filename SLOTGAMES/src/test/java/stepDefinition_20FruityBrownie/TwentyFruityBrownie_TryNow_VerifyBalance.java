@@ -1,5 +1,9 @@
 package stepDefinition_20FruityBrownie;
 
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
 public class TwentyFruityBrownie_TryNow_VerifyBalance {
 
 	
@@ -17,7 +21,7 @@ public class TwentyFruityBrownie_TryNow_VerifyBalance {
 
 	@Then("^System should provide five thousand as balance on click on try now button in (\\d+) Fruity Brownie slot game$")
 	public void system_should_provide_five_thousand_as_balance_on_click_on_try_now_button_in_Fruity_Brownie_slot_game(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    Thread.sleep(2000);
+	    driver.quit();
 	}
 }

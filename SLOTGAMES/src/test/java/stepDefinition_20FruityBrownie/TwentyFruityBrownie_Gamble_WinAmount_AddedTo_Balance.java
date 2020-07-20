@@ -1,12 +1,48 @@
 package stepDefinition_20FruityBrownie;
 
-public class TwentyFruityBrownie_Gamble_WinAmount_AddedTo_Balance {
+import java.util.Set;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+
+public class TwentyFruityBrownie_Gamble_WinAmount_AddedTo_Balance {
+	AppiumDriver<MobileElement> driver;
+
+	public TwentyFruityBrownie_Gamble_WinAmount_AddedTo_Balance() throws InterruptedException {
+		this.driver = TwentyFruityBrownie_URL_Login.getDriver();
+		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Fruity Brownie slot game, balance, spin button, win amount, gamble button, gamble amount, red button, black button and gamble status$")
 	public void chrome_browser_valid_URL_valid_login_details_Fruity_Brownie_slot_game_balance_spin_button_win_amount_gamble_button_gamble_amount_red_button_black_button_and_gamble_status(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
+		MobileElement balT = driver.findElement(By.id("transferInput"));
+		balT.clear();
+		Thread.sleep(1000);
+		balT.sendKeys("300");
+		Thread.sleep(2000);
+		driver.findElement(By.className("Transfer_Ok_but")).click();
+
+		String parent1=driver.getWindowHandle();
+		Set<String>s1=driver.getWindowHandles();
+
+		System.out.println("Window for slot game is"+" "+s1);
+		 
+		Set<String> contx = driver.getContextHandles();
+		String pk = driver.getContext();
+		//System.out.println("The current contesx is"+" "+pk);
+		for(String cont:contx){
+			 System.out.println(cont);
+		 }
+		driver.context("NATIVE_APP");
+		Thread.sleep(4000);
 	}
 
 	@When("^Open the (\\d+) Fruity Brownie slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, click on red or black button and check the balance after win$")
@@ -17,7 +53,7 @@ public class TwentyFruityBrownie_Gamble_WinAmount_AddedTo_Balance {
 
 	@Then("^Gamble Win amount should get added to main balance after status displayed as WIN and gamble page should get closed in (\\d+) Fruity Brownie slot game$")
 	public void gamble_Win_amount_should_get_added_to_main_balance_after_status_displayed_as_WIN_and_gamble_page_should_get_closed_in_Fruity_Brownie_slot_game(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    Thread.sleep(2000);
+	    driver.quit();
 	}
 }

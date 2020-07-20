@@ -1,5 +1,9 @@
 package stepDefinition_20FruityBrownie;
 
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
 public class TwentyFruityBrownie_TryNow_Check_WinAmount_AddedToBalance {
 
 	
@@ -17,7 +21,7 @@ public class TwentyFruityBrownie_TryNow_Check_WinAmount_AddedToBalance {
 
 	@Then("^Win amount should get added to the balance when the player wins in try now page of (\\d+) Fruity Brownie slot game$")
 	public void win_amount_should_get_added_to_the_balance_when_the_player_wins_in_try_now_page_of_Fruity_Brownie_slot_game(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    Thread.sleep(2000);
+	    driver.quit();
 	}
 }

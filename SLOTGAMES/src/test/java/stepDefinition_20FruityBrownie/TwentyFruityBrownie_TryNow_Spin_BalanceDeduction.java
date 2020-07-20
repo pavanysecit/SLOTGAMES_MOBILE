@@ -1,5 +1,9 @@
 package stepDefinition_20FruityBrownie;
 
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
 public class TwentyFruityBrownie_TryNow_Spin_BalanceDeduction {
 
 	
@@ -17,7 +21,7 @@ public class TwentyFruityBrownie_TryNow_Spin_BalanceDeduction {
 
 	@Then("^Amount should get deducted from balance on click on spin button in try now page of (\\d+) Fruity Brownieslot game$")
 	public void amount_should_get_deducted_from_balance_on_click_on_spin_button_in_try_now_page_of_Fruity_Brownieslot_game(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    Thread.sleep(2000);
+	    driver.quit();
 	}
 }
