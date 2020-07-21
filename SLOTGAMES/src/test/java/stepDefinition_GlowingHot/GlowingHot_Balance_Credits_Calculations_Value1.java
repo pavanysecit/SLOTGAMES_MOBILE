@@ -28,7 +28,7 @@ public class GlowingHot_Balance_Credits_Calculations_Value1 {
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
 		Thread.sleep(1000);
-		balT.sendKeys("300");
+		balT.sendKeys("5");
 		Thread.sleep(2000);
 		driver.findElement(By.className("Transfer_Ok_but")).click();
 

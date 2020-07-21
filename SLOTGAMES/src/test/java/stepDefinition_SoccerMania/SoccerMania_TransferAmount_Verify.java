@@ -22,7 +22,7 @@ public class SoccerMania_TransferAmount_Verify {
 	
 	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania game, balance, text field to transfer balance and Ok button$")
 	public void chrome_browser_valid_URL_valid_login_details_Soccer_Mania_game_balance_text_field_to_transfer_balance_and_Ok_button() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
@@ -30,7 +30,6 @@ public class SoccerMania_TransferAmount_Verify {
 		balT.sendKeys("300");
 		Thread.sleep(2000);
 		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(20000);
 
 		String parent1=driver.getWindowHandle();
 		Set<String>s1=driver.getWindowHandles();
@@ -50,6 +49,9 @@ public class SoccerMania_TransferAmount_Verify {
 
 	@When("^Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, click on Play button, enter the valid amount to transfer and click on Ok butotn$")
 	public void open_the_Soccer_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_click_on_Play_button_enter_the_valid_amount_to_transfer_and_click_on_Ok_butotn() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));  
 		String actual = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Balance of the Treasure Bonanza slot game is : "+actual);
 	    String expected = "300.00";

@@ -1,5 +1,6 @@
 package stepDefinition_GlowingHot;
 
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
@@ -48,6 +49,8 @@ public class GlowingHot_Gamble_WinAmount_SameAs_GambleAmount {
 
 	@When("^Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till player wins, click on gamble button and check the gamble amount$")
 	public void open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_amount() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The balance is equal to"+" "+balance);
 
@@ -69,7 +72,8 @@ public class GlowingHot_Gamble_WinAmount_SameAs_GambleAmount {
 		System.out.println("Win amount is: " +prewin);	                            	
 
         Thread.sleep(2000);
-		driver.findElement(By.id("hud_btnGamble")).click();		          
+		driver.findElement(By.id("hud_btnGamble")).click();	
+		Thread.sleep(3000);
 		String gAmount = driver.findElement(By.id("gamble_txtGambleAmount")).getText();
 		System.out.println("Gamble amount is :"+gAmount);
 		Thread.sleep(2000);

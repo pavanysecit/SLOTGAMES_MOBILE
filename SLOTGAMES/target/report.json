@@ -1,0 +1,229 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "comments": [
+          {
+            "line": 4,
+            "value": "#\tScenario: Select the bet type as 0.03 from the drop down and check the bet value should be 0.15,0.3,0.75,1.5,3 in Glowing Hot game"
+          },
+          {
+            "line": 5,
+            "value": "#Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, bet type as 0.03 and bet value as 0.15,0.3,0.75,1.5,3"
+          },
+          {
+            "line": 6,
+            "value": "#When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 and check the bet value should be 0.15,0.3,0.75,1.5,3"
+          },
+          {
+            "line": 7,
+            "value": "#Then Bet value should get changed to 0.15,0.3,0.75,1.5,3 if the bet type selected as 0.03 from the drop down in Glowing Hot slot game"
+          }
+        ],
+        "before": [
+          {
+            "result": {
+              "duration": 49508164700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GlowingHot_URL_Login.GlowingHot_URL_Login()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Select the bet type as 0.05 from the drop down and check the bet value should be 0.25,0.5,1.25,2.5 \u0026 5 in Glowing Hot slot game",
+        "description": "",
+        "id": "test-all-the-functionalities-of-glowing-hot-slot-game;select-the-bet-type-as-0.05-from-the-drop-down-and-check-the-bet-value-should-be-0.25,0.5,1.25,2.5-\u0026-5-in-glowing-hot-slot-game",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9076445200,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Chrome browser, valid URL, valid login details, Glowing Hot slot game, bet type as 0.05 from down 2 and bet value as 0.25,0.5,1.25,2.5 \u0026 5",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 83
+                },
+                {
+                  "val": "05",
+                  "offset": 85
+                },
+                {
+                  "val": "2",
+                  "offset": 98
+                },
+                {
+                  "val": "0",
+                  "offset": 117
+                },
+                {
+                  "val": "25",
+                  "offset": 119
+                },
+                {
+                  "val": "0",
+                  "offset": 122
+                },
+                {
+                  "val": "5",
+                  "offset": 124
+                },
+                {
+                  "val": "1",
+                  "offset": 126
+                },
+                {
+                  "val": "25",
+                  "offset": 128
+                },
+                {
+                  "val": "2",
+                  "offset": 131
+                },
+                {
+                  "val": "5",
+                  "offset": 133
+                },
+                {
+                  "val": "5",
+                  "offset": 137
+                }
+              ],
+              "location": "GlowingHot_Check_BetType_BetValue_DropDown2.chrome_browser_valid_URL_valid_login_details_Glowing_Hot_slot_game_bet_type_as_from_down_and_bet_value_as(int,int,int,int,int,int,int,int,int,int,int,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 68753095100,
+              "error_message": "org.junit.ComparisonFailure: expected:\u003c[2.]5\u003e but was:\u003c[]5\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat stepDefinition_GlowingHot.GlowingHot_Check_BetType_BetValue_DropDown2.open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_logi_n_details_select_the_bet_type_as_from_down_and_check_the_bet_value_should_be(GlowingHot_Check_BetType_BetValue_DropDown2.java:158)\r\n\tat ✽.When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid logi., n details, select the bet type as 0.05 from down  and check the bet value should be 0.25,0.5,1.25,2.5 \u0026 5(C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:12)\r\n",
+              "status": "failed"
+            },
+            "line": 12,
+            "name": "Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid logi., n details, select the bet type as 0.05 from down  and check the bet value should be 0.25,0.5,1.25,2.5 \u0026 5",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 126
+                },
+                {
+                  "val": "05",
+                  "offset": 128
+                },
+                {
+                  "val": "0",
+                  "offset": 176
+                },
+                {
+                  "val": "25",
+                  "offset": 178
+                },
+                {
+                  "val": "0",
+                  "offset": 181
+                },
+                {
+                  "val": "5",
+                  "offset": 183
+                },
+                {
+                  "val": "1",
+                  "offset": 185
+                },
+                {
+                  "val": "25",
+                  "offset": 187
+                },
+                {
+                  "val": "2",
+                  "offset": 190
+                },
+                {
+                  "val": "5",
+                  "offset": 192
+                },
+                {
+                  "val": "5",
+                  "offset": 196
+                }
+              ],
+              "location": "GlowingHot_Check_BetType_BetValue_DropDown2.open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_logi_n_details_select_the_bet_type_as_from_down_and_check_the_bet_value_should_be(int,int,int,int,int,int,int,int,int,int,int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Bet value should get changed to 0.25,0.5,1.25,2.5 \u0026 5 if the bet type selected as 0.05 from the drop down two in Glowing Hot slot game",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 32
+                },
+                {
+                  "val": "25",
+                  "offset": 34
+                },
+                {
+                  "val": "0",
+                  "offset": 37
+                },
+                {
+                  "val": "5",
+                  "offset": 39
+                },
+                {
+                  "val": "1",
+                  "offset": 41
+                },
+                {
+                  "val": "25",
+                  "offset": 43
+                },
+                {
+                  "val": "2",
+                  "offset": 46
+                },
+                {
+                  "val": "5",
+                  "offset": 48
+                },
+                {
+                  "val": "5",
+                  "offset": 52
+                },
+                {
+                  "val": "0",
+                  "offset": 82
+                },
+                {
+                  "val": "05",
+                  "offset": 84
+                }
+              ],
+              "location": "GlowingHot_Check_BetType_BetValue_DropDown2.bet_value_should_get_changed_to_if_the_bet_type_selected_as_from_the_drop_down_two_in_Glowing_Hot_slot_game(int,int,int,int,int,int,int,int,int,int,int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Test all the functionalities of Glowing Hot Slot Game",
+    "description": "",
+    "id": "test-all-the-functionalities-of-glowing-hot-slot-game",
+    "keyword": "Feature",
+    "uri": "C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature"
+  }
+]

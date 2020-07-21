@@ -63,7 +63,7 @@ public class GlowingHot_Balance_Check_WinAmount_AddedToBalance {
 		for(MobileElement be:balance)
 		{
 			
-			if(be.getText().equals("3")){
+			if(be.getText().equals("1")){
 				be.click();
 				Thread.sleep(3000);
 				break;
@@ -72,7 +72,7 @@ public class GlowingHot_Balance_Check_WinAmount_AddedToBalance {
 		
 		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
 		String creditValue = actual;
-		String expected = "3";
+		String expected = "1";
 		Assert.assertEquals(expected, actual);
 		Thread.sleep(1000);
 		
@@ -107,10 +107,10 @@ public class GlowingHot_Balance_Check_WinAmount_AddedToBalance {
 		Thread.sleep(2000);
 		
 		driver.findElement(By.id("hud_btnGamble")).click();
-		Thread.sleep(3000);
-
+		Thread.sleep(5000);
+		
 		//Clicking on Collect button
-		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[4]")).click();
+		driver.findElement(By.id("hud_btnSpin")).click();
 		Thread.sleep(4000);
 		String Balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		Thread.sleep(2000);

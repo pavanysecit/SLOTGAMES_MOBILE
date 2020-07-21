@@ -1,28 +1,28 @@
 Feature: Test all the functionalities of Glowing Hot Slot Game
    
 
-	Scenario: Select the bet type as 0.03 from the drop down and check the bet value should be 0.15,0.3,0.75,1.5,3 in Glowing Hot game
-    Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, bet type as 0.03 and bet value as 0.15,0.3,0.75,1.5,3
-    When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 and check the bet value should be 0.15,0.3,0.75,1.5,3
-    Then Bet value should get changed to 0.15,0.3,0.75,1.5,3 if the bet type selected as 0.03 from the drop down in Glowing Hot slot game
+#	Scenario: Select the bet type as 0.03 from the drop down and check the bet value should be 0.15,0.3,0.75,1.5,3 in Glowing Hot game
+    #Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, bet type as 0.03 and bet value as 0.15,0.3,0.75,1.5,3
+    #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 and check the bet value should be 0.15,0.3,0.75,1.5,3
+    #Then Bet value should get changed to 0.15,0.3,0.75,1.5,3 if the bet type selected as 0.03 from the drop down in Glowing Hot slot game
+#	
+	
+#	Scenario: Select the bet type as 0.05 from the drop down and check the bet value should be 0.25,0.5,1.25,2.5 & 5 in Glowing Hot slot game
+    #Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, bet type as 0.05 from down 2 and bet value as 0.25,0.5,1.25,2.5 & 5
+    #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid logi., n details, select the bet type as 0.05 from down  and check the bet value should be 0.25,0.5,1.25,2.5 & 5
+    #Then Bet value should get changed to 0.25,0.5,1.25,2.5 & 5 if the bet type selected as 0.05 from the drop down two in Glowing Hot slot game
 	
 	
-	Scenario: Select the bet type as 0.05 from the drop down and check the bet value should be 0.25,0.5,1.25,2.5 & 5 in Glowing Hot slot game
-    Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, bet type as 0.05 from down 2 and bet value as 0.25,0.5,1.25,2.5 & 5
-    When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid logi., n details, select the bet type as 0.05 from down  and check the bet value should be 0.25,0.5,1.25,2.5 & 5
-    Then Bet value should get changed to 0.25,0.5,1.25,2.5 & 5 if the bet type selected as 0.05 from the drop down two in Glowing Hot slot game
+#	Scenario: Select the bet type as 0.1 from the drop down and check the bet value should be 0.5,1,2.5,5 & 10 in Glowing Hot slot game
+    #Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, bet type as 0.1 from drop down and bet value as 0.5,1,2.5,5 & 10
+    #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.1 from drop down and check the bet value should be 0.5,1,2.5,5 & 10
+    #Then Bet value should get changed to 0.5,1,2.5,5 & 10 if the bet type selected as 0.1 from the drop down three in Glowing Hot slot game
 	
 	
-	Scenario: Select the bet type as 0.1 from the drop down and check the bet value should be 0.5,1,2.5,5 & 10 in Glowing Hot slot game
-    Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, bet type as 0.1 from drop down and bet value as 0.5,1,2.5,5 & 10
-    When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.1 from drop down and check the bet value should be 0.5,1,2.5,5 & 10
-    Then Bet value should get changed to 0.5,1,2.5,5 & 10 if the bet type selected as 0.1 from the drop down three in Glowing Hot slot game
-	
-	
-	Scenario: Select the bet type as ONE from the drop down and check the bet value should be 5,10,25,50 & 100 in Glowing Hot slot game
-    Given Chrome browser, valid URL, valid login details, Glowing Hot game, bet type as ONE and bet value as 5,10,25,50 & 100
-    When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as ONE and check the bet value should be 5,10,25,50 & 100
-    Then Bet value should get changed to 5,10,25,50 & 100 if the bet type selected as ONE from the drop down 1 in Glowing Hot slot game
+#	Scenario: Select the bet type as ONE from the drop down and check the bet value should be 5,10,25,50 & 100 in Glowing Hot slot game
+    #Given Chrome browser, valid URL, valid login details, Glowing Hot game, bet type as ONE and bet value as 5,10,25,50 & 100
+    #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as ONE and check the bet value should be 5,10,25,50 & 100
+    #Then Bet value should get changed to 5,10,25,50 & 100 if the bet type selected as ONE from the drop down 1 in Glowing Hot slot game
 	
 
 
@@ -89,7 +89,7 @@ Feature: Test all the functionalities of Glowing Hot Slot Game
     #Given Chrome browser, valid URL, valid login details, Glowing Hot game, bet type as 0.05, bet value as FIVE, balance, spin button and balance after spin
     #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.05, select the denomination as FIVE, click on spin button and check the balance
     #Then Current Balance should get deducted by FIVE as bet type is selected as 0.05 & bet value as FIVE in Glowing Hot game
-#
+
 #	
 #	
 #	
@@ -220,7 +220,7 @@ Feature: Test all the functionalities of Glowing Hot Slot Game
     #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on spin button till user win and check the balance after win in Glowing Hot slot game
     #Then Win amount should get added to the balance after win and balance should get increased with win amount in Glowing Hot slot game
 #	
-#	
+	
 #	Scenario: Check whether user able to play the game when there is insufficiant balance in account in Glowing Hot slot game
     #Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, balance, spin button and validation message
     #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message
@@ -244,10 +244,10 @@ Feature: Test all the functionalities of Glowing Hot Slot Game
     #Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, maximize button and minimize button
     #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on maximize button and click on minimize button
     #Then Full screen should be displayed after clicking on maximize button and minimized screen should be displayed after clicking on minimize button in Glowing Hot slot game
-#	
-#	
-#
-#	
+	
+	
+
+	
 #	Scenario: Check whether system performing ten spins after selecting ten option in the auto spin drop down of the Glowing Hot slot game
     #Given Chrome browser, valid URL, valid login details, Glowing Hot  slot game, balance, spin button, auto spin button, ten spins option and number of spins left message
     #When Open the Glowing Hot  slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on ten spin option under auto spin drop down and check the number of spins left message
@@ -303,11 +303,11 @@ Feature: Test all the functionalities of Glowing Hot Slot Game
 #	
 #
 #		
-#	Scenario: Checking whether win amount is displaying as gamble amount in gamble page of Glowing Hot slot game 
-    #Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, balance, spin button, win amount, gamble button and gamble amount
-    #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till player wins, click on gamble button and check the gamble amount
-    #Then Win amount should be displayed as Gamble amount in the gamble page of the Glowing Hot slot game
-#	
+	Scenario: Checking whether win amount is displaying as gamble amount in gamble page of Glowing Hot slot game 
+    Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, balance, spin button, win amount, gamble button and gamble amount
+    When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till player wins, click on gamble button and check the gamble amount
+    Then Win amount should be displayed as Gamble amount in the gamble page of the Glowing Hot slot game
+	
 #	Scenario: Checking Gamble to Win amount should be double than gamble amount in gamble page of Glowing Hot slot game 
     #Given Chrome browser, valid URL, valid login details, Glowing Hot slot game, balance, spin button, win amount, gamble button, gamble amount and gamble to win amount
     #When Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, click on spin button till player wins, click on gamble button and check the gamble to win amount

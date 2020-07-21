@@ -1,1 +1,1 @@
-C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:4:22
+C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature:10
