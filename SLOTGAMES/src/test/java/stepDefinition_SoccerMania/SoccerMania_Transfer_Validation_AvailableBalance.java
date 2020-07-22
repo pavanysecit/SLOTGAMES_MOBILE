@@ -91,7 +91,7 @@ public class SoccerMania_Transfer_Validation_AvailableBalance {
 			    Assert.assertEquals(expected, actual);
 			    Thread.sleep(2000);
 		   }
-		driver.quit();
+		//driver.quit();
 		}
 	}
 

@@ -54,34 +54,34 @@ public class SoccerMania_Check_BetType_BetValue_DropDown1 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));  
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		//Selecting the credit as 0.01 from the drop down
-		driver.findElement(By.id("hud_btnCredit")).click();
-		Thread.sleep(2000);
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("0.01")){
-				be.click();
-				Thread.sleep(3000);
-				break;
-			}	
-		}
-		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+//		driver.findElement(By.id("hud_btnCredit")).click();
+//		Thread.sleep(2000);
+//		for(MobileElement be:balance)
+//		{
+//			
+//			if(be.getText().equals("0.01")){
+//				be.click();
+//				Thread.sleep(3000);
+//				break;
+//			}	
+//		}
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.01";
 		Assert.assertEquals(actual, expected);
 		
 		//Selecting the bet amount as 0.3 from the drop down
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		for(MobileElement be1:balance)
-		{
-			
-			if(be1.getText().equals("0.3")){
-				be1.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+//		driver.findElement(By.id("hud_txtBetAmount")).click();
+//		Thread.sleep(2000);
+//		for(MobileElement be1:balance)
+//		{
+//			
+//			if(be1.getText().equals("0.3")){
+//				be1.click();
+//				Thread.sleep(2000);
+//				break;
+//			}	
+//		}
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected1 = "0.3";
 		System.out.println("Available bet amounts under credit 0.01 are : " +"\n" +actual1);

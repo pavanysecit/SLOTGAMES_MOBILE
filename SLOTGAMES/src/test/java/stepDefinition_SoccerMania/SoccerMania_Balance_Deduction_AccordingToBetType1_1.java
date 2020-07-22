@@ -56,7 +56,7 @@ AppiumDriver<MobileElement> driver;
 		System.out.println("Current balance of the account Before spin: " +preSpin);
 		
 		//Getting the bet value and Bet amount
-		String creditValue = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		String creditValue = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is: " +creditValue);
 		String betValue = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		System.out.println("Selected credit value is: " +betValue);

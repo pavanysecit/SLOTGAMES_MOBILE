@@ -58,7 +58,7 @@ AppiumDriver<MobileElement> driver;
 		System.out.println("Current balance of the account Before spin: " +preSpin);
 		
 		//Getting the bet value and Bet amount
-		String creditValue = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		String creditValue = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is: " +creditValue);
 		//Selecting bet amount as 1.5
 		driver.findElement(By.id("hud_txtBetAmount")).click();
@@ -73,6 +73,7 @@ AppiumDriver<MobileElement> driver;
 				break;
 			}	
 		}
+		Thread.sleep(2000);
 		String actual = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		System.out.println("Selected bet amount is: " +actual);
 		String expected = "1.5";

@@ -61,11 +61,12 @@ public class SoccerMania_Check_BetType_BetValue_DropDown4 {
 			
 			if(be.getText().equals("0.5")){
 				be.click();
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 				break;
 			}	
 		}
-		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		Thread.sleep(2000);
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.5";
 		Assert.assertEquals(actual, expected);
@@ -82,27 +83,13 @@ public class SoccerMania_Check_BetType_BetValue_DropDown4 {
 				break;
 			}	
 		}
+		Thread.sleep(2000);
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected1 = "15";
 		System.out.println("Available bet amounts under credit 0.5 are : " +"\n" +actual1);
 		Assert.assertEquals(actual1, expected1);
 		
-		//Selecting bet amount as 30
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		for(MobileElement be2:balance)
-		{
-			
-			if(be2.getText().equals("30")){
-				be2.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
-		String actual2 = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		String expected2 = "30";
-		System.out.println("\n" +actual2);
-		Assert.assertEquals(actual2, expected2);
+
 		
 		//Selecting bet amount as 75
 		driver.findElement(By.id("hud_txtBetAmount")).click();
@@ -116,6 +103,7 @@ public class SoccerMania_Check_BetType_BetValue_DropDown4 {
 				break;
 			}	
 		}
+		Thread.sleep(2000);
 		String actual3 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected3 = "75";
 		System.out.println("\n" +actual3);
@@ -133,6 +121,7 @@ public class SoccerMania_Check_BetType_BetValue_DropDown4 {
 				break;
 			}	
 		}
+		Thread.sleep(2000);
 		String actual4 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected4 = "150";
 		System.out.println("\n" +actual4);
@@ -150,11 +139,30 @@ public class SoccerMania_Check_BetType_BetValue_DropDown4 {
 				break;
 			}	
 		}
+		Thread.sleep(2000);
 		String actual5 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected5 = "300";
 		System.out.println("\n" +actual5);
 		Assert.assertEquals(actual5, expected5);
 		Thread.sleep(2000);
+		
+		//Selecting bet amount as 30
+		driver.findElement(By.id("hud_txtBetAmount")).click();
+		Thread.sleep(2000);
+		for(MobileElement be2:balance)
+		{
+			
+			if(be2.getText().equals("30")){
+				be2.click();
+				Thread.sleep(2000);
+				break;
+			}	
+		}
+		Thread.sleep(2000);
+		String actual2 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String expected2 = "30";
+		System.out.println("\n" +actual2);
+		Assert.assertEquals(actual2, expected2);
 	}
 
 	@Then("^Bet value should get changed to (\\d+),(\\d+),(\\d+),(\\d+) & (\\d+) if the bet type selected as (\\d+)\\.(\\d+) from the drop down three in Soccer Mania slot game$")

@@ -65,7 +65,7 @@ public class SoccerMania_Check_BetType_BetValue_DropDown2 {
 				break;
 			}	
 		}
-		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.02";
 		Assert.assertEquals(actual, expected);

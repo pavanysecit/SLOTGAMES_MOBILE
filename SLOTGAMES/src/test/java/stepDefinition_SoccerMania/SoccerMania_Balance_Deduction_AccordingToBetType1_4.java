@@ -53,24 +53,26 @@ AppiumDriver<MobileElement> driver;
 	public void open_the_Soccer_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_select_the_bet_value_as_THREE_click_on_spin_button_and_check_the_balance(int arg1, int arg2) throws Throwable {
 	    WebDriverWait wait = new WebDriverWait(driver, 90);
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));     
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));   
+		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 	   //Storing the value before spin
 		String preSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Current balance of the account Before spin: " +preSpin);
 		
 		//Getting the bet value and Bet amount
-		String creditValue = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		String creditValue = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is: " +creditValue);
+		
 		//Selecting bet amount as 3
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
+
 		for(MobileElement be:balance)
 		{
 			
 			if(be.getText().equals("3")){
 				be.click();
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 				break;
 			}	
 		}

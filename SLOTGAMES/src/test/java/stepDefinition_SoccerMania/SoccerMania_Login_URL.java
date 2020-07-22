@@ -37,10 +37,10 @@ private static AppiumDriver<MobileElement> driver;
 		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[6]/div[1]/div")).click();
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[16]/div[1]/div")).click();
 		Thread.sleep(2000);
 				 
-		driver.findElement(By.name("email")).sendKeys("7988466032");
+		driver.findElement(By.name("email")).sendKeys("test8");
 		Thread.sleep(2000);
 				
 		driver.findElement(By.xpath("/html/body/div[3]/header/section/div[10]/div/div[2]/form/div[2]/input")).sendKeys("mans@123");
@@ -51,7 +51,7 @@ private static AppiumDriver<MobileElement> driver;
 		jse.executeScript("arguments[0].click();", sub);
 		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[6]/div[1]/div")).click();
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[16]/div[1]/div")).click();
 		Thread.sleep(10000);
 	}
 	
