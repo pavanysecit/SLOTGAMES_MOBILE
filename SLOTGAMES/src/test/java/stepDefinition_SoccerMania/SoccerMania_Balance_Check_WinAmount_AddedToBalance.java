@@ -47,15 +47,15 @@ AppiumDriver<MobileElement> driver;
 		Thread.sleep(4000);
 	}
 
-	@When("^Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on spin button till user win and check the balance after win in Soccer Mania slot game$")
-	public void open_the_Golded_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_amount_click_on_spin_button_till_user_win_and_check_the_balance_after_win_in_Soccer_Mania_slot_game() throws Throwable {
+	@When("^Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on spin button till user win and check the balance after win in Soccer Mania slot game$")
+	public void open_the_Soccer_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_amount_click_on_spin_button_till_user_win_and_check_the_balance_after_win_in_Soccer_Mania_slot_game() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		
 		//Storing the value before spin or win
 		String preWin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
-		System.out.println("Current balance of the account Before Converting into credits: " +preWin);
+		System.out.println("Current balance of the account before spin: " +preWin);
 		
 		//Getting the bet value and Bet amount	
 		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");

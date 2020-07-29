@@ -55,7 +55,8 @@ AppiumDriver<MobileElement> driver;
 			System.out.println("Current balance of the account Before Converting into credits: " +preConvert);
 			
 			//Getting the bet value and Bet amount
-			String creditValue = driver.findElement(By.id("hud_txtCreditValue")).getText();
+			Thread.sleep(4000);
+			String creditValue = driver.findElement(By.id("hud_txtCredit")).getText();
 			System.out.println("Selected credit value is: " +creditValue);
 			String actual = creditValue;
 			String expected = "0.01";

@@ -29,7 +29,6 @@ AppiumDriver<MobileElement> driver;
 		balT.sendKeys("300");
 		Thread.sleep(2000);
 		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(20000);
 
 		String parent1=driver.getWindowHandle();
 		Set<String>s1=driver.getWindowHandles();
@@ -48,7 +47,7 @@ AppiumDriver<MobileElement> driver;
 
 	@When("^Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+), select the bet value as (\\d+)\\.(\\d+), click on spin button and check the balance after spin$")
 	public void open_the_Soccer_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_select_the_bet_value_as_click_on_spin_button_and_check_the_balance_after_spin(int arg1, int arg2, int arg3, int arg4) throws Throwable {	    
-		WebDriverWait wait = new WebDriverWait(driver, 90);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));     
 		
 		//Storing the value before spin
@@ -67,6 +66,8 @@ AppiumDriver<MobileElement> driver;
 		Thread.sleep(2000);
 		
 		//Storing the value after spin
+		WebDriverWait wait1 = new WebDriverWait(driver, 30);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));  
 		String postSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Current balance of the account After spin: " +postSpin);
 		

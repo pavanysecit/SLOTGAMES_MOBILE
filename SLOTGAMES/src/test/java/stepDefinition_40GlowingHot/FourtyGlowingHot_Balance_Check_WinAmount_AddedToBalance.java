@@ -188,8 +188,8 @@ private MobileElement prq;
 //		Assert.assertEquals(dbi, postwin);
 	}
 
-	@Then("^Win amount should get added to the balance after win and balance should get increased with win amount$")
-	public void win_amount_should_get_added_to_the_balance_after_win_and_balance_should_get_increased_with_win_amount() throws Throwable {
+	@Then("^Win amount should get added to the balance after win and balance should get increased with win amount in (\\d+) glowing hot slot game$")
+	public void win_amount_should_get_added_to_the_balance_after_win_and_balance_should_get_increased_with_win_amount_in_glowing_hot_slot_game(int arg1) throws Throwable {
 		Thread.sleep(3000);
 		driver.quit();
 	}

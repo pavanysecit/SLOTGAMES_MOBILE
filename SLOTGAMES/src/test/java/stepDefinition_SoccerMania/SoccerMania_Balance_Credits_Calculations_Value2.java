@@ -57,9 +57,12 @@ public class SoccerMania_Balance_Credits_Calculations_Value2 {
 			String preConvert = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 			System.out.println("Current balance of the account Before Converting into credits: " +preConvert);
 			
+			String dd = driver.findElement(By.id("hud_txtCredit")).getText();
+			System.out.println("Selected credit value is : " +dd);
 			//Selecting the credit as 0.02 from the drop down and bet amount
 			List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-			driver.findElement(By.id("hud_btnCredit")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.id("hud_txtCreditValue")).click();
 			Thread.sleep(2000);
 			for(MobileElement be:balance)
 			{
@@ -70,7 +73,7 @@ public class SoccerMania_Balance_Credits_Calculations_Value2 {
 					break;
 				}	
 			}
-			String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+			String actual = driver.findElement(By.id("hud_txtCredit")).getText();
 			String creditValue = actual;
 			System.out.println("Selected credit value is : " +actual);
 			String expected = "0.02";

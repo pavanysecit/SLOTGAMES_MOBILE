@@ -22,7 +22,7 @@ public class FourtySplendidHot_TransferAmount_Verify {
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot game, balance, text field to transfer balance and Ok button$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_game_balance_text_field_to_transfer_balance_and_Ok_button(int arg1) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+	    WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();

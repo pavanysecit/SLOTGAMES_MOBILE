@@ -51,7 +51,7 @@ public class SoccerMania_Balance_Deduction_AccordingToBetType3_1 {
 
 	@When("^Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select the bet type as one point five from bet type drop down, click on spin button and check the balance$")
 	public void open_the_Soccer_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_one_point_five_from_bet_type_drop_down_click_on_spin_button_and_check_the_balance() throws Throwable {
-	    WebDriverWait wait = new WebDriverWait(driver, 90);
+	    WebDriverWait wait = new WebDriverWait(driver, 60);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		//Storing the value before spin
@@ -71,23 +71,25 @@ public class SoccerMania_Balance_Deduction_AccordingToBetType3_1 {
 				break;
 			}	
 		}
+	    WebDriverWait wait1 = new WebDriverWait(driver, 20);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_txtCreditValue"))); 
 		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.05";
 		Assert.assertEquals(actual, expected);
 		
-		//Selecting bet amount as 1.5	
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("1.5")){
-				be.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+//		//Selecting bet amount as 1.5	
+//		driver.findElement(By.id("hud_txtBetAmount")).click();
+//		Thread.sleep(2000);
+//		for(MobileElement be:balance)
+//		{
+//			
+//			if(be.getText().equals("1.5")){
+//				be.click();
+//				Thread.sleep(2000);
+//				break;
+//			}	
+//		}
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		System.out.println("Selected bet amount is: " +actual1);
 		String expected1 = "1.5";
