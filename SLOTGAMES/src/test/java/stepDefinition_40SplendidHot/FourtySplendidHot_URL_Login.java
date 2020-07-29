@@ -10,6 +10,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
+
+import cucumber.api.java.Before;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -17,7 +19,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class FourtySplendidHot_URL_Login {
 private static AppiumDriver<MobileElement> driver;
 	
-	//@Before
+	@Before
 	public static void  FourtySplendidHot_URL_Login() throws InterruptedException, MalformedURLException, FindFailed {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
