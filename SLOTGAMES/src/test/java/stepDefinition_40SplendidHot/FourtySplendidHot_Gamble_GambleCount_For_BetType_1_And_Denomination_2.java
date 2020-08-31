@@ -107,27 +107,27 @@ public class FourtySplendidHot_Gamble_GambleCount_For_BetType_1_And_Denomination
 		MobileElement attempts = driver.findElement(By.id("gamble_txtAttemptsLeft"));
 		
 		System.out.println("No. of attempts left :"+" "+attempts.getText());
-		if(monty>=0.8 && monty<=1.6)
+		if(monty>=0.01 && monty<=1.8)
 		{
 			System.out.println("The no. of attempts should be : "+" "+"5"+" "+" & no. of actual attempts are :"+attempts.getText());
 			Assert.assertEquals("5",attempts.getText());
 		}
-	   else if(monty>1.6 && monty<=3.2){
+	   else if(monty>1.8 && monty<=3.6){
 		  System.out.println("The no. of attempts should be : "+" "+"4"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("4", attempts.getText());
 		}
-	   else if(monty>3.2 && monty<=6.4){
+	   else if(monty>3.6 && monty<=7.2){
 		  System.out.println("The no. of attempts should be :"+" "+"3"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("3",attempts.getText());
 	   }
-	   else if(monty>6.4 && monty<=12.8){
+	   else if(monty>7.2 && monty<=14.4){
 		  System.out.println("The no. of attempts should be :"+" "+"2"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("2",attempts.getText());
 	   }
-	   else if(monty>12.8 && monty<=28){
+	   else if(monty>14.4 && monty<=28){
 		  System.out.println("The no. of attempts should be :"+" "+"1"+" "+"& no. of actual attempts are:"+attempts.getText());  
 		  
 		  Assert.assertEquals("1", attempts.getText());

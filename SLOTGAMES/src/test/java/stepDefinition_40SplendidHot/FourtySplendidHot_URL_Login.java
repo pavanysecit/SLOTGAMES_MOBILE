@@ -38,22 +38,22 @@ private static AppiumDriver<MobileElement> driver;
 		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div")).click();
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[31]/div[1]/div")).click();
 		Thread.sleep(2000);
 				 
-		driver.findElement(By.name("email")).sendKeys("8017627028");
+		driver.findElement(By.name("email")).sendKeys("test8");
 		Thread.sleep(2000);
 				
-		driver.findElement(By.xpath("/html/body/div[3]/header/section/div[9]/div/div[2]/form/div[2]/input")).sendKeys("mans@123");
+		driver.findElement(By.xpath("/html/body/div[3]/header/section/div[10]/div/div[2]/form/div[2]/input")).sendKeys("mans@123");
 		Thread.sleep(2000);
 		
-		MobileElement sub = driver.findElement(By.xpath("/html/body/div[3]/header/section/div[9]/div/div[2]/form/div[3]"));
+		MobileElement sub = driver.findElement(By.xpath("/html/body/div[3]/header/section/div[10]/div/div[2]/form/button"));
 		JavascriptExecutor jse=(JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].click();", sub);
 		Thread.sleep(5000);
 		
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[1]/div[1]/div"));
+		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[31]/div[1]/div"));
         wait.until(ExpectedConditions.elementToBeClickable(login_button));
         login_button.click();
         

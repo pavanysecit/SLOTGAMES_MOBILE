@@ -49,7 +49,7 @@ public class FourtySplendidHot_Transfer_Validation_AvailableBalance {
 		
 		//Passing 100 to the balance field and storing in getvalue2 variable
 		MobileElement transfer = driver.findElement(By.id("transferInput"));
-		transfer.sendKeys("100");
+		transfer.sendKeys("1000");
 		Thread.sleep(2000);
 		TargetElement.click();
 		String getValue2 = transfer.getAttribute("value");
@@ -63,40 +63,32 @@ public class FourtySplendidHot_Transfer_Validation_AvailableBalance {
         String pk="";
         String totalf = pk+total;
         
+        
         MobileElement fbal = driver.findElement(By.id("transferInput"));
         fbal.clear();
         fbal.sendKeys(totalf);
         System.out.println("Final Balance is:" +totalf);
         Thread.sleep(2000);
 		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 
-		//As there is developer bug, closing the blank window manually using keyboard actions
-		//driver.navigate().back();
-		((PressesKey) driver).pressKey(new KeyEvent(AndroidKey.BACK));
-		Thread.sleep(3000);
+//		//As there is developer bug, closing the blank window manually using keyboard actions
+//		//driver.navigate().back();
+//		((PressesKey) driver).pressKey(new KeyEvent(AndroidKey.BACK));
+//		Thread.sleep(3000);
 	}
 
 	@When("^Open the (\\d+) Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, enter the amount greater than available balance and click on Ok butotn$")
 	public void open_the_Splendid_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_enter_the_amount_greater_than_available_balance_and_click_on_Ok_butotn(int arg1) throws Throwable {
-		String parentWindow = driver.getWindowHandle();
-		Set<String> handles =  driver.getWindowHandles();
-		for(String windowHandle  : handles)
-		{
-		    if(!windowHandle.equals(parentWindow))
-		   {
-		     driver.switchTo().window(windowHandle);
-				String expected = driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/div[7]/div/span")).getText();
-			    String actual = "Transfer Amount should be smaller than  balance";
-			    Assert.assertEquals(expected, actual);
-			    Thread.sleep(2000);
-		   }
-		driver.quit();
-		}
+		String expected = driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/div[7]/div/span")).getText();
+		String actual = "Transfer Amount should be smaller than  balance";
+	    Assert.assertEquals(expected, actual); 
+	    Thread.sleep(2000);
 	}
 
 	@Then("^Player should be blocked from loading the (\\d+) Splendid Hot game when the amount entered in the transfer page is more than the available balance$")
 	public void player_should_be_blocked_from_loading_the_Splendid_Hot_game_when_the_amount_entered_in_the_transfer_page_is_more_than_the_available_balance(int arg1) throws Throwable {
-	    
+		Thread.sleep(2000);
+		driver.quit();
 	}
 }

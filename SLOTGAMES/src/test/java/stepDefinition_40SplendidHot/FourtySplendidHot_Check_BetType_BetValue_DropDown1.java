@@ -65,7 +65,7 @@ public class FourtySplendidHot_Check_BetType_BetValue_DropDown1 {
 				break;
 			}	
 		}
-		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		String actual = driver.findElement(By.id("hud_btnCredit")).getText();
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.01";
 		Assert.assertEquals(actual, expected);

@@ -24,58 +24,33 @@ public class BlazingHot_PayOut_BetType_1_And_Denomination_2 {
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, icon to open payout table, all symbols, max amount on each symbol like bar, back button, bet type (\\d+)\\.(\\d+) and denomination value as (\\d+)\\.(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_bar_back_button_bet_type_and_denomination_value_as(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Blazing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like bar, click on back button, select bet type as (\\d+)\\.(\\d+) & denomination  values as (\\d+)\\.(\\d+) and check payout amount$")
 	public void open_the_Blazing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_icon_to_open_payout_table_check_payout_amount_on_each_symbol_like_bar_click_on_back_button_select_bet_type_as_denomination_values_as_and_check_payout_amount(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		//Getting the bet value and Bet amount
-		String creditValue = driver.findElement(By.id("hud_txtCreditValue")).getText();
-		System.out.println("Selected credit value is: " +creditValue);
-		String actualC = creditValue;
-		String expectedC = "0.01";
-		Assert.assertEquals(expectedC, actualC);
-		Thread.sleep(1000);
+		//Getting the bet value 0.01 and Bet amount 0.8
+		driver.findElement(By.id("hud_txtCredit")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("hud_CreditPopup10.01")).click();
+		Thread.sleep(2000);
 		
-		//Selecting bet amount as 0.8
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
+		System.out.println("Selected credit value is : " +actual);
+		String expected = "0.01";
+		Assert.assertEquals(actual, expected);
+		
+		//Selecting the bet amount as 0.8 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("0.8")){
-				be.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
-		String actual = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		System.out.println("Selected bet amount is: " +actual);
-		String expected = "0.8";
-		Assert.assertEquals(actual, expected);
+		driver.findElement(By.id("hud_BetPopup20.8")).click();
 		Thread.sleep(2000);
+		
+		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String expected1 = "0.8";
+		System.out.println("Selected bet value is : " +"\n" +actual1);
+		Assert.assertEquals(actual1, expected1);
 		
 		//Clicking on icon to open the PayOut table
 		driver.findElement(By.id("hud_btnMenu")).click();
@@ -84,161 +59,166 @@ public class BlazingHot_PayOut_BetType_1_And_Denomination_2 {
 		
 		String scatter="",Seven="",Seven1="",Seven2="",Seven3="",
 				Bar="",Bar1="",Bar2="",bw="",bw1="",bw2="",agc="",agc1="",agc2="";
+		
+		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		for(MobileElement me:balance){
 		//System.out.println(me.getId()+"  "+me.getText());
 		
 		
-		//Check for Scatter symbol
-		//System.out.println(me.getId()+"  "+me.getText());
-		if(me.getId().equals("26")){
-			scatter = me.getText();
-			String expected4 = scatter;
-			String actual4 = "400 YSI";
-			System.out.println("Payout Value of 5 Scatter symbols for denomination 0.8 is : " +scatter);
-			Assert.assertEquals(actual4, expected4);
-			Thread.sleep(1000);
-		}
-		
-		if(me.getId().equals("27")){
-			scatter = me.getText();
-			String expected4 = scatter;
-			String actual4 = "16 YSI";
-			System.out.println("Payout Value of 4 Scatter symbols for denomination 0.8 is : " +scatter);
-			Assert.assertEquals(actual4, expected4);
-			Thread.sleep(1000);
-		}
-		
-		if(me.getId().equals("28")){
-			scatter = me.getText();
-			String expected4 = scatter;
-			String actual4 = "1.6 YSI";
-			System.out.println("Payout Value of 3 Scatter symbols for denomination 0.8 is : " +scatter);
-			Assert.assertEquals(actual4, expected4);
-			Thread.sleep(1000);
-		}
-
 		//Check for Seven symbol
-		if(me.getId().equals("30")){
+		if(me.getId().equals("26")){
 			Seven = me.getText();
 			String expected5 = Seven;
-			String actual5 = "20 YSI";
+			String actual5 = "20 SRD";
 			System.out.println("Payout Value of 5 Seven symbols for denomination 0.8 is: " +Seven);
 			Assert.assertEquals(actual5, expected5);
 			Thread.sleep(1000);
 		}
 		
-		if(me.getId().equals("31")){
+		if(me.getId().equals("27")){
 			Seven1 = me.getText();
 			String expected6 = Seven1;
-			String actual6 = "4 YSI";
+			String actual6 = "4 SRD";
 			System.out.println("Payout Value of 4 Seven symbols for denomination 0.8 is: " +Seven1);
 			Assert.assertEquals(actual6, expected6);
 			Thread.sleep(1000);
 		}
 		
-		if(me.getId().equals("32")){
+		if(me.getId().equals("28")){
 			Seven2 = me.getText();
 			String expected7 = Seven2;
-			String actual7 = "1 YSI";
+			String actual7 = "1 SRD";
 			System.out.println("Payout Value of 3 Seven symbols for denomination 0.8 is: " +Seven2);
 			Assert.assertEquals(actual7, expected7);
 			Thread.sleep(1000);
 		}
 		
-		if(me.getId().equals("33")){
+		//Id for generating 2 seven symbol is displayed last
+		if(me.getId().equals("41")){
 			Seven3 = me.getText();
 			String expected7 = Seven3;
-			String actual7 = "0.08 YSI";
+			String actual7 = "0.08 SRD";
 			System.out.println("Payout Value of 2 Seven symbols for denomination 0.8 is: " +Seven3);
 			Assert.assertEquals(actual7, expected7);
 			Thread.sleep(1000);
 		}
-		
-
-		//Check for Bar symbol
-		if(me.getId().equals("33")){
-			Bar = me.getText();
-			String expected8 = Bar;
-			String actual8 = "6 YSI";
-			System.out.println("Payout Value of 5 Bar symbol for denomination 0.8: " +Bar);
-			Assert.assertEquals(actual8, expected8);
-			Thread.sleep(1000);
-		}
-		
-		if(me.getId().equals("34")){
-			Bar1 = me.getText();
-			String expected9 = Bar1;
-			String actual9 = "3 YSI";
-			System.out.println("Payout Value of 4 Bar symbol for denomination 0.8: " +Bar1);
-			Assert.assertEquals(actual9, expected9);
-			Thread.sleep(1000);
-		}
-		
-		if(me.getId().equals("35")){
-			Bar2 = me.getText();
-			String expected10 = Bar2;
-			String actual10 = "1 YSI";
-			System.out.println("Payout Value of 3 Bar symbol for denomination 0.8: " +Bar2);
-			Assert.assertEquals(actual10, expected10);
-			Thread.sleep(1000);
-		}
+	
 		
 		//Check for Banana or Watermelon symbol
-		if(me.getId().equals("36")){
+		if(me.getId().equals("29")){
 			bw = me.getText();
 			String expected11 = bw;
-			String actual11 = "4 YSI";
+			String actual11 = "4 SRD";
 			System.out.println("Payout Value of 5 Banana or Watermelon symbol for denomination 0.8 is: " +bw);
 			Assert.assertEquals(actual11, expected11);
 			Thread.sleep(1000);
 			} 
 		
-		if(me.getId().equals("37")){
+		if(me.getId().equals("30")){
 			bw1 = me.getText();
 			String expected12 = bw1;
-			String actual12 = "1.6 YSI";
+			String actual12 = "1.6 SRD";
 			System.out.println("Payout Value of 4 Banana or Watermelon symbol for denomination 0.8 is: " +bw1);
 			Assert.assertEquals(actual12, expected12);
 			Thread.sleep(1000);
 			}
 		
-		if(me.getId().equals("38")){
+		if(me.getId().equals("31")){
 			bw2 = me.getText();
 			String expected13 = bw2;
-			String actual13 = "0.4 YSI";
+			String actual13 = "0.4 SRD";
 			System.out.println("Payout Value of 3 Banana or Watermelon symbol for denomination 0.8 is: " +bw2);
 			Assert.assertEquals(actual13, expected13);
 			Thread.sleep(1000);
 			}
 		
+		
+		//Check for Scatter symbol
+		//System.out.println(me.getId()+"  "+me.getText());
+		if(me.getId().equals("32")){
+			scatter = me.getText();
+			String expected4 = scatter;
+			String actual4 = "400 SRD";
+			System.out.println("Payout Value of 5 Scatter symbols for denomination 0.8 is : " +scatter);
+			Assert.assertEquals(actual4, expected4);
+			Thread.sleep(1000);
+		}
+		
+		if(me.getId().equals("33")){
+			scatter = me.getText();
+			String expected4 = scatter;
+			String actual4 = "16 SRD";
+			System.out.println("Payout Value of 4 Scatter symbols for denomination 0.8 is : " +scatter);
+			Assert.assertEquals(actual4, expected4);
+			Thread.sleep(1000);
+		}
+		
+		if(me.getId().equals("34")){
+			scatter = me.getText();
+			String expected4 = scatter;
+			String actual4 = "1.6 SRD";
+			System.out.println("Payout Value of 3 Scatter symbols for denomination 0.8 is : " +scatter);
+			Assert.assertEquals(actual4, expected4);
+			Thread.sleep(1000);
+		}
+
+
+		//Check for Bar symbol
+		if(me.getId().equals("35")){
+			Bar = me.getText();
+			String expected8 = Bar;
+			String actual8 = "6 SRD";
+			System.out.println("Payout Value of 5 Bar symbol for denomination 0.8: " +Bar);
+			Assert.assertEquals(actual8, expected8);
+			Thread.sleep(1000);
+		}
+		
+		if(me.getId().equals("36")){
+			Bar1 = me.getText();
+			String expected9 = Bar1;
+			String actual9 = "3 SRD";
+			System.out.println("Payout Value of 4 Bar symbol for denomination 0.8: " +Bar1);
+			Assert.assertEquals(actual9, expected9);
+			Thread.sleep(1000);
+		}
+		
+		if(me.getId().equals("37")){
+			Bar2 = me.getText();
+			String expected10 = Bar2;
+			String actual10 = "1 SRD";
+			System.out.println("Payout Value of 3 Bar symbol for denomination 0.8: " +Bar2);
+			Assert.assertEquals(actual10, expected10);
+			Thread.sleep(1000);
+		}
+
 		//Check for Orange or Cherry or Grapes symbol
-		if(me.getId().equals("39")){
+		if(me.getId().equals("38")){
 			agc = me.getText();
 			String expected14 = agc;
-			String actual14 = "2 YSI";
+			String actual14 = "2 SRD";
 			System.out.println("Payout Value of 5 Orange or Cherry or Grapes symbol for denomination 0.8 is: " +agc);
 			Assert.assertEquals(actual14, expected14);
 			Thread.sleep(1000);
 			} 
 		
-		if(me.getId().equals("40")){
+		if(me.getId().equals("39")){
 			agc1 = me.getText();
 			String expected15 = agc1;
-			String actual15 = "0.8 YSI";
+			String actual15 = "0.8 SRD";
 			System.out.println("Payout Value of 4 Orange or Cherry or Grapes symbol for denomination 0.8 is: " +agc1);
 			Assert.assertEquals(actual15, expected15);
 			Thread.sleep(1000);
 			}
 		
-		if(me.getId().equals("41")){
+		if(me.getId().equals("40")){
 			agc2 = me.getText();
 			String expected16 = agc2;
-			String actual16 = "0.16 YSI";
+			String actual16 = "0.16 SRD";
 			System.out.println("Payout Value of 3 Orange or Cherry or Grapes symbol for denomination 0.8 is: " +agc2);
 			Assert.assertEquals(actual16, expected16);
 			Thread.sleep(1000);
 			}
-		}
+		} 
 	}
 
 	@Then("^System should display the Payout max amount on each symbol like bar and payout max amount should get changed whenever player changes the bet type to (\\d+)\\.(\\d+) and denomination value as (\\d+)\\.(\\d+) in Blazing Hot slot game on mobile$")

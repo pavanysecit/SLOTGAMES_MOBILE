@@ -24,49 +24,19 @@ public class BlazingHot_Check_BetType_BetValue_DropDown3 {
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, bet type as (\\d+)\\.(\\d+) from down (\\d+) and bet value as (\\d+)\\.(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+) & (\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_bet_type_as_from_down_and_bet_value_as(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Blazing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) from down  and check the bet value should be (\\d+)\\.(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+) & (\\d+)$")
 	public void open_the_Blazing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_from_down_and_check_the_bet_value_should_be(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 80);
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		//Selecting the credit as 0.03 from the drop down
-		driver.findElement(By.id("hud_btnCredit")).click();
+		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("0.03")){
-				be.click();
-				Thread.sleep(3000);
-				break;
-			}	
-		}
-		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		driver.findElement(By.id("hud_CreditPopup30.03")).click();
+		Thread.sleep(2000);
+		
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.03";
 		Assert.assertEquals(actual, expected);
@@ -74,32 +44,20 @@ public class BlazingHot_Check_BetType_BetValue_DropDown3 {
 		//Selecting the bet amount as 1.2 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be1:balance)
-		{
-			
-			if(be1.getText().equals("1.2")){
-				be1.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup11.2")).click();
+		Thread.sleep(2000);
+		
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected1 = "1.2";
-		System.out.println("Available bet amounts under credit 0.05 are : " +"\n" +actual1);
+		System.out.println("Available bet amounts under credit 0.03 are : " +"\n" +actual1);
 		Assert.assertEquals(actual1, expected1);
 		
 		//Selecting bet amount as 2.4
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be2:balance)
-		{
-			
-			if(be2.getText().equals("2.4")){
-				be2.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup22.4")).click();
+		Thread.sleep(2000);
+		
 		String actual2 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected2 = "2.4";
 		System.out.println("\n" +actual2);
@@ -108,15 +66,9 @@ public class BlazingHot_Check_BetType_BetValue_DropDown3 {
 		//Selecting bet amount as 6
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be3:balance)
-		{
-			
-			if(be3.getText().equals("6")){
-				be3.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup36")).click();
+		Thread.sleep(2000);
+		
 		String actual3 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected3 = "6";
 		System.out.println("\n" +actual3);
@@ -125,15 +77,9 @@ public class BlazingHot_Check_BetType_BetValue_DropDown3 {
 		//Selecting bet amount as 12
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be4:balance)
-		{
-			
-			if(be4.getText().equals("12")){
-				be4.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup412")).click();
+		Thread.sleep(2000);
+		
 		String actual4 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected4 = "12";
 		System.out.println("\n" +actual4);
@@ -142,20 +88,13 @@ public class BlazingHot_Check_BetType_BetValue_DropDown3 {
 		//Selecting bet amount as 24
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be5:balance)
-		{
-			
-			if(be5.getText().equals("24")){
-				be5.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup524")).click();
+		Thread.sleep(2000);
+		
 		String actual5 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected5 = "24";
 		System.out.println("\n" +actual5);
 		Assert.assertEquals(actual5, expected5);
-		Thread.sleep(2000);
 	}
 
 	@Then("^Bet value should get changed to (\\d+)\\.(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+) & (\\d+) if the bet type selected as (\\d+)\\.(\\d+) from the drop down two in Blazing Hot slot game$")
