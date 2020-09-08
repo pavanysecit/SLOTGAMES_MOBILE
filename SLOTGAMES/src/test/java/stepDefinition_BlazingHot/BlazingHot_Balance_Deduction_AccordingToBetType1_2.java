@@ -1,8 +1,5 @@
 package stepDefinition_BlazingHot;
 
-import java.util.List;
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;

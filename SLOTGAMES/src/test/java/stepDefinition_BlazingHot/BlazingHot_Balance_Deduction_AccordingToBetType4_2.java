@@ -35,25 +35,25 @@ public class BlazingHot_Balance_Deduction_AccordingToBetType4_2 {
 		String str = preSpin.replaceAll(",", "");
 		System.out.println("Current balance of the account Before spin: " +str);
 		
-		//Selecting the credit as 0.2 from the drop down
+		//Selecting the credit as 0.4 from the drop down
 		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("hud_CreditPopup40.2")).click();
+		driver.findElement(By.id("hud_CreditPopup40.4")).click();
 		Thread.sleep(2000);
 		
 		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is : " +actual);
-		String expected = "0.2";
+		String expected = "0.4";
 		Assert.assertEquals(actual, expected);
 		
-		//Selecting the bet amount as 16 from the drop down
+		//Selecting the bet amount as 80 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup216")).click();
+		driver.findElement(By.id("hud_BetPopup280")).click();
 		Thread.sleep(2000);
 		
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		String expected1 = "16";
+		String expected1 = "80";
 		System.out.println("Selected bet value is : " +"\n" +actual1);
 		Assert.assertEquals(actual1, expected1);
 			

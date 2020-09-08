@@ -1,8 +1,5 @@
 package stepDefinition_BlazingHot;
 
-import java.util.List;
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -31,27 +28,30 @@ public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_3 {
 	public void open_the_Blazing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_golden_hot_slot_game_select_bet_type_as_denomination_as_TWO_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count_in_gamble_page_of_slot_game(int arg1, int arg2) throws Throwable {
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The current balance of the account :" +balance);
-		List<MobileElement> balanc = driver.findElementsByClassName("android.view.View");
+		
+		driver.findElement(By.id("hud_txtCredit")).click();
+		Thread.sleep(1000);
+		MobileElement cr1 = driver.findElement(By.id("hud_CreditPopup10.01"));
+		String credit1 =cr1.getText();
+		System.out.println(credit1);
+		String expectedA = "0.01";
+		Assert.assertEquals(expectedA, credit1);
+		cr1.click();
+		Thread.sleep(1000);
+
 		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		for(MobileElement be:balanc)
-		{
-			
-			if(be.getText().equals("2")){
-				be.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
-		String betValue = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		System.out.println("Selected bet amount is: " +betValue);
-		String actualB = betValue;
+		Thread.sleep(1000);
+		MobileElement bet1_3= driver.findElement(By.id("hud_BetPopup32"));
+		String Betval1_3 =bet1_3.getText();
+		System.out.println(Betval1_3);
 		String expectedB = "2";
-		Assert.assertEquals(expectedB, actualB);
+		Assert.assertEquals(expectedB, Betval1_3);
 		Thread.sleep(2000);
+		bet1_3.click();
 
 		MobileElement start = driver.findElement(By.id("hud_btnSpin"));
 		start.click();
+		Thread.sleep(8000);
 		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
 
 		String prewin = winE.getText();
@@ -60,7 +60,7 @@ public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_3 {
 		                       
 		while(prewin.isEmpty()){
 			start.click();	
-			Thread.sleep(4000);	
+			Thread.sleep(8000);	
 			winTex = winE.getText();
 			prewin= prewin+winTex;
 			System.out.println(winTex.isEmpty());		
@@ -97,12 +97,12 @@ public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_3 {
 		  
 		  Assert.assertEquals("4", attempts.getText());
 		}
-	   else if(monty>8 && monty<=17.1){
+	   else if(monty>8 && monty<=16){
 		  System.out.println("The no. of attempts should be :"+" "+"3"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("3",attempts.getText());
 	   }
-	   else if(monty>17.1 && monty<=32){
+	   else if(monty>16 && monty<=32){
 		  System.out.println("The no. of attempts should be :"+" "+"2"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("2",attempts.getText());
