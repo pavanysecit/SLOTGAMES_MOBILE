@@ -1,20 +1,22 @@
-package stepDefinition_100GlowingHot;
+package stepDefinition_100SplendidHot;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.sikuli.script.FindFailed;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class HundredGlowingHot_URL_TryNow {
+public class HundredSplendidHot_URL_TryNow {
 private static AppiumDriver<MobileElement> driver;
 	
 	//@Before
-	public static void  HundredGlowingHot_URL_TryNow() throws InterruptedException, MalformedURLException, FindFailed {
+	public static void  HundredSplendidHot_URL_TryNow() throws InterruptedException, MalformedURLException, FindFailed {
 	DesiredCapabilities cap=new DesiredCapabilities();
 	cap.setCapability("deviceName", "ASUS X00TD");
 	cap.setCapability("udid", "JAAAGF10Z743V8H");
