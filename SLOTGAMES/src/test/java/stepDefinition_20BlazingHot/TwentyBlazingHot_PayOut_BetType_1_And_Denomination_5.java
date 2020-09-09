@@ -1,13 +1,10 @@
 package stepDefinition_20BlazingHot;
 
 import java.util.List;
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -19,62 +16,38 @@ public class TwentyBlazingHot_PayOut_BetType_1_And_Denomination_5 {
 
 	public TwentyBlazingHot_PayOut_BetType_1_And_Denomination_5() throws InterruptedException {
 		this.driver = TwentyBlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentyBlazingHot_URL_TryNow.getDriver();	
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Blazing Hot slot game, icon to open payout table, all symbols, max amount on each symbol like watermelon, cherry n etc, back button, bet type (\\d+)\\.(\\d+) and denomination as (\\d+) on mobile$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_watermelon_cherry_n_etc_back_button_bet_type_and_denomination_as_on_mobile(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 	}
 
 	@When("^Open the (\\d+) Blazing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like watermelon, cherry n etc, click on back button, select bet type as (\\d+)\\.(\\d+) & denomination value as (\\d+) and check payout amount on mobile$")
 	public void open_the_Blazing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_icon_to_open_payout_table_check_payout_amount_on_each_symbol_like_watermelon_cherry_n_etc_click_on_back_button_select_bet_type_as_denomination_value_as_and_check_payout_amount_on_mobile(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		//Getting the bet value and Bet amount
-		String creditValue = driver.findElement(By.id("hud_txtCreditValue")).getText();
-		System.out.println("Selected credit value is: " +creditValue);
-		String actualC = creditValue;
-		String expectedC = "0.01";
-		Assert.assertEquals(expectedC, actualC);
-		Thread.sleep(1000);
+		//Getting the bet value 0.01 and Bet amount 4
+		driver.findElement(By.id("hud_txtCredit")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("hud_CreditPopup10.01")).click();
+		Thread.sleep(2000);
 		
-		//Selecting bet amount as 4
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
+		System.out.println("Selected credit value is : " +actual);
+		String expected = "0.01";
+		Assert.assertEquals(actual, expected);
+		
+		//Selecting the bet amount as 4 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("4")){
-				be.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
-		String actual = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		System.out.println("Selected bet amount is: " +actual);
-		String expected = "4";
-		Assert.assertEquals(actual, expected);
+		driver.findElement(By.id("hud_BetPopup54")).click();
 		Thread.sleep(2000);
+		
+		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String expected1 = "4";
+		System.out.println("Selected bet value is : " +"\n" +actual1);
+		Assert.assertEquals(actual1, expected1);
 		
 		//Clicking on icon to open the PayOut table
 		driver.findElement(By.id("hud_btnMenu")).click();
@@ -83,6 +56,7 @@ public class TwentyBlazingHot_PayOut_BetType_1_And_Denomination_5 {
 		
 		String scatter="",Seven="",Seven1="",Seven2="",Seven3="",
 				Bar="",Bar1="",Bar2="",bw="",bw1="",bw2="",agc="",agc1="",agc2="";
+		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
 		for(MobileElement me:balance){
 		//System.out.println(me.getId()+"  "+me.getText());
 		

@@ -5,32 +5,32 @@ Feature: Test all the functionalities of 100 Splendid Hot Slot Game
     Given Chrome browser, valid URL, valid login details, 100 Splendid Hot game, balance, text field to transfer balance and Ok button
     When Open the 100 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, click on Play button, enter the valid amount to transfer and click on Ok butotn
     Then Player should be blocked from loading the 100 Splendid Hot game when the amount entered in the transfer page is more than the available balance
-		And The exact amount entered in the transfer page should transfer to 100 Splendid Hot game and same amount should get displayed on the balance section
-		And An error should be displayed if the balance field is empty and player should be blocked from loading the 100 Splendid Hot game
-		And An error should be displayed if balance entered was zero and player should be blocked from loading the 100 Splendid Hot game
+	And The exact amount entered in the transfer page should transfer to 100 Splendid Hot game and same amount should get displayed on the balance section
+	And An error should be displayed if the balance field is empty and player should be blocked from loading the 100 Splendid Hot game
+	And An error should be displayed if balance entered was zero and player should be blocked from loading the 100 Splendid Hot game
 	
 
 
 
-		Scenario: Select the bet type as 0.01 from the drop down and check the bet value should be 1,2,3,4 & 5 in 100 Splendid Hot game
+	Scenario: Select the bet type as 0.01 from the drop down and check the bet value should be 1,2,3,4 & 5 in 100 Splendid Hot game
     Given Chrome browser, valid URL, valid login details, 100 Splendid Hot slot game, bet type as 0.01 and bet value as 1,2,3,4 & 5
     When Open the 100 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01 and check the bet value should be 1,2,3,4 & 5
     Then Bet value should get changed to 1,2,3,4 & 5 if the bet type selected as 0.01 from the drop down in 100 Splendid Hot slot game
 	
 	
-		Scenario: Select the bet type as 0.04 from the drop down and check the bet value should be 4,8,12,16 & 20 in 100 Splendid Hot slot game
+	Scenario: Select the bet type as 0.04 from the drop down and check the bet value should be 4,8,12,16 & 20 in 100 Splendid Hot slot game
     Given Chrome browser, valid URL, valid login details, 100 Splendid Hot game, bet type as 0.04 and bet value as 4,8,12,16 & 20
     When Open the 100 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.04 and check the bet value should be 4,8,12,16 and 20
     Then Bet value should get changed to 4,8,12,16 & 20 if the bet type selected as 0.04 from the drop down 1 in 100 Splendid Hot slot game
 	
 	
-		Scenario: Select the bet type as 0.06 from the drop down and check the bet value should be 6,12,18,24 & 30 in 100 Splendid Hot slot game
+	Scenario: Select the bet type as 0.06 from the drop down and check the bet value should be 6,12,18,24 & 30 in 100 Splendid Hot slot game
     Given Chrome browser, valid URL, valid login details, 100 Splendid Hot slot game, bet type as 0.06 from down 2 and bet value as 6,12,18,24 & 30
     When Open the 100 Splendid Hot slot game by entering the valid URL in browser, enter the valid logi., n details, select the bet type as 0.06 from down  and check the bet value should be 6,12,18,24 & 30
     Then Bet value should get changed to 6,12,18,24 & 30 if the bet type selected as 0.06 from the drop down two in 100 Splendid Hot slot game
 	
 	
-		Scenario: Select the bet type as 0.4 from the drop down and check the bet value should be 40,80,120,160 & 200 in 100 Splendid Hot slot game
+	Scenario: Select the bet type as 0.4 from the drop down and check the bet value should be 40,80,120,160 & 200 in 100 Splendid Hot slot game
     Given Chrome browser, valid URL, valid login details, 100 Splendid Hot slot game, bet type as 0.4 from drop down and bet value as 40,80,120,160 & 200
     When Open the 100 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.4 from drop down and check the bet value should be 40,80,120,160 & 200
     Then Bet value should get changed to 40,80,120,160 & 200 if the bet type selected as 0.4 from the drop down three in 100 Splendid Hot slot game
@@ -38,7 +38,7 @@ Feature: Test all the functionalities of 100 Splendid Hot Slot Game
 	
 
 	
-		Scenario: Change the bet value as ONE, do the spin and check whether balance is deducting according to the changed bet type in 100 Splendid Hot slot game
+	Scenario: Change the bet value as ONE, do the spin and check whether balance is deducting according to the changed bet type in 100 Splendid Hot slot game
     Given Chrome browser, valid URL, valid login details, 100 Splendid Hot slot game, bet type as 0.01, bet value as ONE, balance and spin button, balance after spin
     When Open the 100 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as ONE, click on spin button and check the balance after spin
     Then Balance should get deducted by ONE after spin as bet type is selected as 0.01 and bet value as ONE in 100 Splendid Hot game
@@ -172,6 +172,38 @@ Feature: Test all the functionalities of 100 Splendid Hot Slot Game
 	
 	
 
+	
+
+	
+	Scenario: Change the bet value as ONE HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in 100 Splendid Hot slot game
+    Given Chrome browser, valid URL, valid login details, 100 Splendid Hot slot game, bet type as 0.01, bet value as ONE HUNDRED, balance in credits and spin button
+    When Open the 100 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as ONE HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by ONE HUNDRED as bet type is selected as 0.01 and bet value as 100 in 100 Splendid Hot game
+	
+	
+	 Scenario: Change the bet value as TWO HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in 100 Splendid Hot slot game
+    Given Chrome browser, valid URL, valid login details, 100 Splendid Hot slot game, bet type as 0.01, bet value as TWO HUNDRED, balance in credits and spin button
+    When Open the 100 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as TWO HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by TWO HUNDRED, as bet type is selected as 0.01 and bet value as 200 in 100 Splendid Hot game
+	
+	
+	 Scenario: Change the bet value as THREE HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in 100 Splendid Hot slot game
+    Given Chrome browser, valid URL, valid login details, 100 Splendid slot game, bet type as 0.01, bet value as THREE HUNDRED, balance in credits and spin button
+    When Open the 100 Splendid Hot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as THREE HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by THREE HUNDRED, as bet type is selected as 0.01 and bet value as 300 in 100 Splendid Hot game
+	
+	
+	 Scenario: Change the bet value as FOUR HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in 100 Splendid Hot slot game
+    Given Chrome browser, valid URL, valid login details, 100 Splendid Hot slot game, bet type as 0.01, bet value as FOUR HUNDRED, balance in credits and spin button
+    When Open the 100 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as FOUR HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by FOUR HUNDRED, as bet type is selected as 0.01 and bet value as 400 in 100 Splendid Hot game
+	
+	
+	 Scenario: Change the bet value as FIVE HUNDRED do the spin and check whether balance in credits is deducting according to the changed bet type in 100 Splendid Hot slot game
+    Given Chrome browser, valid URL, valid login details, 100 Splendid Hot slot game, bet type as 0.01, bet value as FIVE HUNDRED, balance in credits and spin button
+    When Open the 100 Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as FIVE HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by FIVE HUNDRED as bet type is selected as 0.01 and bet value as 500 in 100 Splendid Hot game
+	
 	
 
 

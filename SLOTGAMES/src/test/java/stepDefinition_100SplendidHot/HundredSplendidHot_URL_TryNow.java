@@ -2,6 +2,7 @@ package stepDefinition_100SplendidHot;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -34,7 +35,26 @@ private static AppiumDriver<MobileElement> driver;
 	driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 	Thread.sleep(3000);
 
-	driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[31]/div[2]/div[2]")).click();
-	Thread.sleep(5000);		 
+	driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[33]/div[2]/div[2]")).click();
+	Thread.sleep(5000);	
+	
+	String parent1=driver.getWindowHandle();
+	Set<String>s1=driver.getWindowHandles();
+
+	System.out.println("Window for slot game is"+" "+s1);
+	 
+	Set<String> contx = driver.getContextHandles();
+	String pk = driver.getContext();
+	//System.out.println("The current contesx is"+" "+pk);
+	for(String cont:contx){
+		 System.out.println(cont);
+	 }
+	driver.context("NATIVE_APP");
+	Thread.sleep(2000);
+	}
+	
+	public static AppiumDriver<MobileElement> getDriver()
+	{
+		return driver;
 	}
 }

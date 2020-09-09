@@ -174,6 +174,34 @@ Feature: Test all the functionalities of 100 Glowing Hot Slot Game
 
 	
 
+	
+	Scenario: Change the bet value as ONE HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in 100 Glowing Hot slot game
+    Given Chrome browser, valid URL, valid login details, 100 Glowing Hot slot game, bet type as 0.01, bet value as ONE HUNDRED, balance in credits and spin button
+    When Open the 100 Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as ONE HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by ONE HUNDRED as bet type is selected as 0.01 and bet value as 100 in 100 Glowing Hot game
+	
+	 Scenario: Change the bet value as TWO HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in 100 Glowing Hot slot game
+    Given Chrome browser, valid URL, valid login details, 100 Glowing Hot slot game, bet type as 0.01, bet value as TWO HUNDRED, balance in credits and spin button
+    When Open the 100 Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as TWO HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by TWO HUNDRED, as bet type is selected as 0.01 and bet value as 200 in 100 Glowing Hot game
+	
+	 Scenario: Change the bet value as THREE HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in 100 Glowing Hot slot game
+    Given Chrome browser, valid URL, valid login details, 100 Glowing slot game, bet type as 0.01, bet value as THREE HUNDRED, balance in credits and spin button
+    When Open the 100 Glowing Hot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as THREE HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by THREE HUNDRED, as bet type is selected as 0.01 and bet value as 300 in 100 Glowing Hot game
+	
+	 Scenario: Change the bet value as FOUR HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in 100 Glowing Hot slot game
+    Given Chrome browser, valid URL, valid login details, 100 Glowing Hot slot game, bet type as 0.01, bet value as FOUR HUNDRED, balance in credits and spin button
+    When Open the 100 Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as FOUR HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by FOUR HUNDRED, as bet type is selected as 0.01 and bet value as 400 in 100 Glowing Hot game
+	
+	 Scenario: Change the bet value as FIVE HUNDRED do the spin and check whether balance in credits is deducting according to the changed bet type in 100 Glowing Hot slot game
+    Given Chrome browser, valid URL, valid login details, 100 Glowing Hot slot game, bet type as 0.01, bet value as FIVE HUNDRED, balance in credits and spin button
+    When Open the 100 Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as FIVE HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by FIVE HUNDRED as bet type is selected as 0.01 and bet value as 500 in 100 Glowing Hot game
+	
+	
+
 
 	
 	Scenario: Check whether balance is equals to credit multiplies by denomination 0.01 in 100 Glowing Hot slot game
