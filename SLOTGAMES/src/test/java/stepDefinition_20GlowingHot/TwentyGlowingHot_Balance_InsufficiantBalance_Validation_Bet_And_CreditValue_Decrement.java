@@ -19,10 +19,6 @@ import cucumber.api.java.en.When;
 public class TwentyGlowingHot_Balance_InsufficiantBalance_Validation_Bet_And_CreditValue_Decrement {
 	AppiumDriver<MobileElement> driver;
 
-	public TwentyGlowingHot_Balance_InsufficiantBalance_Validation_Bet_And_CreditValue_Decrement() throws InterruptedException {
-		this.driver = TwentyGlowingHot_URL_Login.getDriver();
-		//this.driver = TwentyGlowingHot_URL_TryNow.getDriver();
-		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Glowing Hot slot game, balance counter, Auto spin button, validation message, credit types and bet types$")
 	public void chrome_browser_valid_URL_valid_login_details_Glowing_Hot_slot_game_balance_counter_Auto_spin_button_validation_message_credit_types_and_bet_types(int arg1) throws Throwable {
