@@ -1,31 +1,31 @@
-package stepDefinition_20BlazingHot;
+package stepDefinition_20FruityBrownie;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 
-public class TwentyBlazingHot_ResumeFeature_DisabledOption_WithoutWin {
+public class TwentyFruityBrownie_ResumeFeature_DisabledOption_WithoutWin {
 	AppiumDriver<MobileElement> driver;
 
-	public TwentyBlazingHot_ResumeFeature_DisabledOption_WithoutWin() throws InterruptedException {
-		this.driver = TwentyBlazingHot_URL_Login.getDriver();
-		//this.driver = TwentyBlazingHot_URL_TryNow.getDriver();	
+	public TwentyFruityBrownie_ResumeFeature_DisabledOption_WithoutWin() throws InterruptedException {
+		this.driver = TwentyFruityBrownie_URL_Login.getDriver();
+		//this.driver = TwentyFruityBrownie_URL_TryNow.getDriver();
 	}
 	
-	@Given("^chrome browser, valid URL, valid login details, (\\d+) Blazing Hot slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble collect$")
-	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_slot_game_bet_type_denomination_balance_spin_button_Gamble_screen_Gamble_collect(int arg1) throws Throwable {
-	    
+	@Given("^chrome browser, valid URL, valid login details, (\\d+) Fruity Brownie slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble collect$")
+	public void chrome_browser_valid_URL_valid_login_details_Fruity_Brownie_slot_slot_game_bet_type_denomination_balance_spin_button_Gamble_screen_Gamble_collect(int arg1) throws Throwable {
+		
 	}
 
-	@When("^Open the (\\d+) Blazing Hot slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on collect and close the browser and again load to the game$")
-	public void open_the_Blazing_Hot_slot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_select_bet_type_denomination_click_on_spin_button_till_win_appears_and_gamble_screen_in_switched_and_click_on_collect_and_close_the_browser_and_again_load_to_the_game(int arg1) throws Throwable {
+	@When("^Open the (\\d+) Fruity Brownie slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on collect and close the browser and again load to the game$")
+	public void open_the_Fruity_Brownie_slot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_select_bet_type_denomination_click_on_spin_button_till_win_appears_and_gamble_screen_in_switched_and_click_on_collect_and_close_the_browser_and_again_load_to_the_game(int arg1) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
@@ -87,10 +87,11 @@ public class TwentyBlazingHot_ResumeFeature_DisabledOption_WithoutWin {
 		System.out.println("Gamble collect button is not on the screen");
 		System.out.println("Testcase passed");
 	}
-	
-	@Then("^Resume feature should not be enabled and land on the game screen of (\\d+) Blazing Hot slot game$")
-	public void resume_feature_should_not_be_enabled_and_land_on_the_game_screen_of_Blazing_Hot_slot_game(int arg1) throws Throwable {
-		Thread.sleep(2000);
+
+	@Then("^Resume feature should not be enabled and land on the game screen of (\\d+) Fruity Brownie slot game$")
+	public void resume_feature_should_not_be_enabled_and_land_on_the_game_screen_of_Fruity_Brownie_slot_game(int arg1) throws Throwable {
+	    Thread.sleep(2000);
 	    driver.quit();
 	}
+
 }

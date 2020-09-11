@@ -1,0 +1,5 @@
+package stepDefinition_20FruityBrownie;
+
+public class TwentyFruityBrownie_TransferAmount_Scenarios_Zero_Empty_MoreBalance_Verify {
+
+}
