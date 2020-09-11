@@ -19,7 +19,8 @@ public class TwentySplendidHot_Balance_Check_WinAmount_AddedToBalance {
 
 	public TwentySplendidHot_Balance_Check_WinAmount_AddedToBalance() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, balance, transfer button, spin button and win amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_balance_transfer_button_spin_button_and_win_amount(int arg1) throws Throwable {

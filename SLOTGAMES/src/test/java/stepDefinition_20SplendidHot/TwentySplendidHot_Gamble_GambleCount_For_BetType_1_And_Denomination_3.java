@@ -19,7 +19,8 @@ public class TwentySplendidHot_Gamble_GambleCount_For_BetType_1_And_Denomination
 
 	public TwentySplendidHot_Gamble_GambleCount_For_BetType_1_And_Denomination_3() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, bet type as (\\d+)\\.(\\d+), denomination as ONE, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_bet_type_as_denomination_as_ONE_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count(int arg1, int arg2, int arg3) throws Throwable {

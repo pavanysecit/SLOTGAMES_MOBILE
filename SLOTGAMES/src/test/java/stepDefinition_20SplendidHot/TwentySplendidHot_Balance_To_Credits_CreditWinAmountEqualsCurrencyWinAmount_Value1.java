@@ -18,7 +18,8 @@ public class TwentySplendidHot_Balance_To_Credits_CreditWinAmountEqualsCurrencyW
 
 	public TwentySplendidHot_Balance_To_Credits_CreditWinAmountEqualsCurrencyWinAmount_Value1() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, balance, spin button, win amount in currency, credits and win amount in credits$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_balance_spin_button_win_amount_in_currency_credits_and_win_amount_in_credits(int arg1) throws Throwable {

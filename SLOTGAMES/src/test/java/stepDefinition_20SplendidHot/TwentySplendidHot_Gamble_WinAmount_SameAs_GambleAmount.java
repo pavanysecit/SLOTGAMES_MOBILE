@@ -18,7 +18,8 @@ public class TwentySplendidHot_Gamble_WinAmount_SameAs_GambleAmount {
 
 	public TwentySplendidHot_Gamble_WinAmount_SameAs_GambleAmount() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, balance, spin button, win amount, gamble button and gamble amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_balance_spin_button_win_amount_gamble_button_and_gamble_amount(int arg1) throws Throwable {

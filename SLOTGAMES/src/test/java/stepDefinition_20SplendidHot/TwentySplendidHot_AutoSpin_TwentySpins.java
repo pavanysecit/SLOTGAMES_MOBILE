@@ -18,7 +18,8 @@ public class TwentySplendidHot_AutoSpin_TwentySpins {
 
 	public TwentySplendidHot_AutoSpin_TwentySpins() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, balance, spin button, auto spin button, twenty spins option and number of spins left message$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_balance_spin_button_auto_spin_button_twenty_spins_option_and_number_of_spins_left_message(int arg1) throws Throwable {

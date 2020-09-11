@@ -20,10 +20,6 @@ import io.appium.java_client.android.AndroidDriver;
 public class TwentyBlazingHot_TransferAmount_Scenarios_Zero_Empty_MoreBalance_Verify {
 	AppiumDriver<MobileElement> driver;
 
-	public TwentyBlazingHot_TransferAmount_Scenarios_Zero_Empty_MoreBalance_Verify() throws InterruptedException {
-		this.driver = TwentyBlazingHot_URL_Login.getDriver();
-		//this.driver = TwentyBlazingHot_URL_TryNow.getDriver();	
-	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Blazing Hot game, balance, text field to transfer balance and Ok button$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_game_balance_text_field_to_transfer_balance_and_Ok_button(int arg1) throws Throwable {

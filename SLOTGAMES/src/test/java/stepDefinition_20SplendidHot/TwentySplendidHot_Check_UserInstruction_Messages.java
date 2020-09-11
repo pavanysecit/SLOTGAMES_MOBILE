@@ -18,7 +18,8 @@ public class TwentySplendidHot_Check_UserInstruction_Messages {
 
 	public TwentySplendidHot_Check_UserInstruction_Messages() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, balance, spin button and user instruction message$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_balance_spin_button_and_user_instruction_message(int arg1) throws Throwable {

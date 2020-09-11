@@ -18,7 +18,8 @@ public class TwentySplendidHot_Gamble_GambleAmount_DoubleThan_WinAmount {
 
 	public TwentySplendidHot_Gamble_GambleAmount_DoubleThan_WinAmount() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, balance, spin button, win amount, gamble button, gamble amount and gamble to win amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_balance_spin_button_win_amount_gamble_button_gamble_amount_and_gamble_to_win_amount(int arg1) throws Throwable {

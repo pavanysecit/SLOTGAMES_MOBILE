@@ -19,7 +19,8 @@ public class TwentySplendidHot_PayOut_BetType_1_And_Denomination_3 {
 
 	public TwentySplendidHot_PayOut_BetType_1_And_Denomination_3() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, icon to open payout table, all symbols, max amount on each symbol like watermelon & etc, back button, bet type (\\d+)\\.(\\d+) and denomination value as ONE$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_watermelon_etc_back_button_bet_type_and_denomination_value_as_ONE(int arg1, int arg2, int arg3) throws Throwable {

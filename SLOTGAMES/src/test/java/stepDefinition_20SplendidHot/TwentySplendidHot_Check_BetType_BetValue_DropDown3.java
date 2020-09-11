@@ -19,7 +19,8 @@ public class TwentySplendidHot_Check_BetType_BetValue_DropDown3 {
 
 	public TwentySplendidHot_Check_BetType_BetValue_DropDown3() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, bet type as (\\d+)\\.(\\d+) from down (\\d+) and bet value as (\\d+),(\\d+),(\\d+),(\\d+) & (\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_bet_type_as_from_down_and_bet_value_as(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) throws Throwable {

@@ -19,7 +19,8 @@ public class TwentySplendidHot_Balance_Credits_Calculations_Value2 {
 
 	public TwentySplendidHot_Balance_Credits_Calculations_Value2() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, balance, credits, denomination drop down and denomination as (\\d+)\\.(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_balance_credits_denomination_drop_down_and_denomination_as(int arg1, int arg2, int arg3) throws Throwable {

@@ -19,7 +19,8 @@ public class TwentySplendidHot_Balance_Deduction_AccordingToBetType1_5 {
 
 	public TwentySplendidHot_Balance_Deduction_AccordingToBetType1_5() throws InterruptedException {
 		this.driver = TwentySplendidHot_URL_Login.getDriver();
-		}
+		//this.driver = TwentySplendidHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, bet type as (\\d+)\\.(\\d+), bet value as FOUR, balance and spin button$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_bet_type_as_bet_value_as_FOUR_balance_and_spin_button(int arg1, int arg2, int arg3) throws Throwable {

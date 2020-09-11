@@ -93,5 +93,4 @@ public class TwentyFruityBrownie_ResumeFeature_DisabledOption_WithoutWin {
 	    Thread.sleep(2000);
 	    driver.quit();
 	}
-
 }
