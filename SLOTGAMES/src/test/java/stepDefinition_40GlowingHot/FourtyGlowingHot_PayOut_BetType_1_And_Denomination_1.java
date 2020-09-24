@@ -17,34 +17,14 @@ public class FourtyGlowingHot_PayOut_BetType_1_And_Denomination_1 {
 AppiumDriver<MobileElement> driver;
 	
 	public FourtyGlowingHot_PayOut_BetType_1_And_Denomination_1() throws InterruptedException {
-		this.driver = SlotGames_URL_Login.getDriver();
-		
+		this.driver = FourtyGlowingHot_URL_Login.getDriver();
+		//this.driver = FourtyGlowingHot_URL_TryNow.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) glowing hot slot game, icon to open payout table, all symbols, max amount on each symbol, back button, bet type (\\d+)\\.(\\d+) and denomination value (\\d+)\\.(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_glowing_hot_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_back_button_bet_type_and_denomination_value(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		
-		MobileElement trs = driver.findElement(By.id("transferInput"));
-		trs.sendKeys("9");
-		Thread.sleep(1000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(20000);
-		 
-		 String parent1=driver.getWindowHandle();
-		 Set<String>s1=driver.getWindowHandles();
-
-		 System.out.println("Window for slot game is"+" "+s1);
-		 
-		 Set<String> contx = driver.getContextHandles();
-		 String pk = driver.getContext();
-		 System.out.println("The current contesx is"+" "+pk);
-		 for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the (\\d+) Glowing hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, click on icon to open payout table, check payout amount on each symbol, click on back button, select bet type as (\\d+)\\.(\\d+) & denomination  value (\\d+)\\.(\\d+) and check payout amount$")

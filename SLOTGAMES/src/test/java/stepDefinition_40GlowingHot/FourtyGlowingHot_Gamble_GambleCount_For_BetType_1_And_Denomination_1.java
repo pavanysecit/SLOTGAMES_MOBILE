@@ -1,6 +1,5 @@
 package stepDefinition_40GlowingHot;
 
-import java.util.Set;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -16,69 +15,69 @@ public class FourtyGlowingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_
 AppiumDriver<MobileElement> driver;
 	
 	public FourtyGlowingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_1() throws InterruptedException {
-		this.driver = SlotGames_URL_Login.getDriver();
-		
+		this.driver = FourtyGlowingHot_URL_Login.getDriver();
+		//this.driver = FourtyGlowingHot_URL_TryNow.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) glowing hot slot game, bet type as (\\d+)\\.(\\d+), denomination as (\\d+)\\.(\\d+), balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count$")
 	public void chrome_browser_valid_URL_valid_login_details_glowing_hot_slot_game_bet_type_as_denomination_as_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(15000);
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the (\\d+) glowing hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type as (\\d+)\\.(\\d+) & denomination as (\\d+)\\.(\\d+), click on spin button till player wins, click on gamble button and check the gamble count$")
 	public void open_the_glowing_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_select_bet_type_as_denomination_as_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The current balance of the account :" +balance);
-		
+
+		// Select the credit 
+		driver.findElement(By.id("hud_txtCredit")).click();
+		Thread.sleep(1000);
+		MobileElement cr1 = driver.findElement(By.id("hud_CreditPopup10.01"));
+		String credit1 =cr1.getText();
+		System.out.println(credit1);
+		String expectedA = "0.01";
+		Assert.assertEquals(expectedA, credit1);
+		cr1.click();
+		Thread.sleep(1000);
+
+		// select the bet value
+		driver.findElement(By.id("hud_txtBetAmount")).click();
+		Thread.sleep(1000);
+		MobileElement bet1_2= driver.findElement(By.id("hud_BetPopup20.4"));
+		String Betval1_2 =bet1_2.getText();
+		System.out.println(Betval1_2);
+		String expectedB = "0.4";
+		Assert.assertEquals(expectedB, Betval1_2);
+		Thread.sleep(2000);
+		bet1_2.click();
 
 		MobileElement start = driver.findElement(By.id("hud_btnSpin"));
 		start.click();
+		Thread.sleep(8000);
 		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
 
 		String prewin = winE.getText();
 		//System.out.println("Balance before win is"+" "+prewin);                    
 		String winTex= winE.getText();
-		                       
+
 		while(prewin.isEmpty()){
 			start.click();	
-			Thread.sleep(4000);	
+			Thread.sleep(8000);	
 			winTex = winE.getText();
 			prewin= prewin+winTex;
 			System.out.println(winTex.isEmpty());		
 		}
 		System.out.println("Win amount is: " +prewin);	
-		System.out.println("Maximum gamble win amount for bet amount 0.2 and credit value 0.01 is : 7 SRD");	                                                                                                                             
+		System.out.println("Maximum gamble win amount for bet amount 0.4 and credit value 0.01 is : 14 SRD");	                                                                                                                             
 		Double maxV = Double.parseDouble(prewin);
-		if(maxV < 7)
-		   {
-			   System.out.println("Win amount less than Gamble max value 7 i.e : "+" " +maxV +". Test Case Passed");
-		   }
+		if(maxV < 14)
+		{
+			System.out.println("Win amount less than Gamble max value 14 i.e : "+" " +maxV +". Test Case Passed");
+		}
 		else
 		{
-			System.out.println("Win amount greater than Gamble max value 7 : i.e "+" " +maxV +". Test Case Failed");
+			System.out.println("Win amount greater than Gamble max value 14 : i.e "+" " +maxV +". Test Case Failed");
 			driver.findElement(By.id("hud_btnGamble")).isDisplayed();
 			Thread.sleep(2000);
 			driver.quit();
@@ -89,37 +88,35 @@ AppiumDriver<MobileElement> driver;
 		Double monty = Double.parseDouble(prewin);
 		System.out.println("Gamble amount is equal to win amount & the amount is :"+" "+monty);
 		MobileElement attempts = driver.findElement(By.id("gamble_txtAttemptsLeft"));
-		
+
 		System.out.println("No. of attempts left :"+" "+attempts.getText());
-		if(monty>=0.1 && monty<=0.4)
+		if(monty>=0.1 && monty<=0.85)
 		{
 			System.out.println("The no. of attempts should be : "+" "+"5"+" "+" & no. of actual attempts are :"+attempts.getText());
 			Assert.assertEquals("5",attempts.getText());
 		}
-	   else if(monty>0.4 && monty<=0.86){
+	   else if(monty>0.85 && monty<=1.7){
 		  System.out.println("The no. of attempts should be : "+" "+"4"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("4", attempts.getText());
 		}
-	   else if(monty>0.86 && monty<=1.7){
+	   else if(monty>1.7 && monty<=3.45){
 		  System.out.println("The no. of attempts should be :"+" "+"3"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("3",attempts.getText());
 	   }
-	   else if(monty>1.7 && monty<=3.4){
+	   else if(monty>3.45 && monty<=6.9){
 		  System.out.println("The no. of attempts should be :"+" "+"2"+" "+"& no. of actual attempts are :"+attempts.getText());
 		  
 		  Assert.assertEquals("2",attempts.getText());
 	   }
-	   else if(monty>3.4 && monty<=7){
+	   else if(monty>6.9 && monty<=14){
 		  System.out.println("The no. of attempts should be :"+" "+"1"+" "+"& no. of actual attempts are:"+attempts.getText());  
 		  
 		  Assert.assertEquals("1", attempts.getText());
 	   }
-	   
 		
-		 driver.findElement(By.id("gamble_btnCollect")).click();
-		 
+		 driver.findElement(By.id("gamble_btnCollect")).click(); 
 		 System.out.println("The testcase has passed");
 	}
 

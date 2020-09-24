@@ -1,9 +1,5 @@
 package stepDefinition_40GlowingHot;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.util.List;
-import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,171 +15,75 @@ public class FourtyGlowingHot_Balance_To_Credits_CreditWinAmountEqualsCurrencyWi
 AppiumDriver<MobileElement> driver;
 	
 	public FourtyGlowingHot_Balance_To_Credits_CreditWinAmountEqualsCurrencyWinAmount_Value2() throws InterruptedException {
-		this.driver = SlotGames_URL_Login.getDriver();
-	}	
+		this.driver = FourtyGlowingHot_URL_Login.getDriver();
+		//this.driver = FourtyGlowingHot_URL_TryNow.getDriver();
+		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) glowing hot slot game, balance, spin button, win amount in currency, credits and win amount in credits for denomination drop down value two$")
 	public void chrome_browser_valid_URL_valid_login_details_glowing_hot_slot_game_balance_spin_button_win_amount_in_currency_credits_and_win_amount_in_credits_for_denomination_drop_down_value_two(int arg1) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		
-		MobileElement trs = driver.findElement(By.id("transferInput"));
-		trs.sendKeys("200");
-		Thread.sleep(1000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(30000);
-		 
-		 String parent1=driver.getWindowHandle();
-		 Set<String>s1=driver.getWindowHandles();
-
-		 System.out.println("Window for slot game is"+" "+s1);
-		 
-		 Set<String> contx = driver.getContextHandles();
-		 String pk = driver.getContext();
-		 //System.out.println("The current contesx is"+" "+pk);
-		 for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 	
 	@When("^Open the (\\d+) Glowing hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select the dinomination drop down value two, click on spin button till player wins, click on balance, check the win amount and click on balance$")
 	public void open_the_Glowing_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_select_the_dinomination_drop_down_value_two_click_on_spin_button_till_player_wins_click_on_balance_check_the_win_amount_and_click_on_balance(int arg1) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-		for(MobileElement me7:balance)
-		{
-			if(me7.getText().equals("1 Cr ="))
-			{
-				me7.click();
-			Thread.sleep(3000);
-			}
-			 if(me7.getText().equals("0.02"))
-			 {
-				 me7.click();
-			 Thread.sleep(1000);
-			 }
-			 //System.out.println(me1.getId()+"  "+me1.getText());	 
-		}
-		//Storing the balance before spin
-		String prewin="";
-		for(MobileElement me:balance){
-			//System.out.println(me.getId()+"  "+me.getText());
-			if(me.getId().equals("28")){
-				 prewin = me.getText();
-				 System.out.println("The current Balance of Account"+" "+me.getText());
-			}
-		}
+		//Storing the value before converting the balance into credits
+		String preWin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		String str = preWin.replaceAll(",", "");
+		System.out.println("Current balance of the account Before Converting into credits: " +str);
 		
-		MobileElement start = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[5]/android.view.View[2]"));
+		//Selecting the credit as 0.02 from the drop down and bet amount
+		driver.findElement(By.id("hud_txtCredit")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("hud_CreditPopup20.02")).click();
+		Thread.sleep(2000);
+		
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
+		String creditValue = actual;
+		System.out.println("Selected credit value is : " +actual);
+		String expected = "0.02";
+		Assert.assertEquals(actual, expected);
+		
+		String betValue = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		System.out.println("Selected bet amount is: " +betValue);
+		Thread.sleep(2000);
+		
+		//Clicking on start button
+		MobileElement start = driver.findElement(By.id("hud_btnSpin"));
 		start.click();
-		
-		MobileElement winE = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[13]/android.view.View[1]"));
-		List<MobileElement> balance1 = driver.findElementsByClassName("android.view.View");
-		String winTex1="";
-		//Storing the balance before spin
-		String prewin1="";
-		for(MobileElement me1:balance1)
-		{
-			//System.out.println(me1.getId()+"  "+me1.getText());
-			if(me1.getId().equals("202")){
-			prewin = me1.getText();
-			System.out.println("The win is"+" "+me1.getText());
-			winTex1=me1.getText();
-			String winTex = me1.getText();
-			while(winTex.isEmpty())
-			 {
-				Thread.sleep(4500);
-				start.click();
-				Thread.sleep(1000);
-				winTex=	winE.getText();
-				winTex1 = winTex1+winTex;
-	         	System.out.println(winTex.isEmpty());	
-			 }
-			System.out.println("The Win is : "+"  "+winTex);
-			System.out.println(winTex.isEmpty()+" "+winTex);	
-			break; 
-			}
-			start.click();   			
-	    }
-		Thread.sleep(5000);
-		System.out.println("win is: "+winTex1);
-	
-		
-		//Clicking on Collect button
-		//driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[5]/android.view.View[3]")).click();
-		//Thread.sleep(3000);
-		//driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[13]")).click();
-		//Thread.sleep(2000);
+		Thread.sleep(2000);
 
-		String winCredit="";
-		for(MobileElement me2:balance){
-			//System.out.println(me2.getId()+"  "+me2.getText());
-			if(me2.getId().equals("28")){
-				me2.click();
-				Thread.sleep(1000);
-				winCredit = me2.getText();
-			System.out.println("Balance in credits: " +me2.getText());
-			Thread.sleep(2000);
-			}			
-		}
 		
-		String winAmt="";
-		for(MobileElement me3:balance){
-			if(me3.getId().equals("25")){
-				winAmt = me3.getText();
-			System.out.println("Win Amount in credits: " +me3.getText());
-			Thread.sleep(2000);
-			}			
-		}
+		//Getting win amount
+		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
 		
-		String betvalue="";
-		for(MobileElement be:balance)
-		{
-			if(be.getId().equals("38")){
-				 betvalue = be.getText();
-				  
-			System.out.println("The bet value is: " +be.getText());
-			}
-		}
-		//System.out.println("BET: " +betvalue);
-		//System.out.println("WIN AMT: " +winAmt);
+		String winTex = winE.getText();
+		while(winTex.isEmpty())
+		 {
+			start.click();
+			Thread.sleep(8000);
+			winTex=	winE.getText();
+			System.out.println(winTex.isEmpty());
+		 }
+		Thread.sleep(2000);
+		System.out.println("The Win is : "+"  "+winTex);
+		System.out.println(winTex.isEmpty());
 		
-		double conValue = Double.parseDouble(betvalue) * Double.parseDouble(winAmt);
-		//System.out.println("After deducting the bet value after spin: " +conValue);
-		DecimalFormat df = new DecimalFormat("##.00");
-	    df.setRoundingMode(RoundingMode.HALF_EVEN);
-	    Double dbi =Double.parseDouble(df.format(conValue));
-		System.out.println("Win amount after multiplications: " +dbi);
+		driver.findElement(By.id("hud_Hud_txtBalance1")).click();
+		Thread.sleep(1000);
+		String Wcrd = driver.findElement(By.id("hud_Hud_txtWin1")).getText();
+		String str1 = Wcrd.replaceAll(",", "");
+		System.out.println("Win amount in credits: " +str1);
+		Thread.sleep(2000);
+
 		
-//		for(MobileElement me4:balance){
-//			System.out.println(me4.getId()+"  "+me4.getText());
-//			if(me4.getId().equals("37")){
-//				me4.click();
-//				Thread.sleep(1000);
-//			//System.out.println("Final Win Amount in currency: " +me4.getText());
-//			Thread.sleep(2000);
-//			
-//			}			
-//		}
-		
-		double ww = dbi;
-		if(winTex1.endsWith("0"))
-		{
-		String pq="";
-	    String paq=pq+ww;
-		String bal="";
-		String yui = paq.concat("0");
-		System.out.println("After concat: " +yui);
-		Assert.assertEquals(winTex1, yui);
-		}
-		else
-		{
-	
-		Assert.assertEquals(winTex1, dbi);
-		}
+		//Converted win amount into credits and multiplying with credit value and it should equal to win amount in currency
+		double conValue = Double.parseDouble(creditValue) * Double.parseDouble(str1);
+		String dbi = String.format("%.2f", conValue);  
+		System.out.println("Win Amount after multiplying balance in credits with bet credit value: "+dbi);
+		Thread.sleep(2000);
+		Assert.assertEquals(dbi, winTex);
+		Thread.sleep(2000);
 	}
 
 	@Then("^Win amount in credit multiplied by denomination drop down value two is equal to win amount in currency in (\\d+) glowing hot slot game$")

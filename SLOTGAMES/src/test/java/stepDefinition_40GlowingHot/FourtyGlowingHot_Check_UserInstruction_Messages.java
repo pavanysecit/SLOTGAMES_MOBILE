@@ -1,7 +1,5 @@
 package stepDefinition_40GlowingHot;
 
-import java.util.List;
-import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,70 +15,42 @@ public class FourtyGlowingHot_Check_UserInstruction_Messages {
 AppiumDriver<MobileElement> driver;
 	
 	public FourtyGlowingHot_Check_UserInstruction_Messages() throws InterruptedException {
-		this.driver = SlotGames_URL_Login.getDriver();
-		
+		this.driver = FourtyGlowingHot_URL_Login.getDriver();
+		//this.driver = FourtyGlowingHot_URL_TryNow.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) glowing hot slot game, balance, spin button and user instruction message$")
 	public void chrome_browser_valid_URL_valid_login_details_glowing_hot_slot_game_balance_spin_button_and_user_instruction_message(int arg1) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		
-		MobileElement trs = driver.findElement(By.id("transferInput"));
-		trs.sendKeys("6");
-		Thread.sleep(1000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(20000);
-		 
-		 String parent1=driver.getWindowHandle();
-		 Set<String>s1=driver.getWindowHandles();
-
-		 System.out.println("Window for slot game is"+" "+s1);
-		 
-		 Set<String> contx = driver.getContextHandles();
-		 String pk = driver.getContext();
-		 System.out.println("The current contesx is"+" "+pk);
-		 for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the (\\d+) Glowing hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button and check the user instruction messages$")
 	public void open_the_Glowing_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_spin_button_and_check_the_user_instruction_messages(int arg1) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-		
-		String premsg="";
-		for(MobileElement me:balance){
-			//System.out.println(me.getId()+"  "+me.getText());
-			if(me.getId().equals("30")){
-				premsg = me.getText();
-				 System.out.println("Message before spin: " +me.getText());
-			}
-		}
-		
-		String expected = premsg;
-		String actual = "Please Place Your Bet";
-		Assert.assertEquals(expected, actual);
-				
-		MobileElement start = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[5]/android.view.View[2]"));
-		start.click();
-		
-		String postmsg="";
-		for(MobileElement me1:balance){
-			//System.out.println(me1.getId()+"  "+me1.getText());
-			if(me1.getId().equals("26")){
-				postmsg = me1.getText();
-				 System.out.println("Message after spin: " +me1.getText());
-			}
-		}
-		
-		String expected1 = postmsg;
-		String actual1 = "GOOD LUCK!";
-		Assert.assertEquals(expected1, actual1);
+	    String preMsg = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    Thread.sleep(3000);
+	    String actual = preMsg;
+	    String expected = "PLEASE PLACE YOUR BET";
+	    System.out.println("Actual Message before Spin:" +actual);
+	    Assert.assertEquals(expected, actual);
+	    
+		driver.findElement(By.id("hud_btnSpin")).click();
+		Thread.sleep(1000);
+		String postMsg = driver.findElement(By.id("hud_txtWinDetail")).getText();
+		String actual1 = postMsg;
+	    String expected1 = "GOOD LUCK!";
+	    System.out.println("Actual Message After Spin:" +actual1);
+	    Assert.assertEquals(expected1, actual1);
+	    
+		driver.findElement(By.id("hud_btnSpin")).click();
+		Thread.sleep(4000);
+			    
+	    WebDriverWait wait = new WebDriverWait(driver, 20);
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "PLEASE PLACE YOUR BET"));
+	    String actual5 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected5 = "PLEASE PLACE YOUR BET";
+	    System.out.println("Message after clicking on stop button : " +actual5);
+	    Assert.assertEquals(actual5, expected5);
 	}
 
 	@Then("^User instruction message 'Please place your bet' should be displayed before spin button is clicked$")

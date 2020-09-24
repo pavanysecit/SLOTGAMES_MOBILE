@@ -1,7 +1,5 @@
 package stepDefinition_40GlowingHot;
 
-import java.util.List;
-import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,117 +15,60 @@ public class FourtyGlowingHot_Balance_Deduction_AccordingToBetType3_1 {
 AppiumDriver<MobileElement> driver;
 	
 	public FourtyGlowingHot_Balance_Deduction_AccordingToBetType3_1() throws InterruptedException {
-		this.driver = SlotGames_URL_Login.getDriver();
-		
+		this.driver = FourtyGlowingHot_URL_Login.getDriver();
+		//this.driver = FourtyGlowingHot_URL_TryNow.getDriver();
 		}	
 	
 	@Given("^Chrome browser, valid URL, valid login details, glowing hot slot game, bet type as (\\d+)\\.(\\d+) from drop down, bet value as (\\d+)\\.(\\d+), balance and spin button$")
 	public void chrome_browser_valid_URL_valid_login_details_glowing_hot_slot_game_bet_type_as_from_drop_down_bet_value_as_balance_and_spin_button(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		
-		MobileElement trs = driver.findElement(By.id("transferInput"));
-		trs.sendKeys("110.88");
-		Thread.sleep(1000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(30000);
-		 
-		 String parent1=driver.getWindowHandle();
-		 Set<String>s1=driver.getWindowHandles();
-
-		 System.out.println("Window for slot game is"+" "+s1);
-		 
-		 Set<String> contx = driver.getContextHandles();
-		 String pk = driver.getContext();
-		 //System.out.println("The current contesx is"+" "+pk);
-		 for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Glowing hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) from bet type drop down, click on spin button and check the balance$")
 	public void open_the_Glowing_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_from_bet_type_drop_down_click_on_spin_button_and_check_the_balance(int arg1, int arg2) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
+		//Storing the value before spin
+		String preSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		String str = preSpin.replaceAll(",", "");
+		System.out.println("Current balance of the account Before spin: " +str);
 		
-		//Storing the balance before spin
-		String prewin="";
-		for(MobileElement me:balance){
-			//System.out.println(me.getId()+"  "+me.getText());
-			if(me.getId().equals("28")){
-				 prewin = me.getText();
-			System.out.println("The current Balance of Account Before Spin: " +me.getText());
-			}
-		}
+		//Selecting the credit as 0.03 from the drop down
+		driver.findElement(By.id("hud_txtCredit")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("hud_CreditPopup30.03")).click();
+		Thread.sleep(2000);
 		
-		for(MobileElement me7:balance)
-		{
-			if(me7.getText().equals("1 Cr ="))
-			{
-				me7.click();
-			Thread.sleep(3000);
-			}
-			 if(me7.getText().equals("0.03"))
-			 {
-				 me7.click();
-			 Thread.sleep(1000);
-			 }
-			 //System.out.println(me1.getId()+"  "+me1.getText());	 
-		}
-			 
-//		// Storing the bet value 16
-//		for(MobileElement be:balance)
-//		{
-//			if(be.getId().equals("33")){
-//				be.click();
-//				Thread.sleep(1000);
-//			}
-//			if(be.getText().equals("1.2")){
-//				be.click();
-//				Thread.sleep(1000);
-//			}
-//		}
-		// Storing the bet value 1.2
-		String betvalue="";
-		for(MobileElement be:balance)
-		{
-			if(be.getId().equals("33")){
-				 betvalue = be.getText();
-				  
-			System.out.println("The bet value is: " +be.getText());
-			String expected = be.getText();
-			String actual = "1.2";
-			Assert.assertEquals(expected, actual);
-			}
-
-		}
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
+		System.out.println("Selected credit value is : " +actual);
+		String expected = "0.03";
+		Assert.assertEquals(actual, expected);
 		
-		//Clicking on start button
-		MobileElement start = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[5]/android.view.View[2]"));
-		start.click();
-		//MobileElement pqr= driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View[1]/android.view.View[22]/android.view.View[1]"));
+		//Selecting the bet amount as 1.2 from the drop down
+		driver.findElement(By.id("hud_txtBetAmount")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("hud_BetPopup11.2")).click();
+		Thread.sleep(2000);
 		
-		//Storing the balance after spin
-		String postspin="";
-		for(MobileElement me2:balance){
-			//System.out.println(me2.getId()+"  "+me2.getText());
-			if(me2.getId().equals("24")){
-				 postspin = me2.getText();
-				  //this.pqr=me2;
-			System.out.println("The current Balance of Account After Spin: " +me2.getText());
-			}
-		}	
+		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String expected1 = "1.2";
+		System.out.println("Selected bet value is : " +actual1);
+		Assert.assertEquals(actual1, expected1);
+			
+		//Clicking on Spin button
+		driver.findElement(By.id("hud_btnSpin")).click();
+		Thread.sleep(5000);
 		
-		//Deducting bet value from the prewin and formating string to double
-		double fValue = Double.parseDouble(prewin) - Double.parseDouble(betvalue);
-		System.out.println("final balance is equal to: "+fValue);
+		//Storing the value after spin
+		String postSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		String str1 = postSpin.replaceAll(",", "");
+		System.out.println("Current balance of the account After spin: " +str1);
+		
+		//Deducting bet value from the preSpin and formating string to double
+		double fValue = Double.parseDouble(str) - Double.parseDouble(actual1);
 		String dbi = String.format("%.2f", fValue);  
-		System.out.println("Final Balance amount after deducting bet value 1.2 is: "+dbi);
+		System.out.println("Final balance after deducting bet amount from the balance : "+dbi);
 		
-		Assert.assertEquals(dbi,postspin);
+		Assert.assertEquals(dbi,str1);
 	}
 	
 	@Then("^Balance should get deducted by (\\d+)\\.(\\d+) if bet type is selected as (\\d+)\\.(\\d+) in glowing hot game$")
