@@ -29,7 +29,6 @@ public class TwentyBlazingHot_Check_MaximizeAndMinimize_Buttons {
 		MobileElement sub = driver.findElement(By.id("hud_btnFullScreen"));
 		sub.click();
 		Thread.sleep(3000);
-		System.out.println("Window is maximized");
 		
 		//Checking when window is maximized, URL tool bar should not visible
 	    Assert.assertTrue(driver.findElements(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText")).size() == 0);
@@ -39,7 +38,6 @@ public class TwentyBlazingHot_Check_MaximizeAndMinimize_Buttons {
 
     	 //Checking when window is minimized, URL tool bar should be visible
 	    Assert.assertTrue(driver.findElements(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText")).size() == 1);
-	    System.out.println("Window is minimized to normal size");
 	}
 
 	@Then("^Full screen should be displayed after clicking on maximize button and minimized screen should be displayed after clicking on minimize button in (\\d+) Blazing Hot slot game$")

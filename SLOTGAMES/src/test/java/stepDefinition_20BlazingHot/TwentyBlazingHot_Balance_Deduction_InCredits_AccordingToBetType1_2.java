@@ -48,14 +48,14 @@ public class TwentyBlazingHot_Balance_Deduction_InCredits_AccordingToBetType1_2 
 		String expected = "0.01";
 		Assert.assertEquals(actual, expected);
 
-		//Selecting the bet amount as 20 from the drop down
+		//Selecting the bet amount as 40 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup120")).click();
+		driver.findElement(By.id("hud_BetPopup240")).click();
 		Thread.sleep(2000);
 		
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		String expected1 = "20";
+		String expected1 = "40";
 		String betValue =actual1;
 		System.out.println("Selected bet value is : " +betValue);
 		Assert.assertEquals(actual1, expected1);

@@ -2,10 +2,6 @@ package stepDefinition_AmazonClash;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-
-import java.util.List;
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,55 +16,24 @@ public class AmazonClash_Check_BetType_BetValue_DropDown4 {
 
 	public AmazonClash_Check_BetType_BetValue_DropDown4() throws InterruptedException {
 		this.driver = AmazonClash_URL_Login.getDriver();
-		}
+		//this.driver = AmazonClash_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Amazon Clash slot game, bet type as (\\d+)\\.(\\d+) from drop down and bet value as (\\d+),(\\d+),(\\d+),(\\d+),(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Amazon_Clash_slot_game_bet_type_as_from_drop_down_and_bet_value_as(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 	}
 
 	@When("^Open the Amazon Clash slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) from drop down and check the bet value should be (\\d+),(\\d+),(\\d+),(\\d+),(\\d+)$")
 	public void open_the_Amazon_Clash_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_from_drop_down_and_check_the_bet_value_should_be(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 80);
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));  
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-		
 		//Selecting the credit as 0.5 from the drop down
-		driver.findElement(By.id("hud_btnCredit")).click();
+		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("0.5")){
-				be.click();
-				Thread.sleep(3000);
-				break;
-			}	
-		}
-		Thread.sleep(3000);
-		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		driver.findElement(By.id("hud_CreditPopup40.5")).click();
+		Thread.sleep(2000);
+		
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.5";
 		Assert.assertEquals(actual, expected);
@@ -76,15 +41,9 @@ public class AmazonClash_Check_BetType_BetValue_DropDown4 {
 		//Selecting the bet amount as 10 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be1:balance)
-		{
-			
-			if(be1.getText().equals("10")){
-				be1.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup110")).click();
+		Thread.sleep(2000);
+		
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected1 = "10";
 		System.out.println("Available bet amounts under credit 0.5 are : " +"\n" +actual1);
@@ -93,15 +52,9 @@ public class AmazonClash_Check_BetType_BetValue_DropDown4 {
 		//Selecting bet amount as 20
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be2:balance)
-		{
-			
-			if(be2.getText().equals("20")){
-				be2.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup220")).click();
+		Thread.sleep(2000);
+		
 		String actual2 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected2 = "20";
 		System.out.println("\n" +actual2);
@@ -110,15 +63,9 @@ public class AmazonClash_Check_BetType_BetValue_DropDown4 {
 		//Selecting bet amount as 50
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be3:balance)
-		{
-			
-			if(be3.getText().equals("50")){
-				be3.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup350")).click();
+		Thread.sleep(2000);
+		
 		String actual3 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected3 = "50";
 		System.out.println("\n" +actual3);
@@ -127,15 +74,9 @@ public class AmazonClash_Check_BetType_BetValue_DropDown4 {
 		//Selecting bet amount as 100
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be4:balance)
-		{
-			
-			if(be4.getText().equals("100")){
-				be4.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup4100")).click();
+		Thread.sleep(2000);
+		
 		String actual4 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected4 = "100";
 		System.out.println("\n" +actual4);
@@ -144,20 +85,13 @@ public class AmazonClash_Check_BetType_BetValue_DropDown4 {
 		//Selecting bet amount as 200
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be5:balance)
-		{
-			
-			if(be5.getText().equals("200")){
-				be5.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup5200")).click();
+		Thread.sleep(2000);
+		
 		String actual5 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected5 = "200";
 		System.out.println("\n" +actual5);
 		Assert.assertEquals(actual5, expected5);
-		Thread.sleep(2000);
 	}
 
 	@Then("^Bet value should get changed to (\\d+),(\\d+),(\\d+),(\\d+),(\\d+) if the bet type selected as (\\d+)\\.(\\d+) from the drop down three in Amazon Clash slot game$")

@@ -29,7 +29,7 @@ public class TwentyBlazingHot_Check_UserInstruction_Messages {
 	    String preMsg = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    Thread.sleep(3000);
 	    String actual = preMsg;
-	    String expected = "PLEASE PLACE YOUR BET";
+	    String expected = "Please Place Your Bet";
 	    System.out.println("Actual Message before Spin:" +actual);
 	    Assert.assertEquals(expected, actual);
 	    
@@ -40,16 +40,7 @@ public class TwentyBlazingHot_Check_UserInstruction_Messages {
 	    String expected1 = "GOOD LUCK!";
 	    System.out.println("Actual Message After Spin:" +actual1);
 	    Assert.assertEquals(expected1, actual1);
-	    
-		driver.findElement(By.id("hud_btnSpin")).click();
-		Thread.sleep(4000);
-			    
-	    WebDriverWait wait = new WebDriverWait(driver, 20);
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "PLEASE PLACE YOUR BET"));
-	    String actual5 = driver.findElement(By.id("hud_txtWinDetail")).getText();
-	    String expected5 = "PLEASE PLACE YOUR BET";
-	    System.out.println("Message after clicking on stop button : " +actual5);
-	    Assert.assertEquals(actual5, expected5);
+	    Thread.sleep(1000);
 	}
 
 	@Then("^User instruction message 'Please place your bet' should be displayed before spin button is clicked$")

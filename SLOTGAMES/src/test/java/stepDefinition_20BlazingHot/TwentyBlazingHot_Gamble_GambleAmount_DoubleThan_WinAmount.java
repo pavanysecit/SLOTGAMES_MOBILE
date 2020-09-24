@@ -40,7 +40,7 @@ public class TwentyBlazingHot_Gamble_GambleAmount_DoubleThan_WinAmount {
 		                       
 		while(prewin.isEmpty()){
 			start.click();	
-			Thread.sleep(8000);	
+			Thread.sleep(4000);	
 			winTex = winE.getText();
 			prewin= prewin+winTex;
 			System.out.println(winTex.isEmpty());		
