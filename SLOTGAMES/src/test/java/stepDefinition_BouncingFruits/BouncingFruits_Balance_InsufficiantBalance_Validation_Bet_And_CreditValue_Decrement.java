@@ -21,11 +21,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class BouncingFruits_Balance_InsufficiantBalance_Validation_Bet_And_CreditValue_Decrement {
 	AppiumDriver<MobileElement> driver;
 
-	public BouncingFruits_Balance_InsufficiantBalance_Validation_Bet_And_CreditValue_Decrement() throws InterruptedException {
-		this.driver = BouncingFruits_URL_Login.getDriver();
-		//this.driver = BouncingFruits_URL_TryNow.getDriver();
-		}
-	
+		
 	@Given("^Chrome browser, valid URL, valid login details, Bouncing Fruits slot game, balance counter, Auto spin button, validation message, credit types and bet types$")
 	public void chrome_browser_valid_URL_valid_login_details_Bouncing_Fruits_slot_game_balance_counter_Auto_spin_button_validation_message_credit_types_and_bet_types() throws Throwable {
 		DesiredCapabilities cap=new DesiredCapabilities();

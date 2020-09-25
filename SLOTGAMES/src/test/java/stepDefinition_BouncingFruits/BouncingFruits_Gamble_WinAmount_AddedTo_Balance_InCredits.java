@@ -22,8 +22,7 @@ public class BouncingFruits_Gamble_WinAmount_AddedTo_Balance_InCredits {
 	
 	@Given("^Chrome browser, valid URL, valid login details, Bouncing Fruits slot game, credit balance, spin button, credit win amount, gamble button, gamble amount in credits, red button, black button and gamble status$")
 	public void chrome_browser_valid_URL_valid_login_details_Bouncing_Fruits_slot_game_credit_balance_spin_button_credit_win_amount_gamble_button_gamble_amount_in_credits_red_button_black_button_and_gamble_status() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 80);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
+
 	}
 
 	@When("^Open the Bouncing Fruits slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, click on red or black button and check the balance in credits after win$")

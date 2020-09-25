@@ -1,6 +1,374 @@
 Feature: Test all the functionalities of Brownie Hot Slot Game
    
 
+ 	Scenario: To check the transferred amount is added to Brownie Hot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot game, balance, text field to transfer balance and Ok button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, click on Play button, enter the valid amount to transfer and click on Ok butotn
+    Then Player should be blocked from loading the Brownie Hot game when the amount entered in the transfer page is more than the available balance
+	And The exact amount entered in the transfer page should transfer to Bouncing Fruits game and same amount should get displayed on the balance section
+	And An error should be displayed if the balance field is empty and player should be blocked from loading the Brownie Hot game
+	And An error should be displayed if balance entered was zero and player should be blocked from loading the Brownie Hot game
+	
+
+
+
+	Scenario: Select the bet type as 0.01 from the drop down and check the bet value should be 0.3,0.6,1.5,3,6 in Brownie Hot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.01 and bet value as 0.3,0.6,1.5,3,6
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01 and check the bet value should be 0.3,0.6,1.5,3,6
+    Then Bet value should get changed to 0.3,0.6,1.5,3,6 if the bet type selected as 0.01 from the drop down in Brownie Hot slot game
+	
+	
+	Scenario: Select the bet type as 0.03 from the drop down and check the bet value should be 0.9,1.8,4.5,9 & 18 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot game, bet type as 0.03 and bet value as 0.9,1.8,4.5,9 & 18
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 and check the bet value should be 0.9,1.8,4.5,9 & 18
+    Then Bet value should get changed to 0.9,1.8,4.5,9 & 18 if the bet type selected as 0.03 from the drop down 1 in Brownie Hot slot game
+	
+	Scenario: Select the bet type as 0.05 from the drop down and check the bet value should be 1.5,3,7.5,15,30 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.05 from down 2 and bet value as 1.5,3,7.5,15,30
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.05 from down  and check the bet value should be 1.5,3,7.5,15,30
+    Then Bet value should get changed to 1.5,3,7.5,15,30 if the bet type selected as 0.05 from the drop down two in Brownie Hot slot game
+	
+	Scenario: Select the bet type as 0.2 from the drop down and check the bet value should be 6,12,30,60 & 120 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.2 from drop down and bet value as 6,12,30,60 & 120
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.2 from drop down and check the bet value should be 6,12,30,60 & 120
+    Then Bet value should get changed to 6,12,30,60 & 120 if the bet type selected as 0.2 from the drop down three in Brownie Hot slot game
+	
+	
+
+	
+	Scenario: Change the bet value as 0.3, do the spin and check whether balance is deducting according to the changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.01, bet value as 0.3, balance and spin button, balance after spin
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as 0.3, click on spin button and check the balance after spin
+    Then Balance should get deducted by 0.3 after spin as bet type is selected as 0.01 and bet value as 0.3 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as 0.6, do the spin and check whether balance is deducting according to the changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot game, bet type as 0.01, bet value as 0.6, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, click on spin button and check the balance
+    Then Balance should get deducted by 0.6 as bet type is selected as 0.01 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value to 1.50, click on spin button and check whether current balance is deducting according to changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.01, bet value as 1.50, balance, spin button and win amount
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as 1.50, click on spin button, check the win amount and check the balance
+    Then Current Balance should get deducted by 1.50 as bet type is selected as 0.01 and bet value as 1.50 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as THREE, do the spin and check whether balance is deducting according to changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.01, bet value as THREE, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as THREE, click on spin button and check the balance
+    Then Current Balance should get deducted by THREE as bet type is selected as 0.01 and bet value as 3 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as SIX, click on spin and check whether existing balance is deducting according to changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot game, bet type as 0.01, bet value as SIX, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value to SIX, click on spin button and check the slot game balance
+    Then Existing Balance should get deducted by SIX as bet type is selected as 0.01 and bet value as SIX in Brownie Hot slot game
+	
+
+	
+	
+	
+
+	Scenario: Change the bet value as 0.9, do the spin and check whether balance is deducting according to the changed bet type in Brownie Hot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot game, 0.03 as bet type , 0.9 as bet value, balance, spin button and balance after spin
+    When Open the Brownie Hot game by entering the valid URL in browser, enter the valid login details, select the bet value to 0.9, click on spin button and check the balance
+    Then Balance should get deducted by 0.9 as bet type is selected as 0.03 and bet value as 0.9 in Brownie Hot game
+	
+	
+	Scenario: Change the bet type as 0.03 from drop down & bet value to 1.8 do the spin and check whether balance is deducting according to the changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type & bet value drop down, bet type as 0.03, bet value as 1.8, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03 from drop down, bet value to 1.8 click on spin button and check the balance after spin
+    Then Balance should get deducted by 1.8 if the bet type is selected as 0.03 and bet value as 1.8 in Brownie Hot hot game
+	
+	
+	Scenario: Change the bet value as 4.5, do the spin and check whether balance is deducting according to changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot game, bet type as 0.03, bet value as four point five(4.5), balance and spin button
+    When Open the Brownie Hotslot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03, select the bet value as 4.5, click on spin button and check the balance
+    Then Current Balance should get deducted by 4.5 as bet type is selected as 0.03 & bet value as 4.5 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value to NINE, click on spin button and check whether current balance is deducting according to changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.03, bet value as NINE, bet type & bet values drop down, balance, spin button and balance amount
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03, select the bet value to NINE, click on spin button and check the balance
+    Then Current Balance should get deducted by 9 as bet type is selected as 0.03 & bet type as NINE in Brownie Hot game
+	
+	Scenario: Change the bet value as 18, click on spin and check whether existing balance is deducting according to changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot game, bet type as 0.03, bet value as 18, bet value drop down, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.03, select the bet value to 18, click on spin button and check the Brownie Hot slot game balance
+    Then Existing Balance should get deducted by 18 as bet type is selected as 0.03 & bet value as 18 in Brownie Hot slot game
+	
+	
+
+	
+	
+	
+	Scenario: Change the bet value as one point five, do the spin and check whether balance is deducting according to the changed bet type 0.05 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.05 from drop down, bet value as one point five, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as one point five from bet type drop down, click on spin button and check the balance
+    Then Balance should get deducted by one point five if bet type is selected as 0.05 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as three, do the spin and check whether balance is deducting according to the changed bet type 0.05 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.05 from drop down, bet value as three, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as three from drop down, click on spin button and check the balance
+    Then Balance should get deducted by three if bet type is selected as 0.05 & bet value as three in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as seven point five, do the spin and check whether balance is deducting according to the changed bet type 0.05 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.05 from drop down, bet value as seven point five from drop down, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.05 from drop down, select the bet vale as seven point five from down, click on spin button and check the balance
+    Then Balance should get deducted by seven point five if bet type is selected as 0.05 & bet value as 7.5 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as 15, do the spin and check whether balance is deducting according to the changed bet type 0.05 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.05 from drop down, bet value as 15, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 15 from bet type drop down, click on spin button and check the balance
+    Then Balance should get deducted by 15 if bet type is selected as 0.05 & bet value as 15 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as thirty, do the spin and check whether balance is deducting according to the changed bet type 0.05 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.05 from drop down, bet value as thirty, balance, spin button and balance after spin
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as thirty from bet type drop down, click on spin button and check the balance after spin
+    Then Balance should get deducted by 30 if bet type is selected as 0.05 & bet value as thirty in Brownie Hot slot game
+	
+	
+	
+	
+	
+	Scenario: Change the bet value as SIX(6), do the spin and check whether balance is deducting according to the changed bet type 0.2 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.2, bet value as SIX(6), balance and spin buttone
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.2 & bet value as SIX(6), click on spin button and check the balance
+    Then Balance should get deducted by SIX(6) as bet type is selected as 0.2 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as twelve(12), do the spin and check whether balance is deducting according to the changed bet type 0.2 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.2, bet value as twelve(12), balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.2 & bet value as twelve(12), click on spin button and check the balance
+    Then Balance should get deducted by twelve(12) as bet type is selected as 0.2 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as thirty(30), do the spin and check whether balance is deducting according to the changed bet type 0.2 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.2, bet value as thirty(30), balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.2 & bet value as thirty(30), click on spin button and check the balance
+    Then Balance should get deducted by thirty(30) as bet type is selected as 0.2 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as sixty, do the spin and check whether balance is deducting according to the changed bet type 0.2 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.2, bet value as sixty, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.2 & bet value as sixty, click on spin button and check the balance
+    Then Balance should get deducted by sixty as bet type is selected as 0.2 in Brownie Hot game
+	
+	
+	Scenario: Change the bet value as one hundred & twenty, do the spin and check whether balance is deducting according to the changed bet type 0.2 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.2, bet value as one hundred & twenty, balance and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.2 & bet value as one hundred & twenty, click on spin button and check the balance
+    Then Balance should get deducted by one hundred & twenty as bet type is selected as 0.2 in Brownie Hot game
+
+	
+
+
+
+	
+   	 Scenario: Change the bet value as THIRTY do the spin and check whether balance in credits is deducting according to the changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.01, bet value as THIRTY, balance in credits and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as THIRTY, click on spin button and check the balance in credits
+    Then Balance should get deducted by THIRTY as bet type is selected as 0.01 and bet value as 30 in Brownie Hot game
+    
+   	Scenario: Change the bet value as SIXTY, do the spin and check whether balance in credits is deducting according to the changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.01, bet value as SIXTY, balance in credits and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as SIXTY, click on spin button and check the balance in credits
+    Then Balance should get deducted by SIXTY as bet type is selected as 0.01 and bet value as 60 in Brownie Hot game
+	
+	 Scenario: Change the bet value as ONE FIFTY, do the spin and check whether balance in credits is deducting according to the changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.01, bet value as ONE FIFTY, balance in credits and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as ONE FIFTY, click on spin button and check the balance in credits
+    Then Balance should get deducted by ONE FIFTY, as bet type is selected as 0.01 and bet value as 150 in Brownie Hot game
+	
+	 Scenario: Change the bet value as THREE HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, 20 Blazing slot game, bet type as 0.01, bet value as THREE HUNDRED, balance in credits and spin button
+    When Open the Brownie Hot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as THREE HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by THREE HUNDRED, as bet type is selected as 0.01 and bet value as 300 in Brownie Hot game
+	
+	 Scenario: Change the bet value as SIX HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, bet type as 0.01, bet value as SIX HUNDRED, balance in credits and spin button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as SIX HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by SIX HUNDRED, as bet type is selected as 0.01 and bet value as 600 in Brownie Hot game
+	
+	
+	
+	
+	Scenario: Check whether balance is equals to credit multiplies by denomination 0.01 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, credits and denomination as 0.01 
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, click on balance, multiply credit by 0.01 and check the balance
+    Then Balance amound should be same as denomination 0.01 multiplies by credit in Brownie Hot slot game
+	
+	Scenario: Check whether balance is equals to credit multiplies by denomination 0.03 in Brownie Hot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, credits, denomination drop down and denomination as 0.03 
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, click on balance, select the denomination from drop down, multiply credit by 0.03 and check the balance
+    Then Balance amound should be same as denomination 0.03 multiplies by credit in Brownie Hot game
+	
+	Scenario: Check whether balance is equals to credit multiplies by denomination 0.05 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game window, balance, credits, denomination drop down and denomination as 0.05 
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, click on balance, multiply credit by 0.05 and compare the balance
+    Then Balance amound should be same as denomination 0.05 multiplies by credit balance in Brownie Hot slot game
+	
+	Scenario: Check whether balance is equals to credit multiplies by denomination 0.2 in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, credits and denomination drop down & value as 0.2 
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, click on balance, multiply credit by denomination 0.2 manually with and check the balance
+    Then Balance amount should be same after multiplying denomination 0.2 by credit in Brownie Hot slot game
+	
+
+	
+		
+	Scenario: Convert win amount into credits and check whether win amount in credits * denomination is equals to win amount in currency
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, spin button, win amount in currency, credits and win amount in credits
+    When Open the 40 Glowing hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Brownie Hot slot game, click on spin button till player wins, click on balance, check the win amount and click on balance
+    Then Win amount in credit multiplied by denomination is equal to win amount in currency in Brownie Hot slot game
+	
+	
+	Scenario: Convert win amount into credits and check whether win amount in credits * denomination is equals to win amount in currency for denomination drop down value two in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, spin button, win amount in currency, credits and win amount in credits for denomination drop down value two 
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select the dinomination drop down value two, click on spin button till player wins, click on balance, check the win amount and click on balance 
+    Then Win amount in credit multiplied by denomination drop down value two is equal to win amount in currency in Brownie Hot slot game
+	
+	
+	Scenario: Convert win amount into credits and check whether win amount in credits * denomination is equals to win amount in currency for denomination drop down value three in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, spin button, win amount in currency, credits and win amount in credits for denomination drop down value three 
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select the dinomination drop down value three, click on spin button till player wins, click on balance, check the win amount and click on balance 
+    Then Win amount in credit multiplied by denomination drop down value three is equal to win amount in currency in Brownie Hot slot game
+	
+	
+	Scenario: Convert win amount into credits and check whether win amount in credits * denomination is equals to win amount in currency for denomination drop down value four in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, spin button, win amount in currency, credits and win amount in credits for denomination drop down value four 
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select the dinomination drop down value four, click on spin button till player wins, click on balance, check the win amount and click on balance 
+    Then Win amount in credit multiplied by denomination drop down value four is equal to win amount in currency in Brownie Hot slot game
+	
+	
+
+	
+	Scenario: Check whether winning amount is getting added to the balance
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, transfer button, spin button and win amount
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on spin button till user win and check the balance after win in Brownie Hot slot game
+    Then Win amount should get added to the balance after win and balance should get increased with win amount in Brownie Hot slot game
+	
+	
+
+	Scenario: Check whether winning amount is getting added to the main balance in credits
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, transfer button, credit balance form, spin button and win amount in credits
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on  balance window to change to credit form, click on spin button till user win and check the balance after win in credits
+    Then Win amount should get added to the credit field after win and credit should get increased with win amount in Brownie Hot slot game
+	
+	
+
+
+	
+	 Scenario: Check whether user able to play the game when there is insufficiant balance in balance counter the bet and credit values are decreased to equal or less than available balance which enables player to resume the game in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance counter, Auto spin button, validation message, credit types and bet types
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Auto spin button till balance counter turns less than betvalues and check the insufficient validation message and reduce the bet and credit values to resume the play.
+    Then Player should be blocked from playing the game when there is less amount in balance counter and reducing the credit and bet types player is enable to continue slot game in Brownie Hot game
+	
+	
+
+	Scenario: Check user instruction messages before and after spin in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, spin button and user instruction message
+    When Open the Brownie Hot hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button and check the user instruction messages
+    Then User instruction message 'Please place your bet' should be displayed before spin button is clicked 
+	And User instruction message 'Good Luck' should be displayed after spin button is clicked in Brownie Hot slot game
+
+	
+	Scenario: Navigate to home screen from Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game and home button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance and click on home button
+    Then System should take the player to Home page after clicking on home button from Brownie Hot game
+	
+	
+	Scenario: Check the functionality of maximize and minimize button in Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, maximize button and minimize button
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on maximize button and click on minimize button
+    Then Full screen should be displayed after clicking on maximize button and minimized screen should be displayed after clicking on minimize button in Brownie Hot slot game
+	
+	
+	
+	
+	Scenario: Check whether system performing ten spins after selecting ten option in the auto spin drop down of the Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot  slot game, balance, spin button, auto spin button, ten spins option and number of spins left message
+    When Open the Brownie Hot  slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on ten spin option under auto spin drop down and check the number of spins left message
+    Then Number of spin left should start from 9 to 1 after clicking ten spins option and should perform 10 spins from 9 to 1 in Brownie Hot slot game
+	
+	Scenario: Check whether system performing twenty spins after selecting twenty option in the auto spin drop down of the Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, spin button, auto spin button, twenty spins option and number of spins left message
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on twenty spin option under auto spin drop down and check the number of spins left message
+    Then Number of spin left should start from 19 to 1 after clicking twenty spins option and should perform 20 spins from 19 to 1 in Brownie Hot slot game
+	
+	Scenario: Check whether system performing continues spins after selecting auto option in the auto spin drop down of the Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, spin button, auto spin button, auto spins option and number of spins left message
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check the player instruction message
+    Then System should keep performing the spins in Brownie Hot slot game
+	
+	
+	
+	
+	Scenario: Check bet value, credit value, home button, info button, play button behavior during autoplay in Brownie Hot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality
+    When Open the Brownie Hot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios
+    Then Bet value & Credit value buttons should not be clickable in Brownie Hot slot game
+	And Home and Info buttons should not be clickable in Brownie Hot slot game
+	And Spin button should not visible & Stop button should be visible and clickable in Brownie Hot slot game
+	And Spin button should be visble after clicking on stop button in Brownie Hot slot game
+    
+    
+    Scenario: Check bet & credit value buttons behavior after navigating from gamble page during autoplay and check win amount getting added to balance in Brownie Hot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality after navigating from gamble page to game page
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons after navigating from gamble page to game page in Brownie Hot slot game
+    Then Bet value & Credit value buttons should not be clickable after navigating from gamble page in Brownie Hot slot game
+	And Win amount should get added to the balance during autoplay in Brownie Hot slot game
+ 
+    
+    Scenario: Check whether auto spin is continued even after switching between the tabs inside a browser session of Brownie Hot slot game
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, spin button, auto spin button, browser tabs.
+    When Open the Brownie Hot slot game by entering the valid URL in browser, click on auto wait for the reel spin, open new browser tabs and redirect to game tab and check the spin functionality
+    Then Auto spin should be continued even after switching between the tabs in Brownie Hot slot game
+	
+	
+	
+
+	
+	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.01 and denomination 0.3 in Brownie Hot slot game on mobile
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, icon to open payout table, all symbols, max amount on each symbol like banana, orange, back button, bet type 0.01 and deominations 0.3 
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like banana, orange, click on back button, select bet type as 0.01 & deominations as 0.3 and check payout amount
+    Then System should display the Payout max amount on each symbol like banana, orange and payout max amount should get changed whenever player changes the bet type to 0.01 and deomination to 0.3 in Brownie Hot slot game on mobile
+	
+	
+	Scenario: Check whether the max payout amount for each symbol like bell, grapes as per the bet type 0.01 and denomination 0.6 in Brownie Hot slot game on mobile
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, icon to open payout table, all symbols, max amount on each symbol like bell, grapes, back button, bet type 0.01 and  denomination value as 0.6
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like bell, grapes, click on back button, select bet type as 0.01 & denomination  values as 0.6 and check payout amount
+    Then System should display the Payout max amount on each symbol like bell, grapes and payout max amount should get changed whenever player changes the bet type to 0.01 and denomination value as 0.6 in Brownie Hot slot game on mobile
+	
+	
+	Scenario: Check whether the max payout amount for each symbol like cherry,lemon, 10 as per the bet type 0.01 and denomination as 1.5 in Brownie Hot slot game on mobile
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, icon to open payout table, all symbols, max amount on each symbol like cherry,lemon n etc, back button, bet type 0.01 and denomination as 1.5 on mobile
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like cherry,lemon n etc, click on back button, select bet type as 0.01 & denomination as 1.5 and check payout amount on mobile
+    Then System should display the Payout max amount on each symbol like cherry,lemon n etc and payout max amount should get changed whenever player changes the bet type to 0.01 and denomination to 1.5 in Brownie Hot slot game on mobile
+	
+	
+	Scenario: Check whether the max payout amount for each symbol like 7, Wild as per the bet type 0.01 and denomination Three in Brownie Hot slot game on mobile
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, icon to open payout table, all symbols, max amount on each symbol like 7, Wild n etc, back button, bet type 0.01 and denomination as Three on mobile
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like 7, Wild n etc, click on back button, select bet type as 0.01 & denomination value as Three and check payout amount on mobile
+    Then System should display the Payout max amount on each symbol like 7, Wild n etc and payout max amount should get changed whenever player changes the bet type to 0.01 and denomination value to Three in Brownie Hot slot game on mobile
+	
+	
+	Scenario: Check whether the max payout amount for each symbol like watermelon as per the bet type 0.01 and denomination SIX in Brownie Hot slot game on mobile
+    Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, icon to open payout table, all symbols, max amount on each symbol like watermelon, back button, bet type 0.01 and denomination as SIX on mobile
+    When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like watermelon, click on back button, select bet type as 0.01 & denomination value as SIX and check payout amount on mobile
+    Then System should display the Payout max amount on each symbol like watermelon and payout max amount should get changed whenever player changes the bet type to 0.01 and denomination value to SIX in Brownie Hot slot game on mobile
+	
+	
+	
+
+
+
+		
 	Scenario: Checking whether win amount is displaying as gamble amount in gamble page of Brownie Hot slot game 
     Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, spin button, win amount, gamble button and gamble amount
     When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till player wins, click on gamble button and check the gamble amount
@@ -17,6 +385,42 @@ Feature: Test all the functionalities of Brownie Hot Slot Game
     Then Gamble Win amount should get added to main balance after status displayed as WIN and gamble page should get closed in Brownie Hot slot game 
 	
 
+	
+	
+			Scenario: Check whether gamble color win options and game play in landscape mode and verify the win amount in win meter  in Brownie Hot slot game 
+	Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, balance, spin button, win amount, gamble button, color win option, game play in landscape mode in gamble page, gamble status 
+	When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, check the play options and play in landscape mode in gamble page and when user wins check the win meter at main page is same as gamble win amount
+	Then Verify the home button is enabled on the game screen after returning from gamble page
+	Then Gamble page should provide multiple options for the user to play and enabled to play in landscape mode and check the win meter in main page in Brownie Hot slot game 
+	
+
+	Scenario: Check whether gamble credit win amount is getting added to the balance after win in Brownie Hot game 
+	Given Chrome browser, valid URL, valid login details, Brownie Hot slot game, credit balance, spin button, credit win amount, gamble button, gamble amount in credits, red button, black button and gamble status
+	When Open the Brownie Hot slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, click on red or black button and check the balance in credits after win
+	Then verify the credit form of currency in gamble page on all fields 
+	Then Gamble credit Win amount should get added to main balance after status displayed as WIN and gamble page should get closed in Brownie Hot slot game
+	
+
+	Scenario: Check whether resume feature is enabled in Gamble screen, when user collect amount in gamble screen without playing Gamble attempts in Brownie Hot slot game
+	Given chrome browser, valid URL, valid login details, Brownie Hot slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble collect
+	When Open the Brownie Hot slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on collect and close the browser and again load to the game 
+	Then  Resume feature should not be enabled and land on the game screen of Brownie Hot slot game
+	
+	
+	Scenario: Check whether resume feature is enabled in Gamble screen of Brownie Hot slot game
+	Given Chrome browser, valid URL, valid login details, Brownie Hot slot slot game, bet type, denomination, balance, spin button, Gamble screen, new browser session.
+	When Open the Brownie Hot slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on red button and close the browser and again login to the game with new browser
+	Then  Resume feature should enabled and land on the gamble screen of Brownie Hot slot game
+	Then  On resuming to gamble screen, collect the amount and verify with main  balance addition and win meter amount same as gamble amount in gamble page in  Brownie Hot slot game
+	
+	
+	Scenario: Check whether on resume feature is enabled in Gamble screen, user can play further left over attempts and check the attempts before and after resuming to gamble screen in Brownie Hot slot game
+	Given chrome browser, valid URL, valid login details, Brownie Hot slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble attempts, gamble play
+	When Open the Brownie Hot slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on black button and close the browser and again login to the game with new browser
+	Then  Resume feature should be enabled and land on the game screen and verify with the left out gamble attempts of Brownie Hot slot game
+	Then Left over attempts should be  between 4 to 1 and the user is enabled to play the remaining attempts in Brownie Hot slot game
+	
+	
 	
 	
 	

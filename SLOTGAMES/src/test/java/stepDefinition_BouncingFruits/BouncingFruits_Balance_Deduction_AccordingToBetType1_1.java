@@ -46,7 +46,7 @@ public class BouncingFruits_Balance_Deduction_AccordingToBetType1_1 {
 		//Selecting the bet amount as 0.2 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup11")).click();
+		driver.findElement(By.id("hud_BetPopup10.2")).click();
 		Thread.sleep(2000);
 		
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();

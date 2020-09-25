@@ -22,11 +22,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class BouncingFruits_TransferAmount_Scenarios_Zero_Empty_MoreBalance_Verify {
 	AppiumDriver<MobileElement> driver;
 
-	public BouncingFruits_TransferAmount_Scenarios_Zero_Empty_MoreBalance_Verify() throws InterruptedException {
-		this.driver = BouncingFruits_URL_Login.getDriver();
-		//this.driver = BouncingFruits_URL_TryNow.getDriver();
-		}
-	
+
 	@Given("^Chrome browser, valid URL, valid login details, Bouncing Fruits game, balance, text field to transfer balance and Ok button$")
 	public void chrome_browser_valid_URL_valid_login_details_Bouncing_Fruits_game_balance_text_field_to_transfer_balance_and_Ok_button() throws Throwable {
 		DesiredCapabilities cap=new DesiredCapabilities();
@@ -190,6 +186,7 @@ public class BouncingFruits_TransferAmount_Scenarios_Zero_Empty_MoreBalance_Veri
 
 	@Then("^An error should be displayed if balance entered was zero and player should be blocked from loading the Bouncing Fruits game$")
 	public void an_error_should_be_displayed_if_balance_entered_was_zero_and_player_should_be_blocked_from_loading_the_Bouncing_Fruits_game() throws Throwable {
+		Thread.sleep(2000);
 		driver.quit();
 	}
 }

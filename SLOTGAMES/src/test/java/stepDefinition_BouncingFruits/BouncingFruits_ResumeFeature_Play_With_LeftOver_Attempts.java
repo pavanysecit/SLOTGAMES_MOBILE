@@ -21,8 +21,7 @@ public class BouncingFruits_ResumeFeature_Play_With_LeftOver_Attempts {
 	
 	@Given("^chrome browser, valid URL, valid login details, Bouncing Fruits slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble attempts, gamble play$")
 	public void chrome_browser_valid_URL_valid_login_details_Bouncing_Fruits_slot_slot_game_bet_type_denomination_balance_spin_button_Gamble_screen_Gamble_attempts_gamble_play() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 80);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
+		
 	}
 
 	@When("^Open the Bouncing Fruits slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on black button and close the browser and again login to the game with new browser$")
