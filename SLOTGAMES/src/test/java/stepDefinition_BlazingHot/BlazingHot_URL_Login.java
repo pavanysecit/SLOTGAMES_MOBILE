@@ -19,7 +19,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class BlazingHot_URL_Login {
 private static AppiumDriver<MobileElement> driver;
 	
-	@Before
+	//@Before
 	public static void  BlazingHot_URL_Login() throws InterruptedException, MalformedURLException, FindFailed {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");

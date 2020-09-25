@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/BouncingFruits_AllUsecases.feature", glue={"stepDefinition_BouncingFruits"})
+@CucumberOptions(features="features/BouncingFruits_AllUsecases.feature", glue={"stepDefinition_BouncingFruits"})
 public class BouncingFruits_runner {
 	
 }

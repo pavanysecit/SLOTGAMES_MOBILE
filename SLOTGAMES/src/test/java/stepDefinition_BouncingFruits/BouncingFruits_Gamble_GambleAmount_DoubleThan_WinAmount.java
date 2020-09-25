@@ -1,7 +1,5 @@
 package stepDefinition_BouncingFruits;
 
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,32 +16,13 @@ public class BouncingFruits_Gamble_GambleAmount_DoubleThan_WinAmount {
 
 	public BouncingFruits_Gamble_GambleAmount_DoubleThan_WinAmount() throws InterruptedException {
 		this.driver = BouncingFruits_URL_Login.getDriver();
+		//this.driver = BouncingFruits_URL_TryNow.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Bouncing Fruits slot game, balance, spin button, win amount, gamble button, gamble amount and gamble to win amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Bouncing_Fruits_slot_game_balance_spin_button_win_amount_gamble_button_gamble_amount_and_gamble_to_win_amount() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Bouncing Fruits slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, click on spin button till player wins, click on gamble button and check the gamble to win amount$")
@@ -51,6 +30,7 @@ public class BouncingFruits_Gamble_GambleAmount_DoubleThan_WinAmount {
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The current balance of the account :" +balance);
 		
+
 		MobileElement start = driver.findElement(By.id("hud_btnSpin"));
 		start.click();
 		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
@@ -66,7 +46,9 @@ public class BouncingFruits_Gamble_GambleAmount_DoubleThan_WinAmount {
 			prewin= prewin+winTex;
 			System.out.println(winTex.isEmpty());		
 		}
-		System.out.println("Win amount is: " +prewin);			                                                                                                                        
+		System.out.println("Win amount is: " +prewin);	
+		                                                                                                                             
+		
 		Thread.sleep(2000);
 		driver.findElement(By.id("hud_btnGamble")).click();		          
 		String gAmount = driver.findElement(By.id("gamble_txtGambleAmount")).getText();

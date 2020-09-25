@@ -1,0 +1,5 @@
+package stepDefinition_BrownieHot;
+
+public class BrownieHot_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeterAmount {
+
+}

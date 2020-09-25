@@ -1,8 +1,5 @@
 package stepDefinition_BouncingFruits;
 
-import java.util.List;
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,95 +16,59 @@ public class BouncingFruits_Balance_Deduction_AccordingToBetType3_2 {
 
 	public BouncingFruits_Balance_Deduction_AccordingToBetType3_2() throws InterruptedException {
 		this.driver = BouncingFruits_URL_Login.getDriver();
+		//this.driver = BouncingFruits_URL_TryNow.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Bouncing Fruits game, bet type as (\\d+)\\.(\\d+) from drop down, bet value as TWO, balance and spin button$")
 	public void chrome_browser_valid_URL_valid_login_details_Bouncing_Fruits_game_bet_type_as_from_drop_down_bet_value_as_TWO_balance_and_spin_button(int arg1, int arg2) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Bouncing Fruits game by entering the valid URL in browser, enter the valid login details, select the bet type as TWO from drop down, click on spin button and check the balance$")
 	public void open_the_Bouncing_Fruits_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_TWO_from_drop_down_click_on_spin_button_and_check_the_balance() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));    
 		//Storing the value before spin
 		String preSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
-		System.out.println("Current balance of the account Before spin: " +preSpin);
+		String str = preSpin.replaceAll(",", "");
+		System.out.println("Current balance of the account Before spin: " +str);
 		
 		//Selecting the credit as 0.05 from the drop down
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-		driver.findElement(By.id("hud_btnCredit")).click();
+		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("0.05")){
-				be.click();
-				Thread.sleep(3000);
-				break;
-			}	
-		}
-		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		driver.findElement(By.id("hud_CreditPopup30.05")).click();
+		Thread.sleep(2000);
+		
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.05";
 		Assert.assertEquals(actual, expected);
 		
-		//Selecting bet amount as 2	
+		//Selecting the bet amount as 2 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("2")){
-				be.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
-		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		System.out.println("Selected bet amount is: " +actual1);
-		String expected1 = "2";
-		Assert.assertEquals(actual1, expected1);
+		driver.findElement(By.id("hud_BetPopup22")).click();
 		Thread.sleep(2000);
-		String betValue = actual1;
 		
+		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String expected1 = "2";
+		System.out.println("Selected bet value is : " +actual1);
+		Assert.assertEquals(actual1, expected1);
+			
 		//Clicking on Spin button
 		driver.findElement(By.id("hud_btnSpin")).click();
 		Thread.sleep(5000);
 		
 		//Storing the value after spin
 		String postSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
-		System.out.println("Current balance of the account After spin: " +postSpin);
+		String str1 = postSpin.replaceAll(",", "");
+		System.out.println("Current balance of the account After spin: " +str1);
 		
 		//Deducting bet value from the preSpin and formating string to double
-		double fValue = Double.parseDouble(preSpin) - Double.parseDouble(betValue);
+		double fValue = Double.parseDouble(str) - Double.parseDouble(actual1);
 		String dbi = String.format("%.2f", fValue);  
 		System.out.println("Final balance after deducting bet amount from the balance : "+dbi);
 		
-		Assert.assertEquals(dbi,postSpin); 
-		Thread.sleep(2000);
+		Assert.assertEquals(dbi,str1);
 	}
 
 	@Then("^Balance should get deducted by TWO after spin if bet type is selected as (\\d+)\\.(\\d+) & bet value as TWO in Bouncing Fruits game$")

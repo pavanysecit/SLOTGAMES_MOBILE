@@ -1,0 +1,5 @@
+package stepDefinition_BrownieHot;
+
+public class BrownieHot_TransferAmount_Scenarios_Zero_Empty_MoreBalance_Verify {
+
+}
