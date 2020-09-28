@@ -19,7 +19,8 @@ public class GlowingHot_PayOut_BetType_1_And_Denomination_3 {
 
 	public GlowingHot_PayOut_BetType_1_And_Denomination_3() throws InterruptedException {
 		this.driver = GlowingHot_URL_Login.getDriver();
-		}
+		//this.driver = GlowingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Glowing Hot slot game, icon to open payout table, all symbols, max amount on each symbol like watermelon, bell & etc, back button, bet type (\\d+)\\.(\\d+) and denomination value as (\\d+)\\.(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Glowing_Hot_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_watermelon_bell_etc_back_button_bet_type_and_denomination_value_as(int arg1, int arg2, int arg3, int arg4) throws Throwable {

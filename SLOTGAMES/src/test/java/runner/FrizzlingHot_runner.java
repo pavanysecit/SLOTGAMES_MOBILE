@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/FrizzlingHot_AllUsecases.feature", glue={"stepDefinition_FrizzlingHot"})
+@CucumberOptions(features="features/FrizzlingHot_AllUsecases.feature", glue={"stepDefinition_FrizzlingHot"})
 public class FrizzlingHot_runner {
 	
 }

@@ -11,7 +11,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/GlowingHot_AllUsecases.feature", glue={"stepDefinition_GlowingHot"}, plugin ={"html:target/cucumber-html-report"})
+@CucumberOptions(features="features/GlowingHot_AllUsecases.feature", glue={"stepDefinition_GlowingHot"}, plugin ={"html:target/cucumber-html-report"})
 public class GlowingHot_runner {
 	
 

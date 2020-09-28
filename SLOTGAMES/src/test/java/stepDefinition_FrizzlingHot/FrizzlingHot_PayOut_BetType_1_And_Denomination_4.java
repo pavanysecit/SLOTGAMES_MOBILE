@@ -19,6 +19,7 @@ public class FrizzlingHot_PayOut_BetType_1_And_Denomination_4 {
 
 	public FrizzlingHot_PayOut_BetType_1_And_Denomination_4() throws InterruptedException {
 		this.driver = FrizzlingHot_URL_Login.getDriver();
+		//this.driver = FrizzlingHot_URL_TryNow.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Frizzling Hot slot game, icon to open payout table, all symbols, max amount on each symbol like orange, cherry & etc etc, back button, bet type (\\d+)\\.(\\d+) and denomination as ONE on mobile$")

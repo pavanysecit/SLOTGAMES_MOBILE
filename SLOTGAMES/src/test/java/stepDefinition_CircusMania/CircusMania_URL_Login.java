@@ -21,7 +21,7 @@ public class CircusMania_URL_Login {
 private static AppiumDriver<MobileElement> driver;
 	
 	//@Before
-	public static void  TwentyBlazingHot_URL_Login() throws InterruptedException, MalformedURLException, FindFailed {
+	public static void  CircusMania_URL_Login() throws InterruptedException, MalformedURLException, FindFailed {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
 		cap.setCapability("udid", "JAAAGF10Z743V8H");
