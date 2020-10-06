@@ -1,0 +1,5 @@
+package stepDefinition_SkinfiriLotto;
+
+public class SkinfiriLotto_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeterAmount {
+
+}

@@ -1,0 +1,5 @@
+package stepDefinition_SkinfiriJungle;
+
+public class SkinfiriJungle_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeterAmount {
+
+}

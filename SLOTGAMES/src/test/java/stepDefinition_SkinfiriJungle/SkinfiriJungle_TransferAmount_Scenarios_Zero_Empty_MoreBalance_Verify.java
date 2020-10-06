@@ -1,0 +1,5 @@
+package stepDefinition_SkinfiriJungle;
+
+public class SkinfiriJungle_TransferAmount_Scenarios_Zero_Empty_MoreBalance_Verify {
+
+}

@@ -1,0 +1,5 @@
+package stepDefinition_SkinfiriJungle;
+
+public class SkinfiriJungle_Balance_InsufficiantBalance_Validation_Bet_And_CreditValue_Decrement {
+
+}

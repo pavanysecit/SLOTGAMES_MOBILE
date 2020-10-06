@@ -1,0 +1,5 @@
+package stepDefinition_SkinfiriLotto;
+
+public class SkinfiriLotto_Balance_Deduction_InCredits_AccordingToBetType1_4 {
+
+}

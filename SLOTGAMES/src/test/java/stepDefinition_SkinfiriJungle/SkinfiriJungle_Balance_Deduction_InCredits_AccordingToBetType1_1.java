@@ -1,0 +1,5 @@
+package stepDefinition_SkinfiriJungle;
+
+public class SkinfiriJungle_Balance_Deduction_InCredits_AccordingToBetType1_1 {
+
+}

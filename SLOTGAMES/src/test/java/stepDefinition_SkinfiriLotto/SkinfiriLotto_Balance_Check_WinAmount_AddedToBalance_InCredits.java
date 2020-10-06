@@ -1,0 +1,5 @@
+package stepDefinition_SkinfiriLotto;
+
+public class SkinfiriLotto_Balance_Check_WinAmount_AddedToBalance_InCredits {
+
+}

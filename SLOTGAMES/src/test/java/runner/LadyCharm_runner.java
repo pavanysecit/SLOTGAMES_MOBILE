@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/LadyCharm_AllUsecases.feature", glue={"stepDefinition_LadyCharm"})
+@CucumberOptions(features="features/LadyCharm_AllUsecases.feature", glue={"stepDefinition_LadyCharm"})
 public class LadyCharm_runner {
 	
 }

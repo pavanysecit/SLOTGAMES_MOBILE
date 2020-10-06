@@ -1,0 +1,5 @@
+package stepDefinition_SkinfiriJungle;
+
+public class SkinfiriJungle_Balance_Check_WinAmount_AddedToBalance_InCredits {
+
+}
