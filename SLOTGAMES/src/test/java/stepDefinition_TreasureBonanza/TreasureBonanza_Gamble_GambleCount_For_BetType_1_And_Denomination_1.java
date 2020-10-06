@@ -1,7 +1,5 @@
 package stepDefinition_TreasureBonanza;
 
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,53 +16,54 @@ public class TreasureBonanza_Gamble_GambleCount_For_BetType_1_And_Denomination_1
 
 	public TreasureBonanza_Gamble_GambleCount_For_BetType_1_And_Denomination_1() throws InterruptedException {
 		this.driver = TreasureBonanza_URL_Login.getDriver();
-		}
+		//this.driver = TreasureBonanza_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game, balance, spin button, win amount, gamble button, card to click for suit win and suit win amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Treasure_Bonanza_slot_game_balance_spin_button_win_amount_gamble_button_card_to_click_for_suit_win_and_suit_win_amount() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(15000);
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait1 = new WebDriverWait(driver, 80);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Treasure Bonanza slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till player wins, click on gamble button and click on suit win card in gamble page$")
 	public void open_the_Treasure_Bonanza_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_spin_button_till_player_wins_click_on_gamble_button_and_click_on_suit_win_card_in_gamble_page() throws Throwable {
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The current balance of the account :" +balance);
-		
+
+		// Select the credit 
+		driver.findElement(By.id("hud_txtCredit")).click();
+		Thread.sleep(1000);
+		MobileElement cr1 = driver.findElement(By.id("hud_CreditPopup10.01"));
+		String credit1 =cr1.getText();
+		System.out.println(credit1);
+		String expectedA = "0.01";
+		Assert.assertEquals(expectedA, credit1);
+		cr1.click();
+		Thread.sleep(1000);
+
+		// select the bet value
+		driver.findElement(By.id("hud_txtBetAmount")).click();
+		Thread.sleep(1000);
+		MobileElement bet1_1= driver.findElement(By.id("hud_BetPopup10.2"));
+		String Betval1_1 =bet1_1.getText();
+		System.out.println(Betval1_1);
+		String expectedB = "0.2";
+		Assert.assertEquals(expectedB, Betval1_1);
+		Thread.sleep(2000);
+		bet1_1.click();
 
 		MobileElement start = driver.findElement(By.id("hud_btnSpin"));
 		start.click();
+		Thread.sleep(8000);
 		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
 
 		String prewin = winE.getText();
 		//System.out.println("Balance before win is"+" "+prewin);                    
 		String winTex= winE.getText();
-		                       
+
 		while(prewin.isEmpty()){
 			start.click();	
-			Thread.sleep(4000);	
+			Thread.sleep(8000);	
 			winTex = winE.getText();
 			prewin= prewin+winTex;
 			System.out.println(winTex.isEmpty());		
@@ -73,9 +72,9 @@ public class TreasureBonanza_Gamble_GambleCount_For_BetType_1_And_Denomination_1
 		System.out.println("Maximum gamble win amount for bet amount 0.2 and credit value 0.01 is : 7 SRD");	                                                                                                                             
 		Double maxV = Double.parseDouble(prewin);
 		if(maxV < 7)
-		   {
-			   System.out.println("Win amount less than Gamble max value 7 i.e : "+" " +maxV +". Test Case Passed");
-		   }
+		{
+			System.out.println("Win amount less than Gamble max value 7 i.e : "+" " +maxV +". Test Case Passed");
+		}
 		else
 		{
 			System.out.println("Win amount greater than Gamble max value 7 : i.e "+" " +maxV +". Test Case Failed");
@@ -89,7 +88,7 @@ public class TreasureBonanza_Gamble_GambleCount_For_BetType_1_And_Denomination_1
 		Double monty = Double.parseDouble(prewin);
 		System.out.println("Gamble amount is equal to win amount & the amount is :"+" "+monty);
 		MobileElement attempts = driver.findElement(By.id("gamble_txtAttemptsLeft"));
-		
+
 		System.out.println("No. of attempts left :"+" "+attempts.getText());
 		if(monty>=0.1 && monty<=0.4)
 		{
@@ -116,10 +115,7 @@ public class TreasureBonanza_Gamble_GambleCount_For_BetType_1_And_Denomination_1
 		  
 		  Assert.assertEquals("1", attempts.getText());
 	   }
-	   
-		
 		 driver.findElement(By.id("gamble_btnCollect")).click();
-		 
 		 System.out.println("The testcase has passed");
 	}
 

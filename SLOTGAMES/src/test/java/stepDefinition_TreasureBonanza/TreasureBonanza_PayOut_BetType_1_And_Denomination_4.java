@@ -5,6 +5,8 @@ import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -17,34 +19,13 @@ public class TreasureBonanza_PayOut_BetType_1_And_Denomination_4 {
 
 	public TreasureBonanza_PayOut_BetType_1_And_Denomination_4() throws InterruptedException {
 		this.driver = TreasureBonanza_URL_Login.getDriver();
-		}
+		//this.driver = TreasureBonanza_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game, icon to open payout table, all symbols, max amount on each symbol like watch n etc, back button, bet type (\\d+)\\.(\\d+) and denomination as TWO on mobile$")
 	public void chrome_browser_valid_URL_valid_login_details_Treasure_Bonanza_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_watch_n_etc_back_button_bet_type_and_denomination_as_TWO_on_mobile(int arg1, int arg2) throws Throwable {
-	    driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[18]/div[1]")).click();
-		Thread.sleep(2000);
-		
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(15000);
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait1 = new WebDriverWait(driver, 80);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Treasure Bonanza slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like watch n etc, click on back button, select bet type as (\\d+)\\.(\\d+) & denomination value as TWO and check payout amount on mobile$")
