@@ -5,8 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/SkinfiriMysterious_AllUsecases.feature", glue={"stepDefinition_SkinfiriMysterious"})
-
+@CucumberOptions(features="features/SkinfiriMysterious_AllUsecases.feature", glue={"stepDefinition_SkinfiriMysterious"})
 
 public class SkinfiriMysterious_runner {
 

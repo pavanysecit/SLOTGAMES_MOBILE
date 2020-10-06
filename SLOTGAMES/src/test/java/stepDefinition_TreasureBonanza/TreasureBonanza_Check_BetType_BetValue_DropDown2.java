@@ -16,7 +16,7 @@ public class TreasureBonanza_Check_BetType_BetValue_DropDown2 {
 AppiumDriver<MobileElement> driver;
 
 	public TreasureBonanza_Check_BetType_BetValue_DropDown2() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+		this.driver = TreasureBonanza_URL_Login.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza game, bet type as (\\d+)\\.(\\d+) and bet value as (\\d+)\\.(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+),(\\d+)$")

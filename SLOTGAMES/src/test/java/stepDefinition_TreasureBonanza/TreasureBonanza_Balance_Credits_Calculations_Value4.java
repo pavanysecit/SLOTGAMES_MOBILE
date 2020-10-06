@@ -19,7 +19,7 @@ public class TreasureBonanza_Balance_Credits_Calculations_Value4 {
 	AppiumDriver<MobileElement> driver;
 
 	public TreasureBonanza_Balance_Credits_Calculations_Value4() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+		this.driver = TreasureBonanza_URL_Login.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game, balance, credits and denomination drop down & value as (\\d+)\\.(\\d+)$")

@@ -26,7 +26,7 @@ public class TwentyBlazingHot_Check_UserInstruction_Messages {
 
 	@When("^Open the (\\d+) Blazing Hot hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button and check the user instruction messages$")
 	public void open_the_Blazing_Hot_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_spin_button_and_check_the_user_instruction_messages(int arg1) throws Throwable {
-	    String preMsg = driver.findElement(By.id("hud_txtWinDetail")).getText();
+		String preMsg = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    Thread.sleep(3000);
 	    String actual = preMsg;
 	    String expected = "Please Place Your Bet";

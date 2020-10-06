@@ -19,7 +19,7 @@ public class TreasureBonanza_Gamble_GambleCount_For_BetType_1_And_Denomination_5
 	AppiumDriver<MobileElement> driver;
 
 	public TreasureBonanza_Gamble_GambleCount_For_BetType_1_And_Denomination_5() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+		this.driver = TreasureBonanza_URL_Login.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, godlen hot slot game, transfer button, bet type as (\\d+)\\.(\\d+), denomination as TWO, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count$")

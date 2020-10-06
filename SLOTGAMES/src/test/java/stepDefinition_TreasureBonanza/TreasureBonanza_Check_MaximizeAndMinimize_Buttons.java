@@ -18,7 +18,7 @@ public class TreasureBonanza_Check_MaximizeAndMinimize_Buttons {
 	AppiumDriver<MobileElement> driver;
 
 	public TreasureBonanza_Check_MaximizeAndMinimize_Buttons() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+		this.driver = TreasureBonanza_URL_Login.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game, maximize button and minimize button$")

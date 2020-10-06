@@ -17,7 +17,7 @@ public class TreasureBonanza_Balance_Deduction_AccordingToBetType1_3 {
 	AppiumDriver<MobileElement> driver;
 
 	public TreasureBonanza_Balance_Deduction_AccordingToBetType1_3() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+		this.driver = TreasureBonanza_URL_Login.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game, bet type as (\\d+)\\.(\\d+), bet value as ONE, balance, spin button and win amount$")

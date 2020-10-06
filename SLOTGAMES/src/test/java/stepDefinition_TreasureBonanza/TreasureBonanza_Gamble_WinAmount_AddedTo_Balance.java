@@ -21,7 +21,7 @@ public class TreasureBonanza_Gamble_WinAmount_AddedTo_Balance {
 	AppiumDriver<MobileElement> driver;
 
 	public TreasureBonanza_Gamble_WinAmount_AddedTo_Balance() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+		this.driver = TreasureBonanza_URL_Login.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game, balance, spin button, win amount, gamble button, gamble amount, red button, black button and gamble status$")

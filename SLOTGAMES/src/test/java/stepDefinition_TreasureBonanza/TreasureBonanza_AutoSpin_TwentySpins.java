@@ -17,7 +17,8 @@ public class TreasureBonanza_AutoSpin_TwentySpins {
 	AppiumDriver<MobileElement> driver;
 
 	public TreasureBonanza_AutoSpin_TwentySpins() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+		this.driver = TreasureBonanza_URL_Login.getDriver();
+		//this.driver = TreasureBonanza_URL_TryNow.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game, balance, spin button, auto spin button, twenty spins option and number of spins left message$")

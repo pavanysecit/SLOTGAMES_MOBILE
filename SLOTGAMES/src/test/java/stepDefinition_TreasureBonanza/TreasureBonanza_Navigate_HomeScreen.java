@@ -18,7 +18,7 @@ public class TreasureBonanza_Navigate_HomeScreen {
 	AppiumDriver<MobileElement> driver;
 
 	public TreasureBonanza_Navigate_HomeScreen() throws InterruptedException {
-		this.driver = TreasureBonanza_Login_URL.getDriver();
+		this.driver = TreasureBonanza_URL_Login.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Treasure Bonanza slot game and home button$")
