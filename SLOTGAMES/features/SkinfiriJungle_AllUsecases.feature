@@ -1,29 +1,15 @@
 Feature: Test all the functionalities of Skinfiri Jungle Slot Game
    
 
- 	Scenario: To check the transferred amount is added to Skinfiri Jungle game
+  	Scenario: To check the transferred amount is added to Skinfiri Jungle game
     Given Chrome browser, valid URL, valid login details, Skinfiri Jungle game, balance, text field to transfer balance and Ok button
     When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, click on Play button, enter the valid amount to transfer and click on Ok butotn
-    Then The exact amount entered in the transfer page should transfer to Skinfiri Jungle game and same amount should get displayed on the balance section
-	
-	
-	Scenario: Check whether the player is able to transfer the amount more than the available balance
-    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle game, balance greater than available balance, text field to transfer balance, Ok button and validation message
-    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, enter the amount greater than available balance and click on Ok butotn
     Then Player should be blocked from loading the Skinfiri Jungle game when the amount entered in the transfer page is more than the available balance
+	And The exact amount entered in the transfer page should transfer to Skinfiri Jungle game and same amount should get displayed on the balance section
+	And An error should be displayed if the balance field is empty and player should be blocked from loading the Skinfiri Jungle game
+	And An error should be displayed if balance entered was zero and player should be blocked from loading the Skinfiri Jungle game
 	
-	
-	Scenario: Check whether balance field is accepting null valuess in the transfer page of Skinfiri Jungle game in mobile
-    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle game, empty balance, text field to transfer balance, Ok button and validation message in mobile
-    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details,  do not enter the amount in the balance field and click on Ok butotn in mobile
-    Then An error should be displayed if the balance field is empty and player should be blocked from loading the Skinfiri Jungle game in mobile
-	
-	
-	Scenario: Check whether balance field is accepting amount as Zero SRD in the transfer amount page of Skinfiri Jungle game
-    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle game, zero balance, text field to transfer balance, Ok button and validation message
-    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, enter the amount as zero SRD and click on Ok butotn
-    Then An error should be displayed if balance entered was zero and player should be blocked from loading the Skinfiri Jungle game
-	
+
 
 
 
@@ -179,6 +165,38 @@ Feature: Test all the functionalities of Skinfiri Jungle Slot Game
     Then Balance should get deducted by two hundred as bet type is selected as 0.5 in Skinfiri Jungle game
 
 	
+	
+	
+
+	
+   	 Scenario: Change the bet value as TWENTY do the spin and check whether balance in credits is deducting according to the changed bet type in Skinfiri Jungle slot game
+    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, bet type as 0.01, bet value as TWENTY, balance in credits and spin button
+    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as TWENTY, click on spin button and check the balance in credits
+    Then Balance should get deducted by TWENTY as bet type is selected as 0.01 and bet value as 20 in Skinfiri Jungle game
+    
+   	Scenario: Change the bet value as FOURTY, do the spin and check whether balance in credits is deducting according to the changed bet type in Skinfiri Jungle slot game
+    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, bet type as 0.01, bet value as FOURTY, balance in credits and spin button
+    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as FOURTY, click on spin button and check the balance in credits
+    Then Balance should get deducted by FOURTY as bet type is selected as 0.01 and bet value as 40 in Skinfiri Jungle game
+	
+	 Scenario: Change the bet value as HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in Skinfiri Jungle slot game
+    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, bet type as 0.01, bet value as HUNDRED, balance in credits and spin button
+    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by HUNDRED, as bet type is selected as 0.01 and bet value as 100 in Skinfiri Jungle game
+	
+	 Scenario: Change the bet value as TWO HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in Skinfiri Jungle slot game
+    Given Chrome browser, valid URL, valid login details, 20 Blazing slot game, bet type as 0.01, bet value as TWO HUNDRED, balance in credits and spin button
+    When Open the Skinfiri Jungle game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as TWO HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by TWO HUNDRED, as bet type is selected as 0.01 and bet value as 200 in Skinfiri Jungle game
+	
+	 Scenario: Change the bet value as FOUR HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in Skinfiri Jungle slot game
+    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, bet type as 0.01, bet value as FOUR HUNDRED, balance in credits and spin button
+    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as FOUR HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by FOUR HUNDRED, as bet type is selected as 0.01 and bet value as 400 in Skinfiri Jungle game
+	
+	
+	
+	
 
 	
 	Scenario: Check whether balance is equals to credit multiplies by denomination 0.01 in Skinfiri Jungle slot game
@@ -237,11 +255,21 @@ Feature: Test all the functionalities of Skinfiri Jungle Slot Game
 	
 	
 
+	Scenario: Check whether winning amount is getting added to the main balance in credits
+    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, balance, transfer button, credit balance form, spin button and win amount in credits
+    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on  balance window to change to credit form, click on spin button till user win and check the balance after win in credits
+    Then Win amount should get added to the credit field after win and credit should get increased with win amount in Skinfiri Jungle slot game
 	
-	Scenario: Check whether user able to play the game when there is insufficiant balance in account in Skinfiri Jungle slot game
-    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, balance, spin button and validation message
-    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message
-    Then Player should be blocked from playing the game when there is no balance in the account in Skinfiri Jungle game
+	
+
+
+	
+	 Scenario: Check whether user able to play the game when there is insufficiant balance in balance counter the bet and credit values are decreased to equal or less than available balance which enables player to resume the game in Skinfiri Jungle slot game
+    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, balance counter, Auto spin button, validation message, credit types and bet types
+    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Auto spin button till balance counter turns less than betvalues and check the insufficient validation message and reduce the bet and credit values to resume the play.
+    Then Player should be blocked from playing the game when there is less amount in balance counter and reducing the credit and bet types player is enable to continue slot game in Skinfiri Jungle game
+	
+	
 	
 
 	Scenario: Check user instruction messages before and after spin in Skinfiri Jungle slot game
@@ -280,6 +308,30 @@ Feature: Test all the functionalities of Skinfiri Jungle Slot Game
     When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check the player instruction message
     Then System should keep performing the spins in Skinfiri Jungle slot game
 	
+	
+	
+	
+	
+		Scenario: Check bet value, credit value, home button, info button, play button behavior during autoplay in Skinfiri Jungle game
+    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality
+    When Open the Skinfiri Jungle game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios
+    Then Bet value & Credit value buttons should not be clickable in Skinfiri Jungle slot game
+	And Home and Info buttons should not be clickable in Skinfiri Jungle slot game
+	And Spin button should not visible & Stop button should be visible and clickable in Skinfiri Jungle slot game
+	And Spin button should be visble after clicking on stop button in Skinfiri Jungle slot game
+    
+    
+    Scenario: Check bet & credit value buttons behavior after navigating from gamble page during autoplay and check win amount getting added to balance in Skinfiri Jungle game
+    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality after navigating from gamble page to game page
+    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons after navigating from gamble page to game page
+    Then Bet value & Credit value buttons should not be clickable after navigating from gamble page
+	And Win amount should get added to the balance during autoplay
+ 
+    
+    Scenario: Check whether auto spin is continued even after switching between the tabs inside a browser session of Skinfiri Jungle slot game
+    Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, spin button, auto spin button, browser tabs.
+    When Open the Skinfiri Jungle slot game by entering the valid URL in browser, click on auto wait for the reel spin, open new browser tabs and redirect to game tab and check the spin functionality
+    Then Auto spin should be continued even after switching between the tabs in Skinfiri Jungle slot game
 	
 	
 	
@@ -327,6 +379,43 @@ Feature: Test all the functionalities of Skinfiri Jungle Slot Game
 	
 
 
+
+
+	Scenario: Check whether gamble color win options and game play in landscape mode and verify the win amount in win meter  in Skinfiri Jungle slot game 
+	Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, balance, spin button, win amount, gamble button, color win option, game play in landscape mode in gamble page, gamble status 
+	When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, check the play options and play in landscape mode in gamble page and when user wins check the win meter at main page is same as gamble win amount
+	Then Verify the home button is enabled on the game screen after returning from gamble page
+	Then Gamble page should provide multiple options for the user to play and enabled to play in landscape mode and check the win meter in main page in Skinfiri Jungle slot game 
+	
+
+	Scenario: Check whether gamble credit win amount is getting added to the balance after win in Skinfiri Jungle game 
+	Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, credit balance, spin button, credit win amount, gamble button, gamble amount in credits, red button, black button and gamble status
+	When Open the Skinfiri Jungle slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, click on red or black button and check the balance in credits after win
+	Then verify the credit form of currency in gamble page on all fields 
+	Then Gamble credit Win amount should get added to main balance after status displayed as WIN and gamble page should get closed in Skinfiri Jungle slot game
+	
+
+	Scenario: Check whether resume feature is enabled in Gamble screen, when user collect amount in gamble screen without playing Gamble attempts in Skinfiri Jungle slot game
+	Given chrome browser, valid URL, valid login details, Skinfiri Jungle slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble collect
+	When Open the Skinfiri Jungle slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on collect and close the browser and again load to the game 
+	Then  Resume feature should not be enabled and land on the game screen of Skinfiri Jungle slot game
+	
+	
+	Scenario: Check whether resume feature is enabled in Gamble screen of Skinfiri Jungle slot game
+	Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot slot game, bet type, denomination, balance, spin button, Gamble screen, new browser session.
+	When Open the Skinfiri Jungle slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on red button and close the browser and again login to the game with new browser
+	Then  Resume feature should enabled and land on the gamble screen of Skinfiri Jungle slot game
+	Then  On resuming to gamble screen, collect the amount and verify with main  balance addition and win meter amount same as gamble amount in gamble page in  Skinfiri Jungle slot game
+	
+	
+	Scenario: Check whether on resume feature is enabled in Gamble screen, user can play further left over attempts and check the attempts before and after resuming to gamble screen in Skinfiri Jungle slot game
+	Given chrome browser, valid URL, valid login details, Skinfiri Jungle slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble attempts, gamble play
+	When Open the Skinfiri Jungle slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on black button and close the browser and again login to the game with new browser
+	Then  Resume feature should be enabled and land on the game screen and verify with the left out gamble attempts of Skinfiri Jungle slot game
+	Then Left over attempts should be  between 4 to 1 and the user is enabled to play the remaining attempts
+	
+	
+	
 	
 	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination 0.2 in Skinfiri Jungle game
     Given Chrome browser, valid URL, valid login details, Skinfiri Jungle slot game, bet type as 0.01, denomination as 0.2, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
