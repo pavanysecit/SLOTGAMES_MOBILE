@@ -1,8 +1,5 @@
 package stepDefinition_UltraHot;
 
-import java.util.List;
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,53 +16,24 @@ public class UltraHot_Check_BetType_BetValue_DropDown3 {
 
 	public UltraHot_Check_BetType_BetValue_DropDown3() throws InterruptedException {
 		this.driver = UltraHot_URL_Login.getDriver();
-		}
+		//this.driver = UltraHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Ultra Hot slot game, bet type as (\\d+)\\.(\\d+) from down (\\d+) and bet value as (\\d+)\\.(\\d+),(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Ultra_Hot_slot_game_bet_type_as_from_down_and_bet_value_as(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait1 = new WebDriverWait(driver, 80);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Ultra Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) from down  and check the bet value should be (\\d+)\\.(\\d+),(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+)$")
 	public void open_the_Ultra_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_from_down_and_check_the_bet_value_should_be(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 80);
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-		//Selecting the credit as 0.12 from the drop down
-		driver.findElement(By.id("hud_btnCredit")).click();
+		//Selecting the credit as 0.1 from the drop down
+		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("0.1")){
-				be.click();
-				Thread.sleep(3000);
-				break;
-			}	
-		}
-		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		driver.findElement(By.id("hud_CreditPopup30.1")).click();
+		Thread.sleep(2000);
+		
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.1";
 		Assert.assertEquals(actual, expected);
@@ -73,15 +41,9 @@ public class UltraHot_Check_BetType_BetValue_DropDown3 {
 		//Selecting the bet amount as 0.5 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be1:balance)
-		{
-			
-			if(be1.getText().equals("0.5")){
-				be1.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup10.5")).click();
+		Thread.sleep(2000);
+		
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected1 = "0.5";
 		System.out.println("Available bet amounts under credit 0.1 are : " +"\n" +actual1);
@@ -90,15 +52,9 @@ public class UltraHot_Check_BetType_BetValue_DropDown3 {
 		//Selecting bet amount as 1
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be2:balance)
-		{
-			
-			if(be2.getText().equals("1")){
-				be2.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup21")).click();
+		Thread.sleep(2000);
+		
 		String actual2 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected2 = "1";
 		System.out.println("\n" +actual2);
@@ -107,15 +63,9 @@ public class UltraHot_Check_BetType_BetValue_DropDown3 {
 		//Selecting bet amount as 2.5
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be3:balance)
-		{
-			
-			if(be3.getText().equals("2.5")){
-				be3.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup32.5")).click();
+		Thread.sleep(2000);
+		
 		String actual3 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected3 = "2.5";
 		System.out.println("\n" +actual3);
@@ -124,15 +74,9 @@ public class UltraHot_Check_BetType_BetValue_DropDown3 {
 		//Selecting bet amount as 5
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be4:balance)
-		{
-			
-			if(be4.getText().equals("5")){
-				be4.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup45")).click();
+		Thread.sleep(2000);
+		
 		String actual4 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected4 = "5";
 		System.out.println("\n" +actual4);
@@ -141,20 +85,13 @@ public class UltraHot_Check_BetType_BetValue_DropDown3 {
 		//Selecting bet amount as 10
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be5:balance)
-		{
-			
-			if(be5.getText().equals("10")){
-				be5.click();
-				Thread.sleep(2000);
-				break;
-			}	
-		}
+		driver.findElement(By.id("hud_BetPopup510")).click();
+		Thread.sleep(2000);
+		
 		String actual5 = driver.findElement(By.id("hud_txtBetAmount")).getText();
 		String expected5 = "10";
 		System.out.println("\n" +actual5);
 		Assert.assertEquals(actual5, expected5);
-		Thread.sleep(2000);
 	}
 
 	@Then("^Bet value should get changed to (\\d+)\\.(\\d+),(\\d+),(\\d+)\\.(\\d+),(\\d+),(\\d+) if the bet type selected as (\\d+)\\.(\\d+) from the drop down two in Ultra Hot slot game$")

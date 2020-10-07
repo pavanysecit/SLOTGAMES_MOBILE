@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/UltraHot_AllUsecases.feature", glue={"stepDefinition_UltraHot"})
+@CucumberOptions(features="features/UltraHot_AllUsecases.feature", glue={"stepDefinition_UltraHot"})
 public class UltraHot_runner {
 	
 }
