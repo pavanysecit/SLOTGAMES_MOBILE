@@ -19,32 +19,13 @@ public class SeaPearl_PayOut_BetType_1_And_Denomination_3 {
 
 	public SeaPearl_PayOut_BetType_1_And_Denomination_3() throws InterruptedException {
 		this.driver = SeaPearl_URL_Login.getDriver();
-		}
+		//this.driver = SeaPearl_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Sea Pearl slot game, icon to open payout table, all symbols, max amount on each symbol like A, K, (\\d+) n etc, back button, bet type (\\d+)\\.(\\d+) and denomination as ONE on mobile$")
 	public void chrome_browser_valid_URL_valid_login_details_Sea_Pearl_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_A_K_n_etc_back_button_bet_type_and_denomination_as_ONE_on_mobile(int arg1, int arg2, int arg3) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait1 = new WebDriverWait(driver, 80);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like A, K, (\\d+) n etc, click on back button, select bet type as (\\d+)\\.(\\d+) & denomination as ONE and check payout amount on mobile$")

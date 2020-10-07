@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/SeaPearl_AllUsecases.feature", glue={"stepDefinition_SeaPearl"})
+@CucumberOptions(features="features/SeaPearl_AllUsecases.feature", glue={"stepDefinition_SeaPearl"})
 public class SeaPearl_runner {
 	
 }
