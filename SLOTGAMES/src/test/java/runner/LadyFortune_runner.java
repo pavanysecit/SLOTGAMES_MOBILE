@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/LadyFortune_AllUsecases.feature", glue={"stepDefinition_LadyFortune"})
+@CucumberOptions(features="features/LadyFortune_AllUsecases.feature", glue={"stepDefinition_LadyFortune"})
 public class LadyFortune_runner {
 	
 }
