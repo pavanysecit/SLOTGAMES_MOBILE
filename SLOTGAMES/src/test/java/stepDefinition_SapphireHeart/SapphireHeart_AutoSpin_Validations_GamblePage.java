@@ -1,7 +1,4 @@
-package stepDefinition_100SplendidHot;
-
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+package stepDefinition_SapphireHeart;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,22 +7,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 
-public class HundredSplendidHot_AutoSpin_Validations_GamblePage {
+public class SapphireHeart_AutoSpin_Validations_GamblePage {
 	AppiumDriver<MobileElement> driver;
 
-	public HundredSplendidHot_AutoSpin_Validations_GamblePage() throws InterruptedException {
-		this.driver = HundredSplendidHot_URL_Login.getDriver();
-		//this.driver = HundredSplendidHot_URL_TryNow.getDriver();	
+	public SapphireHeart_AutoSpin_Validations_GamblePage() throws InterruptedException {
+		this.driver = SapphireHeart_URL_Login.getDriver();
+		//this.driver = SapphireHeart_URL_TryNow.getDriver();
 	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality after navigating from gamble page to game page$")
-	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality_after_navigating_from_gamble_page_to_game_page(int arg1) throws Throwable {
-		
+	@Given("^Chrome browser, valid URL, valid login details, Sapphire Heart slot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality after navigating from gamble page to game page$")
+	public void chrome_browser_valid_URL_valid_login_details_Sapphire_Heart_slot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality_after_navigating_from_gamble_page_to_game_page() throws Throwable {
+	   
 	}
 
-	@When("^Open the (\\d+) Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons after navigating from gamble page to game page$")
-	public void open_the_Splendid_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_after_navigating_from_gamble_page_to_game_page(int arg1) throws Throwable {
+	@When("^Open the Sapphire Heart slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons after navigating from gamble page to game page in Sapphire Heart slot game$")
+	public void open_the_Sapphire_Heart_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_after_navigating_from_gamble_page_to_game_page_in_Sapphire_Heart_slot_game() throws Throwable {
 		WebDriverWait wait1 = new WebDriverWait(driver, 80);
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String Bal = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
@@ -131,13 +130,13 @@ public class HundredSplendidHot_AutoSpin_Validations_GamblePage {
 		Thread.sleep(3000);
 	}
 
-	@Then("^Bet value & Credit value buttons should not be clickable after navigating from gamble page$")
-	public void bet_value_Credit_value_buttons_should_not_be_clickable_after_navigating_from_gamble_page() throws Throwable {
+	@Then("^Bet value & Credit value buttons should not be clickable after navigating from gamble page in Sapphire Heart slot game$")
+	public void bet_value_Credit_value_buttons_should_not_be_clickable_after_navigating_from_gamble_page_in_Sapphire_Heart_slot_game() throws Throwable {
 		Thread.sleep(2000);
 	}
 
-	@Then("^Win amount should get added to the balance during autoplay$")
-	public void win_amount_should_get_added_to_the_balance_during_autoplay() throws Throwable {
-		driver.quit();
+	@Then("^Win amount should get added to the balance during autoplay in Sapphire Heart slot game$")
+	public void win_amount_should_get_added_to_the_balance_during_autoplay_in_Sapphire_Heart_slot_game() throws Throwable {
+	    driver.quit();
 	}
 }

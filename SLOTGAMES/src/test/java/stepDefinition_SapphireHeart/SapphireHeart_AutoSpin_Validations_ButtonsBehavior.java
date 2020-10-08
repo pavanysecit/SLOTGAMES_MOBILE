@@ -1,7 +1,4 @@
-package stepDefinition_100SplendidHot;
-
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+package stepDefinition_SapphireHeart;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,22 +8,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 
-public class HundredSplendidHot_AutoSpin_Validations_ButtonsBehavior {
+public class SapphireHeart_AutoSpin_Validations_ButtonsBehavior {
 	AppiumDriver<MobileElement> driver;
 
-	public HundredSplendidHot_AutoSpin_Validations_ButtonsBehavior() throws InterruptedException {
-		this.driver = HundredSplendidHot_URL_Login.getDriver();
-		//this.driver = HundredSplendidHot_URL_TryNow.getDriver();	
+	public SapphireHeart_AutoSpin_Validations_ButtonsBehavior() throws InterruptedException {
+		this.driver = SapphireHeart_URL_Login.getDriver();
+		//this.driver = SapphireHeart_URL_TryNow.getDriver();
 	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality$")
-	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality(int arg1) throws Throwable {
-		 
+	@Given("^Chrome browser, valid URL, valid login details, Sapphire Heart game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality$")
+	public void chrome_browser_valid_URL_valid_login_details_Sapphire_Heart_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality() throws Throwable {
+	    
 	}
 
-	@When("^Open the (\\d+) Splendid Hot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios$")
-	public void open_the_Splendid_Hot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_in_different_scenarios(int arg1) throws Throwable {
+	@When("^Open the Sapphire Heart game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios$")
+	public void open_the_Sapphire_Heart_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_in_different_scenarios() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		
@@ -119,23 +118,23 @@ public class HundredSplendidHot_AutoSpin_Validations_ButtonsBehavior {
 		Assert.assertEquals(actual1, expected1);
 	}
 
-	@Then("^Bet value & Credit value buttons should not be clickable$")
-	public void bet_value_Credit_value_buttons_should_not_be_clickable() throws Throwable {
+	@Then("^Bet value & Credit value buttons should not be clickable in Sapphire Heart slot game$")
+	public void bet_value_Credit_value_buttons_should_not_be_clickable_in_Sapphire_Heart_slot_game() throws Throwable {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Home and Info buttons should not be clickable$")
-	public void home_and_Info_buttons_should_not_be_clickable() throws Throwable {
+	@Then("^Home and Info buttons should not be clickable in Sapphire Heart slot game$")
+	public void home_and_Info_buttons_should_not_be_clickable_in_Sapphire_Heart_slot_game() throws Throwable {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Spin button should not visible & Stop button should be visible and clickable$")
-	public void spin_button_should_not_visible_Stop_button_should_be_visible_and_clickable() throws Throwable {
+	@Then("^Spin button should not visible & Stop button should be visible and clickable in Sapphire Heart slot game$")
+	public void spin_button_should_not_visible_Stop_button_should_be_visible_and_clickable_in_Sapphire_Heart_slot_game() throws Throwable {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Spin button should be visble after clicking on stop button$")
-	public void spin_button_should_be_visble_after_clicking_on_stop_button() throws Throwable {
+	@Then("^Spin button should be visble after clicking on stop button in Sapphire Heart slot game$")
+	public void spin_button_should_be_visble_after_clicking_on_stop_button_in_Sapphire_Heart_slot_game() throws Throwable {
 		driver.quit();
 	}
 }
