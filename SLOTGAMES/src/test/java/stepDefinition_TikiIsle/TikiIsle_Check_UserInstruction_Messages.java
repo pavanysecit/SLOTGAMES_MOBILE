@@ -1,6 +1,6 @@
 package stepDefinition_TikiIsle;
 
-import java.util.Set;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -18,33 +18,13 @@ public class TikiIsle_Check_UserInstruction_Messages {
 
 	public TikiIsle_Check_UserInstruction_Messages() throws InterruptedException {
 		this.driver = TikiIsle_URL_Login.getDriver();
-		}
+		//this.driver = TikiIsle_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Tiki Isle slot game, balance, spin button and user instruction message$")
 	public void chrome_browser_valid_URL_valid_login_details_Tiki_Isle_slot_game_balance_spin_button_and_user_instruction_message() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(20000);
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Tiki Isle hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button and check the user instruction messages$")
@@ -52,7 +32,7 @@ public class TikiIsle_Check_UserInstruction_Messages {
 	    String preMsg = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    Thread.sleep(3000);
 	    String actual = preMsg;
-	    String expected = "Please Place Your Bet";
+	    String expected = "PLEASE PLACE YOUR BET";
 	    System.out.println("Actual Message before Spin:" +actual);
 	    Assert.assertEquals(expected, actual);
 	    
@@ -63,7 +43,16 @@ public class TikiIsle_Check_UserInstruction_Messages {
 	    String expected1 = "GOOD LUCK!";
 	    System.out.println("Actual Message After Spin:" +actual1);
 	    Assert.assertEquals(expected1, actual1);
-	    Thread.sleep(1000);
+	    
+		driver.findElement(By.id("hud_btnSpin")).click();
+		Thread.sleep(4000);
+			    
+	    WebDriverWait wait = new WebDriverWait(driver, 20);
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "PLEASE PLACE YOUR BET"));
+	    String actual5 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected5 = "PLEASE PLACE YOUR BET";
+	    System.out.println("Message after clicking on stop button : " +actual5);
+	    Assert.assertEquals(actual5, expected5);
 	}
 
 	@Then("^User instruction message 'Please place your bet' should be displayed before spin button is clicked$")

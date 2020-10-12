@@ -1,7 +1,5 @@
 package stepDefinition_TikiIsle;
 
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,54 +15,24 @@ public class TikiIsle_AutoSpin_TwentySpins {
 
 	public TikiIsle_AutoSpin_TwentySpins() throws InterruptedException {
 		this.driver = TikiIsle_URL_Login.getDriver();
-		}
+		//this.driver = TikiIsle_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Tiki Isle slot game, balance, spin button, auto spin button, twenty spins option and number of spins left message$")
 	public void chrome_browser_valid_URL_valid_login_details_Tiki_Isle_slot_game_balance_spin_button_auto_spin_button_twenty_spins_option_and_number_of_spins_left_message() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(20000);
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Tiki Isle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on twenty spin option under auto spin drop down and check the number of spins left message$")
 	public void open_the_Tiki_Isle_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_twenty_spin_option_under_auto_spin_drop_down_and_check_the_number_of_spins_left_message() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 6);
-		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[6]/android.view.View[1]/android.view.View/android.view.View[1]")).click();
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("AutoSpinListItem_undefined")));
+		driver.findElement(By.id("AutoSpinListItem_undefined")).click();
 		Thread.sleep(3000);
-		
-		while(true)
-		 {
-			driver.findElement(By.id("AutoSpinListItem_20")).click();
-			Thread.sleep(0500);
-			break;
-		 }
-		
-//		MobileElement element = driver.findElement(By.id("AutoSpinListItem_10"));
-//		wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSearch")));
-//		JavascriptExecutor executor = (JavascriptExecutor)driver;
-//		executor.executeScript("arguments[0].click();", element);
-//		wait.until(ExpectedConditions.elementToBeClickable(By.id("AutoSpinListItem_10")));
-		
+
+		driver.findElement(By.id("AutoSpinListItem_20")).click();
+		System.out.println("Auplay 20: Started spinning the real : ");
 		
 		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "19 SPINS LEFT"));
 	    String actual = driver.findElement(By.id("hud_txtWinDetail")).getText();
@@ -114,18 +82,78 @@ public class TikiIsle_AutoSpin_TwentySpins {
 	    System.out.println(actual7);
 	    Assert.assertEquals(actual7, expected7);
 	    
+	    
 	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "11 SPINS LEFT"));
+	    String actual71 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected71 = "11 SPINS LEFT";
+	    System.out.println(actual71);
+	    Assert.assertEquals(actual71, expected71);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "10 SPINS LEFT"));
 	    String actual8 = driver.findElement(By.id("hud_txtWinDetail")).getText();
-	    String expected8 = "11 SPINS LEFT";
+	    String expected8 = "10 SPINS LEFT";
 	    System.out.println(actual8);
 	    Assert.assertEquals(actual8, expected8);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "10 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "9 SPINS LEFT"));
 	    String actual9 = driver.findElement(By.id("hud_txtWinDetail")).getText();
-	    String expected9 = "10 SPINS LEFT";
+	    String expected9 = "9 SPINS LEFT";
 	    System.out.println(actual9);
 	    Assert.assertEquals(actual9, expected9);
 	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "8 SPINS LEFT"));
+	    String actual10 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected10 = "8 SPINS LEFT";
+	    System.out.println(actual10);
+	    Assert.assertEquals(actual10, expected10);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "7 SPINS LEFT"));
+	    String actual11 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected11 = "7 SPINS LEFT";
+	    System.out.println(actual11);
+	    Assert.assertEquals(actual11, expected11);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "6 SPINS LEFT"));
+	    String actual12 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected12 = "6 SPINS LEFT";
+	    System.out.println(actual12);
+	    Assert.assertEquals(actual12, expected12);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "5 SPINS LEFT"));
+	    String actual13 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected13 = "5 SPINS LEFT";
+	    System.out.println(actual13);
+	    Assert.assertEquals(actual13, expected13);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "4 SPINS LEFT"));
+	    String actual14 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected14 = "4 SPINS LEFT";
+	    System.out.println(actual14);
+	    Assert.assertEquals(actual14, expected14);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "3 SPINS LEFT"));
+	    String actual15 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected15 = "3 SPINS LEFT";
+	    System.out.println(actual15);
+	    Assert.assertEquals(actual15, expected15);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "2 SPINS LEFT"));
+	    String actual16 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected16 = "2 SPINS LEFT";
+	    System.out.println(actual16);
+	    Assert.assertEquals(actual16, expected16);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "1 SPIN LEFT"));
+	    String actual17 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected17 = "1 SPIN LEFT";
+	    System.out.println(actual17);
+	    Assert.assertEquals(actual17, expected17);
+	    
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "LAST SPIN"));
+	    String actual20 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected20 = "LAST SPIN";
+	    System.out.println(actual20);
+	    Assert.assertEquals(actual20, expected20);
 	}
 
 	@Then("^Number of spin left should start from (\\d+) to (\\d+) after clicking twenty spins option and should perform (\\d+) spins from (\\d+) to (\\d+) in Tiki Isle slot game$")

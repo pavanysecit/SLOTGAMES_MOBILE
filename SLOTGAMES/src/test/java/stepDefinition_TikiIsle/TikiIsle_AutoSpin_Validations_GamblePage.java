@@ -1,30 +1,30 @@
-package stepDefinition_20GlowingHot;
+package stepDefinition_TikiIsle;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 
-public class TwentyGlowingHot_AutoSpin_Validations_GamblePage {
+public class TikiIsle_AutoSpin_Validations_GamblePage {
 	AppiumDriver<MobileElement> driver;
 
-	public TwentyGlowingHot_AutoSpin_Validations_GamblePage() throws InterruptedException {
-		this.driver = TwentyGlowingHot_URL_Login.getDriver();
-		//this.driver = TwentyGlowingHot_URL_TryNow.getDriver();
-		}
+	public TikiIsle_AutoSpin_Validations_GamblePage() throws InterruptedException {
+		this.driver = TikiIsle_URL_Login.getDriver();
+		//this.driver = TikiIsle_URL_TryNow.getDriver();
+	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Glowing Hot slot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality after navigating from gamble page to game page$")
-	public void chrome_browser_valid_URL_valid_login_details_Glowing_Hot_slot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality_after_navigating_from_gamble_page_to_game_page(int arg1) throws Throwable {
-		
+	@Given("^Chrome browser, valid URL, valid login details, Tiki Isle slot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality after navigating from gamble page to game page$")
+	public void chrome_browser_valid_URL_valid_login_details_Tiki_Isle_slot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality_after_navigating_from_gamble_page_to_game_page() throws Throwable {
+	  
 	}
 
-	@When("^Open the (\\d+) Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons after navigating from gamble page to game page$")
-	public void open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_after_navigating_from_gamble_page_to_game_page(int arg1) throws Throwable {
+	@When("^Open the Tiki Isle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons after navigating from gamble page to game page$")
+	public void open_the_Tiki_Isle_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_after_navigating_from_gamble_page_to_game_page() throws Throwable {
 		WebDriverWait wait1 = new WebDriverWait(driver, 80);
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String Bal = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();

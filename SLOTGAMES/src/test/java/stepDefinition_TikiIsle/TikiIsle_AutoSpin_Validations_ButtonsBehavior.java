@@ -1,31 +1,31 @@
-package stepDefinition_20GlowingHot;
+package stepDefinition_TikiIsle;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 
-public class TwentyGlowingHot_AutoSpin_Validations_ButtonsBehavior {
+public class TikiIsle_AutoSpin_Validations_ButtonsBehavior {
 	AppiumDriver<MobileElement> driver;
 
-	public TwentyGlowingHot_AutoSpin_Validations_ButtonsBehavior() throws InterruptedException {
-		this.driver = TwentyGlowingHot_URL_Login.getDriver();
-		//this.driver = TwentyGlowingHot_URL_TryNow.getDriver();
-		}
+	public TikiIsle_AutoSpin_Validations_ButtonsBehavior() throws InterruptedException {
+		this.driver = TikiIsle_URL_Login.getDriver();
+		//this.driver = TikiIsle_URL_TryNow.getDriver();
+	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Glowing Hot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality$")
-	public void chrome_browser_valid_URL_valid_login_details_Glowing_Hot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality(int arg1) throws Throwable {
-		
+	@Given("^Chrome browser, valid URL, valid login details, Tiki Isle game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality$")
+	public void chrome_browser_valid_URL_valid_login_details_Tiki_Isle_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality() throws Throwable {
+	    
 	}
 
-	@When("^Open the (\\d+) Glowing Hot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios$")
-	public void open_the_Glowing_Hot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_in_different_scenarios(int arg1) throws Throwable {
+	@When("^Open the Tiki Isle game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios$")
+	public void open_the_Tiki_Isle_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_in_different_scenarios() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		
@@ -118,23 +118,23 @@ public class TwentyGlowingHot_AutoSpin_Validations_ButtonsBehavior {
 		Assert.assertEquals(actual1, expected1);
 	}
 
-	@Then("^Bet value & Credit value buttons should not be clickable in (\\d+) Glowing hot slot game$")
-	public void bet_value_Credit_value_buttons_should_not_be_clickable_in_Glowing_hot_slot_game(int arg1) throws Throwable {
+	@Then("^Bet value & Credit value buttons should not be clickable in Tiki Isle slot game$")
+	public void bet_value_Credit_value_buttons_should_not_be_clickable_in_Tiki_Isle_slot_game() throws Throwable {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Home and Info buttons should not be clickable in (\\d+) Glowing hot slot game$")
-	public void home_and_Info_buttons_should_not_be_clickable_in_Glowing_hot_slot_game(int arg1) throws Throwable {
+	@Then("^Home and Info buttons should not be clickable in Tiki Isle slot game$")
+	public void home_and_Info_buttons_should_not_be_clickable_in_Tiki_Isle_slot_game() throws Throwable {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Spin button should not visible & Stop button should be visible and clickable in (\\d+) Glowing hot slot game$")
-	public void spin_button_should_not_visible_Stop_button_should_be_visible_and_clickable_in_Glowing_hot_slot_game(int arg1) throws Throwable {
+	@Then("^Spin button should not visible & Stop button should be visible and clickable in Tiki Isle slot game$")
+	public void spin_button_should_not_visible_Stop_button_should_be_visible_and_clickable_in_Tiki_Isle_slot_game() throws Throwable {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Spin button should be visble after clicking on stop button in (\\d+) Glowing hot slot game$")
-	public void spin_button_should_be_visble_after_clicking_on_stop_button_in_Glowing_hot_slot_game(int arg1) throws Throwable {
-		driver.quit();
+	@Then("^Spin button should be visble after clicking on stop button in Tiki Isle slot game$")
+	public void spin_button_should_be_visble_after_clicking_on_stop_button_in_Tiki_Isle_slot_game() throws Throwable {
+	    driver.quit();
 	}
 }

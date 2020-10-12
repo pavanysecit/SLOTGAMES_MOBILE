@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/TikiIsle_AllUsecases.feature", glue={"stepDefinition_TikiIsle"})
+@CucumberOptions(features="features/TikiIsle_AllUsecases.feature", glue={"stepDefinition_TikiIsle"})
 public class TikiIsle_runner {
 
 }

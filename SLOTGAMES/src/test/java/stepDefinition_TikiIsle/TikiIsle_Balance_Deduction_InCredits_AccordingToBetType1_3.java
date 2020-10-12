@@ -1,7 +1,4 @@
-package stepDefinition_20GlowingHot;
-
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+package stepDefinition_TikiIsle;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,23 +8,26 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 
-public class TwentyGlowingHot_Balance_Deduction_InCredits_AccordingToBetType1_1 {
+
+public class TikiIsle_Balance_Deduction_InCredits_AccordingToBetType1_3 {
 	AppiumDriver<MobileElement> driver;
 
-	public TwentyGlowingHot_Balance_Deduction_InCredits_AccordingToBetType1_1() throws InterruptedException {
-		this.driver = TwentyGlowingHot_URL_Login.getDriver();
-		//this.driver = TwentyGlowingHot_URL_TryNow.getDriver();
-		}
+	public TikiIsle_Balance_Deduction_InCredits_AccordingToBetType1_3() throws InterruptedException {
+		this.driver = TikiIsle_URL_Login.getDriver();
+		//this.driver = TikiIsle_URL_TryNow.getDriver();
+	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Glowing Hot slot game, bet type as (\\d+)\\.(\\d+), bet value as TWENTY, balance in credits and spin button$")
-	public void chrome_browser_valid_URL_valid_login_details_Glowing_Hot_slot_game_bet_type_as_bet_value_as_TWENTY_balance_in_credits_and_spin_button(int arg1, int arg2, int arg3) throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Tiki Isle slot game, bet type as (\\d+)\\.(\\d+), bet value as HUNDRED, balance in credits and spin button$")
+	public void chrome_browser_valid_URL_valid_login_details_Tiki_Isle_slot_game_bet_type_as_bet_value_as_HUNDRED_balance_in_credits_and_spin_button(int arg1, int arg2) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
-	@When("^Open the (\\d+) Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+), select the bet value as TWENTY, click on spin button and check the balance in credits$")
-	public void open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_select_the_bet_value_as_TWENTY_click_on_spin_button_and_check_the_balance_in_credits(int arg1, int arg2, int arg3) throws Throwable {
+	@When("^Open the Tiki Isle slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+), select the bet value as HUNDRED, click on spin button and check the balance in credits$")
+	public void open_the_Tiki_Isle_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_select_the_bet_value_as_HUNDRED_click_on_spin_button_and_check_the_balance_in_credits(int arg1, int arg2) throws Throwable {
 		//Storing the value before spin
 		MobileElement preSpin = driver.findElement(By.id("hud_Hud_txtBalance1"));
 		preSpin.click();
@@ -49,14 +49,14 @@ public class TwentyGlowingHot_Balance_Deduction_InCredits_AccordingToBetType1_1 
 		String expected = "0.01";
 		Assert.assertEquals(actual, expected);
 
-		//Selecting the bet amount as 20 from the drop down
+		//Selecting the bet amount as 100 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup120")).click();
+		driver.findElement(By.id("hud_BetPopup3100")).click();
 		Thread.sleep(2000);
 		
 		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		String expected1 = "20";
+		String expected1 = "100";
 		String betValue =actual1;
 		System.out.println("Selected bet value is : " +betValue);
 		Assert.assertEquals(actual1, expected1);
@@ -81,8 +81,8 @@ public class TwentyGlowingHot_Balance_Deduction_InCredits_AccordingToBetType1_1 
 		Assert.assertEquals(dbi,pt);
 	}
 
-	@Then("^Balance should get deducted by TWENTY as bet type is selected as (\\d+)\\.(\\d+) and bet value as (\\d+) in (\\d+) Glowing Hot game$")
-	public void balance_should_get_deducted_by_TWENTY_as_bet_type_is_selected_as_and_bet_value_as_in_Glowing_Hot_game(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+	@Then("^Balance should get deducted by HUNDRED, as bet type is selected as (\\d+)\\.(\\d+) and bet value as (\\d+) in Tiki Isle game$")
+	public void balance_should_get_deducted_by_HUNDRED_as_bet_type_is_selected_as_and_bet_value_as_in_Tiki_Isle_game(int arg1, int arg2, int arg3) throws Throwable {
 		Thread.sleep(2000);
 	    driver.quit();
 	}

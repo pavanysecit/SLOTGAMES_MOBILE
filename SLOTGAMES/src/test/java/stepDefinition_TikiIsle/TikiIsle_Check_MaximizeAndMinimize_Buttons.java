@@ -1,7 +1,5 @@
 package stepDefinition_TikiIsle;
 
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,33 +15,13 @@ public class TikiIsle_Check_MaximizeAndMinimize_Buttons {
 
 	public TikiIsle_Check_MaximizeAndMinimize_Buttons() throws InterruptedException {
 		this.driver = TikiIsle_URL_Login.getDriver();
-		}
+		//this.driver = TikiIsle_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Tiki Isle slot game, maximize button and minimize button$")
 	public void chrome_browser_valid_URL_valid_login_details_Tiki_Isle_slot_game_maximize_button_and_minimize_button() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(20000);
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Tiki Isle slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on maximize button and click on minimize button$")
@@ -51,6 +29,7 @@ public class TikiIsle_Check_MaximizeAndMinimize_Buttons {
 		MobileElement sub = driver.findElement(By.id("hud_btnFullScreen"));
 		sub.click();
 		Thread.sleep(3000);
+		System.out.println("Window is maximized");
 		
 		//Checking when window is maximized, URL tool bar should not visible
 	    Assert.assertTrue(driver.findElements(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText")).size() == 0);
@@ -60,6 +39,7 @@ public class TikiIsle_Check_MaximizeAndMinimize_Buttons {
 
     	 //Checking when window is minimized, URL tool bar should be visible
 	    Assert.assertTrue(driver.findElements(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText")).size() == 1);
+	    System.out.println("Window is minimized to normal size");
 	}
 
 	@Then("^Full screen should be displayed after clicking on maximize button and minimized screen should be displayed after clicking on minimize button in Tiki Isle slot game$")
