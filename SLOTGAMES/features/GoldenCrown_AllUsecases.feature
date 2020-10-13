@@ -4,25 +4,10 @@ Feature: Test all the functionalities of Golden Crown Slot Game
  	Scenario: To check the transferred amount is added to Golden Crown game
     Given Chrome browser, valid URL, valid login details, Golden Crown game, balance, text field to transfer balance and Ok button
     When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, click on Play button, enter the valid amount to transfer and click on Ok butotn
-    Then The exact amount entered in the transfer page should transfer to Golden Crown game and same amount should get displayed on the balance section
-	
-	
-	Scenario: Check whether the player is able to transfer the amount more than the available balance
-    Given Chrome browser, valid URL, valid login details, Golden Crown game, balance greater than available balance, text field to transfer balance, Ok button and validation message
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, enter the amount greater than available balance and click on Ok butotn
     Then Player should be blocked from loading the Golden Crown game when the amount entered in the transfer page is more than the available balance
-	
-	
-	Scenario: Check whether balance field is accepting null valuess in the transfer page of Golden Crown game
-    Given Chrome browser, valid URL, valid login details, Golden Crown game, empty balance, text field to transfer balance, Ok button and validation message
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details,  do not enter the amount in the balance field and click on Ok butotn
-    Then An error should be displayed if the balance field is empty and player should be blocked from loading the Golden Crown game
-	
-	
-	Scenario: Check whether balance field is accepting amount as Zero SRD in the transfer amount page of Golden Crown game
-    Given Chrome browser, valid URL, valid login details, Golden Crown game, zero balance, text field to transfer balance, Ok button and validation message
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, enter the amount as zero SRD and click on Ok butotn
-    Then An error should be displayed if balance entered was zero and player should be blocked from loading the Golden Crown game
+	And The exact amount entered in the transfer page should transfer to Golden Crown game and same amount should get displayed on the balance section
+	And An error should be displayed if the balance field is empty and player should be blocked from loading the Golden Crown game
+	And An error should be displayed if balance entered was zero and player should be blocked from loading the Golden Crown game
 	
 
 	
@@ -51,7 +36,7 @@ Feature: Test all the functionalities of Golden Crown Slot Game
 	
 	
 	
-	
+
 	
 	Scenario: Change the bet value as 0.2, do the spin and check whether balance is deducting according to the changed bet type in Golden Crown slot game
     Given Chrome browser, valid URL, valid login details, Golden Crown slot game, bet type as 0.01, bet value as 0.2, balance and spin button
@@ -184,6 +169,36 @@ Feature: Test all the functionalities of Golden Crown Slot Game
 	
 	
 	
+	
+   	 Scenario: Change the bet value as TWENTY do the spin and check whether balance in credits is deducting according to the changed bet type in Golden Crown slot game
+    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, bet type as 0.01, bet value as TWENTY, balance in credits and spin button
+    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as TWENTY, click on spin button and check the balance in credits
+    Then Balance should get deducted by TWENTY as bet type is selected as 0.01 and bet value as 20 in Golden Crown game
+    
+   	Scenario: Change the bet value as FOURTY, do the spin and check whether balance in credits is deducting according to the changed bet type in Golden Crown slot game
+    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, bet type as 0.01, bet value as FOURTY, balance in credits and spin button
+    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as FOURTY, click on spin button and check the balance in credits
+    Then Balance should get deducted by FOURTY as bet type is selected as 0.01 and bet value as 40 in Golden Crown game
+	
+	 Scenario: Change the bet value as HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in Golden Crown slot game
+    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, bet type as 0.01, bet value as HUNDRED, balance in credits and spin button
+    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by HUNDRED, as bet type is selected as 0.01 and bet value as 100 in Golden Crown game
+	
+	 Scenario: Change the bet value as TWO HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in Golden Crown slot game
+    Given Chrome browser, valid URL, valid login details, 20 Blazing slot game, bet type as 0.01, bet value as TWO HUNDRED, balance in credits and spin button
+    When Open the Golden Crown game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as TWO HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by TWO HUNDRED, as bet type is selected as 0.01 and bet value as 200 in Golden Crown game
+	
+	 Scenario: Change the bet value as FOUR HUNDRED, do the spin and check whether balance in credits is deducting according to the changed bet type in Golden Crown slot game
+    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, bet type as 0.01, bet value as FOUR HUNDRED, balance in credits and spin button
+    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as FOUR HUNDRED, click on spin button and check the balance in credits
+    Then Balance should get deducted by FOUR HUNDRED, as bet type is selected as 0.01 and bet value as 400 in Golden Crown game
+	
+	
+	
+	
+	
 	Scenario: Check whether balance is equals to credit multiplies by denomination 0.01 in Golden Crown slot game
     Given Chrome browser, valid URL, valid login details, Golden Crown slot game, balance, credits and denomination as 0.01 
     When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, click on balance, multiply credit by 0.01 and check the balance
@@ -233,6 +248,8 @@ Feature: Test all the functionalities of Golden Crown Slot Game
 	
 	
 
+
+
 	
 	Scenario: Check whether winning amount is getting added to the balance
     Given Chrome browser, valid URL, valid login details, godlen hot slot game, balance, transfer button, spin button and win amount
@@ -241,11 +258,18 @@ Feature: Test all the functionalities of Golden Crown Slot Game
 	
 	
 	
+	Scenario: Check whether winning amount is getting added to the main balance in credits
+    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, balance, transfer button, credit balance form, spin button and win amount in credits
+    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on  balance window to change to credit form, click on spin button till user win and check the balance after win in credits
+    Then Win amount should get added to the credit field after win and credit should get increased with win amount in Golden Crown slot game
 	
-	Scenario: Check whether user able to play the game when there is insufficiant balance in account in Golden Crown slot game
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, balance, spin button and validation message
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message
-    Then Player should be blocked from playing the game when there is no balance in the account in Golden Crown game
+	
+
+	Scenario: Check whether user able to play the game when there is insufficiant balance in balance counter the bet and credit values are decreased to equal or less than available balance which enables player to resume the game in Golden Crown slot game
+    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, balance counter, Auto spin button, validation message, credit types and bet types
+    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Auto spin button till balance counter turns less than betvalues and check the insufficient validation message and reduce the bet and credit values to resume the play.
+    Then Player should be blocked from playing the game when there is less amount in balance counter and reducing the credit and bet types player is enable to continue slot game in Golden Crown game
+	
 	
 
 	Scenario: Check user instruction messages before and after spin in Golden Crown slot game
@@ -285,7 +309,30 @@ Feature: Test all the functionalities of Golden Crown Slot Game
     When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on twenty spin option under auto spin drop down and check the number of spins left message
     Then Number of spin left should start from 19 to 1 after clicking twenty spins option and should perform 20 spins from 19 to 1 in Golden Crown slot game
 	
-
+	
+	
+	
+	
+	Scenario: Check bet value, credit value, home button, info button, play button behavior during autoplay in Golden Crown game
+    Given Chrome browser, valid URL, valid login details, Golden Crown game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality
+    When Open the Golden Crown game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios
+    Then Bet value & Credit value buttons should not be clickable in Golden Crown slot game
+	And Home and Info buttons should not be clickable in Golden Crown slot game
+	And Spin button should not visible & Stop button should be visible and clickable in Golden Crown slot game
+	And Spin button should be visble after clicking on stop button in Golden Crown slot game
+    
+    
+    Scenario: Check bet & credit value buttons behavior after navigating from gamble page during autoplay and check win amount getting added to balance in Golden Crown game
+    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality after navigating from gamble page to game page
+    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons after navigating from gamble page to game page
+    Then Bet value & Credit value buttons should not be clickable after navigating from gamble page
+	And Win amount should get added to the balance during autoplay
+ 
+    
+    Scenario: Check whether auto spin is continued even after switching between the tabs inside a browser session of Golden Crown slot game
+    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, spin button, auto spin button, browser tabs.
+    When Open the Golden Crown slot game by entering the valid URL in browser, click on auto wait for the reel spin, open new browser tabs and redirect to game tab and check the spin functionality
+    Then Auto spin should be continued even after switching between the tabs in Golden Crown slot game
 	
 	
 	
@@ -322,96 +369,7 @@ Feature: Test all the functionalities of Golden Crown Slot Game
 	
 	
 	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.02 and denomination value 0.4 in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like orange n etc, back button, bet type 0.02 and denomination value 0.4
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like orange n etc, click on back button, select bet type as 0.02 & denomination  value 0.4 and check payout amount
-    Then System should display the Payout max amount on each symbol like orange n etc and payout max amount should get changed whenever player changes the bet type to 0.02 and denomination value 0.4 in Golden Crown slot game
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.02 and denomination 0.8 in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like bell n etc, back button, bet type 0.02 and denomination value 0.8
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like bell, click on back button, select bet type as 0.02 & denomination  value 0.8 and check payout amount
-    Then System should display the Payout max amount on each symbol like bell and payout max amount should get changed whenever player changes the bet type to 0.02 and denomination value 0.8 in Golden Crown slot game
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.02 and denomination value 2 in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like cherry n etc, back button, bet type 0.02 and denomination value 2
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like cherry n etc, click on back button, select bet type as 0.02 & denomination  value 2 and check payout amount
-    Then System should display the Payout max amount on each symbol like cherry n etc and payout max amount should get changed whenever player changes the bet type to 0.02 and denomination value 2 in Golden Crown slot game
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.02 and denomination value 4 in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like watermelon n etc, back button, bet type 0.02 and denomination value 4
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like watermelon n etc, click on back button, select bet type as 0.02 & denomination  value 4 and check payout amount
-    Then System should display the Payout max amount on each symbol like watermelon n etc and payout max amount should get changed whenever player changes the bet type to 0.02 and denomination value 4 in Golden Crown slot game
-	
-		Scenario: Check whether the max payout amount for each symbol as per the bet type 0.02 and denomination value 8 in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like seven n etc, back button, bet type 0.02 and denomination value 8
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like seven n etc, click on back button, select bet type as 0.02 & denomination  value 8 and check payout amount
-    Then System should display the Payout max amount on each symbol like seven n etc and payout max amount should get changed whenever player changes the bet type to 0.02 and denomination value 8 in Golden Crown slot game
-	
 
-	
-	
-	
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.05 and denomination ONE in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like seven and etc, back button, bet type 0.05 and denomination value ONE
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like seven, click on back button, select bet type as 0.05 & denomination  value ONE and check payout amount
-    Then System should display the Payout max amount on each symbol like seven and payout max amount should get changed whenever player changes the bet type to 0.05 and denomination value ONE in Golden Crown slot game
-	
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.05 and denomination value TWO in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like bar n etc, back button, bet type 0.05 and denomination value TWO
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like bar n etc, click on back button, select bet type as 0.05 & denomination  value TWO and check payout amount
-    Then System should display the Payout max amount on each symbol like bar n etc and payout max amount should get changed whenever player changes the bet type to 0.05 and denomination value TWO in Golden Crown slot game
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.05 and denomination value FIVE in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like orange n etc, back button, bet type 0.05 and denomination value FIVE
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like orange n etc, click on back button, select bet type as 0.05 & denomination  value FIVE and check payout amount
-    Then System should display the Payout max amount on each symbol like orange n etc and payout max amount should get changed whenever player changes the bet type to 0.05 and denomination value FIVE in Golden Crown slot game
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.05 and denomination value TEN in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like lemon n etc, back button, bet type 0.05 and denomination value TEN
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like lemon n etc, click on back button, select bet type as 0.05 & denomination  value TEN and check payout amount
-    Then System should display the Payout max amount on each symbol like lemon n etc and payout max amount should get changed whenever player changes the bet type to 0.05 and denomination value TEN in Golden Crown slot game
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.05 and denomination value 20 in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like watermelon and etc, back button, bet type 0.05 and denomination value 20
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like watermelon and etc, click on back button, select bet type as 0.05 & denomination  value 20 and check payout amount
-    Then System should display the Payout max amount on each symbol like watermelon and etc and payout max amount should get changed whenever player changes the bet type to 0.05 and denomination value 20 in Golden Crown slot game
-	
-	
-	
-	
-	
-	
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.5 and denomination TEN in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like orange and etc, back button, bet type 0.5 and denomination value TEN
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like orange, click on back button, select bet type as 0.5 & denomination  value TEN and check payout amount
-    Then System should display the Payout max amount on each symbol like orange and payout max amount should get changed whenever player changes the bet type to 0.5 and denomination value TEN in Golden Crown slot game
-	
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.5 and denomination value twenty in Golden Crown hot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown hot game, icon to open payout table, all symbols, max amount on each symbol like scatter n etc, back button, bet type 0.5 and denomination value twenty
-    When Open the Golden Crown game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like scatter n etc, click on back button, select bet type as 0.5 & denomination  value twenty and check payout amount
-    Then System should display the Payout max amount on each symbol like scatter n etc and payout max amount should get changed whenever player changes the bet type to 0.5 and denomination value twenty in Golden Crown slot game
-	
-
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.5 and denomination value fifty in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like bell n etc, back button, bet type 0.5 and denomination value fifty
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like bell n etc, click on back button, select bet type as 0.5 & denomination  value fifty and check payout amount
-    Then System should display the Payout max amount on each symbol like bell n etc and payout max amount should get changed whenever player changes the bet type to 0.5 and denomination value fifty in Golden Crown slot game
-	
-	 
-	
-	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.5 and denomination value 200 in Golden Crown slot game 
-    Given Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like watermilon and etc, back button, bet type 0.5 and denomination value 200
-    When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on icon to open payout table, check payout amount on each symbol like watermilon and etc, click on back button, select bet type as 0.5 & denomination  value 200 and check payout amount
-    Then System should display the Payout max amount on each symbol like watermilon and etc and payout max amount should get changed whenever player changes the bet type to 0.5 and denomination value 200 in Golden Crown slot game
-	
-	
-	
-	
-	
 		
 	Scenario: Checking whether win amount is displaying as gamble amount in gamble page of Golden Crown slot game 
     Given Chrome browser, valid URL, valid login details, Golden Crown slot game, balance, spin button, win amount, gamble button and gamble amount
@@ -428,6 +386,42 @@ Feature: Test all the functionalities of Golden Crown Slot Game
     When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, click on red or black button and check the balance after win
     Then Gamble Win amount should get added to main balance after status displayed as WIN and gamble page should get closed in Golden Crown slot game 
 	
+	
+	
+	
+	
+	Scenario: Check whether gamble color win options and game play in landscape mode and verify the win amount in win meter  in Golden Crown slot game 
+	Given Chrome browser, valid URL, valid login details, Golden Crown slot game, balance, spin button, win amount, gamble button, color win option, game play in landscape mode in gamble page, gamble status 
+	When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, check the play options and play in landscape mode in gamble page and when user wins check the win meter at main page is same as gamble win amount
+	Then Verify the home button is enabled on the game screen after returning from gamble page
+	Then Gamble page should provide multiple options for the user to play and enabled to play in landscape mode and check the win meter in main page in Golden Crown slot game 
+	
+
+	Scenario: Check whether gamble credit win amount is getting added to the balance after win in Golden Crown game 
+	Given Chrome browser, valid URL, valid login details, Golden Crown slot game, credit balance, spin button, credit win amount, gamble button, gamble amount in credits, red button, black button and gamble status
+	When Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, click on red or black button and check the balance in credits after win
+	Then verify the credit form of currency in gamble page on all fields 
+	Then Gamble credit Win amount should get added to main balance after status displayed as WIN and gamble page should get closed in Golden Crown slot game
+	
+
+	Scenario: Check whether resume feature is enabled in Gamble screen, when user collect amount in gamble screen without playing Gamble attempts in Golden Crown slot game
+	Given chrome browser, valid URL, valid login details, Golden Crown slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble collect
+	When Open the Golden Crown slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on collect and close the browser and again load to the game 
+	Then  Resume feature should not be enabled and land on the game screen of Golden Crown slot game
+	
+	
+	Scenario: Check whether resume feature is enabled in Gamble screen of Golden Crown slot game
+	Given Chrome browser, valid URL, valid login details, Golden Crown slot slot game, bet type, denomination, balance, spin button, Gamble screen, new browser session.
+	When Open the Golden Crown slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on red button and close the browser and again login to the game with new browser
+	Then  Resume feature should enabled and land on the gamble screen of Golden Crown slot game
+	Then  On resuming to gamble screen, collect the amount and verify with main  balance addition and win meter amount same as gamble amount in gamble page in  Golden Crown slot game
+	
+	
+	Scenario: Check whether on resume feature is enabled in Gamble screen, user can play further left over attempts and check the attempts before and after resuming to gamble screen in Golden Crown slot game
+	Given chrome browser, valid URL, valid login details, Golden Crown slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble attempts, gamble play
+	When Open the Golden Crown slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on black button and close the browser and again login to the game with new browser
+	Then  Resume feature should be enabled and land on the game screen and verify with the left out gamble attempts of Golden Crown slot game
+	Then Left over attempts should be  between 4 to 1 and the user is enabled to play the remaining attempts
 	
 	
 	
@@ -465,105 +459,6 @@ Feature: Test all the functionalities of Golden Crown Slot Game
 	
 	
 
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.02 & denomination 0.4 in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, golden hot slot game, bet type as 0.02, denomination as 0.4, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as 0.02 & denomination as 0.4, click on spin button till user wins, click on gamble button and check the gamble count
-    Then Gamble count should be displayed based on win amount and gamble max amount configured on the info page for bet type 0.02 & denomination 0.4 in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.02 and denomination 0.8 in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, golden hot slot game, transfer button, bet type as 0.02, denomination as 0.8, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, transfer amount to slot game, select bet type as 0.02 & denomination as 0.8, click on spin button till player wins, click on gamble button and check the gamble count in gamble page
-    Then Gamble count should be displayed based on winning amount and gamble max amount configured on the game info page for bet type 0.02 & denomination 0.8 in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.02 & denomination TWO in Golden Crown game
-    Given Godlen hot slot game, bet type as 0.02, denomination as TWO, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page of slot game
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, enter the amount, transfer the balance, click on golden hot slot game, select bet type as 0.02 & denomination as TWO, click on spin button till player wins, click on gamble button and check the gamble count in gamble page of slot game
-    Then Gamble count should be displayed  on gamble page of golden hot slot game based on win amount and gamble max amount configured on the game info page for bet type 0.02 & denomination TWO in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.02 & denomination FOUR in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, godlen hot slot game, amount to transfer, transfer button, bet type as 0.02, denomination as FOUR, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, enter the amount, transfer the balance, click on golden hot slot game, transfer the amount, select bet type as 0.02 & denomination as FOUR, click on spin button till player wins, click on gamble button and check the gamble count
-    Then Gamble count should be displayed based on win amount and max amount of the gamble configured on the game info page for bet type 0.02 and denomination FOUR in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.02 & denomination EIGHT in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, godlen hot slot game, bet type as 0.02, denomination as EIGHT, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as 0.02 & denomination as EIGHT, click on spin button till player wins, click on gamble button and check the gamble count
-    Then Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type 0.02 & denomination EIGHT in Golden Crown game
-	
-	
-	
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.05 & denomination ONE in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, golden hot slot game, bet type as 0.05, denomination as ONE, balance, transfer button, spin button, win amount, gamble button, gamble amount, game info page and gamble count
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, enter amount & transfer the balance, click on golden hot slot game, select bet type as 0.05 & denomination as ONE, click on spin button till user wins, click on gamble button and check the gamble count
-    Then Gamble count should be displayed based on winning amount and gamble max amount configured on the info page for bet type 0.05 & denomination ONE in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.05 and denomination TWO in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, golden hot slot game, transfer button, bet type as 0.05, denomination as TWO, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, transfer amount to slot game, select bet type as 0.05 & denomination as TWO, click on spin button till player wins, click on gamble button and check the gamble count in gamble page
-    Then Gamble count should be displayed based on winning amount and gamble max amount configured on the game info page for bet type 0.05 & denomination TWO in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.05 & denomination FIVE in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, golden hot slot game, transfer button, bet type as 0.05, denomination as FIVE, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page of slot game
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, click on golden hot slot game, select bet type as 0.05 & denomination as FIVE, click on spin button till player wins, click on gamble button and check the gamble count in gamble page of slot game
-    Then Gamble count should be displayed  on gamble page based on win amount and gamble max amount configured on the game info page for bet type 0.05 & denomination FIVE in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.05 & denomination TEN in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, godlen hot slot game, amount to transfer, transfer button, bet type as 0.05, denomination as TEN, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, enter the amount, transfer the balance, click on golden hot slot game, transfer the amount, select bet type as 0.05 & denomination as TEN, click on spin button till player wins, click on gamble button and check the gamble count
-    Then Gamble count should be displayed based on win amount and max amount of the gamble configured on the game info page for bet type 0.05 and denomination TEN in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.05 & denomination TWENTY in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, godlen hot slot game, bet type as 0.05, denomination as TWENTY, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as 0.05 & denomination as TWENTY, click on spin button till player wins, click on gamble button and check the gamble count
-    Then Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type 0.05 & denomination TWENTY in Golden Crown game
-	
-	
-	
-	
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.5 & denomination TEN in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, golden hot slot game, bet type as 0.5, denomination as TEN, balance, transfer button, spin button, win amount, gamble button, gamble amount, game info page and gamble count
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, enter amount & transfer the balance, click on golden hot slot game, select bet type as 0.5 & denomination as TEN, click on spin button till user wins, click on gamble button and check the gamble count
-    Then Gamble count should be displayed based on winning amount and gamble max amount configured on the info page for bet type 0.5 & denomination TEN in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.5 and denomination TWENTY in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, golden hot slot game, transfer button, bet type as 0.5, denomination as TWENTY, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, transfer amount to slot game, select bet type as 0.5 & denomination as TWENTY, click on spin button till player wins, click on gamble button and check the gamble count in gamble page
-    Then Gamble count should be displayed based on winning amount and gamble max amount configured on the game info page for bet type 0.5 & denomination TWENTY in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.5 & denomination FIFTY in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, golden hot slot game, transfer button, bet type as 0.5, denomination as FIFTY, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page of slot game
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, click on golden hot slot game, select bet type as 0.5 & denomination as FIFTY, click on spin button till player wins, click on gamble button and check the gamble count in gamble page of slot game
-    Then Gamble count should be displayed  on gamble page based on win amount and gamble max amount configured on the game info page for bet type 0.5 & denomination FIFTY in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.5 & denomination HUNDRED in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, godlen hot slot game, amount to transfer, transfer button, bet type as 0.5, denomination as HUNDRED, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, enter the amount, transfer the balance, click on golden hot slot game, transfer the amount, select bet type as 0.5 & denomination as HUNDRED, click on spin button till player wins, click on gamble button and check the gamble count
-    Then Gamble count should be displayed based on win amount and max amount of the gamble configured on the game info page for bet type 0.5 and denomination HUNDRED in Golden Crown game
-	
-	
-	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.5 & denomination 200 in Golden Crown game
-    Given Chrome browser, valid URL, valid login details, godlen hot slot game, bet type as 0.5, denomination as 200, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
-    When Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as 0.5 & denomination as 200, click on spin button till player wins, click on gamble button and check the gamble count
-    Then Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type 0.5 & denomination 200 in Golden Crown game
-	
-
-	
 	
 
 	

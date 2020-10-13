@@ -8,7 +8,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="E:/SLOTGAMES_AUTOMATION/SLOTGAMES/features/GoldenCrown_AllUsecases.feature", glue={"stepDefinition_GoldenCrown"}, plugin ={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"})
+@CucumberOptions(features="features/GoldenCrown_AllUsecases.feature", glue={"stepDefinition_GoldenCrown"}, plugin ={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"})
 public class GoldenCrown_runner {
 
 

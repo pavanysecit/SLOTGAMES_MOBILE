@@ -18,8 +18,8 @@ AppiumDriver<MobileElement> driver;
 
 	public GoldenCrown_PayOut_BetType_1_And_Denomination_2() throws InterruptedException {
 		this.driver = GoldenCrown_URL_Login.getDriver();
-		
-		}
+		//this.driver = GoldenCrown_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Golden Crown slot game, icon to open payout table, all symbols, max amount on each symbol like cherry n etc, back button, bet type (\\d+)\\.(\\d+) and denomination value (\\d+)\\.(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Golden_Crown_slot_game_icon_to_open_payout_table_all_symbols_max_amount_on_each_symbol_like_cherry_n_etc_back_button_bet_type_and_denomination_value(int arg1, int arg2, int arg3, int arg4) throws Throwable {

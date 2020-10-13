@@ -1,10 +1,7 @@
 package stepDefinition_GoldenCrown;
 
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,36 +16,13 @@ AppiumDriver<MobileElement> driver;
 
 	public GoldenCrown_Check_MaximizeAndMinimize_Buttons() throws InterruptedException {
 		this.driver = GoldenCrown_URL_Login.getDriver();
-		
-		}
+		//this.driver = GoldenCrown_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Golden Crown slot game, maximize button and minimize button$")
 	public void chrome_browser_valid_URL_valid_login_details_Golden_Crown_slot_game_maximize_button_and_minimize_button() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		
-		MobileElement bal = driver.findElement(By.id("transferInput"));
-		bal.clear();
-		Thread.sleep(1000);
-		bal.sendKeys("10");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(20000);
-		 
-		 
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-		
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-			}
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+		WebDriverWait wait1 = new WebDriverWait(driver, 80);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
 	@When("^Open the Golden Crown slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on maximize button and click on minimize button$")
