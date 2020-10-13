@@ -1,4 +1,4 @@
-package stepDefinition_UltraHot;
+package stepDefinition_VegasMania;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,23 +11,23 @@ import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class UltraHot_AutoSpin_Validations_ButtonsBehavior {
+public class VegasMania_AutoSpin_Validations_ButtonsBehavior {
 	AppiumDriver<MobileElement> driver;
 
-	public UltraHot_AutoSpin_Validations_ButtonsBehavior() throws InterruptedException {
-		this.driver = UltraHot_URL_Login.getDriver();
-		//this.driver = UltraHot_URL_TryNow.getDriver();
+	public VegasMania_AutoSpin_Validations_ButtonsBehavior() throws InterruptedException {
+		this.driver = VegasMania_URL_Login.getDriver();
+		//this.driver = VegasMania_URL_TryNow.getDriver();
 	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Ultra Hot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality$")
-	public void chrome_browser_valid_URL_valid_login_details_Ultra_Hot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality() throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Vegas Mania game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality$")
+	public void chrome_browser_valid_URL_valid_login_details_Vegas_Mania_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality() throws Throwable {
 	    
 	}
 
-	@When("^Open the Ultra Hot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios$")
-	public void open_the_Ultra_Hot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_in_different_scenarios() throws Throwable {
+	@When("^Open the Vegas Mania game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios$")
+	public void open_the_Vegas_Mania_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_in_different_scenarios() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		
 		String Bal = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Balance amount:" +Bal);
@@ -59,7 +59,7 @@ public class UltraHot_AutoSpin_Validations_ButtonsBehavior {
 			System.out.println("Credit click is performed but value not changed during autoplay. Hence test case passed");
 		}
 		System.out.println("Credit value comparision is verified and test case passed");
-		Assert.assertEquals("0.03", cr);
+		Assert.assertEquals("0.02", cr);
 		Thread.sleep(2000);
 
 		MobileElement bet=	driver.findElement(By.id("hud_txtBetAmount"));
@@ -68,13 +68,13 @@ public class UltraHot_AutoSpin_Validations_ButtonsBehavior {
 		Thread.sleep(2000);
 		System.out.println("bet click is performed");
 		Thread.sleep(2000);
-		if(driver.findElements(By.id("hud_BetPopup30.75")).size() != 0){
+		if(driver.findElements(By.id("hud_BetPopup32.5")).size() != 0){
 			System.out.println("BetValue click is performed but value is changed during autoplay. Hence test case failed");
 		}else{
 			System.out.println("BetValue click is performed but bet value not changed during autoplay. Hence test case passed");
 		}
 		System.out.println("betvalues comparision is verified and test case passed");
-		Assert.assertEquals("0.15",betval );
+		Assert.assertEquals("0.2",betval );
 		Thread.sleep(2000);
 
 		MobileElement home = driver.findElement(By.id("hud_btnHome"));
@@ -118,23 +118,23 @@ public class UltraHot_AutoSpin_Validations_ButtonsBehavior {
 		Assert.assertEquals(actual1, expected1);
 	}
 
-	@Then("^Bet value & Credit value buttons should not be clickable in Ultra Hot game$")
-	public void bet_value_Credit_value_buttons_should_not_be_clickable_in_Ultra_Hot_game() throws Throwable {
+	@Then("^Bet value & Credit value buttons should not be clickable in Vegas Mania game$")
+	public void bet_value_Credit_value_buttons_should_not_be_clickable_in_Vegas_Mania_game() throws Throwable {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Home and Info buttons should not be clickable in Ultra Hot game$")
-	public void home_and_Info_buttons_should_not_be_clickable_in_Ultra_Hot_game() throws Throwable {
+	@Then("^Home and Info buttons should not be clickable in Vegas Mania game$")
+	public void home_and_Info_buttons_should_not_be_clickable_in_Vegas_Mania_game() throws Throwable {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Spin button should not visible & Stop button should be visible and clickable in Ultra Hot game$")
-	public void spin_button_should_not_visible_Stop_button_should_be_visible_and_clickable_in_Ultra_Hot_game() throws Throwable {
+	@Then("^Spin button should not visible & Stop button should be visible and clickable in Vegas Mania game$")
+	public void spin_button_should_not_visible_Stop_button_should_be_visible_and_clickable_in_Vegas_Mania_game() throws Throwable {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Spin button should be visble after clicking on stop button in in Ultra Hot game$")
-	public void spin_button_should_be_visble_after_clicking_on_stop_button_in_in_Ultra_Hot_game() throws Throwable {
-	   driver.quit();
+	@Then("^Spin button should be visble after clicking on stop button in in Vegas Mania game$")
+	public void spin_button_should_be_visble_after_clicking_on_stop_button_in_in_Vegas_Mania_game() throws Throwable {
+	    driver.quit();
 	}
 }
