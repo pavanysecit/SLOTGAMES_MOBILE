@@ -11,7 +11,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="E:/SLOTGAMES_AUTOMATION/SLOTGAMES/features/GoldenHot_AllUsecase.feature", glue={"stepDefinition_GoldenHot1"}, plugin ={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"})
+@CucumberOptions(features="features/GoldenHot_AllUsecase.feature", glue={"stepDefinition_GoldenHot1"}, plugin ={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"})
 public class GoldenHot_runner {
 
 

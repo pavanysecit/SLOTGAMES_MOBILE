@@ -1,7 +1,6 @@
 package stepDefinition_GoldenHot1;
 
-import java.util.List;
-import java.util.Set;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,112 +13,83 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class GoldenHot_Gamble_GambleCount_For_BetType_1_And_Denomination_2 {
-AppiumDriver<MobileElement> driver;
-	
+	AppiumDriver<MobileElement> driver;
+
 	public GoldenHot_Gamble_GambleCount_For_BetType_1_And_Denomination_2() throws InterruptedException {
-		this.driver = SlotGames_URL_Login.getDriver();
-		driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[6]/div[1]/div")).click();
-		Thread.sleep(5000);
-		}
+		this.driver = GoldenHot_URL_Login.getDriver();
+		//this.driver = GoldenHot_URL_TryNow.getDriver();
+	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, godlen hot slot game, bet type as (\\d+)\\.(\\d+), denomination as (\\d+)\\.(\\d+), balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page$")
-	public void chrome_browser_valid_URL_valid_login_details_godlen_hot_slot_game_bet_type_as_denomination_as_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count_in_gamble_page(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		
-		driver.findElement(By.id("transferInput")).sendKeys("200");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(20000);
-		
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-		
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-			}
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+	@Given("^Chrome browser, valid URL, valid login details, Golden Hot slot game, bet type as (\\d+)\\.(\\d+), denomination as (\\d+)\\.(\\d+), balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page$")
+	public void chrome_browser_valid_URL_valid_login_details_Golden_Hot_slot_game_bet_type_as_denomination_as_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count_in_gamble_page(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
-	@When("^Open the Golded hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as (\\d+)\\.(\\d+) & denomination as (\\d+)\\.(\\d+), click on spin button till player wins, click on gamble button and check the gamble count in gamble page$")
-	public void open_the_Golded_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_golden_hot_slot_game_select_bet_type_as_denomination_as_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count_in_gamble_page(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
+	@When("^Open the Golden hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Golden Hot slot game, select bet type as (\\d+)\\.(\\d+) & denomination as (\\d+)\\.(\\d+), click on spin button till player wins, click on gamble button and check the gamble count in gamble page$")
+	public void open_the_Golden_hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_Golden_Hot_slot_game_select_bet_type_as_denomination_as_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count_in_gamble_page(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
+		System.out.println("The current balance of the account :" +balance);
 		
+		driver.findElement(By.id("hud_txtCredit")).click();
+		Thread.sleep(1000);
+		MobileElement cr1 = driver.findElement(By.id("hud_CreditPopup10.03"));
+		String credit1 =cr1.getText();
+		System.out.println(credit1);
+		String expectedA = "0.03";
+		Assert.assertEquals(expectedA, credit1);
+		cr1.click();
+		Thread.sleep(1000);
 
-		//Storing the balance before spin
-		String prewin="";
-		for(MobileElement me:balance){
-			//System.out.println(me.getId()+"  "+me.getText());
-			if(me.getId().equals("37")){
-				 prewin = me.getText();
-				 System.out.println("The current Balance of Account"+" "+me.getText());
-			}
-		}
+		driver.findElement(By.id("hud_txtBetAmount")).click();
+		Thread.sleep(1000);
+		MobileElement bet1_5= driver.findElement(By.id("hud_BetPopup20.3"));
+		String Betval1_5 =bet1_5.getText();
+		System.out.println(Betval1_5);
+		String expectedB = "0.3";
+		Assert.assertEquals(expectedB, Betval1_5);
+		Thread.sleep(2000);
+		bet1_5.click();
 
-		//Selecting denomination as 0.3 from denomination drop down by xpath
-		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[9]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[24]/android.view.View[2]/android.view.View[2]")).click();
-		Thread.sleep(2000);
-		
-		for(MobileElement me3:balance)
-		{
-			//System.out.println(me3.getId()+"  "+me3.getText());
-			if(me3.getId().equals("25"))
-			{
-			String actual = me3.getText();
-			String expected = "0.3";
-			System.out.println("Selected Denomination is: "+" "+me3.getText());
-			Assert.assertEquals(actual, expected);
-			}	
-		}
-		//Method to click on the play/start button/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[6]/android.view.View[2]
-		MobileElement start = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[6]/android.view.View[2]"));
+		MobileElement start = driver.findElement(By.id("hud_btnSpin"));
 		start.click();
-				                                                                                                                                                                                                      
- 		MobileElement winE = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[1]/android.view.View[21]/android.view.View[1]"));
-		List<MobileElement> balance1 = driver.findElementsByClassName("android.view.View");
-		String winTex1="";
-		//Storing the balance before spin
-		String prewin1="";
-		for(MobileElement me1:balance1){
-		//System.out.println(me1.getId()+"  "+me1.getText());
-			if(me1.getId().equals("187")){
-				 prewin = me1.getText();
-				 //System.out.println("The win is"+" "+me1.getText());
-				 winTex1=me1.getText();
-				 String winTex = me1.getText();			
-				 while(winTex.isEmpty())
-				 {
-					Thread.sleep(4500);
-					start.click();
-					Thread.sleep(1000);
-					winTex=	winE.getText();
-					winTex1 = winTex1+winTex;
-		         	System.out.println(winTex.isEmpty());	
-				 }
-				System.out.println("The Win is : "+"  "+winTex);
-				System.out.println(winTex.isEmpty()+" "+winTex);	
-			break; 
+		Thread.sleep(8000);
+		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
+
+		String prewin = winE.getText();
+		//System.out.println("Balance before win is"+" "+prewin);                    
+		String winTex= winE.getText();
+		                       
+		while(prewin.isEmpty()){
+			start.click();	
+			Thread.sleep(8000);	
+			winTex = winE.getText();
+			prewin= prewin+winTex;
+			System.out.println(winTex.isEmpty());		
 		}
-				start.click();   			
-		    }
-	
+		System.out.println("Win amount is: " +prewin);	
+		System.out.println("Maximum gamble win amount for bet amount 0.3 and credit value 0.03 is : 10.5 SRD");	                                                                                                                             
+		Double maxV = Double.parseDouble(prewin);
+		if(maxV < 10.5)
+		   {
+			   System.out.println("Win amount less than Gamble max value 10.5 i.e : "+" " +maxV +". Test Case Passed");
+		   }
+		else
+		{
+			System.out.println("Win amount greater than Gamble max value 10.5 : i.e "+" " +maxV +". Test Case Failed");
+			driver.findElement(By.id("hud_btnGamble")).isDisplayed();
+			Thread.sleep(2000);
+			driver.quit();
+		}
 		Thread.sleep(2000);
-		Double monty = Double.parseDouble(winTex1);
+		driver.findElement(By.id("hud_btnGamble")).click();	
+		Thread.sleep(3000);
+		Double monty = Double.parseDouble(prewin);
 		System.out.println("Gamble amount is equal to win amount & the amount is :"+" "+monty);
-		MobileElement attempts = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[7]"));
+		MobileElement attempts = driver.findElement(By.id("gamble_txtAttemptsLeft"));
 		
 		System.out.println("No. of attempts left :"+" "+attempts.getText());
-		if(monty>=0.3 && monty<=0.3)
+		if(monty>=0.3 && monty<=0.6)
 		{
 			System.out.println("The no. of attempts should be : "+" "+"5"+" "+" & no. of actual attempts are :"+attempts.getText());
 			Assert.assertEquals("5",attempts.getText());
@@ -144,14 +114,15 @@ AppiumDriver<MobileElement> driver;
 		  
 		  Assert.assertEquals("1", attempts.getText());
 	   }
-		
-		 driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[13]")).click();
+	   
+		 driver.findElement(By.id("gamble_btnCollect")).click();
 		 
 		 System.out.println("The testcase has passed");
-	}    
+	}
 
-	@Then("^Gamble count should be displayed on gamble page based on win amount and gamble max amount configured on the game info page for bet type (\\d+)\\.(\\d+) & denomination (\\d+)\\.(\\d+)$")
-	public void gamble_count_should_be_displayed_on_gamble_page_based_on_win_amount_and_gamble_max_amount_configured_on_the_game_info_page_for_bet_type_denomination(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+	@Then("^Gamble count should be displayed on gamble page based on win amount and gamble max amount configured on the game info page for bet type (\\d+)\\.(\\d+) & denomination (\\d+)\\.(\\d+) in Golden Hot slot game$")
+	public void gamble_count_should_be_displayed_on_gamble_page_based_on_win_amount_and_gamble_max_amount_configured_on_the_game_info_page_for_bet_type_denomination_in_Golden_Hot_slot_game(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+		Thread.sleep(2000);
 	    driver.quit();
 	}
 }

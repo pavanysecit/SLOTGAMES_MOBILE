@@ -17,7 +17,7 @@ public class GoldenHot_PayOut_BetType_1_And_Denomination_2 {
 AppiumDriver<MobileElement> driver;
 	
 	public GoldenHot_PayOut_BetType_1_And_Denomination_2() throws InterruptedException {
-		this.driver = SlotGames_URL_Login.getDriver();
+		this.driver = GoldenHot_URL_Login.getDriver();
 		
 		}
 	
