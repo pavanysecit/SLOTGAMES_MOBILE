@@ -20,8 +20,7 @@ public class BrownieHot_AutoSpin_Validations_ButtonsBehavior {
 	
 	@Given("^Chrome browser, valid URL, valid login details, Brownie Hot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality$")
 	public void chrome_browser_valid_URL_valid_login_details_Brownie_Hot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 80);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
+		
 	}
 
 	@When("^Open the Brownie Hot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios$")

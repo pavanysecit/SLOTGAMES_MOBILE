@@ -8,7 +8,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:/Users/sw176/git/SLOTGAMES_MOBILES/SLOTGAMES/features/SoccerMania_AllUsecases.feature", glue={"stepDefinition_SoccerMania"}, plugin ={"com.cucumber.listener.ExtentCucumberFormatter:target/html/Report.html"})
+@CucumberOptions(features="features/SoccerMania_AllUsecases.feature", glue={"stepDefinition_SoccerMania"}, plugin ={"com.cucumber.listener.ExtentCucumberFormatter:target/html/Report.html"})
 public class SoccerMania_runner {
 
 	

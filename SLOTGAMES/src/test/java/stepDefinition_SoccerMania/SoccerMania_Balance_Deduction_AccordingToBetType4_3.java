@@ -3,9 +3,6 @@ package stepDefinition_SoccerMania;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-import java.util.List;
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,101 +16,65 @@ public class SoccerMania_Balance_Deduction_AccordingToBetType4_3 {
 	AppiumDriver<MobileElement> driver;
 
 	public SoccerMania_Balance_Deduction_AccordingToBetType4_3() throws InterruptedException {
-		this.driver = SoccerMania_Login_URL.getDriver();
-		}
+		this.driver = SoccerMania_URL_Login.getDriver();
+		//this.driver = SoccerMania_URL_TryNow.getDriver();
+	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania slot game, bet type as (\\d+)\\.(\\d+), bet value as seventy five\\((\\d+)\\), balance and spin button$")
-	public void chrome_browser_valid_URL_valid_login_details_Soccer_Mania_slot_game_bet_type_as_bet_value_as_seventy_five_balance_and_spin_button(int arg1, int arg2, int arg3) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement balT = driver.findElement(By.id("transferInput"));
-		balT.clear();
-		Thread.sleep(1000);
-		balT.sendKeys("300");
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		Thread.sleep(20000);
-
-		String parent1=driver.getWindowHandle();
-		Set<String>s1=driver.getWindowHandles();
-
-		System.out.println("Window for slot game is"+" "+s1);
-		 
-		Set<String> contx = driver.getContextHandles();
-		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
-		for(String cont:contx){
-			 System.out.println(cont);
-		 }
-		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
+	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania slot game, bet type as (\\d+)\\.(\\d+), bet value as THIRTY\\((\\d+)\\), balance and spin button$")
+	public void chrome_browser_valid_URL_valid_login_details_Soccer_Mania_slot_game_bet_type_as_bet_value_as_THIRTY_balance_and_spin_button(int arg1, int arg2, int arg3) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
-	@When("^Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) & bet value as seventy five\\((\\d+)\\), click on spin button and check the balance$")
-	public void open_the_Soccer_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_bet_value_as_seventy_five_click_on_spin_button_and_check_the_balance(int arg1, int arg2, int arg3) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
+	@When("^Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select the bet type as (\\d+)\\.(\\d+) & bet value as THIRTY\\((\\d+)\\), click on spin button and check the balance$")
+	public void open_the_Soccer_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_the_bet_type_as_bet_value_as_THIRTY_click_on_spin_button_and_check_the_balance(int arg1, int arg2, int arg3) throws Throwable {
 		//Storing the value before spin
 		String preSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
-		System.out.println("Current balance of the account Before spin: " +preSpin);
+		String str = preSpin.replaceAll(",", "");
+		System.out.println("Current balance of the account Before spin: " +str);
 		
-		//Selecting the credit as 0.5 from the drop down
-		List<MobileElement> balance = driver.findElementsByClassName("android.view.View");
-		driver.findElement(By.id("hud_btnCredit")).click();
+		//Selecting the credit as 0.2 from the drop down
+		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);
-		for(MobileElement be:balance)
-		{
-			
-			if(be.getText().equals("0.5")){
-				be.click();
-				Thread.sleep(3000);
-				//break;
-			}	
-		}
-		String actual = driver.findElement(By.id("hud_txtCreditValue")).getText();
+		driver.findElement(By.id("hud_CreditPopup40.2")).click();
+		Thread.sleep(2000);
+		
+		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
 		System.out.println("Selected credit value is : " +actual);
-		String expected = "0.5";
+		String expected = "0.2";
 		Assert.assertEquals(actual, expected);
 		
-		//Selecting bet amount as 75	
+		//Selecting the bet amount as 30 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		for(MobileElement be1:balance)
-		{
-			
-			if(be1.getText().equals("75")){
-				be1.click();
-				Thread.sleep(2000);
-				//break;
-			}	
-		}
-		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
-		System.out.println("Selected bet amount is: " +actual1);
-		String expected1 = "75";
-		Assert.assertEquals(actual1, expected1);
+		driver.findElement(By.id("hud_BetPopup330")).click();
 		Thread.sleep(2000);
-		String betValue = actual1;
 		
+		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String expected1 = "30";
+		System.out.println("Selected bet value is : " +"\n" +actual1);
+		Assert.assertEquals(actual1, expected1);
+			
 		//Clicking on Spin button
 		driver.findElement(By.id("hud_btnSpin")).click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		//Storing the value after spin
 		String postSpin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
-		System.out.println("Current balance of the account After spin: " +postSpin);
+		String str1 = postSpin.replaceAll(",", "");
+		System.out.println("Current balance of the account After spin: " +str1);
 		
 		//Deducting bet value from the preSpin and formating string to double
-		double fValue = Double.parseDouble(preSpin) - Double.parseDouble(betValue);
+		double fValue = Double.parseDouble(str) - Double.parseDouble(actual1);
 		String dbi = String.format("%.2f", fValue);  
 		System.out.println("Final balance after deducting bet amount from the balance : "+dbi);
 		
-		Assert.assertEquals(dbi,postSpin); 
+		Assert.assertEquals(dbi,str1);
 	}
 
-	@Then("^Balance should get deducted by seventy five\\((\\d+)\\) as bet type is selected as (\\d+)\\.(\\d+) in Soccer Mania game$")
-	public void balance_should_get_deducted_by_seventy_five_as_bet_type_is_selected_as_in_Soccer_Mania_game(int arg1, int arg2, int arg3) throws Throwable {
+	@Then("^Balance should get deducted by THIRTY\\((\\d+)\\) as bet type is selected as (\\d+)\\.(\\d+) in Soccer Mania game$")
+	public void balance_should_get_deducted_by_THIRTY_as_bet_type_is_selected_as_in_Soccer_Mania_game(int arg1, int arg2, int arg3) throws Throwable {
 		Thread.sleep(2000);
-	    driver.quit(); 
+	    driver.quit();
 	}
 }

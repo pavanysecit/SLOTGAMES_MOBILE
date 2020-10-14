@@ -16,7 +16,7 @@ public class SoccerMania_PayOut_BetType_1_And_Denomination_5 {
 	AppiumDriver<MobileElement> driver;
 
 	public SoccerMania_PayOut_BetType_1_And_Denomination_5() throws InterruptedException {
-		this.driver = SoccerMania_Login_URL.getDriver();
+		this.driver = SoccerMania_URL_Login.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Soccer Mania slot game, icon to open payout table, all symbols, max amount on each symbol like J, Wild n etc, back button, bet type (\\d+)\\.(\\d+) and denomination as SIX on mobile$")
