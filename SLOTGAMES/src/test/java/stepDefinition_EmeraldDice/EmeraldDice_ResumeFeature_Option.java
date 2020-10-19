@@ -49,6 +49,7 @@ public class EmeraldDice_ResumeFeature_Option {
 		System.out.println("Win amount is: " +prewin);	 
 		String balance1 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Balance amount before clicking on gamble link :"+balance1);
+		String bal1 = balance1.replaceAll(",", "");
 
 		driver.findElement(By.id("hud_btnGamble")).click();	
 		Thread.sleep(1800);
@@ -83,7 +84,7 @@ public class EmeraldDice_ResumeFeature_Option {
 			driver.context("CHROMIUM");
 			Thread.sleep(4000);
 
-			driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[33]/div[1]/div[1]")).click();
+			driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[39]/div[1]/div[1]")).click();
 			Thread.sleep(5000);  
 			System.out.println("driver context during resuming to gamble screen  "+driver.getContext());
 			// Switching context to Native view
@@ -98,24 +99,40 @@ public class EmeraldDice_ResumeFeature_Option {
 			String GamtResume = driver.findElement(By.id("gamble_txtGambleAmount")).getText();
 			System.out.println(GamtResume);
 			String GamtResume1 = GamtResume.replaceAll(" SRD", "");
-			
+			System.out.println(GamtResume1);
+			String s2="0";
+			boolean result = gamble1.endsWith(s2);
+			System.out.println("Boolean condition"+result);
+
+			if(result==true) {
+				// Removing the last character 
+				// of a string 
+				StringBuilder sb = new StringBuilder(gamble1); 
+				sb.deleteCharAt(gamble1.length() - 1); 
+				String Gres=sb.toString();
+				Assert.assertEquals(GamtResume1, Gres);
+			}else {
+				System.out.println("Last digit doesnt contain '0'");
+				Assert.assertEquals(GamtResume1, gamble1);
+			}
+
 			// Validation of Gamble amount before and after resuming to gamble screen
-			Assert.assertEquals(GamtResume1, gamble1);
 			System.out.println("Gamble amount before and after resuming to gamble screen are same");
 			System.out.println("Test case passed");
 
 			// The user is able to collect the amount after resuming to gamble screen 
 			driver.findElement(By.id("gamble_btnCollect")).click();
 			Thread.sleep(3000);
-			
+
 			// Verifying the win amount added to main balance after Resuming to gamble screen and collect the amount.
 			String postBalance22 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 			System.out.println("Balance amount After clicking on collect link :"+postBalance22);
-			double conValue = Double.parseDouble(balance1) + Double.parseDouble(gamble1);
+			String postBal22 = postBalance22.replaceAll(",", "");
+			double conValue = Double.parseDouble(bal1) + Double.parseDouble(gamble1);
 			String dbi = String.format("%.2f", conValue);  
 			System.out.println("Balance after adding gamble win amount: "+dbi);
 			Thread.sleep(2000);
-			Assert.assertEquals(dbi, postBalance22);
+			Assert.assertEquals(dbi, postBal22);
 			Thread.sleep(2000);
 
 			// Verifying the gamble win amount is added to main screen win meter 
