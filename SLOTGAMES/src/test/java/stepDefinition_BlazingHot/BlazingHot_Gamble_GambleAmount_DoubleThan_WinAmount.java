@@ -2,9 +2,6 @@ package stepDefinition_BlazingHot;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,7 +16,8 @@ public class BlazingHot_Gamble_GambleAmount_DoubleThan_WinAmount {
 
 	public BlazingHot_Gamble_GambleAmount_DoubleThan_WinAmount() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, balance, spin button, win amount, gamble button, gamble amount and gamble to win amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_balance_spin_button_win_amount_gamble_button_gamble_amount_and_gamble_to_win_amount() throws Throwable {

@@ -15,7 +15,8 @@ public class BlazingHot_Balance_Check_WinAmount_AddedToBalance {
 
 	public BlazingHot_Balance_Check_WinAmount_AddedToBalance() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, balance, transfer button, spin button and win amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_balance_transfer_button_spin_button_and_win_amount() throws Throwable {

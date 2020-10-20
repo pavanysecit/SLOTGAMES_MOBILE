@@ -417,6 +417,16 @@ Feature: Test all the functionalities of Skinfiri Mysterious Slot Game
 	
 	
 	
+	Scenario: Check whether Gamble Link is enabled even changing the credit and bet values
+    Given Chrome browser, valid URL, valid login details, Skinfiri Mysterious slot game, balance, transfer button, bet values, credit values spin button and Gamble Link
+    When Open the Skinfiri Mysterious slot game by entering the valid URL in browser, enter the valid login details, transfer the amount, click on spin button till player wins, enables Gamble link and change bet or credit 
+    Then  Verify the gamble link on the screen and should not be available for the user
+	
+	
+	
+	
+	
+	
 	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination 0.2 in Skinfiri Mysterious game
     Given Chrome browser, valid URL, valid login details, Skinfiri Mysterious slot game, bet type as 0.01, denomination as 0.2, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
     When Open the Skinfiri Mysterious slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type as 0.01 & denomination as 0.2, click on spin button till player wins, click on gamble button and check the gamble count

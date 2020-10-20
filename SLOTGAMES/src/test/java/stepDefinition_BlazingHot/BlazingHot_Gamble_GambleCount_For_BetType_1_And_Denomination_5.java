@@ -16,7 +16,8 @@ public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_5 {
 
 	public BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_5() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, bet type as (\\d+)\\.(\\d+), denomination as eight, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_bet_type_as_denomination_as_eight_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count(int arg1, int arg2) throws Throwable {

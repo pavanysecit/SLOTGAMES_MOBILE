@@ -16,7 +16,8 @@ public class BlazingHot_Balance_Deduction_AccordingToBetType1_3 {
 
 	public BlazingHot_Balance_Deduction_AccordingToBetType1_3() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, bet type as (\\d+)\\.(\\d+), bet value as TWO, balance, spin button and win amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_bet_type_as_bet_value_as_TWO_balance_spin_button_and_win_amount(int arg1, int arg2) throws Throwable {

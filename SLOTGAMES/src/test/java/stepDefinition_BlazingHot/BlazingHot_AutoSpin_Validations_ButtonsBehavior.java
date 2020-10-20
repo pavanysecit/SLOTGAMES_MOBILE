@@ -17,7 +17,8 @@ public class BlazingHot_AutoSpin_Validations_ButtonsBehavior {
 
 	public BlazingHot_AutoSpin_Validations_ButtonsBehavior() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality() throws Throwable {

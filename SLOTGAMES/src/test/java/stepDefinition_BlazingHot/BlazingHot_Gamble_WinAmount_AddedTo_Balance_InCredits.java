@@ -1,6 +1,6 @@
 package stepDefinition_BlazingHot;
 
-import java.util.Set;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -18,6 +18,7 @@ public class BlazingHot_Gamble_WinAmount_AddedTo_Balance_InCredits {
 
 	public BlazingHot_Gamble_WinAmount_AddedTo_Balance_InCredits() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
 	}
 
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, credit balance, spin button, credit win amount, gamble button, gamble amount in credits, red button, black button and gamble status$")

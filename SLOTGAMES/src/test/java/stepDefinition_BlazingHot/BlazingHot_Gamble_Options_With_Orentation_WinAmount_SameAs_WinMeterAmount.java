@@ -18,6 +18,7 @@ public class BlazingHot_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeter
 
 	public BlazingHot_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeterAmount() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
 	}
 
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, balance, spin button, win amount, gamble button, color win option, game play in landscape mode in gamble page, gamble status$")

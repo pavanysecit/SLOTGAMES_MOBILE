@@ -16,6 +16,7 @@ public class BlazingHot_ResumeFeature_Play_With_LeftOver_Attempts {
 
 	public BlazingHot_ResumeFeature_Play_With_LeftOver_Attempts() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
 	}
 
 	@Given("^chrome browser, valid URL, valid login details, Blazing Hot slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble attempts, gamble play$")

@@ -17,7 +17,8 @@ public class BlazingHot_Check_MaximizeAndMinimize_Buttons {
 
 	public BlazingHot_Check_MaximizeAndMinimize_Buttons() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, maximize button and minimize button$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_maximize_button_and_minimize_button() throws Throwable {

@@ -1,6 +1,5 @@
 package stepDefinition_BlazingHot;
 
-import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -18,7 +17,8 @@ public class BlazingHot_Check_UserInstruction_Messages {
 
 	public BlazingHot_Check_UserInstruction_Messages() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, balance, spin button and user instruction message$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_balance_spin_button_and_user_instruction_message() throws Throwable {

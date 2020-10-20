@@ -16,7 +16,8 @@ public class BlazingHot_AutoSpin_TenSpins {
 
 	public BlazingHot_AutoSpin_TenSpins() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot  slot game, balance, spin button, auto spin button, ten spins option and number of spins left message$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_balance_spin_button_auto_spin_button_ten_spins_option_and_number_of_spins_left_message() throws Throwable {

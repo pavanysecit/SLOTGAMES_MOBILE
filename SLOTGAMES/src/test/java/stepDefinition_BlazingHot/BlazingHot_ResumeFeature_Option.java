@@ -16,6 +16,7 @@ public class BlazingHot_ResumeFeature_Option {
 
 	public BlazingHot_ResumeFeature_Option() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
 	}
 
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot slot game, bet type, denomination, balance, spin button, Gamble screen, new browser session\\.$")

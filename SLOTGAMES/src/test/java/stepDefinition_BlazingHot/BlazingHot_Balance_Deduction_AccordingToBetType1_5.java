@@ -16,7 +16,8 @@ public class BlazingHot_Balance_Deduction_AccordingToBetType1_5 {
 
 	public BlazingHot_Balance_Deduction_AccordingToBetType1_5() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot game, bet type as (\\d+)\\.(\\d+), bet value as Eight, balance and spin button$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_game_bet_type_as_bet_value_as_Eight_balance_and_spin_button(int arg1, int arg2) throws Throwable {

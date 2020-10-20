@@ -17,7 +17,8 @@ public class BlazingHot_AutoSpin_Validations_SwitchingTabs {
 
 	public BlazingHot_AutoSpin_Validations_SwitchingTabs() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, spin button, auto spin button, browser tabs\\.$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_spin_button_auto_spin_button_browser_tabs() throws Throwable {

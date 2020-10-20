@@ -17,7 +17,8 @@ public class BlazingHot_Navigate_HomeScreen {
 
 	public BlazingHot_Navigate_HomeScreen() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game and home button$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_and_home_button() throws Throwable {

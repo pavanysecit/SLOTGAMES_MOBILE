@@ -2,10 +2,6 @@ package stepDefinition_BlazingHot;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-
-import java.util.List;
-import java.util.Set;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,7 +16,8 @@ public class BlazingHot_Balance_Credits_Calculations_Value1 {
 
 	public BlazingHot_Balance_Credits_Calculations_Value1() throws InterruptedException {
 		this.driver = BlazingHot_URL_Login.getDriver();
-		}
+		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, balance, credits and denomination as (\\d+)\\.(\\d+)$")
 	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_balance_credits_and_denomination_as(int arg1, int arg2) throws Throwable {
