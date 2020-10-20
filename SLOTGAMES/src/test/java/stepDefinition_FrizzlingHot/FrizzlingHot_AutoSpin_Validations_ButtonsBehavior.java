@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -29,7 +30,7 @@ public class FrizzlingHot_AutoSpin_Validations_ButtonsBehavior {
 	public void open_the_Frizzling_Hot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_in_different_scenarios() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
-		
+
 		String Bal = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Balance amount:" +Bal);
 
@@ -50,7 +51,7 @@ public class FrizzlingHot_AutoSpin_Validations_ButtonsBehavior {
 		MobileElement credit=driver.findElement(By.id("hud_txtCredit"));
 		String cr =credit.getText();
 		credit.click();
-		
+
 		Thread.sleep(2000);
 		System.out.println("Credit click is performed");
 		Thread.sleep(2000);
@@ -60,7 +61,7 @@ public class FrizzlingHot_AutoSpin_Validations_ButtonsBehavior {
 			System.out.println("Credit click is performed but value not changed during autoplay. Hence test case passed");
 		}
 		System.out.println("Credit value comparision is verified and test case passed");
-		Assert.assertEquals("0.03", cr);
+		Assert.assertEquals("0.02", cr);
 		Thread.sleep(2000);
 
 		MobileElement bet=	driver.findElement(By.id("hud_txtBetAmount"));
@@ -69,15 +70,18 @@ public class FrizzlingHot_AutoSpin_Validations_ButtonsBehavior {
 		Thread.sleep(2000);
 		System.out.println("bet click is performed");
 		Thread.sleep(2000);
-		if(driver.findElements(By.id("hud_BetPopup30.75")).size() != 0){
+		if(driver.findElements(By.id("hud_BetPopup30.5")).size() != 0){
 			System.out.println("BetValue click is performed but value is changed during autoplay. Hence test case failed");
 		}else{
 			System.out.println("BetValue click is performed but bet value not changed during autoplay. Hence test case passed");
 		}
 		System.out.println("betvalues comparision is verified and test case passed");
-		Assert.assertEquals("0.15",betval );
+		Assert.assertEquals("0.2",betval );
 		Thread.sleep(2000);
 
+		// change the orientation of the screen
+		driver.rotate(ScreenOrientation.LANDSCAPE);
+		Thread.sleep(4000);
 		MobileElement home = driver.findElement(By.id("hud_btnHome"));
 		Boolean home1 = home.isDisplayed();
 		Assert.assertTrue(home1);
@@ -92,6 +96,9 @@ public class FrizzlingHot_AutoSpin_Validations_ButtonsBehavior {
 			System.out.println("Test case failed as Home button click performed successfully during autoplay");
 		}
 		Thread.sleep(2000);
+		// change the orientation of the screen
+		driver.rotate(ScreenOrientation.PORTRAIT);
+		Thread.sleep(4000);
 
 		MobileElement info = driver.findElement(By.id("hud_btnMenu"));
 		Boolean menu = info.isDisplayed();
@@ -106,11 +113,22 @@ public class FrizzlingHot_AutoSpin_Validations_ButtonsBehavior {
 		else {
 			System.out.println("Test case failed as Menu/info button click performed successfully");
 		}
-		
+
 		//Clicking on stop button to check the instruction message 
 		MobileElement stop=(MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_btnSpin")));
 		stop.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
+
+		if( driver.findElements(By.id("hud_btnGamble")).size() != 0) {
+			driver.findElement(By.id("hud_btnGamble")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.id("gamble_btnCollect")).click();
+			Thread.sleep(0500);
+		}
+		else {
+			System.out.println("Win is not triggered");
+		}
+
 
 		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "PLEASE PLACE YOUR BET"));
 		String actual1 = driver.findElement(By.id("hud_txtWinDetail")).getText();

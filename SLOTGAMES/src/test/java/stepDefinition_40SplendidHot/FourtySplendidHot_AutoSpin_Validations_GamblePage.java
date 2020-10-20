@@ -20,8 +20,7 @@ public class FourtySplendidHot_AutoSpin_Validations_GamblePage {
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality after navigating from gamble page to game page$")
 	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality_after_navigating_from_gamble_page_to_game_page(int arg1) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 80);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
+		
 	}
 
 	@When("^Open the (\\d+) Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons after navigating from gamble page to game page$")
@@ -32,23 +31,23 @@ public class FourtySplendidHot_AutoSpin_Validations_GamblePage {
 		System.out.println("Balance amount:" +Bal);
 
 		driver.findElement(By.id("hud_txtCredit")).click();
-		//		Thread.sleep(1000);
-		MobileElement cr4 = driver.findElement(By.id("hud_CreditPopup40.5"));
+		Thread.sleep(1000);
+		MobileElement cr4 = driver.findElement(By.id("hud_CreditPopup40.2"));
 		String credit4 =cr4.getText();
 		System.out.println(credit4);
 		cr4.click();
-		//		Thread.sleep(1000);
+		Thread.sleep(1000);
 
 		driver.findElement(By.id("hud_txtBetAmount")).click();
-		//		Thread.sleep(1000);
-		MobileElement bet4_3= driver.findElement(By.id("hud_BetPopup350"));
+		Thread.sleep(1000);
+		MobileElement bet4_3= driver.findElement(By.id("hud_BetPopup340"));
 		String Betval4_3 =bet4_3.getText();
 		System.out.println(Betval4_3);
 		bet4_3.click();
-		//		Thread.sleep(0500);
+		Thread.sleep(0500);
 
 		driver.findElement(By.id("hud_btnAuto")).click();
-		//		Thread.sleep(0500);
+		Thread.sleep(0500);
 
 		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
 		String prewin = winE.getText();
@@ -56,27 +55,11 @@ public class FourtySplendidHot_AutoSpin_Validations_GamblePage {
 		String winTex= winE.getText();
 
 		while(prewin.isEmpty()){	
-			String Bal1 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
-			String zerobal = "0.00";
-			if(Bal1 == zerobal) {
-				Thread.sleep(1000);
-				MobileElement insuffientbal = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[3]"));
-				insuffientbal.click();
-				driver.quit();
-			}else {
-				Thread.sleep(1000);	
-				winTex = winE.getText();
-				prewin= prewin+winTex;
-				System.out.println(winTex.isEmpty());
-			}		
+			Thread.sleep(1000);	
+			winTex = winE.getText();
+			prewin= prewin+winTex;
+			System.out.println(winTex.isEmpty());		
 		}
-		//		for(;;){
-		//			
-		//			if(insuffient.isDisplayed() == true) {
-		//				insuffient.click();	
-		//				break;
-		//			}
-		//		}
 		System.out.println("Win amount is: " +prewin);	
 		driver.findElement(By.id("hud_btnGamble")).click();
 		Thread.sleep(3000);
@@ -91,9 +74,20 @@ public class FourtySplendidHot_AutoSpin_Validations_GamblePage {
 		stop.click();
 		Thread.sleep(3000);
 
+		// If win is triggered during the auto spin stop
+		if( driver.findElements(By.id("hud_btnGamble")).size() != 0) {
+			driver.findElement(By.id("hud_btnGamble")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.id("gamble_btnCollect")).click();
+			Thread.sleep(0500);
+		}
+		else {
+			System.out.println("Win is not triggered");
+		}
+
 		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);
-		MobileElement cr3 = driver.findElement(By.id("hud_CreditPopup30.05"));
+		MobileElement cr3 = driver.findElement(By.id("hud_CreditPopup30.03"));
 		String credit3 =cr3.getText();
 		System.out.println(credit3);
 		cr3.click();
@@ -101,7 +95,7 @@ public class FourtySplendidHot_AutoSpin_Validations_GamblePage {
 
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		MobileElement bet3_5= driver.findElement(By.id("hud_BetPopup520"));
+		MobileElement bet3_5= driver.findElement(By.id("hud_BetPopup524"));
 		String Betval3_5 =bet3_5.getText();
 		System.out.println(Betval3_5);
 		bet3_5.click();
@@ -113,7 +107,7 @@ public class FourtySplendidHot_AutoSpin_Validations_GamblePage {
 
 		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);
-		MobileElement cr41 = driver.findElement(By.id("hud_CreditPopup40.5"));
+		MobileElement cr41 = driver.findElement(By.id("hud_CreditPopup40.2"));
 		String credit41 =cr41.getText();
 		System.out.println(credit41);
 		cr41.click();

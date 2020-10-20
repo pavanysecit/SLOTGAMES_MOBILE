@@ -23,8 +23,7 @@ public class AmazonClash_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMete
 	
 	@Given("^Chrome browser, valid URL, valid login details, Amazon Clash slot game, balance, spin button, win amount, gamble button, color win option, game play in landscape mode in gamble page, gamble status$")
 	public void chrome_browser_valid_URL_valid_login_details_Amazon_Clash_slot_game_balance_spin_button_win_amount_gamble_button_color_win_option_game_play_in_landscape_mode_in_gamble_page_gamble_status() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+		
 	}
 
 	@When("^Open the Amazon Clash slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, check the play options and play in landscape mode in gamble page and when user wins check the win meter at main page is same as gamble win amount$")
@@ -52,7 +51,7 @@ public class AmazonClash_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMete
 		System.out.println("Win amount is: " +prewin);	 
 		String balance1 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Balance amount before clicking on gamble link :"+balance1);
-
+		String bal1 = balance1.replaceAll(",", "");
 		driver.findElement(By.id("hud_btnGamble")).click();	
 		Thread.sleep(2000);
 
@@ -64,7 +63,7 @@ public class AmazonClash_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMete
 
 		// change the orientation of the screen
 		driver.rotate(ScreenOrientation.LANDSCAPE);
-		
+
 		// Get the orientation of the screen
 		String LANDSCAPE = driver.getOrientation().name();
 		Assert.assertEquals("LANDSCAPE", LANDSCAPE);
@@ -108,10 +107,10 @@ public class AmazonClash_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMete
 		String gAmount1 = driver.findElement(By.id("gamble_txtGambleAmount")).getText();
 		String gambleamtafter = gAmount1.replaceAll(" SRD", "");
 		System.out.println("Gamble amount after selecting red or black button: "+gambleamtafter);
-	
-		
+
+
 		if(gamblewin.equalsIgnoreCase(gambleamtafter)) {
-			
+
 			String gAmount11 = driver.findElement(By.id("gamble_txtGambleAmount")).getText();
 			String gamble1 = gAmount11.replaceAll(" SRD", "");
 			Thread.sleep(2000);
@@ -122,11 +121,12 @@ public class AmazonClash_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMete
 			Thread.sleep(3000);
 			String postBalance22 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 			System.out.println("Balance amount After clicking on collect link :"+postBalance22);
-			double conValue = Double.parseDouble(balance1) + Double.parseDouble(gamble1);
+			double conValue = Double.parseDouble(bal1) + Double.parseDouble(gamble1);
 			String dbi = String.format("%.2f", conValue);  
 			System.out.println("Balance after adding gamble win amount: "+dbi);
 			Thread.sleep(2000);
-			Assert.assertEquals(dbi, postBalance22);
+			String postbal = postBalance22.replaceAll(",", "");
+			Assert.assertEquals(dbi, postbal);
 			Thread.sleep(2000);
 			String winamount = driver.findElement(By.id("hud_Hud_txtWin1")).getText();
 			String winfield = winamount.replaceAll(" SRD", "");

@@ -1,6 +1,5 @@
 package stepDefinition_BlazingHot;
 
-import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
@@ -51,7 +50,7 @@ public class BlazingHot_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeter
 		System.out.println("Win amount is: " +prewin);	 
 		String balance1 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Balance amount before clicking on gamble link :"+balance1);
-
+		String bal1 = balance1.replaceAll(",", "");
 		driver.findElement(By.id("hud_btnGamble")).click();	
 		Thread.sleep(2000);
 
@@ -63,7 +62,7 @@ public class BlazingHot_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeter
 
 		// change the orientation of the screen
 		driver.rotate(ScreenOrientation.LANDSCAPE);
-		
+
 		// Get the orientation of the screen
 		String LANDSCAPE = driver.getOrientation().name();
 		Assert.assertEquals("LANDSCAPE", LANDSCAPE);
@@ -107,10 +106,10 @@ public class BlazingHot_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeter
 		String gAmount1 = driver.findElement(By.id("gamble_txtGambleAmount")).getText();
 		String gambleamtafter = gAmount1.replaceAll(" SRD", "");
 		System.out.println("Gamble amount after selecting red or black button: "+gambleamtafter);
-	
-		
+
+
 		if(gamblewin.equalsIgnoreCase(gambleamtafter)) {
-			
+
 			String gAmount11 = driver.findElement(By.id("gamble_txtGambleAmount")).getText();
 			String gamble1 = gAmount11.replaceAll(" SRD", "");
 			Thread.sleep(2000);
@@ -121,11 +120,12 @@ public class BlazingHot_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeter
 			Thread.sleep(3000);
 			String postBalance22 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 			System.out.println("Balance amount After clicking on collect link :"+postBalance22);
-			double conValue = Double.parseDouble(balance1) + Double.parseDouble(gamble1);
+			double conValue = Double.parseDouble(bal1) + Double.parseDouble(gamble1);
 			String dbi = String.format("%.2f", conValue);  
 			System.out.println("Balance after adding gamble win amount: "+dbi);
 			Thread.sleep(2000);
-			Assert.assertEquals(dbi, postBalance22);
+			String postbal = postBalance22.replaceAll(",", "");
+			Assert.assertEquals(dbi, postbal);
 			Thread.sleep(2000);
 			String winamount = driver.findElement(By.id("hud_Hud_txtWin1")).getText();
 			String winfield = winamount.replaceAll(" SRD", "");
@@ -146,7 +146,6 @@ public class BlazingHot_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeter
 
 	@Then("^Verify the home button is enabled on the game screen after returning from gamble page$")
 	public void verify_the_home_button_is_enabled_on_the_game_screen_after_returning_from_gamble_page() throws Throwable {
-	   
 		MobileElement home = driver.findElement(By.id("hud_btnHome"));
 		Boolean home1 = home.isDisplayed();
 		System.out.println("home button visibility:"+home1);

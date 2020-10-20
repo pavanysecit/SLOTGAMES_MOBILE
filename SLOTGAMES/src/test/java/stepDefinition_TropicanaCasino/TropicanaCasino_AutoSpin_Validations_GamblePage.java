@@ -31,23 +31,23 @@ public class TropicanaCasino_AutoSpin_Validations_GamblePage {
 		System.out.println("Balance amount:" +Bal);
 
 		driver.findElement(By.id("hud_txtCredit")).click();
-		//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		MobileElement cr4 = driver.findElement(By.id("hud_CreditPopup40.5"));
 		String credit4 =cr4.getText();
 		System.out.println(credit4);
 		cr4.click();
-		//		Thread.sleep(1000);
+		Thread.sleep(1000);
 
 		driver.findElement(By.id("hud_txtBetAmount")).click();
-		//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		MobileElement bet4_3= driver.findElement(By.id("hud_BetPopup350"));
 		String Betval4_3 =bet4_3.getText();
 		System.out.println(Betval4_3);
 		bet4_3.click();
-		//		Thread.sleep(0500);
+		Thread.sleep(0500);
 
 		driver.findElement(By.id("hud_btnAuto")).click();
-		//		Thread.sleep(0500);
+		Thread.sleep(0500);
 
 		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
 		String prewin = winE.getText();
@@ -55,27 +55,11 @@ public class TropicanaCasino_AutoSpin_Validations_GamblePage {
 		String winTex= winE.getText();
 
 		while(prewin.isEmpty()){	
-			String Bal1 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
-			String zerobal = "0.00";
-			if(Bal1 == zerobal) {
-				Thread.sleep(1000);
-				MobileElement insuffientbal = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[3]"));
-				insuffientbal.click();
-				driver.quit();
-			}else {
-				Thread.sleep(1000);	
-				winTex = winE.getText();
-				prewin= prewin+winTex;
-				System.out.println(winTex.isEmpty());
-			}		
+			Thread.sleep(1000);	
+			winTex = winE.getText();
+			prewin= prewin+winTex;
+			System.out.println(winTex.isEmpty());		
 		}
-		//		for(;;){
-		//			
-		//			if(insuffient.isDisplayed() == true) {
-		//				insuffient.click();	
-		//				break;
-		//			}
-		//		}
 		System.out.println("Win amount is: " +prewin);	
 		driver.findElement(By.id("hud_btnGamble")).click();
 		Thread.sleep(3000);
@@ -89,6 +73,17 @@ public class TropicanaCasino_AutoSpin_Validations_GamblePage {
 		MobileElement stop=(MobileElement) wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_btnSpin")));
 		stop.click();
 		Thread.sleep(3000);
+
+		// If win is triggered during the auto spin stop
+		if( driver.findElements(By.id("hud_btnGamble")).size() != 0) {
+			driver.findElement(By.id("hud_btnGamble")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.id("gamble_btnCollect")).click();
+			Thread.sleep(0500);
+		}
+		else {
+			System.out.println("Win is not triggered");
+		}
 
 		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);

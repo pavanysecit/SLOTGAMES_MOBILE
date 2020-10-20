@@ -123,16 +123,18 @@ public class TwentyFruityBrownie_ResumeFeature_Play_With_LeftOver_Attempts {
 			System.out.println("Test case passed on Gamble attempts on resuming to gamble screen");
 
 			// Verifying the user is able to play further attempts on resuming to gamble screen
-			driver.findElement(By.id("gamble_btnBlack")).click();
-			MobileElement gcollect =driver.findElement(By.id("gamble_btnCollect"));
-			Thread.sleep(2000);
-			if(gcollect.isDisplayed()) {
+			MobileElement Black =driver.findElement(By.id("gamble_btnBlack"));
+			Black.click();
+			Thread.sleep(5000);
+			if(Black.isDisplayed()) {
+				MobileElement gcollect =driver.findElement(By.id("gamble_btnCollect"));
 				gcollect.click();
 				Thread.sleep(3000);
-				System.out.println(" USer is able to play further leftover attempts");
+				System.out.println(" User is able to play further leftover attempts");
 			}
 			else
 			{
+				Thread.sleep(3000);
 				System.out.println("Gamble is lose and user is on the game screen");
 			}
 		}  

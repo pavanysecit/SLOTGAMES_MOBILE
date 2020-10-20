@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,15 +23,14 @@ AppiumDriver<MobileElement> driver;
 	
 	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Glowing Hot game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality$")
 	public void chrome_browser_valid_URL_valid_login_details_Glowing_Hot_game_balance_spin_button_auto_spin_button_auto_spins_option_and_check_for_buttons_behavior_functionality(int arg1) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 80);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
+
 	}
 
 	@When("^Open the (\\d+) Glowing Hot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios$")
 	public void open_the_Glowing_Hot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_behavior_of_different_buttons_in_different_scenarios(int arg1) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
-		
+
 		String Bal = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Balance amount:" +Bal);
 
@@ -51,7 +51,7 @@ AppiumDriver<MobileElement> driver;
 		MobileElement credit=driver.findElement(By.id("hud_txtCredit"));
 		String cr =credit.getText();
 		credit.click();
-		
+
 		Thread.sleep(2000);
 		System.out.println("Credit click is performed");
 		Thread.sleep(2000);
@@ -70,15 +70,18 @@ AppiumDriver<MobileElement> driver;
 		Thread.sleep(2000);
 		System.out.println("bet click is performed");
 		Thread.sleep(2000);
-		if(driver.findElements(By.id("hud_BetPopup32")).size() != 0){
+		if(driver.findElements(By.id("hud_BetPopup34")).size() != 0){
 			System.out.println("BetValue click is performed but value is changed during autoplay. Hence test case failed");
 		}else{
 			System.out.println("BetValue click is performed but bet value not changed during autoplay. Hence test case passed");
 		}
 		System.out.println("betvalues comparision is verified and test case passed");
-		Assert.assertEquals("0.2",betval );
+		Assert.assertEquals("0.4",betval );
 		Thread.sleep(2000);
 
+		// change the orientation of the screen
+		driver.rotate(ScreenOrientation.LANDSCAPE);
+		Thread.sleep(4000);
 		MobileElement home = driver.findElement(By.id("hud_btnHome"));
 		Boolean home1 = home.isDisplayed();
 		Assert.assertTrue(home1);
@@ -93,6 +96,9 @@ AppiumDriver<MobileElement> driver;
 			System.out.println("Test case failed as Home button click performed successfully during autoplay");
 		}
 		Thread.sleep(2000);
+		// change the orientation of the screen
+		driver.rotate(ScreenOrientation.PORTRAIT);
+		Thread.sleep(4000);
 
 		MobileElement info = driver.findElement(By.id("hud_btnMenu"));
 		Boolean menu = info.isDisplayed();
@@ -107,11 +113,22 @@ AppiumDriver<MobileElement> driver;
 		else {
 			System.out.println("Test case failed as Menu/info button click performed successfully");
 		}
-		
+
 		//Clicking on stop button to check the instruction message 
 		MobileElement stop=(MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_btnSpin")));
 		stop.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
+
+		if( driver.findElements(By.id("hud_btnGamble")).size() != 0) {
+			driver.findElement(By.id("hud_btnGamble")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.id("gamble_btnCollect")).click();
+			Thread.sleep(0500);
+		}
+		else {
+			System.out.println("Win is not triggered");
+		}
+
 
 		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "PLEASE PLACE YOUR BET"));
 		String actual1 = driver.findElement(By.id("hud_txtWinDetail")).getText();

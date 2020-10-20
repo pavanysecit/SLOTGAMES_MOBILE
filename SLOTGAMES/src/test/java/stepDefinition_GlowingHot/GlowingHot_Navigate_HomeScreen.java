@@ -2,6 +2,7 @@ package stepDefinition_GlowingHot;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -27,11 +28,14 @@ public class GlowingHot_Navigate_HomeScreen {
 
 	@When("^Open the Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance and click on home button$")
 	public void open_the_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_and_click_on_home_button() throws Throwable {
-		driver.findElement(By.id("hud_btnHome")).click();
+        // change the orientation of the screen
+		driver.rotate(ScreenOrientation.LANDSCAPE);   		
+        driver.findElement(By.id("hud_btnHome")).click();
 		Thread.sleep(4000);
-		
-		String expected = driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/h3")).getText();
-		String actual = "Slot Games";
+
+		String expected= driver.findElement(By.id("com.android.chrome:id/url_bar")).getText();
+		//String expected = driver.findElement(By.xpath("/html/body/div[3]/div[1]/ui-view/section/section[1]/h3")).getText();
+		String actual = "demo.ysecit.in:82/SlotGames/slotsgame";
 		Assert.assertEquals(expected, actual);
 	}
 

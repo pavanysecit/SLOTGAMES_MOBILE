@@ -26,12 +26,12 @@ public class BouncingFruits_Balance_InsufficiantBalance_Validation_Bet_And_Credi
 	public void chrome_browser_valid_URL_valid_login_details_Bouncing_Fruits_slot_game_balance_counter_Auto_spin_button_validation_message_credit_types_and_bet_types() throws Throwable {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
-		cap.setCapability("udid", "JAAAGF10Z743V8H");
+		cap.setCapability("udid", "J9AAGF10J33379E");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("browserName", "Chrome");
 		
-		URL url=new URL("http://10.10.13.84:4723/wd/hub");
+		URL url=new URL("http://10.10.13.86:4723/wd/hub");
 		
 		driver=new AndroidDriver<MobileElement>(url,cap);
 		
@@ -41,7 +41,7 @@ public class BouncingFruits_Balance_InsufficiantBalance_Validation_Bet_And_Credi
 		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[33]/div[1]/div")).click();
+		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div")).click();
 		Thread.sleep(2000);
 				 
 		driver.findElement(By.name("email")).sendKeys("test8");
@@ -56,7 +56,7 @@ public class BouncingFruits_Balance_InsufficiantBalance_Validation_Bet_And_Credi
 		Thread.sleep(5000);
 		
 		WebDriverWait wait = new WebDriverWait(driver, 40);
-		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[33]/div[1]/div"));
+		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div"));
         wait.until(ExpectedConditions.elementToBeClickable(login_button));
         login_button.click();
         
@@ -65,7 +65,7 @@ public class BouncingFruits_Balance_InsufficiantBalance_Validation_Bet_And_Credi
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
 		Thread.sleep(1000);
-		balT.sendKeys("100");
+		balT.sendKeys("80");
 		Thread.sleep(2000);
 		driver.findElement(By.className("Transfer_Ok_but")).click();
 
@@ -160,13 +160,27 @@ public class BouncingFruits_Balance_InsufficiantBalance_Validation_Bet_And_Credi
 		start.click();
 		Thread.sleep(4000);
 		
+		/* If the win is triggered during the cycle autolist will be not able to locate on the screen
+		   hence script may fail abruptly
+		   Hence if the win is triggered accept the win and verify the autolist from the screen
+		 */
+		if(driver.findElements(By.id("hud_btnGamble")).size() != 0){
+			System.out.println("Win is triggered accept the win");
+			driver.findElement(By.id("hud_btnGamble")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.id("gamble_btnCollect")).click();
+			Thread.sleep(3000);
+		}else{
+			System.out.println("Gamble link not present on the screen");
+		}
+		
 		//Checking whether auto spin is working after changing the credit and bet values
 		if(driver.findElements(By.id("AutoSpinListItem_undefined")).size() != 0){
-			System.out.println("Not able to spin the reel after changing the credit and bet values. ");
-			System.out.println("Testcase failed");
-		}else{
-			System.out.println("Able to spin the reel after changing the credit and bet values.");
+			System.out.println("Able to spin the reel after changing the credit and bet values. ");
 			System.out.println("Testcase passed");
+		}else{
+			System.out.println("Not able to spin the reel after changing the credit and bet values.");
+			System.out.println("Testcase failed");
 		}
 		Thread.sleep(2000);
 		

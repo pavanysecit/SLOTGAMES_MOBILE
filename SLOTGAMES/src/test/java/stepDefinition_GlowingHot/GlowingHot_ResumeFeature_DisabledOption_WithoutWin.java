@@ -61,7 +61,7 @@ public class GlowingHot_ResumeFeature_DisabledOption_WithoutWin {
 		driver.context("CHROMIUM");
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[33]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[39]/div[1]/div[1]")).click();
 		Thread.sleep(4000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
@@ -80,13 +80,14 @@ public class GlowingHot_ResumeFeature_DisabledOption_WithoutWin {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String ResumeBal = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The balance is equal to"+" "+ResumeBal);
+		Assert.assertNotEquals(ResumeBal, balance1);
 		System.out.println("Main balance is available on the screen for the user and new game session has been generated");
 		System.out.println("Resuming to gamble screen is disable for the user: Test case passed");
 
-		MobileElement gcollect = driver.findElement(By.id("gamble_btnCollect"));
-		Assert.assertFalse(gcollect.isDisplayed());
-		System.out.println("Gamble collect button is not on the screen");
-		System.out.println("Testcase passed");
+		//		MobileElement gcollect = driver.findElement(By.id("gamble_btnCollect"));
+		//		Assert.assertFalse(gcollect.isDisplayed());
+		//		System.out.println("Gamble collect button is not on the screen");
+		//		System.out.println("Testcase passed");
 	}
 
 	@Then("^Resume feature should not be enabled and land on the game screen of Glowing Hot slot game$")
