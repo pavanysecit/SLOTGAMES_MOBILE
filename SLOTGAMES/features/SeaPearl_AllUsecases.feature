@@ -168,7 +168,7 @@ Feature: Test all the functionalities of Sea Pearl Slot Game
 
 	
 	
-	
+	#Balance Deduction in credits
 	  
    	Scenario: Change the bet value as TEN, do the spin and check whether balance in credits is deducting according to the changed bet type in Sea Pearl slot game
     Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, bet type as 0.01, bet value as TEN, balance in credits and spin button
@@ -394,7 +394,7 @@ Feature: Test all the functionalities of Sea Pearl Slot Game
 	
 	
 	
-		Scenario: Check whether gamble color win options and game play in landscape mode and verify the win amount in win meter  in Sea Pearl slot game 
+	Scenario: Check whether gamble color win options and game play in landscape mode and verify the win amount in win meter  in Sea Pearl slot game 
 	Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, spin button, win amount, gamble button, color win option, game play in landscape mode in gamble page, gamble status 
 	When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, check the play options and play in landscape mode in gamble page and when user wins check the win meter at main page is same as gamble win amount
 	Then Verify the home button is enabled on the game screen after returning from gamble page
@@ -463,6 +463,118 @@ Feature: Test all the functionalities of Sea Pearl Slot Game
 	
 
 	
+	
+	#1. SeaPearl_AutoSpin_Check_WinAmount_AddedToBalance
+
+	Scenario: Check whether in AutoSpin win amount is added to balance automatically when new spin starts in Sea Pearl slot game 
+	Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, Autospin button, win amount added to balance
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, select autospin, play till win triggers and observe win amount added to main balance in next spin itteration
+    Then Automatically Win amount should get added to the main balance after win and balance should get increased with win amount and next spin should continue in Sea Pearl slot game
+ 
+#2. SeaPearl_AutoSpin_Reload_Option 
+
+ 	Scenario: Check whether reload the game while playing Autospin is allowed in Sea Pearl slot game 
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, Autospin button, browser hamburger reload button valid session invalid error message.
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, select autospin button, click on  hamburger menu and reload the game session.
+    Then User should not able to resume to game and autospin should be terminated and informed with valid error message for session invalid in Sea Pearl slot game 
+ 
+
+#3. SeaPearl_AutoSpin_Validations_NetworkInteruptions
+
+ 	Scenario: Check whether error messages is displayed on network interuptions and upon good network connection resume to game session in Sea Pearl slot game 
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, spin button, wifi turnOFF and ON, network messages 
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, and launch the game, spin autospin and turn OFF wifi and check for valid message. and turn on wifi for autospin to continued
+    Then User is addressed with valid error message 'No Internet' for network interuptions in Sea Pearl slot game 
+    Then User is addressed with valid error message 'Disconnected from Server' for longer duration network interuptions in Sea Pearl slot game 
+
+
+#4. SeaPearl_Balance_Check_MaxBet_WinAmount_AddedTo_Balance 
+     
+    Scenario: Check whether error messages is displayed on network interuptions and upon good network connection resume to game session in Sea Pearl slot game 
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, spin button, gamble collect, max credit and bet value, win amount added to balance
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, spin till player wins, gamble screen, gamble collect, win amount added to main balance
+    Then MaxBet Win amount should get added to the main balance after win and balance should get increased with win amount in Sea Pearl slot game    
+
+#5. SeaPearl_Balance_CreditBalance_For_IncrementalAndDecremental_CreditValue 
+      
+	Scenario: Check whether incrementing and decrementing the creditvalue, balance is equal to balance in creditform multplies by denomination respectively in Sea Pearl slot game 
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, increment, decrement and balance, balance in credit form, creditvalues
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, inc and dec credit balance and verify the balance in credit form and verify the balance
+    Then Credit balance for all credit values should be same as balance multiplies by credit value are assigned respectively in Sea Pearl slot game 
+ 
+
+#6. SeaPearlt_Balance_FullAmount_AddedToGame_And_Reload_Option
+
+ 	Scenario: Check whether user is allowed to play with full amount in the account in Sea Pearl slot game 
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, Full amount transfer from account to game.
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, select game and transfer full amount same amount has to reflect in game balance, play and reload the game 
+    Then Remaining balance should be transfered to main account balance in Sea Pearl slot game 
+ 
+
+#7. SeaPearl_Balance_InsufficiantBalance_Validation1 
+
+ 	Scenario: Check whether user able to play the game when there is insufficiant balance in account and verify when the insuffficient alert popup is displayed with the game buttons during behavior during alert popup in Sea Pearl slot game
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, spin button and validation message, button behavior, 
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message with buttons behavior 
+    Then Check the insufficient alert popop is displayed before the clicking on spin 
+    Then Player should be blocked from playing the game when there is no balance in the account and buttons are inactive state in Sea Pearl game
+
+
+#8. SeaPearl_Check_BetType_BetValue_DropDown_For_IncrementalAndDecremental_CreditValue
+   
+ 	Scenario: Check whether incrementing and decrementing the creditvalue, betval amount are assigned respectively in Sea Pearl slot game 
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, increment, decrement and betvalue amount
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, inc and dec credit and verify the betvalue assigned respectively 
+    Then Bet amount for all credit values should be assigned respectively in Sea Pearl slot game 
+
+
+#9. SeaPearl_Check_SessionExpired_Messages 
+    
+ 	Scenario: Check whether error messages is displayed on game session is being idle for more than 20minutes in Sea Pearl slot game 
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, spin button, full screen, landscape mode ,session terminated messages 
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, and full screen and change orientation of the screen, idle for more 20mins  
+    Then User is addressed with valid error message on the screen 'Session Expired' in Sea Pearl slot game 
+    Then Again relauch other slot game and verify user is able to continue gameplay
+ 
+
+#10. SeaPearl_Gamble_GamblePage_NetworkInteruptions 
+
+ 	Scenario: Check whether error messages is displayed on network interruptions and upon good network connection resume to gamble session in Sea Pearl slot game 
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, spin button, gamble screen, wifi turnOFF and ON, network messages 
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, and launch the game, spin till player wins, selext any gamble option and turn OFF wifi and check for valid message and turn on wifi for gamble to resume if won or go back to game screen
+    Then User is addressed with valid error message 'No Internet' for network interuptions in gamble page of Sea Pearl slot game 
+ 
+ 
+#11. SeaPearl_Gamble_Reload_Option
+ 
+ 	Scenario: Check whether reload the game while playing gamble is allowed in Sea Pearl slot game 
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, spin button, gamble page, browser hamburger reload button valid session invalid error message.
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, spin till player wins, gamble screen, gamble should won,  click on  hamburger menu and reload the game session.
+    Then User should not able to resume to game and informed with valid error message for session invalid error message and again relauch the game and game session redirected to gamble page in Sea Pearl slot game 
+ 
+
+
+#12. SeaPearl_ManualSpin_Validations_ButtonsBehavior
+
+ 	Scenario: Check bet value, credit value, home button, info button, play button, gamble link (active/disable) behavior during manual spin in Sea Pearl slot game
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, spin button, spin button and check for buttons behavior & functionality
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin option and check behavior of different buttons in different scenarios
+    Then Bet value & Credit value buttons should not be clickable under spin condition in Sea Pearl slot game
+	And Home, Info and Turbo buttons should not be clickable on screen under spin condition in Sea Pearl slot game
+	And Spin button should be disabled during reel spin in Sea Pearl slot game
+	And Spin button should be visible after reel spin stops and if  win is triggered clicking on collect button in Sea Pearl slot game
+	And Gamble button behaviour under win triggered and disabled when next spin starts in Sea Pearl slot game
+	
+
+#13. SeaPearl_Reload_Option 
+
+ 	Scenario: Check whether reload the game is allowed in Sea Pearl slot game 
+    Given Chrome browser, valid URL, valid login details, Sea Pearl slot game, balance, spin button, browser hamburger reload button valid session invalid error message.
+    When Open the Sea Pearl slot game by entering the valid URL in browser, enter the valid login details, click on  hamburger menu and reload the game session.
+    Then User should not able to resume to game and informed with valid error message for session invalid error message in Sea Pearl slot game 
+
+
+
 	
 	
 	Scenario: Check whether system is providing balance in try now feature of Sea Pearl slot game

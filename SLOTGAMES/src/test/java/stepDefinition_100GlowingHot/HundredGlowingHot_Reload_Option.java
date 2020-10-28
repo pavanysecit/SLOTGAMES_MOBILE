@@ -22,12 +22,13 @@ public class HundredGlowingHot_Reload_Option {
 	
 	@Given("^Chrome browser, valid URL, valid login details, Hundred Glowing Hot slot game, balance, spin button, browser hamburger reload button valid session invalid error message\\.$")
 	public void chrome_browser_valid_URL_valid_login_details_Hundred_Glowing_Hot_slot_game_balance_spin_button_browser_hamburger_reload_button_valid_session_invalid_error_message() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
+		
 	}
 
 	@When("^Open the Hundred Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, click on  hamburger menu and reload the game session\\.$")
 	public void open_the_Hundred_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_click_on_hamburger_menu_and_reload_the_game_session() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The balance in first session"+" "+balance);
 		MobileElement start = driver.findElement(By.id("hud_btnSpin"));

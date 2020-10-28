@@ -19,8 +19,8 @@ public class GummyLand_Balance_Deduction_AccordingToBetType2_3 {
 		//this.driver = GummyLand_URL_TryNow.getDriver();
 	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Gummy Land slot game, bet type as (\\d+)\\.(\\d+), bet value as (\\d+)\\.(\\d+), balance and spin button$")
-	public void chrome_browser_valid_URL_valid_login_details_Gummy_Land_slot_game_bet_type_as_bet_value_as_balance_and_spin_button(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Gummy Land slot game, bet type as (\\d+)\\.(\\d+), bet value as (\\d+)\\.(\\d+), balanceee and sppinn buttton$")
+	public void chrome_browser_valid_URL_valid_login_details_Gummy_Land_slot_game_bet_type_as_bet_value_as_balanceee_and_sppinn_buttton(int arg1, int arg2, int arg3, int arg4) throws Throwable {
 		WebDriverWait wait1 = new WebDriverWait(driver, 80);
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}

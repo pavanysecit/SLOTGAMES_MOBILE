@@ -21,12 +21,13 @@ public class HundredGlowingHot_AutoSpin_Check_WinAmount_AddedToBalance {
 	
 	@Given("^Chrome browser, valid URL, valid login details, Hundred Glowing Hot slot game, balance, Autospin button, win amount added to balance$")
 	public void chrome_browser_valid_URL_valid_login_details_Hundred_Glowing_Hot_slot_game_balance_Autospin_button_win_amount_added_to_balance() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));   
+		   
 	}
 
 	@When("^Open the Hundred Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select autospin, play till win triggers and observe win amount added to main balance in next spin itteration$")
 	public void open_the_Hundred_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_autospin_play_till_win_triggers_and_observe_win_amount_added_to_main_balance_in_next_spin_itteration() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		//Storing the value before converting the balance into credits
 		String Bal = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Balance amount:" +Bal);

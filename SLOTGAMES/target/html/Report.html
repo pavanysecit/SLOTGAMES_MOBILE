@@ -45,7 +45,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Oct 14, 2020 11:53:49 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Oct 28, 2020 05:13:25 PM</span>
 				</a>
 			</li>
 			<li>
@@ -139,7 +139,7 @@
 					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>5</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>13</span> others
 				</div>
 			</div>
 		</div>
@@ -154,7 +154,7 @@
 					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>19</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>46</span> others
 				</div>
 			</div>
 		</div>
@@ -171,22 +171,22 @@
 				<li class='test displayed active has-leaf skip' status='skip' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Test all the functionalities of Soccer Mania Slot Game</span>
-						<span class='test-time'>Oct 14, 2020 11:53:50 AM</span>
+						<span class='test-time'>Oct 28, 2020 05:13:25 PM</span>
 						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='skip'>
-	<span class='duration right label'>0h 0m 0s+16ms</span>
+	<span class='duration right label'>0h 0m 0s+21ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Check whether gamble color win options and game play in landscape mode and verify the win amount in win meter in Soccer Mania slot game</span>
+		<span class="desc-text">Check whether in AutoSpin win amount is added to balance automatically when new spin starts in Soccer Mania slot game</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node given skip' status='skip'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, spin button, win amount, gamble button, color win option, game play in landscape mode in gamble page, gamble status</span>
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, Autospin button, win amount added to balance</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
@@ -194,7 +194,7 @@
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, check the play options and play in landscape mode in gamble page and when user wins check the win meter at main page is same as gamble win amount</span>
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select autospin, play till win triggers and observe win amount added to main balance in next spin itteration</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
@@ -202,171 +202,459 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then Verify the home button is enabled on the game screen after returning from gamble page</span>
-				<div class='pre'>undefined</div>
-			
-		</li>
-		<li test-id='6' class='node then skip' status='skip'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then Gamble page should provide multiple options for the user to play and enabled to play in landscape mode and check the win meter in main page in Soccer Mania slot game</span>
+			<span class="bdd-step-name">Then Automatically Win amount should get added to the main balance after win and balance should get increased with win amount and next spin should continue in Soccer Mania slot game</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
 	</ul>
 </div>
-<div class='scenario node' test-id='7' status='skip'>
-	<span class='duration right label'>0h 0m 0s+0ms</span>
+<div class='scenario node' test-id='6' status='skip'>
+	<span class='duration right label'>0h 0m 0s+2ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Check whether gamble credit win amount is getting added to the balance after win in Soccer Mania game</span>
+		<span class="desc-text">Check whether reload the game while playing Autospin is allowed in Soccer Mania slot game</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='8' class='node given skip' status='skip'>
+		<li test-id='7' class='node given skip' status='skip'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, credit balance, spin button, credit win amount, gamble button, gamble amount in credits, red button, black button and gamble status</span>
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, Autospin button, browser hamburger reload button valid session invalid error message.</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='9' class='node when skip' status='skip'>
+		<li test-id='8' class='node when skip' status='skip'>
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, click on red or black button and check the balance in credits after win</span>
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select autospin button, click on  hamburger menu and reload the game session.</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='10' class='node then skip' status='skip'>
+		<li test-id='9' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then verify the credit form of currency in gamble page on all fields</span>
-				<div class='pre'>undefined</div>
-			
-		</li>
-		<li test-id='11' class='node then skip' status='skip'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then Gamble credit Win amount should get added to main balance after status displayed as WIN and gamble page should get closed in Soccer Mania slot game</span>
+			<span class="bdd-step-name">Then User should not able to resume to game and autospin should be terminated and informed with valid error message for session invalid in Soccer Mania slot game</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
 	</ul>
 </div>
-<div class='scenario node' test-id='12' status='skip'>
-	<span class='duration right label'>0h 0m 0s+15ms</span>
+<div class='scenario node' test-id='10' status='skip'>
+	<span class='duration right label'>0h 0m 0s+4ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Check whether resume feature is enabled in Gamble screen, when user collect amount in gamble screen without playing Gamble attempts in Soccer Mania slot game</span>
+		<span class="desc-text">Check whether error messages is displayed on network interuptions and upon good network connection resume to game session in Soccer Mania slot game</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='13' class='node given skip' status='skip'>
+		<li test-id='11' class='node given skip' status='skip'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given chrome browser, valid URL, valid login details, Soccer Mania slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble collect</span>
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, spin button, wifi turnOFF and ON, network messages</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='14' class='node when skip' status='skip'>
+		<li test-id='12' class='node when skip' status='skip'>
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When Open the Soccer Mania slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on collect and close the browser and again load to the game</span>
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, and launch the game, spin autospin and turn OFF wifi and check for valid message. and turn on wifi for autospin to continued</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='15' class='node then skip' status='skip'>
+		<li test-id='13' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then Resume feature should not be enabled and land on the game screen of Soccer Mania slot game</span>
+			<span class="bdd-step-name">Then User is addressed with valid error message 'No Internet' for network interuptions in Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='14' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User is addressed with valid error message 'Disconnected from Server' for longer duration network interuptions in Soccer Mania slot game</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
 	</ul>
 </div>
-<div class='scenario node' test-id='16' status='skip'>
-	<span class='duration right label'>0h 0m 0s+0ms</span>
+<div class='scenario node' test-id='15' status='skip'>
+	<span class='duration right label'>0h 0m 0s+2ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Check whether resume feature is enabled in Gamble screen of Soccer Mania slot game</span>
+		<span class="desc-text">Check whether error messages is displayed on network interuptions and upon good network connection resume to game session in Soccer Mania slot game</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='17' class='node given skip' status='skip'>
+		<li test-id='16' class='node given skip' status='skip'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot slot game, bet type, denomination, balance, spin button, Gamble screen, new browser session.</span>
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, spin button, gamble collect, max credit and bet value, win amount added to balance</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='18' class='node when skip' status='skip'>
+		<li test-id='17' class='node when skip' status='skip'>
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When Open the Soccer Mania slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on red button and close the browser and again login to the game with new browser</span>
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, spin till player wins, gamble screen, gamble collect, win amount added to main balance</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='19' class='node then skip' status='skip'>
+		<li test-id='18' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then Resume feature should enabled and land on the gamble screen of Soccer Mania slot game</span>
-				<div class='pre'>undefined</div>
-			
-		</li>
-		<li test-id='20' class='node then skip' status='skip'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then On resuming to gamble screen, collect the amount and verify with main  balance addition and win meter amount same as gamble amount in gamble page in  Soccer Mania slot game</span>
+			<span class="bdd-step-name">Then MaxBet Win amount should get added to the main balance after win and balance should get increased with win amount in Soccer Mania slot game</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
 	</ul>
 </div>
-<div class='scenario node' test-id='21' status='skip'>
-	<span class='duration right label'>0h 0m 0s+0ms</span>
+<div class='scenario node' test-id='19' status='skip'>
+	<span class='duration right label'>0h 0m 0s+4ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Check whether on resume feature is enabled in Gamble screen, user can play further left over attempts and check the attempts before and after resuming to gamble screen in Soccer Mania slot game</span>
+		<span class="desc-text">Check whether incrementing and decrementing the creditvalue, balance is equal to balance in creditform multplies by denomination respectively in Soccer Mania slot game</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='22' class='node given skip' status='skip'>
+		<li test-id='20' class='node given skip' status='skip'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given chrome browser, valid URL, valid login details, Soccer Mania slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble attempts, gamble play</span>
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, increment, decrement and balance, balance in credit form, creditvalues</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='23' class='node when skip' status='skip'>
+		<li test-id='21' class='node when skip' status='skip'>
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When Open the Soccer Mania slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on black button and close the browser and again login to the game with new browser</span>
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, inc and dec credit balance and verify the balance in credit form and verify the balance</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='24' class='node then skip' status='skip'>
+		<li test-id='22' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then Resume feature should be enabled and land on the game screen and verify with the left out gamble attempts of Soccer Mania slot game</span>
+			<span class="bdd-step-name">Then Credit balance for all credit values should be same as balance multiplies by credit value are assigned respectively in Soccer Mania slot game</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
-		<li test-id='25' class='node then skip' status='skip'>
+	</ul>
+</div>
+<div class='scenario node' test-id='23' status='skip'>
+	<span class='duration right label'>0h 0m 0s+7ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Check whether user is allowed to play with full amount in the account in Soccer Mania slot game</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='24' class='node given skip' status='skip'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, Full amount transfer from account to game.</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='25' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, select game and transfer full amount same amount has to reflect in game balance, play and reload the game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='26' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then Left over attempts should be  between 4 to 1 and the user is enabled to play the remaining attempts</span>
+			<span class="bdd-step-name">Then Remaining balance should be transfered to main account balance in Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='27' status='skip'>
+	<span class='duration right label'>0h 0m 0s+4ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Check whether user able to play the game when there is insufficiant balance in account and verify when the insuffficient alert popup is displayed with the game buttons during behavior during alert popup in Soccer Mania slot game</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='28' class='node given skip' status='skip'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, spin button and validation message, button behavior,</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='29' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message with buttons behavior</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='30' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Check the insufficient alert popop is displayed before the clicking on spin</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='31' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Player should be blocked from playing the game when there is no balance in the account and buttons are inactive state in Soccer Mania game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='32' status='skip'>
+	<span class='duration right label'>0h 0m 0s+3ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Check whether incrementing and decrementing the creditvalue, betval amount are assigned respectively in Soccer Mania slot game</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='33' class='node given skip' status='skip'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, increment, decrement and betvalue amount</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='34' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, inc and dec credit and verify the betvalue assigned respectively</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='35' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Bet amount for all credit values should be assigned respectively in Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='36' status='skip'>
+	<span class='duration right label'>0h 0m 0s+4ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Check whether error messages is displayed on game session is being idle for more than 20minutes in Soccer Mania slot game</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='37' class='node given skip' status='skip'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, spin button, full screen, landscape mode ,session terminated messages</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='38' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, and full screen and change orientation of the screen, idle for more 20mins</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='39' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User is addressed with valid error message on the screen 'Session Expired' in Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='40' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Again relauch other slot game and verify user is able to continue gameplay</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='41' status='skip'>
+	<span class='duration right label'>0h 0m 0s+2ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Check whether error messages is displayed on network interruptions and upon good network connection resume to gamble session in Soccer Mania slot game</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='42' class='node given skip' status='skip'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, spin button, gamble screen, wifi turnOFF and ON, network messages</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='43' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, and launch the game, spin till player wins, selext any gamble option and turn OFF wifi and check for valid message and turn on wifi for gamble to resume if won or go back to game screen</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='44' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User is addressed with valid error message 'No Internet' for network interuptions in gamble page of Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='45' status='skip'>
+	<span class='duration right label'>0h 0m 0s+3ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Check whether reload the game while playing gamble is allowed in Soccer Mania slot game</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='46' class='node given skip' status='skip'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, spin button, gamble page, browser hamburger reload button valid session invalid error message.</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='47' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, spin till player wins, gamble screen, gamble should won,  click on  hamburger menu and reload the game session.</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='48' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User should not able to resume to game and informed with valid error message for session invalid error message and again relauch the game and game session redirected to gamble page in Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='49' status='skip'>
+	<span class='duration right label'>0h 0m 0s+10ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Check bet value, credit value, home button, info button, play button, gamble link (active/disable) behavior during manual spin in Soccer Mania slot game</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='50' class='node given skip' status='skip'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, spin button, spin button and check for buttons behavior & functionality</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='51' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin option and check behavior of different buttons in different scenarios</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='52' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Bet value & Credit value buttons should not be clickable under spin condition in Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='53' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Home, Info and Turbo buttons should not be clickable on screen under spin condition in Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='54' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Spin button should be disabled during reel spin in Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='55' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Spin button should be visible after reel spin stops and if  win is triggered clicking on collect button in Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='56' class='node and skip' status='skip'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Gamble button behaviour under win triggered and disabled when next spin starts in Soccer Mania slot game</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='57' status='skip'>
+	<span class='duration right label'>0h 0m 0s+3ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Check whether reload the game is allowed in Soccer Mania slot game</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='58' class='node given skip' status='skip'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Chrome browser, valid URL, valid login details, Soccer Mania slot game, balance, spin button, browser hamburger reload button valid session invalid error message.</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='59' class='node when skip' status='skip'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Open the Soccer Mania slot game by entering the valid URL in browser, enter the valid login details, click on  hamburger menu and reload the game session.</span>
+				<div class='pre'>undefined</div>
+			
+		</li>
+		<li test-id='60' class='node then skip' status='skip'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User should not able to resume to game and informed with valid error message for session invalid error message in Soccer Mania slot game</span>
 				<div class='pre'>undefined</div>
 			
 		</li>
@@ -415,31 +703,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>5</div>
+					<div class='panel-lead'>13</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>19</div>
+					<div class='panel-lead'>46</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Oct 14, 2020 11:53:49 AM</div>
+					<div class='panel-lead'>Oct 28, 2020 05:13:25 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Oct 14, 2020 11:53:50 AM</div>
+			 		<div class='panel-lead'>Oct 28, 2020 05:13:25 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>140ms</div>
+					<div class='panel-lead'>252ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -502,18 +790,18 @@
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
-				skipChild: 5,
+				skipChild: 13,
 				infoChild: 0,
-				exceptionsChild: 5,
+				exceptionsChild: 13,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 19,
+				skipGrandChild: 46,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 19,
+				exceptionsGrandChild: 46,
 			};
 		</script>
 		

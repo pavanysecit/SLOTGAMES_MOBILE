@@ -22,12 +22,13 @@ public class HundredSplendidHot_ManualSpin_Validations_ButtonsBehavior {
 	
 	@Given("^Chrome browser, valid URL, valid login details, Hundred Splendid Hot slot game, balance, spin button, spin button and check for buttons behavior & functionality$")
 	public void chrome_browser_valid_URL_valid_login_details_Hundred_Splendid_Hot_slot_game_balance_spin_button_spin_button_and_check_for_buttons_behavior_functionality() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+		
 	}
 
 	@When("^Open the Hundred Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin option and check behavior of different buttons in different scenarios$")
 	public void open_the_Hundred_Splendid_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_spin_option_and_check_behavior_of_different_buttons_in_different_scenarios() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The balance is equal to"+" "+balance);
 		MobileElement credit1= driver.findElement(By.id("hud_txtCredit"));

@@ -166,9 +166,9 @@ Feature: Test all the functionalities of Emerald Dice Slot Game
 	
 	
 	
+	#Balance Deduction in credits
 	
-	
-   	 Scenario: Change the bet value as TWENTY do the spin and check whether balance in credits is deducting according to the changed bet type in Emerald Dice slot game
+   	Scenario: Change the bet value as TWENTY do the spin and check whether balance in credits is deducting according to the changed bet type in Emerald Dice slot game
     Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, bet type as 0.01, bet value as TWENTY, balance in credits and spin button
     When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as TWENTY, click on spin button and check the balance in credits
     Then Balance should get deducted by TWENTY as bet type is selected as 0.01 and bet value as 20 in Emerald Dice game
@@ -260,10 +260,42 @@ Feature: Test all the functionalities of Emerald Dice Slot Game
     Then Win amount should get added to the credit field after win and credit should get increased with win amount in 20 Blazing hot slot game
 	
 	
+    Scenario: Check whether error messages is displayed on network interuptions and upon good network connection resume to game session in Emerald Dice slot game 
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, spin button, gamble collect, max credit and bet value, win amount added to balance
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, spin till player wins, gamble screen, gamble collect, win amount added to main balance
+    Then MaxBet Win amount should get added to the main balance after win and balance should get increased with win amount in Emerald Dice slot game    
 
+
+
+      
+	Scenario: Check whether incrementing and decrementing the creditvalue, balance is equal to balance in creditform multplies by denomination respectively in Emerald Dice slot game 
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, increment, decrement and balance, balance in credit form, creditvalues
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, inc and dec credit balance and verify the balance in credit form and verify the balance
+    Then Credit balance for all credit values should be same as balance multiplies by credit value are assigned respectively in Emerald Dice slot game 
+ 
+
+ 	Scenario: Check whether user is allowed to play with full amount in the account in Emerald Dice slot game 
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, Full amount transfer from account to game.
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, select game and transfer full amount same amount has to reflect in game balance, play and reload the game 
+    Then Remaining balance should be transfered to main account balance in Emerald Dice slot game 
+ 
+
+ 	Scenario: Check whether user able to play the game when there is insufficiant balance in account and verify when the insuffficient alert popup is displayed with the game buttons during behavior during alert popup in Emerald Dice slot game
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, spin button and validation message, button behavior, 
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message with buttons behavior 
+    Then Check the insufficient alert popop is displayed before the clicking on spin 
+    Then Player should be blocked from playing the game when there is no balance in the account and buttons are inactive state in Emerald Dice game
+
+   
+ 	Scenario: Check whether incrementing and decrementing the creditvalue, betval amount are assigned respectively in Emerald Dice slot game 
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, increment, decrement and betvalue amount
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, inc and dec credit and verify the betvalue assigned respectively 
+    Then Bet amount for all credit values should be assigned respectively in Emerald Dice slot game 
+
+    
 
 	
-	 Scenario: Check whether user able to play the game when there is insufficiant balance in balance counter the bet and credit values are decreased to equal or less than available balance which enables player to resume the game in Emerald Dice slot game
+	Scenario: Check whether user able to play the game when there is insufficiant balance in balance counter the bet and credit values are decreased to equal or less than available balance which enables player to resume the game in Emerald Dice slot game
     Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance counter, Auto spin button, validation message, credit types and bet types
     When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Auto spin button till balance counter turns less than betvalues and check the insufficient validation message and reduce the bet and credit values to resume the play.
     Then Player should be blocked from playing the game when there is less amount in balance counter and reducing the credit and bet types player is enable to continue slot game in Emerald Dice game
@@ -289,6 +321,15 @@ Feature: Test all the functionalities of Emerald Dice Slot Game
 	
 	
 	
+	Scenario: Check whether error messages is displayed on game session is being idle for more than 20minutes in Emerald Dice slot game 
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, spin button, full screen, landscape mode ,session terminated messages 
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, and full screen and change orientation of the screen, idle for more 20mins  
+    Then User is addressed with valid error message on the screen 'Session Expired' in Emerald Dice slot game 
+    Then Again relauch other slot game and verify user is able to continue gameplay
+	
+	
+	
+	
 	
 	Scenario: Check whether system performing ten spins after selecting ten option in the auto spin drop down of the Emerald Dice slot game
     Given Chrome browser, valid URL, valid login details, Emerald Dice  slot game, balance, spin button, auto spin button, ten spins option and number of spins left message
@@ -308,7 +349,7 @@ Feature: Test all the functionalities of Emerald Dice Slot Game
 	
 	
 	
-		Scenario: Check bet value, credit value, home button, info button, play button behavior during autoplay in Emerald Dice game
+	Scenario: Check bet value, credit value, home button, info button, play button behavior during autoplay in Emerald Dice game
     Given Chrome browser, valid URL, valid login details, Emerald Dice game, balance, spin button, auto spin button, auto spins option and check for buttons behavior & functionality
     When Open the Emerald Dice game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check behavior of different buttons in different scenarios
     Then Bet value & Credit value buttons should not be clickable in Emerald Dice slot game
@@ -332,6 +373,29 @@ Feature: Test all the functionalities of Emerald Dice Slot Game
 	
 	
 	
+	
+	
+	Scenario: Check whether in AutoSpin win amount is added to balance automatically when new spin starts in Emerald Dice slot game 
+	Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, Autospin button, win amount added to balance
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, select autospin, play till win triggers and observe win amount added to main balance in next spin itteration
+    Then Automatically Win amount should get added to the main balance after win and balance should get increased with win amount and next spin should continue in Emerald Dice slot game
+ 
+
+ 	Scenario: Check whether reload the game while playing Autospin is allowed in Emerald Dice slot game 
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, Autospin button, browser hamburger reload button valid session invalid error message.
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, select autospin button, click on  hamburger menu and reload the game session.
+    Then User should not able to resume to game and autospin should be terminated and informed with valid error message for session invalid in Emerald Dice slot game 
+ 
+
+ 	Scenario: Check whether error messages is displayed on network interuptions and upon good network connection resume to game session in Emerald Dice slot game 
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, spin button, wifi turnOFF and ON, network messages 
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, and launch the game, spin autospin and turn OFF wifi and check for valid message. and turn on wifi for autospin to continued
+    Then User is addressed with valid error message 'No Internet' for network interuptions in Emerald Dice slot game 
+    Then User is addressed with valid error message 'Disconnected from Server' for longer duration network interuptions in Emerald Dice slot game 
+	
+	
+	
+
 
 	
 	Scenario: Check whether the max payout amount for each symbol as per the bet type 0.01 and all the denominations in Emerald Dice slot game on mobile
@@ -415,6 +479,21 @@ Feature: Test all the functionalities of Emerald Dice Slot Game
 	
 	
 	
+	Scenario: Check whether error messages is displayed on network interruptions and upon good network connection resume to gamble session in Emerald Dice slot game 
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, spin button, gamble screen, wifi turnOFF and ON, network messages 
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, and launch the game, spin till player wins, selext any gamble option and turn OFF wifi and check for valid message and turn on wifi for gamble to resume if won or go back to game screen
+    Then User is addressed with valid error message 'No Internet' for network interuptions in gamble page of Emerald Dice slot game 
+ 
+ 
+ 	Scenario: Check whether reload the game while playing gamble is allowed in Emerald Dice slot game 
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, spin button, gamble page, browser hamburger reload button valid session invalid error message.
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, spin till player wins, gamble screen, gamble should won,  click on  hamburger menu and reload the game session.
+    Then User should not able to resume to game and informed with valid error message for session invalid error message and again relauch the game and game session redirected to gamble page in Emerald Dice slot game 
+	
+	
+	
+	
+	
 	
 	Scenario: Check whether gamble count is displaying as per the max amount configured on the info page for bet type 0.01 & denomination 0.2 in Emerald Dice game
     Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, bet type as 0.01, denomination as 0.2, balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count
@@ -446,6 +525,27 @@ Feature: Test all the functionalities of Emerald Dice Slot Game
     Then Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type 0.01 & denomination FOUR in Emerald Dice game
 	
 	
+	
+	
+	
+	Scenario: Check bet value, credit value, home button, info button, play button, gamble link (active/disable) behavior during manual spin in Emerald Dice slot game
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, spin button, spin button and check for buttons behavior & functionality
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin option and check behavior of different buttons in different scenarios
+    Then Bet value & Credit value buttons should not be clickable under spin condition in Emerald Dice slot game
+	And Home, Info and Turbo buttons should not be clickable on screen under spin condition in Emerald Dice slot game
+	And Spin button should be disabled during reel spin in Emerald Dice slot game
+	And Spin button should be visible after reel spin stops and if  win is triggered clicking on collect button in Emerald Dice slot game
+	And Gamble button behaviour under win triggered and disabled when next spin starts in Emerald Dice slot game
+	
+
+ 	Scenario: Check whether reload the game is allowed in Emerald Dice slot game 
+    Given Chrome browser, valid URL, valid login details, Emerald Dice slot game, balance, spin button, browser hamburger reload button valid session invalid error message.
+    When Open the Emerald Dice slot game by entering the valid URL in browser, enter the valid login details, click on  hamburger menu and reload the game session.
+    Then User should not able to resume to game and informed with valid error message for session invalid error message in Emerald Dice slot game 
+
+
+
+
 	
 	
 	Scenario: Check whether system is providing balance in try now feature of Emerald Dice slot game

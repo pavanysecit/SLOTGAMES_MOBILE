@@ -1,7 +1,14 @@
 package stepDefinition_100SplendidHot;
 
+import java.net.URL;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -10,23 +17,78 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 
 public class HundredSplendidHot_Balance_InsufficiantBalance_Validation {
 	AppiumDriver<MobileElement> driver;
 
-	public HundredSplendidHot_Balance_InsufficiantBalance_Validation() throws InterruptedException {
-		this.driver = HundredSplendidHot_URL_Login.getDriver();
-		//this.driver = HundredSplendidHot_URL_TryNow.getDriver();
-		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Hundred Splendid Hot slot game, balance, spin button and validation message, button behavior,$")
 	public void chrome_browser_valid_URL_valid_login_details_Hundred_Splendid_Hot_slot_game_balance_spin_button_and_validation_message_button_behavior() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+		DesiredCapabilities cap=new DesiredCapabilities();
+		cap.setCapability("deviceName", "ASUS X00TD");
+		cap.setCapability("udid", "J9AAGF10J33379E");
+		cap.setCapability("platformName", "Android");
+		cap.setCapability("platformVersion", "9");
+		cap.setCapability("browserName", "Chrome");
+		
+		URL url=new URL("http://10.10.13.86:4723/wd/hub");
+		
+		driver=new AndroidDriver<MobileElement>(url,cap);
+		
+		System.out.println("Appium started sucessfully");
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
+		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div")).click();
+		Thread.sleep(2000);
+				 
+		driver.findElement(By.name("email")).sendKeys("test8");
+		Thread.sleep(2000);
+				
+		driver.findElement(By.xpath("/html/body/div[2]/header/section/div[10]/div/div[2]/form/div[2]/input")).sendKeys("mans@123");
+		Thread.sleep(2000);
+		
+		MobileElement sub = driver.findElement(By.xpath("/html/body/div[2]/header/section/div[10]/div/div[2]/form/button"));
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", sub);
+		Thread.sleep(5000);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div"));
+        wait.until(ExpectedConditions.elementToBeClickable(login_button));
+        login_button.click();
+        
+		WebDriverWait wait1 = new WebDriverWait(driver, 10);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
+		MobileElement balT = driver.findElement(By.id("transferInput"));
+		balT.clear();
+		Thread.sleep(1000);
+		balT.sendKeys("5");
+		Thread.sleep(2000);
+		driver.findElement(By.className("Transfer_Ok_but")).click();
+
+		String parent1=driver.getWindowHandle();
+		Set<String>s1=driver.getWindowHandles();
+
+		System.out.println("Window for slot game is"+" "+s1);
+		 
+		Set<String> contx = driver.getContextHandles();
+		String pk = driver.getContext();
+		//System.out.println("The current contesx is"+" "+pk);
+		for(String cont:contx){
+			 System.out.println(cont);
+		 }
+		driver.context("NATIVE_APP");
+		Thread.sleep(2000);
 	}
 
 	@When("^Open the Hundred Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message with buttons behavior$")
 	public void open_the_Hundred_Splendid_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_spin_button_till_balance_turns_to_zero_and_check_the_validation_message_with_buttons_behavior() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		//Storing the value before converting the balance into credits
 		MobileElement bal = driver.findElement(By.id("hud_Hud_txtBalance1"));
 		String preWin =bal.getText();

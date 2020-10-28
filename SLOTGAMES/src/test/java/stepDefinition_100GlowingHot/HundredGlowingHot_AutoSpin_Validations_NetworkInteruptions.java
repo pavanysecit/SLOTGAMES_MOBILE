@@ -24,12 +24,13 @@ public class HundredGlowingHot_AutoSpin_Validations_NetworkInteruptions {
 	
 	@Given("^Chrome browser, valid URL, valid login details, Hundred Glowing Hot slot game, balance, spin button, wifi turnOFF and ON, network messages$")
 	public void chrome_browser_valid_URL_valid_login_details_Hundred_Glowing_Hot_slot_game_balance_spin_button_wifi_turnOFF_and_ON_network_messages() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
+		
 	}
 
 	@When("^Open the Hundred Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, and launch the game, spin autospin and turn OFF wifi and check for valid message\\. and turn on wifi for autospin to continued$")
 	public void open_the_Hundred_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_and_launch_the_game_spin_autospin_and_turn_OFF_wifi_and_check_for_valid_message_and_turn_on_wifi_for_autospin_to_continued() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The balance in first session"+" "+balance);
 		MobileElement start = driver.findElement(By.id("hud_btnAuto"));

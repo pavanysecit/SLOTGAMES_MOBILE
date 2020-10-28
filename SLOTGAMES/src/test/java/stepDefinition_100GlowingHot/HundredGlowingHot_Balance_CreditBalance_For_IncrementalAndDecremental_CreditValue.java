@@ -21,13 +21,14 @@ public class HundredGlowingHot_Balance_CreditBalance_For_IncrementalAndDecrement
 	
 	@Given("^Chrome browser, valid URL, valid login details, Hundred Glowing Hot slot game, increment, decrement and balance, balance in credit form, creditvalues$")
 	public void chrome_browser_valid_URL_valid_login_details_Hundred_Glowing_Hot_slot_game_increment_decrement_and_balance_balance_in_credit_form_creditvalues() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));   
+		 
 	}
 
 	@When("^Open the Hundred Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, inc and dec credit balance and verify the balance in credit form and verify the balance$")
 	public void open_the_Hundred_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_inc_and_dec_credit_balance_and_verify_the_balance_in_credit_form_and_verify_the_balance() throws Throwable {
-   		//Storing the value before converting the balance into credits
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));  
+		//Storing the value before converting the balance into credits
 		MobileElement preConvert = driver.findElement(By.id("hud_Hud_txtBalance1"));
 		String Preconv = preConvert.getText();
 		String preconv = Preconv.replaceAll(",", "");

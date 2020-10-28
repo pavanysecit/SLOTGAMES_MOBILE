@@ -21,12 +21,13 @@ public class HundredGlowingHot_Check_BetType_BetValue_DropDown_For_IncrementalAn
 	
 	@Given("^Chrome browser, valid URL, valid login details, Hundred Glowing Hot slot game, increment, decrement and betvalue amount$")
 	public void chrome_browser_valid_URL_valid_login_details_Hundred_Glowing_Hot_slot_game_increment_decrement_and_betvalue_amount() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+
 	}
 
 	@When("^Open the Hundred Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, inc and dec credit and verify the betvalue assigned respectively$")
 	public void open_the_Hundred_Glowing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_inc_and_dec_credit_and_verify_the_betvalue_assigned_respectively() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		//Storing the value before converting the balance into credits
 		MobileElement preConvert = driver.findElement(By.id("hud_Hud_txtBalance1"));
 		String Preconv = preConvert.getText();
