@@ -1,4 +1,4 @@
-package stepDefinition_40SplendidHot;
+package stepDefinition_FruitFortune;
 
 import java.net.URL;
 import java.util.Set;
@@ -18,12 +18,13 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class FourtySplendidHot_Balance_InsufficiantBalance_Validation_Bet_And_CreditValue_Decrement {
+public class FruityFortune_Balance_InsufficiantBalance_Validation_Bet_And_CreditValue_Decrement {
 	AppiumDriver<MobileElement> driver;
 
 	
-	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, balance counter, Auto spin button, validation message, credit types and bet types$")
-	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_balance_counter_Auto_spin_button_validation_message_credit_types_and_bet_types(int arg1) throws Throwable {
+	
+	@Given("^Chrome browser, valid URL, valid login details, Fruity Fortune slot game, balance, spin button and validation message, button behavior,$")
+	public void chrome_browser_valid_URL_valid_login_details_Fruity_Fortune_slot_game_balance_spin_button_and_validation_message_button_behavior() throws Throwable {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
 		cap.setCapability("udid", "J9AAGF10J33379E");
@@ -84,8 +85,8 @@ public class FourtySplendidHot_Balance_InsufficiantBalance_Validation_Bet_And_Cr
 		Thread.sleep(2000);
 	}
 
-	@When("^Open the (\\d+) Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Auto spin button till balance counter turns less than betvalues and check the insufficient validation message and reduce the bet and credit values to resume the play\\.$")
-	public void open_the_Splendid_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_Auto_spin_button_till_balance_counter_turns_less_than_betvalues_and_check_the_insufficient_validation_message_and_reduce_the_bet_and_credit_values_to_resume_the_play(int arg1) throws Throwable {
+	@When("^Open the Fruity Fortune slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message with buttons behavior$")
+	public void open_the_Fruity_Fortune_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_spin_button_till_balance_turns_to_zero_and_check_the_validation_message_with_buttons_behavior() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String Bal = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
@@ -216,8 +217,13 @@ public class FourtySplendidHot_Balance_InsufficiantBalance_Validation_Bet_And_Cr
 		}	
 	}
 
-	@Then("^Player should be blocked from playing the game when there is less amount in balance counter and reducing the credit and bet types player is enable to continue slot game in (\\d+) Splendid Hot game$")
-	public void player_should_be_blocked_from_playing_the_game_when_there_is_less_amount_in_balance_counter_and_reducing_the_credit_and_bet_types_player_is_enable_to_continue_slot_game_in_Splendid_Hot_game(int arg1) throws Throwable {
+	@Then("^Check the insufficient alert popop is displayed before the clicking on spin$")
+	public void check_the_insufficient_alert_popop_is_displayed_before_the_clicking_on_spin() throws Throwable {
+		Thread.sleep(1000);
+	}
+
+	@Then("^Player should be blocked from playing the game when there is no balance in the account and buttons are inactive state in Fruity Fortune game$")
+	public void player_should_be_blocked_from_playing_the_game_when_there_is_no_balance_in_the_account_and_buttons_are_inactive_state_in_Fruity_Fortune_game() throws Throwable {
 		Thread.sleep(2000);
 	    driver.quit();
 	}
