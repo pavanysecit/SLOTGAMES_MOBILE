@@ -1,4 +1,4 @@
-package stepDefinition_CircusMania;
+package stepDefinition_SplendidHot7;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -12,22 +12,22 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 
-public class CircusMania_Balance_FullAmount_AddedToGame_And_Reload_Option {
+public class SplendidHot7_Balance_FullAmount_AddedToGame_And_Reload_Option {
 	AppiumDriver<MobileElement> driver;
 
-	public CircusMania_Balance_FullAmount_AddedToGame_And_Reload_Option() throws InterruptedException {
-		this.driver = CircusMania_URL_Login.getDriver();
-		//this.driver = CircusMania_URL_TryNow.getDriver();
+	public SplendidHot7_Balance_FullAmount_AddedToGame_And_Reload_Option() throws InterruptedException {
+		this.driver = SplendidHot7_URL_Login.getDriver();
+		//this.driver = SplendidHot7_URL_TryNow.getDriver();
 	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Circus Mania slot game, Full amount transfer from account to game\\.$")
-	public void chrome_browser_valid_URL_valid_login_details_Circus_Mania_slot_game_Full_amount_transfer_from_account_to_game() throws Throwable {
-	    
+	@Given("^Chrome browser, valid URL, valid login details, Splendid Hot Seven slot game, Full amount transfer from account to game\\.$")
+	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_Seven_slot_game_Full_amount_transfer_from_account_to_game() throws Throwable {
+	   
 	}
 
-	@When("^Open the Circus Mania slot game by entering the valid URL in browser, enter the valid login details, select game and transfer full amount same amount has to reflect in game balance, play and reload the game$")
-	public void open_the_Circus_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_game_and_transfer_full_amount_same_amount_has_to_reflect_in_game_balance_play_and_reload_the_game() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 50);
+	@When("^Open the Splendid Hot Seven slot game by entering the valid URL in browser, enter the valid login details, select game and transfer full amount same amount has to reflect in game balance, play and reload the game$")
+	public void open_the_Splendid_Hot_Seven_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_game_and_transfer_full_amount_same_amount_has_to_reflect_in_game_balance_play_and_reload_the_game() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The balance is equal to"+" "+balance);
@@ -42,7 +42,7 @@ public class CircusMania_Balance_FullAmount_AddedToGame_And_Reload_Option {
 		menu.click();
 		Thread.sleep(2000);
 		// Select the refresh button
-		MobileElement refresh = driver. findElement(MobileBy.AccessibilityId("Refresh"));
+		MobileElement refresh = driver. findElement(MobileBy. AccessibilityId("Refresh page"));
 		refresh.click();
 		Thread.sleep(2000);
 		// Validation message on refreshing the game page
@@ -76,24 +76,18 @@ public class CircusMania_Balance_FullAmount_AddedToGame_And_Reload_Option {
 
 		// Validation on balance is transferred to main account balance and available for the user.
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
-		MobileElement mainbal = driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/div[7]/div/div[1]/label[1]"));
+		MobileElement mainbal = driver.findElement(By.xpath("//label[@class='amt-currency ng-binding']"));
 		String fullamt =mainbal.getText();
 		System.out.println("main bal after redirected from game :"+fullamt);
-		Thread.sleep(2000);
-		driver.findElement(By.className("Transfer_Ok_but")).click();
-		
-		Thread.sleep(120000);
-		String bal11 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
-		System.out.println("The balance after spin"+" "+bal11);
-		String bal22 = bal11.replace(",","");
-		Assert.assertEquals(bal22, fullamt);
+		String bal = bal1.replace(",","");
+		Assert.assertEquals(bal, fullamt);
 		System.out.println("Left over game balance is same as Account balance");
 		System.out.println("Test case passed");
 	}
 
-	@Then("^Remaining balance should be transfered to main account balance in Circus Mania slot game$")
-	public void remaining_balance_should_be_transfered_to_main_account_balance_in_Circus_Mania_slot_game() throws Throwable {
-	  Thread.sleep(2000);
-	  driver.quit();
+	@Then("^Remaining balance should be transfered to main account balance in Splendid Hot Seven slot game$")
+	public void remaining_balance_should_be_transfered_to_main_account_balance_in_Splendid_Hot_Seven_slot_game() throws Throwable {
+		Thread.sleep(2000);
+	    driver.quit();
 	}
 }

@@ -1,46 +1,58 @@
-package stepDefinition_BouncingFruits;
+package stepDefinition_SplendidHot7;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
+
+import com.google.common.collect.ImmutableMap;
 
 import cucumber.api.java.Before;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class BouncingFruits_URL_Login {
+public class SplendidHot7_URL_Login {
 private static AppiumDriver<MobileElement> driver;
 	
 	@Before
-	public static void  BouncingFruits_URL_Login() throws InterruptedException, MalformedURLException, FindFailed {
+	public static void  SplendidHot7_URL_Login() throws InterruptedException, MalformedURLException, FindFailed {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
 		cap.setCapability("udid", "JAAAGF10Z743V8H");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("browserName", "Chrome");
+		//cap.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
 		
 		URL url=new URL("http://10.10.13.84:4723/wd/hub");
 		
 		driver=new AndroidDriver<MobileElement>(url,cap);
 		
 		System.out.println("Appium started sucessfully");
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[26]/div[1]/div")).click();
-		Thread.sleep(2000);
+		MobileElement sub1 = driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[3]/div[1]/div"));
+		JavascriptExecutor jse1=(JavascriptExecutor)driver;
+		jse1.executeScript("arguments[0].click();", sub1);
+		Thread.sleep(5000);
+//		WebDriverWait wait2 = new WebDriverWait(driver, 60);
+//		wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[3]/div[1]/div")));
+//		
+//		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[3]/div[1]/div/span")).click();
+//		Thread.sleep(2000);
 				 
 		driver.findElement(By.name("email")).sendKeys("test8");
 		Thread.sleep(2000);
@@ -53,11 +65,18 @@ private static AppiumDriver<MobileElement> driver;
 		jse.executeScript("arguments[0].click();", sub);
 		Thread.sleep(5000);
 		
-		WebDriverWait wait = new WebDriverWait(driver, 40);
-		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[26]/div[1]/div"));
-        wait.until(ExpectedConditions.elementToBeClickable(login_button));
-        login_button.click();
+//		WebDriverWait wait = new WebDriverWait(driver, 40);
+//		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[3]/div[1]/div"));
+//        wait.until(ExpectedConditions.elementToBeClickable(login_button));
+//        login_button.click();
         
+		
+		MobileElement sub2 = driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[3]/div[1]/div"));
+		JavascriptExecutor jse2=(JavascriptExecutor)driver;
+		jse2.executeScript("arguments[0].click();", sub2);
+		Thread.sleep(5000);
+		
+		
 		WebDriverWait wait1 = new WebDriverWait(driver, 10);
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
@@ -74,7 +93,7 @@ private static AppiumDriver<MobileElement> driver;
 		 
 		Set<String> contx = driver.getContextHandles();
 		String pk = driver.getContext();
-		//System.out.println("The current contesx is"+" "+pk);
+		System.out.println("The current contesx is"+" "+pk);
 		for(String cont:contx){
 			 System.out.println(cont);
 		 }

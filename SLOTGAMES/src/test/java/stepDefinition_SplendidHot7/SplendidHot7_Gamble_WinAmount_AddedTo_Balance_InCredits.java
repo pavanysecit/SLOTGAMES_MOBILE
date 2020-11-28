@@ -1,4 +1,4 @@
-package stepDefinition_40SplendidHot;
+package stepDefinition_SplendidHot7;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -12,21 +12,22 @@ import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class FourtySplendidHot_Gamble_WinAmount_AddedTo_Balance_InCredits {
+public class SplendidHot7_Gamble_WinAmount_AddedTo_Balance_InCredits {
 	AppiumDriver<MobileElement> driver;
 
-	public FourtySplendidHot_Gamble_WinAmount_AddedTo_Balance_InCredits() throws InterruptedException {
-		this.driver = FourtySplendidHot_URL_Login.getDriver();
-		//this.driver = FourtySplendidHot_URL_TryNow.getDriver();
-		}
+	public SplendidHot7_Gamble_WinAmount_AddedTo_Balance_InCredits() throws InterruptedException {
+		this.driver = SplendidHot7_URL_Login.getDriver();
+		//this.driver = SplendidHot7_URL_TryNow.getDriver();
+	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, credit balance, spin button, credit win amount, gamble button, gamble amount in credits, red button, black button and gamble status$")
-	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_credit_balance_spin_button_credit_win_amount_gamble_button_gamble_amount_in_credits_red_button_black_button_and_gamble_status(int arg1) throws Throwable {
-		
+	
+	@Given("^Chrome browser, valid URL, valid login details, Splendid Hot Seven slot game, credit balance, spin button, credit win amount, gamble button, gamble amount in credits, red button, black button and gamble status$")
+	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_Seven_slot_game_credit_balance_spin_button_credit_win_amount_gamble_button_gamble_amount_in_credits_red_button_black_button_and_gamble_status() throws Throwable {
+	    
 	}
 
-	@When("^Open the (\\d+) Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, click on red or black button and check the balance in credits after win$")
-	public void open_the_Splendid_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_click_on_spin_button_till_player_wins_click_on_gamble_button_click_on_red_or_black_button_and_check_the_balance_in_credits_after_win(int arg1) throws Throwable {
+	@When("^Open the Splendid Hot Seven slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, click on red or black button and check the balance in credits after win$")
+	public void open_the_Splendid_Hot_Seven_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_click_on_spin_button_till_player_wins_click_on_gamble_button_click_on_red_or_black_button_and_check_the_balance_in_credits_after_win() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		WebElement balance = driver.findElement(By.id("hud_Hud_txtBalance1"));
@@ -171,12 +172,12 @@ public class FourtySplendidHot_Gamble_WinAmount_AddedTo_Balance_InCredits {
 
 	@Then("^verify the credit form of currency in gamble page on all fields$")
 	public void verify_the_credit_form_of_currency_in_gamble_page_on_all_fields() throws Throwable {
-		Thread.sleep(1000);
+		 Thread.sleep(1000);
 	}
 
-	@Then("^Gamble credit Win amount should get added to main balance after status displayed as WIN and gamble page should get closed in (\\d+) Splendid Hot slot game$")
-	public void gamble_credit_Win_amount_should_get_added_to_main_balance_after_status_displayed_as_WIN_and_gamble_page_should_get_closed_in_Splendid_Hot_slot_game(int arg1) throws Throwable {
+	@Then("^Gamble credit Win amount should get added to main balance after status displayed as WIN and gamble page should get closed in Splendid Hot Seven slot game$")
+	public void gamble_credit_Win_amount_should_get_added_to_main_balance_after_status_displayed_as_WIN_and_gamble_page_should_get_closed_in_Splendid_Hot_Seven_slot_game() throws Throwable {
 		 Thread.sleep(2000);
-		    driver.quit();
+		 driver.quit();
 	}
 }

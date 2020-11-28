@@ -1,4 +1,4 @@
-package stepDefinition_40SplendidHot;
+package stepDefinition_SplendidHot7;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,21 +11,21 @@ import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class FourtySplendidHot_Balance_CreditBalance_For_IncrementalAndDecremental_CreditValue {
+public class SplendidHot7_Balance_CreditBalance_For_IncrementalAndDecremental_CreditValue {
 	AppiumDriver<MobileElement> driver;
 
-	public FourtySplendidHot_Balance_CreditBalance_For_IncrementalAndDecremental_CreditValue() throws InterruptedException {
-		this.driver = FourtySplendidHot_URL_Login.getDriver();
-		//this.driver = FourtySplendidHot_URL_TryNow.getDriver();
-		}
+	public SplendidHot7_Balance_CreditBalance_For_IncrementalAndDecremental_CreditValue() throws InterruptedException {
+		this.driver = SplendidHot7_URL_Login.getDriver();
+		//this.driver = SplendidHot7_URL_TryNow.getDriver();
+	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, (\\d+) Splendid Hot slot game, increment, decrement and balance, balance in credit form, creditvalues$")
-	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_slot_game_increment_decrement_and_balance_balance_in_credit_form_creditvalues(int arg1) throws Throwable {
-	    
+	@Given("^Chrome browser, valid URL, valid login details, Splendid Hot Seven slot game, increment, decrement and balance, balance in credit form, creditvalues$")
+	public void chrome_browser_valid_URL_valid_login_details_Splendid_Hot_Seven_slot_game_increment_decrement_and_balance_balance_in_credit_form_creditvalues() throws Throwable {
+	   
 	}
 
-	@When("^Open the (\\d+) Splendid Hot slot game by entering the valid URL in browser, enter the valid login details, inc and dec credit balance and verify the balance in credit form and verify the balance$")
-	public void open_the_Splendid_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_inc_and_dec_credit_balance_and_verify_the_balance_in_credit_form_and_verify_the_balance(int arg1) throws Throwable {
+	@When("^Open the Splendid Hot Seven slot game by entering the valid URL in browser, enter the valid login details, inc and dec credit balance and verify the balance in credit form and verify the balance$")
+	public void open_the_Splendid_Hot_Seven_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_inc_and_dec_credit_balance_and_verify_the_balance_in_credit_form_and_verify_the_balance() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));  
 		//Storing the value before converting the balance into credits
@@ -124,8 +124,8 @@ public class FourtySplendidHot_Balance_CreditBalance_For_IncrementalAndDecrement
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	}
 
-	@Then("^Credit balance for all credit values should be same as balance multiplies by credit value are assigned respectively in (\\d+) Splendid Hot slot game$")
-	public void credit_balance_for_all_credit_values_should_be_same_as_balance_multiplies_by_credit_value_are_assigned_respectively_in_Splendid_Hot_slot_game(int arg1) throws Throwable {
+	@Then("^Credit balance for all credit values should be same as balance multiplies by credit value are assigned respectively in Splendid Hot Seven slot game$")
+	public void credit_balance_for_all_credit_values_should_be_same_as_balance_multiplies_by_credit_value_are_assigned_respectively_in_Splendid_Hot_Seven_slot_game() throws Throwable {
 		Thread.sleep(2000);
 	    driver.quit();
 	}
