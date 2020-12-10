@@ -1,4 +1,4 @@
-package stepDefinition_CircusMania;
+package stepDefinition_Hot777;
 
 import java.net.URL;
 import java.util.Set;
@@ -19,20 +19,20 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class CircusMania_Balance_InsufficiantBalance_Validation {
+public class Hot777_Balance_InsufficiantBalance_Validation1 {
 	AppiumDriver<MobileElement> driver;
 
 	
-	@Given("^Chrome browser, valid URL, valid login details, Circus Mania slot game, balance, spin button and validation message, button behavior,$")
-	public void chrome_browser_valid_URL_valid_login_details_Circus_Mania_slot_game_balance_spin_button_and_validation_message_button_behavior() throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Hot (\\d+) slot game, balance, spin button and validation message, button behavior,$")
+	public void chrome_browser_valid_URL_valid_login_details_Hot_slot_game_balance_spin_button_and_validation_message_button_behavior(int arg1) throws Throwable {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
-		cap.setCapability("udid", "JAAAGF10Z743V8H");
+		cap.setCapability("udid", "J9AAGF10J33379E");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("browserName", "Chrome");
 		
-		URL url=new URL("http://10.10.13.84:4723/wd/hub");
+		URL url=new URL("http://10.10.13.86:4723/wd/hub");
 		
 		driver=new AndroidDriver<MobileElement>(url,cap);
 		
@@ -66,7 +66,7 @@ public class CircusMania_Balance_InsufficiantBalance_Validation {
 		MobileElement balT = driver.findElement(By.id("transferInput"));
 		balT.clear();
 		Thread.sleep(1000);
-		balT.sendKeys("5");
+		balT.sendKeys("10");
 		Thread.sleep(2000);
 		driver.findElement(By.className("Transfer_Ok_but")).click();
 
@@ -85,11 +85,9 @@ public class CircusMania_Balance_InsufficiantBalance_Validation {
 		Thread.sleep(2000);
 	}
 
-	@When("^Open the Circus Mania slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message with buttons behavior$")
-	public void open_the_Circus_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_spin_button_till_balance_turns_to_zero_and_check_the_validation_message_with_buttons_behavior() throws Throwable {
+	@When("^Open the Hot (\\d+) slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till balance turns to zero and check the validation message with buttons behavior$")
+	public void open_the_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_spin_button_till_balance_turns_to_zero_and_check_the_validation_message_with_buttons_behavior(int arg1) throws Throwable {
 		//Storing the value before converting the balance into credits
-		WebDriverWait wait1 = new WebDriverWait(driver, 80);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		MobileElement bal = driver.findElement(By.id("hud_Hud_txtBalance1"));
 		String preWin =bal.getText();
 		System.out.println("Current balance of the account: " +preWin);
@@ -108,11 +106,11 @@ public class CircusMania_Balance_InsufficiantBalance_Validation {
 		MobileElement betval = driver.findElement(By.id("hud_txtBetAmount"));
 		betval.click();
 		Thread.sleep(1000);
-		MobileElement bet1_5 = driver.findElement(By.id("hud_BetPopup54"));
+		MobileElement bet1_5 = driver.findElement(By.id("hud_BetPopup58"));
 		bet1_5.click();
 		Thread.sleep(1000);
 		String betval1_5 =betval.getText();
-		Assert.assertEquals("4",betval1_5);
+		Assert.assertEquals("8",betval1_5);
 		System.out.println("Selected bet value is: " +betval1_5);
 
 		//Clicking on Spin button
@@ -189,23 +187,23 @@ public class CircusMania_Balance_InsufficiantBalance_Validation {
 		else {
 			System.out.println("Test case failed as menu button is not visible");
 		}
-		String insufficient1 =driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[2]/android.view.View")).getText();
+		String insufficient1 =driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[3]/android.view.View")).getText();
 		Assert.assertEquals("Insufficient Balance.",insufficient1);
 		System.out.println("Insufficient balance alert is present");
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[3]")).click();
+		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[2]")).click();
 		System.out.println("Click on ALert 'OK' and accepted the alert");
 		System.out.println("Test case passed");
 	}
 
 	@Then("^Check the insufficient alert popop is displayed before the clicking on spin$")
 	public void check_the_insufficient_alert_popop_is_displayed_before_the_clicking_on_spin() throws Throwable {
-		 Thread.sleep(1000);
+		Thread.sleep(1000);
 	}
 
-	@Then("^Player should be blocked from playing the game when there is no balance in the account and buttons are inactive state in Circus Mania game$")
-	public void player_should_be_blocked_from_playing_the_game_when_there_is_no_balance_in_the_account_and_buttons_are_inactive_state_in_Circus_Mania_game() throws Throwable {
-	  Thread.sleep(2000);
-	  driver.quit();
+	@Then("^Player should be blocked from playing the game when there is no balance in the account and buttons are inactive state in Hot (\\d+) game$")
+	public void player_should_be_blocked_from_playing_the_game_when_there_is_no_balance_in_the_account_and_buttons_are_inactive_state_in_Hot_game(int arg1) throws Throwable {
+		Thread.sleep(1000);
+		driver.quit();
 	}
 }

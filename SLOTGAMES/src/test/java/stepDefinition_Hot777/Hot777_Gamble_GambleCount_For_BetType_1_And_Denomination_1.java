@@ -1,4 +1,4 @@
-package stepDefinition_BlazingHot;
+package stepDefinition_Hot777;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,22 +11,22 @@ import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_1 {
+public class Hot777_Gamble_GambleCount_For_BetType_1_And_Denomination_1 {
 	AppiumDriver<MobileElement> driver;
 
-	public BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_1() throws InterruptedException {
-		this.driver = BlazingHot_URL_Login.getDriver();
-		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	public Hot777_Gamble_GambleCount_For_BetType_1_And_Denomination_1() throws InterruptedException {
+		this.driver = Hot777_URL_Login.getDriver();
+		//this.driver = Hot777_URL_TryNow.getDriver();
 	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, bet type as (\\d+)\\.(\\d+), denomination as (\\d+)\\.(\\d+), balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count$")
-	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_bet_type_as_denomination_as_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+	@Given("^Chrome browser, valid URL, valid login details, Hot (\\d+) slot game, transfer button, bet type as (\\d+)\\.(\\d+), denomination as one point (\\d+)\\.(\\d+), balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count$")
+	public void chrome_browser_valid_URL_valid_login_details_Hot_slot_game_transfer_button_bet_type_as_denomination_as_one_point_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
-	@When("^Open the Blazing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type as (\\d+)\\.(\\d+) & denomination as (\\d+)\\.(\\d+), click on spin button till player wins, click on gamble button and check the gamble count$")
-	public void open_the_Blazing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_select_bet_type_as_denomination_as_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+	@When("^Open the Hot (\\d+) slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, transfer the amount, select bet type as (\\d+)\\.(\\d+) & denomination as one point (\\d+)\\.(\\d+), click on spin button till player wins, click on gamble button and check the gamble count$")
+	public void open_the_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_golden_hot_slot_game_transfer_the_amount_select_bet_type_as_denomination_as_one_point_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The current balance of the account :" +balance);
 
@@ -122,8 +122,8 @@ public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_1 {
 		System.out.println("The testcase has passed");
 	}
 
-	@Then("^Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type (\\d+)\\.(\\d+) & denomination (\\d+)\\.(\\d+) in Blazing Hot game$")
-	public void gamble_count_should_be_displayed_based_on_win_amount_and_gamble_max_amount_configured_on_the_game_info_page_for_bet_type_denomination_in_Blazing_Hot_game(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+	@Then("^Gamble count should be displayed based on winning amount and max amount of the gamble configured on the game info page for bet type (\\d+)\\.(\\d+) and denomination one point (\\d+)\\.(\\d+) in Hot (\\d+) game$")
+	public void gamble_count_should_be_displayed_based_on_winning_amount_and_max_amount_of_the_gamble_configured_on_the_game_info_page_for_bet_type_and_denomination_one_point_in_Hot_game(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
 		Thread.sleep(2000);
 	    driver.quit();
 	}

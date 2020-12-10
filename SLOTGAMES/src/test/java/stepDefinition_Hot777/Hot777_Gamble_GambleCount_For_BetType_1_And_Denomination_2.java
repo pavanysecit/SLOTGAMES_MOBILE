@@ -1,4 +1,4 @@
-package stepDefinition_BlazingHot;
+package stepDefinition_Hot777;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,22 +11,22 @@ import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_1 {
+public class Hot777_Gamble_GambleCount_For_BetType_1_And_Denomination_2 {
 	AppiumDriver<MobileElement> driver;
 
-	public BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_1() throws InterruptedException {
-		this.driver = BlazingHot_URL_Login.getDriver();
-		//this.driver = BlazingHot_URL_TryNow.getDriver();
+	public Hot777_Gamble_GambleCount_For_BetType_1_And_Denomination_2() throws InterruptedException {
+		this.driver = Hot777_URL_Login.getDriver();
+		//this.driver = Hot777_URL_TryNow.getDriver();
 	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot slot game, bet type as (\\d+)\\.(\\d+), denomination as (\\d+)\\.(\\d+), balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count$")
-	public void chrome_browser_valid_URL_valid_login_details_Blazing_Hot_slot_game_bet_type_as_denomination_as_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count(int arg1, int arg2, int arg3, int arg4) throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
+	@Given("^Chrome browser, valid URL, valid login details, Hot (\\d+) slot game, bet type as (\\d+)\\.(\\d+), denomination as (\\d+)\\.(\\d+), balance, spin button, win amount, gamble button, gamble amount, game info page and gamble count in gamble page$")
+	public void chrome_browser_valid_URL_valid_login_details_Hot_slot_game_bet_type_as_denomination_as_balance_spin_button_win_amount_gamble_button_gamble_amount_game_info_page_and_gamble_count_in_gamble_page(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 	}
 
-	@When("^Open the Blazing Hot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type as (\\d+)\\.(\\d+) & denomination as (\\d+)\\.(\\d+), click on spin button till player wins, click on gamble button and check the gamble count$")
-	public void open_the_Blazing_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_select_bet_type_as_denomination_as_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+	@When("^Open the Hot (\\d+) slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, select bet type as (\\d+)\\.(\\d+) & denomination as (\\d+)\\.(\\d+), click on spin button till player wins, click on gamble button and check the gamble count in gamble page$")
+	public void open_the_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_golden_hot_slot_game_select_bet_type_as_denomination_as_click_on_spin_button_till_player_wins_click_on_gamble_button_and_check_the_gamble_count_in_gamble_page(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The current balance of the account :" +balance);
 
@@ -44,13 +44,13 @@ public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_1 {
 		// select the bet value
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(1000);
-		MobileElement bet1_1= driver.findElement(By.id("hud_BetPopup20.4"));
-		String Betval1_1 =bet1_1.getText();
-		System.out.println(Betval1_1);
-		String expectedB = "0.4";
-		Assert.assertEquals(expectedB, Betval1_1);
+		MobileElement bet1_2= driver.findElement(By.id("hud_BetPopup20.8"));
+		String Betval1_2 =bet1_2.getText();
+		System.out.println(Betval1_2);
+		String expectedB = "0.8";
+		Assert.assertEquals(expectedB, Betval1_2);
 		Thread.sleep(2000);
-		bet1_1.click();
+		bet1_2.click();
 
 		MobileElement start = driver.findElement(By.id("hud_btnSpin"));
 		start.click();
@@ -69,15 +69,15 @@ public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_1 {
 			System.out.println(winTex.isEmpty());		
 		}
 		System.out.println("Win amount is: " +prewin);	
-		System.out.println("Maximum gamble win amount for bet amount 0.4 and credit value 0.01 is : 14 SRD");	                                                                                                                             
+		System.out.println("Maximum gamble win amount for bet amount 0.8 and credit value 0.01 is : 28 SRD");	                                                                                                                             
 		Double maxV = Double.parseDouble(prewin);
-		if(maxV < 14)
+		if(maxV < 28)
 		{
-			System.out.println("Win amount less than Gamble max value 14 i.e : "+" " +maxV +". Test Case Passed");
+			System.out.println("Win amount less than Gamble max value 28 i.e : "+" " +maxV +". Test Case Passed");
 		}
 		else
 		{
-			System.out.println("Win amount greater than Gamble max value 14 : i.e "+" " +maxV +". Test Case Failed");
+			System.out.println("Win amount greater than Gamble max value 28 : i.e "+" " +maxV +". Test Case Failed");
 			driver.findElement(By.id("hud_btnGamble")).isDisplayed();
 			Thread.sleep(2000);
 			driver.quit();
@@ -90,27 +90,27 @@ public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_1 {
 		MobileElement attempts = driver.findElement(By.id("gamble_txtAttemptsLeft"));
 
 		System.out.println("No. of attempts left :"+" "+attempts.getText());
-		if(monty>=0.4 && monty<=0.8)
+		if(monty>=0.8 && monty<=1.6)
 		{
 			System.out.println("The no. of attempts should be : "+" "+"5"+" "+" & no. of actual attempts are :"+attempts.getText());
 			Assert.assertEquals("5",attempts.getText());
 		}
-		else if(monty>0.8 && monty<=1.6){
+		else if(monty>1.6 && monty<=3.2){
 			System.out.println("The no. of attempts should be : "+" "+"4"+" "+"& no. of actual attempts are :"+attempts.getText());
 
 			Assert.assertEquals("4", attempts.getText());
 		}
-		else if(monty>1.6 && monty<=3.2){
+		else if(monty>3.2 && monty<=6.4){
 			System.out.println("The no. of attempts should be :"+" "+"3"+" "+"& no. of actual attempts are :"+attempts.getText());
 
 			Assert.assertEquals("3",attempts.getText());
 		}
-		else if(monty>3.2 && monty<=6.4){
+		else if(monty>6.4 && monty<=12.8){
 			System.out.println("The no. of attempts should be :"+" "+"2"+" "+"& no. of actual attempts are :"+attempts.getText());
 
 			Assert.assertEquals("2",attempts.getText());
 		}
-		else if(monty>6.4 && monty<=14){
+		else if(monty>12.8 && monty<=28){
 			System.out.println("The no. of attempts should be :"+" "+"1"+" "+"& no. of actual attempts are:"+attempts.getText());  
 
 			Assert.assertEquals("1", attempts.getText());
@@ -122,8 +122,8 @@ public class BlazingHot_Gamble_GambleCount_For_BetType_1_And_Denomination_1 {
 		System.out.println("The testcase has passed");
 	}
 
-	@Then("^Gamble count should be displayed based on win amount and gamble max amount configured on the game info page for bet type (\\d+)\\.(\\d+) & denomination (\\d+)\\.(\\d+) in Blazing Hot game$")
-	public void gamble_count_should_be_displayed_based_on_win_amount_and_gamble_max_amount_configured_on_the_game_info_page_for_bet_type_denomination_in_Blazing_Hot_game(int arg1, int arg2, int arg3, int arg4) throws Throwable {
+	@Then("^Gamble count should be displayed on gamble page based on win amount and gamble max amount configured on the game info page for bet type (\\d+)\\.(\\d+) & denomination (\\d+)\\.(\\d+) Hot (\\d+) game$")
+	public void gamble_count_should_be_displayed_on_gamble_page_based_on_win_amount_and_gamble_max_amount_configured_on_the_game_info_page_for_bet_type_denomination_Hot_game(int arg1, int arg2, int arg3, int arg4, int arg5) throws Throwable {
 		Thread.sleep(2000);
 	    driver.quit();
 	}

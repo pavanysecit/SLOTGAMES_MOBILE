@@ -1,4 +1,4 @@
-package stepDefinition_CircusMania;
+package stepDefinition_Hot777;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -18,11 +18,11 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class CircusMania_URL_Login {
+public class Hot777_URL_Login {
 private static AppiumDriver<MobileElement> driver;
 	
-	@Before
-	public static void  CircusMania_URL_Login() throws InterruptedException, MalformedURLException, FindFailed {
+	//@Before
+	public static void  Hot777_URL_Login() throws InterruptedException, MalformedURLException, FindFailed {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
 		cap.setCapability("udid", "JAAAGF10Z743V8H");
@@ -40,7 +40,7 @@ private static AppiumDriver<MobileElement> driver;
 		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[14]/div[1]/div")).click();
+		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[2]/div[1]/div")).click();
 		Thread.sleep(2000);
 				 
 		driver.findElement(By.name("email")).sendKeys("test8");
@@ -55,7 +55,7 @@ private static AppiumDriver<MobileElement> driver;
 		Thread.sleep(5000);
 		
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[14]/div[1]/div"));
+		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[2]/div[1]/div"));
         wait.until(ExpectedConditions.elementToBeClickable(login_button));
         login_button.click();
         

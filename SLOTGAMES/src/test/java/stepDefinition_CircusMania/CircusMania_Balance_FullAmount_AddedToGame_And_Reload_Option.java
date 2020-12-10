@@ -1,7 +1,9 @@
 package stepDefinition_CircusMania;
 
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -41,10 +43,11 @@ public class CircusMania_Balance_FullAmount_AddedToGame_And_Reload_Option {
 		MobileElement menu = driver.findElement(By.id("com.android.chrome:id/menu_button"));
 		menu.click();
 		Thread.sleep(2000);
+			
 		// Select the refresh button
 		MobileElement refresh = driver. findElement(MobileBy.AccessibilityId("Refresh"));
 		refresh.click();
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		// Validation message on refreshing the game page
 		MobileElement title = driver.findElement(By.id("com.android.chrome:id/title"));
 		System.out.println("Title: "+title.getText());
@@ -71,20 +74,20 @@ public class CircusMania_Balance_FullAmount_AddedToGame_And_Reload_Option {
 		System.out.println("User is redirected to game selection screen");
 
 		// Again login to game to validate autospin is not continued
-		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[33]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[13]/div[1]/div")).click();
 		Thread.sleep(3000);
 
 		// Validation on balance is transferred to main account balance and available for the user.
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement mainbal = driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/div[7]/div/div[1]/label[1]"));
 		String fullamt =mainbal.getText();
-		System.out.println("main bal after redirected from game :"+fullamt);
+		System.out.println("available bal after redirected from game :"+fullamt);
 		Thread.sleep(2000);
 		driver.findElement(By.className("Transfer_Ok_but")).click();
 		
-		Thread.sleep(120000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1")));
 		String bal11 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
-		System.out.println("The balance after spin"+" "+bal11);
+		System.out.println("The balance"+" "+bal11);
 		String bal22 = bal11.replace(",","");
 		Assert.assertEquals(bal22, fullamt);
 		System.out.println("Left over game balance is same as Account balance");

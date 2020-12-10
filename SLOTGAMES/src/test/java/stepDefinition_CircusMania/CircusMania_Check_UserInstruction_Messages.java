@@ -30,7 +30,7 @@ public class CircusMania_Check_UserInstruction_Messages {
 	    String preMsg = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    Thread.sleep(3000);
 	    String actual = preMsg;
-	    String expected = "Please Place Your Bet";
+	    String expected = "PLEASE PLACE YOUR BET";
 	    System.out.println("Actual Message before Spin:" +actual);
 	    Assert.assertEquals(expected, actual);
 	    

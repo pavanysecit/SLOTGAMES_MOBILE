@@ -1,4 +1,4 @@
-package stepDefinition_CircusMania;
+package stepDefinition_Hot777;
 
 import java.net.URL;
 import java.util.Set;
@@ -18,20 +18,24 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditValue_Decrement {
+public class Hot777_Balance_InsufficiantBalance_Validation_Bet_And_CreditValue_Decrement {
 	AppiumDriver<MobileElement> driver;
 
+	public Hot777_Balance_InsufficiantBalance_Validation_Bet_And_CreditValue_Decrement() throws InterruptedException {
+		this.driver = Hot777_URL_Login.getDriver();
+		//this.driver = Hot777_URL_TryNow.getDriver();
+	}
 	
-	@Given("^Chrome browser, valid URL, valid login details, Circus Mania slot game, balance counter, Auto spin button, validation message, credit types and bet types$")
-	public void chrome_browser_valid_URL_valid_login_details_Circus_Mania_slot_game_balance_counter_Auto_spin_button_validation_message_credit_types_and_bet_types() throws Throwable {
+	@Given("^Chrome browser, valid URL, valid login details, Hot (\\d+) slot game, balance counter, Auto spin button, validation message, credit types and bet types$")
+	public void chrome_browser_valid_URL_valid_login_details_Hot_slot_game_balance_counter_Auto_spin_button_validation_message_credit_types_and_bet_types(int arg1) throws Throwable {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
-		cap.setCapability("udid", "JAAAGF10Z743V8H");
+		cap.setCapability("udid", "J9AAGF10J33379E");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("browserName", "Chrome");
 		
-		URL url=new URL("http://10.10.13.84:4723/wd/hub");
+		URL url=new URL("http://10.10.13.86:4723/wd/hub");
 		
 		driver=new AndroidDriver<MobileElement>(url,cap);
 		
@@ -41,7 +45,7 @@ public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditVa
 		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[14]/div[1]/div")).click();
+		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div")).click();
 		Thread.sleep(2000);
 				 
 		driver.findElement(By.name("email")).sendKeys("test8");
@@ -56,7 +60,7 @@ public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditVa
 		Thread.sleep(5000);
 		
 		WebDriverWait wait = new WebDriverWait(driver, 40);
-		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[14]/div[1]/div"));
+		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div"));
         wait.until(ExpectedConditions.elementToBeClickable(login_button));
         login_button.click();
         
@@ -84,8 +88,8 @@ public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditVa
 		Thread.sleep(2000);
 	}
 
-	@When("^Open the Circus Mania slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Auto spin button till balance counter turns less than betvalues and check the insufficient validation message and reduce the bet and credit values to resume the play\\.$")
-	public void open_the_Circus_Mania_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_Auto_spin_button_till_balance_counter_turns_less_than_betvalues_and_check_the_insufficient_validation_message_and_reduce_the_bet_and_credit_values_to_resume_the_play() throws Throwable {
+	@When("^Open the Hot (\\d+) slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on Auto spin button till balance counter turns less than betvalues and check the insufficient validation message and reduce the bet and credit values to resume the play\\.$")
+	public void open_the_Hot_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_Auto_spin_button_till_balance_counter_turns_less_than_betvalues_and_check_the_insufficient_validation_message_and_reduce_the_bet_and_credit_values_to_resume_the_play(int arg1) throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String Bal = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
@@ -95,7 +99,7 @@ public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditVa
 		//Change the credit and bet values to max level to generate Insufficiant balance message
 		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(1000);
-		MobileElement cr4 = driver.findElement(By.id("hud_CreditPopup40.5"));
+		MobileElement cr4 = driver.findElement(By.id("hud_CreditPopup40.2"));
 		String credit4 =cr4.getText();
 		System.out.println("Credit value is: " +credit4);
 		cr4.click();
@@ -103,7 +107,7 @@ public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditVa
 
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(1000);
-		MobileElement bet4_5= driver.findElement(By.id("hud_BetPopup5200"));
+		MobileElement bet4_5= driver.findElement(By.id("hud_BetPopup5160"));
 		String Betval4_5 =bet4_5.getText();
 		System.out.println("Bet value is: " +Betval4_5);
 		bet4_5.click();
@@ -136,7 +140,7 @@ public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditVa
 		//Checking whether able to change the credit and bet values after getting insufficiant balance pop-up
 		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);
-		MobileElement cr3 = driver.findElement(By.id("hud_CreditPopup30.05"));
+		MobileElement cr3 = driver.findElement(By.id("hud_CreditPopup30.03"));
 		String credit3 =cr3.getText();
 		System.out.println(credit3);
 		cr3.click();
@@ -149,7 +153,7 @@ public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditVa
 		
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(1000);
-		MobileElement bet3_1= driver.findElement(By.id("hud_BetPopup11"));
+		MobileElement bet3_1= driver.findElement(By.id("hud_BetPopup11.2"));
 		String Betval3_1 =bet3_1.getText();
 		System.out.println(Betval3_1);
 		bet3_1.click();
@@ -188,7 +192,7 @@ public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditVa
 		//Change the credit and bet values to max level to generate Insufficiant balance message
 		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(1000);
-		MobileElement cr44 = driver.findElement(By.id("hud_CreditPopup40.5"));
+		MobileElement cr44 = driver.findElement(By.id("hud_CreditPopup40.2"));
 		String credit44 =cr44.getText();
 		System.out.println("Credit value is: " +credit44);
 		cr44.click();
@@ -196,7 +200,7 @@ public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditVa
 
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(1000);
-		MobileElement bet4_5_1= driver.findElement(By.id("hud_BetPopup5200"));
+		MobileElement bet4_5_1= driver.findElement(By.id("hud_BetPopup5160"));
 		String Betval4_5_1 =bet4_5_1.getText();
 		System.out.println("Bet value is: " +Betval4_5_1);
 		bet4_5.click();
@@ -216,8 +220,8 @@ public class CircusMania_Balance_InsufficiantBalance_Validation_Bet_And_CreditVa
 		}	
 	}
 
-	@Then("^Player should be blocked from playing the game when there is less amount in balance counter and reducing the credit and bet types player is enable to continue slot game in Circus Mania game$")
-	public void player_should_be_blocked_from_playing_the_game_when_there_is_less_amount_in_balance_counter_and_reducing_the_credit_and_bet_types_player_is_enable_to_continue_slot_game_in_Circus_Mania_game() throws Throwable {
+	@Then("^Player should be blocked from playing the game when there is less amount in balance counter and reducing the credit and bet types player is enable to continue slot game in Hot (\\d+) game$")
+	public void player_should_be_blocked_from_playing_the_game_when_there_is_less_amount_in_balance_counter_and_reducing_the_credit_and_bet_types_player_is_enable_to_continue_slot_game_in_Hot_game(int arg1) throws Throwable {
 		Thread.sleep(2000);
 	    driver.quit();
 	}

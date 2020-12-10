@@ -42,7 +42,7 @@ public class BlazingHot_Balance_InsufficiantBalance_Validation {
 		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div")).click();
+		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[14]/div[1]/div")).click();
 		Thread.sleep(2000);
 				 
 		driver.findElement(By.name("email")).sendKeys("test8");
@@ -57,7 +57,7 @@ public class BlazingHot_Balance_InsufficiantBalance_Validation {
 		Thread.sleep(5000);
 		
 		WebDriverWait wait = new WebDriverWait(driver, 40);
-		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div"));
+		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[14]/div[1]/div"));
         wait.until(ExpectedConditions.elementToBeClickable(login_button));
         login_button.click();
         
