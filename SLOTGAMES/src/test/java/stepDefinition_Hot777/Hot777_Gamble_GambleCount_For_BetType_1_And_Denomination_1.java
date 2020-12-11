@@ -44,7 +44,7 @@ public class Hot777_Gamble_GambleCount_For_BetType_1_And_Denomination_1 {
 		// select the bet value
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(1000);
-		MobileElement bet1_1= driver.findElement(By.id("hud_BetPopup20.4"));
+		MobileElement bet1_1= driver.findElement(By.id("hud_BetPopup10.4"));
 		String Betval1_1 =bet1_1.getText();
 		System.out.println(Betval1_1);
 		String expectedB = "0.4";
