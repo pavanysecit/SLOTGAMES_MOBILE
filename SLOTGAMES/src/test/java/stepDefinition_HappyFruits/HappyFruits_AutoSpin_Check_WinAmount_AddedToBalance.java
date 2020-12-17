@@ -74,6 +74,7 @@ public class HappyFruits_AutoSpin_Check_WinAmount_AddedToBalance {
 		Thread.sleep(0500);
 		String balance2 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Balance amount after win amount adding:"+balance2);
+		String bal2 = balance2.replaceAll(",", "");
 		Assert.assertEquals(dbi, balance2);
 		System.out.println("Balance is verified and win amount is added automatically to main balance");
 	}
