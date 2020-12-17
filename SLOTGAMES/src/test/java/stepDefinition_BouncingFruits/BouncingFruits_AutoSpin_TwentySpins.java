@@ -53,104 +53,104 @@ public class BouncingFruits_AutoSpin_TwentySpins {
 	    System.out.println(actual2);
 	    Assert.assertEquals(actual2, expected2);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "16 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "16 SPINS LEFT"));	    		
 	    String actual3 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected3 = "16 SPINS LEFT";
 	    System.out.println(actual3);
 	    Assert.assertEquals(actual3, expected3);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "15 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "15 SPINS LEFT"));	  
 	    String actual4 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected4 = "15 SPINS LEFT";
 	    System.out.println(actual4);
 	    Assert.assertEquals(actual4, expected4);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "14 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "14 SPINS LEFT"));	  
 	    String actual5 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected5 = "14 SPINS LEFT";
 	    System.out.println(actual5);
 	    Assert.assertEquals(actual5, expected5);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "13 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "13 SPINS LEFT"));	  
 	    String actual6 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected6 = "13 SPINS LEFT";
 	    System.out.println(actual6);
 	    Assert.assertEquals(actual6, expected6);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "12 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "12 SPINS LEFT"));	  
 	    String actual7 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected7 = "12 SPINS LEFT";
 	    System.out.println(actual7);
 	    Assert.assertEquals(actual7, expected7);
 	    
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "11 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "11 SPINS LEFT"));	  
 	    String actual71 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected71 = "11 SPINS LEFT";
 	    System.out.println(actual71);
 	    Assert.assertEquals(actual71, expected71);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "10 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "10 SPINS LEFT"));	  
 	    String actual8 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected8 = "10 SPINS LEFT";
 	    System.out.println(actual8);
 	    Assert.assertEquals(actual8, expected8);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "9 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "9 SPINS LEFT"));	  
 	    String actual9 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected9 = "9 SPINS LEFT";
 	    System.out.println(actual9);
 	    Assert.assertEquals(actual9, expected9);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "8 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "8 SPINS LEFT"));	  
 	    String actual10 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected10 = "8 SPINS LEFT";
 	    System.out.println(actual10);
 	    Assert.assertEquals(actual10, expected10);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "7 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "7 SPINS LEFT"));	  
 	    String actual11 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected11 = "7 SPINS LEFT";
 	    System.out.println(actual11);
 	    Assert.assertEquals(actual11, expected11);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "6 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "6 SPINS LEFT"));	  
 	    String actual12 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected12 = "6 SPINS LEFT";
 	    System.out.println(actual12);
 	    Assert.assertEquals(actual12, expected12);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "5 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "5 SPINS LEFT"));	  
 	    String actual13 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected13 = "5 SPINS LEFT";
 	    System.out.println(actual13);
 	    Assert.assertEquals(actual13, expected13);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "4 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "4 SPINS LEFT"));	  
 	    String actual14 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected14 = "4 SPINS LEFT";
 	    System.out.println(actual14);
 	    Assert.assertEquals(actual14, expected14);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "3 SPINS LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "3 SPINS LEFT"));	  
 	    String actual15 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected15 = "3 SPINS LEFT";
 	    System.out.println(actual15);
 	    Assert.assertEquals(actual15, expected15);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "2 SPINS LEFT"));
-	    String actual16 = driver.findElement(By.id("hud_txtWinDetail")).getText();
-	    String expected16 = "2 SPINS LEFT";
-	    System.out.println(actual16);
-	    Assert.assertEquals(actual16, expected16);
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "2 SPINS LEFT"));	  
+	    String actual166 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+	    String expected166 = "2 SPINS LEFT";
+	    System.out.println(actual166);
+	    Assert.assertEquals(actual166, expected166);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "1 SPIN LEFT"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "1 SPIN LEFT"));	  
 	    String actual17 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected17 = "1 SPIN LEFT";
 	    System.out.println(actual17);
 	    Assert.assertEquals(actual17, expected17);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "LAST SPIN"));
+	    wait.until(ExpectedConditions.textToBe(By.id("hud_txtWinDetail"), "LAST SPIN"));	  
 	    String actual20 = driver.findElement(By.id("hud_txtWinDetail")).getText();
 	    String expected20 = "LAST SPIN";
 	    System.out.println(actual20);

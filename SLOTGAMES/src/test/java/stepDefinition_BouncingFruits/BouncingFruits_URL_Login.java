@@ -39,10 +39,10 @@ private static AppiumDriver<MobileElement> driver;
 		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[26]/div[1]/div")).click();
+		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[29]/div[1]/div")).click();
 		Thread.sleep(2000);
 				 
-		driver.findElement(By.name("email")).sendKeys("test8");
+		driver.findElement(By.name("email")).sendKeys("test6692");
 		Thread.sleep(2000);
 				
 		driver.findElement(By.xpath("/html/body/div[2]/header/section/div[10]/div/div[2]/form/div[2]/input")).sendKeys("mans@123");
@@ -54,7 +54,7 @@ private static AppiumDriver<MobileElement> driver;
 		Thread.sleep(5000);
 		
 		WebDriverWait wait = new WebDriverWait(driver, 40);
-		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[26]/div[1]/div"));
+		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[29]/div[1]/div"));
         wait.until(ExpectedConditions.elementToBeClickable(login_button));
         login_button.click();
         

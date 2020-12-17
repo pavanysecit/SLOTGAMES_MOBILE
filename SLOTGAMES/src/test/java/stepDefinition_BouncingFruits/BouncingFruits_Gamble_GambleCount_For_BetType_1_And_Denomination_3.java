@@ -34,7 +34,7 @@ public class BouncingFruits_Gamble_GambleCount_For_BetType_1_And_Denomination_3 
 		Thread.sleep(1000);
 		MobileElement cr1 = driver.findElement(By.id("hud_CreditPopup10.01"));
 		String credit1 =cr1.getText();
-		System.out.println(credit1);
+		System.out.println("Selected credit type: " +credit1);
 		String expectedA = "0.01";
 		Assert.assertEquals(expectedA, credit1);
 		cr1.click();
@@ -44,7 +44,7 @@ public class BouncingFruits_Gamble_GambleCount_For_BetType_1_And_Denomination_3 
 		Thread.sleep(1000);
 		MobileElement bet1_3= driver.findElement(By.id("hud_BetPopup31"));
 		String Betval1_3 =bet1_3.getText();
-		System.out.println(Betval1_3);
+		System.out.println("Selected bet value: " +Betval1_3);
 		String expectedB = "1";
 		Assert.assertEquals(expectedB, Betval1_3);
 		Thread.sleep(2000);

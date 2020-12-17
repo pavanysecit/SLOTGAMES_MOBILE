@@ -104,7 +104,7 @@ public class FruityFortune_ResumeFeature_Play_With_LeftOver_Attempts {
 			driver.context("CHROMIUM");
 			Thread.sleep(4000);
 
-			driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[33]/div[1]/div[1]")).click();
+			driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[29]/div[1]/div[1]")).click();
 			Thread.sleep(5000);  
 			System.out.println("driver context during resuming to gamble screen  :"+driver.getContext());
 			// Switching context to Native view

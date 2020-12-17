@@ -63,19 +63,19 @@ public class BouncingFruits_AutoSpin_AutoSpins {
 	    Assert.assertEquals(actual3, expected3);
 	    Thread.sleep(2000);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
-	    String actual4 = driver.findElement(By.id("hud_txtWinDetail")).getText();
-	    String expected4 = "GOOD LUCK!";
-	    System.out.println(actual4);
-	    Assert.assertEquals(actual4, expected4);
-	    Thread.sleep(2000);
+//	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "GOOD LUCK!"));
+//	    String actual4 = driver.findElement(By.id("hud_txtWinDetail")).getText();
+//	    String expected4 = "GOOD LUCK!";
+//	    System.out.println(actual4);
+//	    Assert.assertEquals(actual4, expected4);
+//	    Thread.sleep(2000);
 	    
 	    driver.findElement(By.id("hud_btnSpin")).click();
 	    Thread.sleep(5000);
 	    
-	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "Please Place Your Bet"));
+	    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("hud_txtWinDetail"), "PLEASE PLACE YOUR BET"));
 	    String actual5 = driver.findElement(By.id("hud_txtWinDetail")).getText();
-	    String expected5 = "Please Place Your Bet";
+	    String expected5 = "PLEASE PLACE YOUR BET";
 	    System.out.println(actual5);
 	    Assert.assertEquals(actual5, expected5);
 	}

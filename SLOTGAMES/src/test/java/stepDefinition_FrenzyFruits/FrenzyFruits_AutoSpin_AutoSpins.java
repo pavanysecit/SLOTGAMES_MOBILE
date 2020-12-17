@@ -26,8 +26,6 @@ public class FrenzyFruits_AutoSpin_AutoSpins {
 
 	@When("^Open the Frenzy Fruits slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on auto spin option under auto spin drop down and check the player instruction message$")
 	public void open_the_Frenzy_Fruits_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_auto_spin_option_under_auto_spin_drop_down_and_check_the_player_instruction_message() throws Throwable {
-		WebDriverWait wait1 = new WebDriverWait(driver, 80);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_btnAuto")));
 		driver.findElement(By.id("hud_btnAuto")).click();
