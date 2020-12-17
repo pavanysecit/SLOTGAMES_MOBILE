@@ -70,7 +70,7 @@ public class FrozenFruits_Balance_Credits_Calculations_Value2 {
 
 	@Then("^Balance amound should be same as denomination (\\d+)\\.(\\d+) multiplies by credit in Frozen Fruits game$")
 	public void balance_amound_should_be_same_as_denomination_multiplies_by_credit_in_Frozen_Fruits_game(int arg1, int arg2) throws Throwable {
-		   Thread.sleep(2000);
-		   driver.quit();
+	   Thread.sleep(2000);
+	   driver.quit();
 	}
 }

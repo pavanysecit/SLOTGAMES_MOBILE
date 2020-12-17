@@ -43,7 +43,7 @@ private static AppiumDriver<MobileElement> driver;
 		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[14]/div[1]/div")).click();
 		Thread.sleep(2000);
 				 
-		driver.findElement(By.name("email")).sendKeys("test8");
+		driver.findElement(By.name("email")).sendKeys("test6692");
 		Thread.sleep(2000);
 				
 		driver.findElement(By.xpath("/html/body/div[2]/header/section/div[10]/div/div[2]/form/div[2]/input")).sendKeys("mans@123");
