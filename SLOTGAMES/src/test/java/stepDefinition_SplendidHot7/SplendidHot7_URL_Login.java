@@ -34,7 +34,7 @@ private static AppiumDriver<MobileElement> driver;
 		cap.setCapability("browserName", "Chrome");
 		//cap.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
 		
-		URL url=new URL("http://10.10.13.84:4723/wd/hub");
+		URL url=new URL("http://0.0.0.0:4723/wd/hub");
 		
 		driver=new AndroidDriver<MobileElement>(url,cap);
 		

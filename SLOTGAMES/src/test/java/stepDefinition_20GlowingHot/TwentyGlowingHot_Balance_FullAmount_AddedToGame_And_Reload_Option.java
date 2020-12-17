@@ -1,7 +1,14 @@
 package stepDefinition_20GlowingHot;
 
+import java.net.URL;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,18 +18,76 @@ import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 
 public class TwentyGlowingHot_Balance_FullAmount_AddedToGame_And_Reload_Option {
 	AppiumDriver<MobileElement> driver;
 
-	public TwentyGlowingHot_Balance_FullAmount_AddedToGame_And_Reload_Option() throws InterruptedException {
-		this.driver = TwentyGlowingHot_URL_Login.getDriver();
-		//this.driver = TwentyGlowingHot_URL_TryNow.getDriver();
-		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Twenty Glowing Hot slot game, Full amount transfer from account to game\\.$")
 	public void chrome_browser_valid_URL_valid_login_details_Twenty_Glowing_Hot_slot_game_Full_amount_transfer_from_account_to_game() throws Throwable {
-	   
+		DesiredCapabilities cap=new DesiredCapabilities();
+		cap.setCapability("deviceName", "ASUS X00TD");
+		cap.setCapability("udid", "J9AAGF10J33379E");
+		cap.setCapability("platformName", "Android");
+		cap.setCapability("platformVersion", "9");
+		cap.setCapability("browserName", "Chrome");
+		
+		URL url=new URL("http://0.0.0.0:4723/wd/hub");
+		
+		driver=new AndroidDriver<MobileElement>(url,cap);
+		
+		System.out.println("Appium started sucessfully");
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
+		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div")).click();
+		Thread.sleep(2000);
+				 
+		driver.findElement(By.name("email")).sendKeys("test8");
+		Thread.sleep(2000);
+				
+		driver.findElement(By.xpath("/html/body/div[2]/header/section/div[10]/div/div[2]/form/div[2]/input")).sendKeys("mans@123");
+		Thread.sleep(2000);
+		
+		MobileElement sub = driver.findElement(By.xpath("/html/body/div[2]/header/section/div[10]/div/div[2]/form/button"));
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", sub);
+		Thread.sleep(5000);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div"));
+        wait.until(ExpectedConditions.elementToBeClickable(login_button));
+        login_button.click();
+        
+		WebDriverWait wait1 = new WebDriverWait(driver, 10);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
+		MobileElement mainbal = driver.findElement(By.xpath("//label[@class='amt-currency ng-binding']"));
+		String mainbalance = mainbal.getText();
+		System.out.println("mainbal before:"+ mainbalance);
+		MobileElement balT = driver.findElement(By.id("transferInput"));
+		balT.clear();
+		Thread.sleep(1000);
+		String fullamt =mainbal.getText();
+		balT.sendKeys(fullamt);
+		Thread.sleep(2000);
+		driver.findElement(By.className("Transfer_Ok_but")).click();
+
+		String parent1=driver.getWindowHandle();
+		Set<String>s1=driver.getWindowHandles();
+
+		System.out.println("Window for slot game is"+" "+s1);
+
+		Set<String> contx = driver.getContextHandles();
+		String pk = driver.getContext();
+		//System.out.println("The current contesx is"+" "+pk);
+		for(String cont:contx){
+			System.out.println(cont);
+		}
+		driver.context("NATIVE_APP");
+		Thread.sleep(4000);
 	}
 
 	@When("^Open the Twenty Glowing Hot slot game by entering the valid URL in browser, enter the valid login details, select game and transfer full amount same amount has to reflect in game balance, play and reload the game$")
