@@ -29,19 +29,10 @@ public class FrozenFruits_Balance_Deduction_InCredits_AccordingToBetType3_1 {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		//Storing the value before spin
-		MobileElement preSpin = driver.findElement(By.id("hud_Hud_txtBalance1"));
-		preSpin.click();
-		String prespin =preSpin.getText();
-		String str = prespin.replaceAll(",", "");
-        System.out.println(str);
-		System.out.println("Current balance of the account Before spin: " +prespin);
-		System.out.println("Balance before adding win amount is: "+"  "+str);
-	
-		
 		//Selecting the credit as 0.05 from the drop down
 		driver.findElement(By.id("hud_txtCredit")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("hud_CreditPopup10.05")).click();
+		driver.findElement(By.id("hud_CreditPopup30.05")).click();
 		Thread.sleep(2000);
 		
 		String actual = driver.findElement(By.id("hud_txtCredit")).getText();
@@ -49,6 +40,15 @@ public class FrozenFruits_Balance_Deduction_InCredits_AccordingToBetType3_1 {
 		String expected = "0.05";
 		Assert.assertEquals(actual, expected);
 
+		
+		MobileElement preSpin = driver.findElement(By.id("hud_Hud_txtBalance1"));
+		preSpin.click();
+		String prespin =preSpin.getText();
+		String str = prespin.replaceAll(",", "");
+        System.out.println(str);
+		System.out.println("Current balance of the account Before spin: " +prespin);
+		System.out.println("Balance before adding win amount is: "+"  "+str);
+		
 		//Selecting the bet amount as 20 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);

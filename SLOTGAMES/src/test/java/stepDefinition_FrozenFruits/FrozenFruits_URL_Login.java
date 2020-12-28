@@ -13,14 +13,18 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
 
+import com.google.common.collect.ImmutableMap;
+
+import cucumber.api.java.Before;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
 
 public class FrozenFruits_URL_Login {
 private static AppiumDriver<MobileElement> driver;
 	
-	//@Before
+	@Before
 	public static void  FruitBazaar_URL_Login() throws InterruptedException, MalformedURLException, FindFailed {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
@@ -28,8 +32,11 @@ private static AppiumDriver<MobileElement> driver;
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("browserName", "Chrome");
+		cap.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
+		cap.setCapability(MobileCapabilityType.FULL_RESET, false);
+		cap.setCapability(MobileCapabilityType.NO_RESET, false);
 		
-		URL url=new URL("http://0.0.0.0:4723/wd/hub");
+		URL url=new URL("http://10.10.13.84:4723/wd/hub");
 		
 		driver=new AndroidDriver<MobileElement>(url,cap);
 		

@@ -1,9 +1,8 @@
-Feature: Test all the functionalities of Frozen Slot Game
-   
+Feature: Test all the functionalities of Frozen Fruits Slot Game
 
-		Scenario: Transfer balance with decimal value and check whether balance deducting with decimal value in Frozen Fruits slot game
-    Given Chrome browser, valid URL, valid login details, Frozen Fruits slot game, bet type as 0.01, mimimum bet value, balance in decimal value and spin button
-    When Open the Frozen Fruits slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01, select the bet value as 0.2, click on spin button and check the balance in decimal
-    Then Balance should get deducted by decimal value, as bet type is selected as 0.01 and bet value as 0.2 in Frozen Fruits game
-	And After deducting balance, switch to credit mode and spin and check balance is deducting according to credit value in Frozen Fruits game
-	
+  
+	Scenario: Check whether balance is equals to credit multiplies by denomination 0.01 in Frozen Fruits slot game
+    Given Chrome browser, valid URL, valid login details, Frozen Fruits slot game, balance, credits and denomination as 0.01 
+    When Open the Frozen Fruits slot game by entering the valid URL in browser, enter the valid login details, click on balance, multiply credit by 0.01 and check the balance
+    Then Balance amound should be same as denomination 0.01 multiplies by credit in Frozen Fruits slot game
+    

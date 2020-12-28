@@ -31,12 +31,12 @@ public class FrozenFruits_Balance_InsufficiantBalance_Validation_Bet_And_CreditV
 	public void chrome_browser_valid_URL_valid_login_details_Frozen_Fruits_slot_game_balance_counter_Auto_spin_button_validation_message_credit_types_and_bet_types() throws Throwable {
 	    DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
-		cap.setCapability("udid", "J9AAGF10J33379E");
+		cap.setCapability("udid", "JAAAGF10Z743V8H");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("browserName", "Chrome");
 		
-		URL url=new URL("http://0.0.0.0:4723/wd/hub");
+		URL url=new URL("http://10.10.13.84:4723/wd/hub");
 		
 		driver=new AndroidDriver<MobileElement>(url,cap);
 		

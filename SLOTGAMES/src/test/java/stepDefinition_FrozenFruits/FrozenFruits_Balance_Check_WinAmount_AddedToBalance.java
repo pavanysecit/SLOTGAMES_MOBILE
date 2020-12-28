@@ -10,14 +10,14 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import stepDefinition_BouncingFruits.BouncingFruits_URL_Login;
+
 
 public class FrozenFruits_Balance_Check_WinAmount_AddedToBalance {
 	AppiumDriver<MobileElement> driver;
 
 	public FrozenFruits_Balance_Check_WinAmount_AddedToBalance() throws InterruptedException {
-		this.driver = BouncingFruits_URL_Login.getDriver();
-		//this.driver = BouncingFruits_URL_TryNow.getDriver();
+		this.driver = FrozenFruits_URL_Login.getDriver();
+		//this.driver = FrozenFruits_URL_TryNow.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Frozen Fruits slot game, balance, transfer button, spin button and win amount$")
@@ -66,13 +66,17 @@ public class FrozenFruits_Balance_Check_WinAmount_AddedToBalance {
 		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
 		
 		String winTex = winE.getText();
-		while(winTex.isEmpty())
-		 {
+//		while(winTex.isEmpty())
+//		 {
+//			start.click();
+//			Thread.sleep(8000);
+//			winTex=	winE.getText();
+//			System.out.println(winTex.isEmpty());
+//		 }
+		while (driver.findElement(By.id("hud_btnGamble")).isDisplayed() == false) {
 			start.click();
-			Thread.sleep(8000);
-			winTex=	winE.getText();
-			System.out.println(winTex.isEmpty());
-		 }
+			Thread.sleep(5000);
+		}
 		Thread.sleep(2000);
 		System.out.println("The Win is : "+"  "+winTex);
 		System.out.println(winTex.isEmpty());
@@ -82,12 +86,12 @@ public class FrozenFruits_Balance_Check_WinAmount_AddedToBalance {
 		System.out.println("Balance before adding win amount is: "+"  "+str1);
 		Thread.sleep(2000);
 		
-		driver.findElement(By.id("hud_btnGamble")).click();
-		Thread.sleep(3000);
-
-		//Clicking on Collect button
-		driver.findElement(By.id("gamble_btnCollect")).click();
-		Thread.sleep(6000);
+//		driver.findElement(By.id("hud_btnGamble")).click();
+//		Thread.sleep(3000);
+//
+//		//Clicking on Collect button
+//		driver.findElement(By.id("gamble_btnCollect")).click();
+//		Thread.sleep(6000);
 		String Balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		String str2 = Balance.replaceAll(",", "");
 		Thread.sleep(2000);

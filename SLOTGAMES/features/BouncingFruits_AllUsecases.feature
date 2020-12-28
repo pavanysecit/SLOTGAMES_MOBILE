@@ -12,26 +12,26 @@ Feature: Test all the functionalities of Bouncing Fruits Slot Game
 
 
 
-#	Scenario: Select the bet type as 0.01 from the drop down and check the bet value should be 0.2,0.4,1,2,4 in Bouncing Fruits game
-    #Given Chrome browser, valid URL, valid login details, Bouncing Fruits slot game, bet type as 0.01 and bet value as 0.2,0.4,1,2,4
-    #When Open the Bouncing Fruits slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01 and check the bet value should be 0.2,0.4,1,2,4
-    #Then Bet value should get changed to 0.2,0.4,1,2,4 if the bet type selected as 0.01 from the drop down in Bouncing Fruits slot game
-#	
-#	
-#	Scenario: Select the bet type as 0.02 from the drop down and check the bet value should be 0.4,0.8,2,4 & 8 in Bouncing Fruits slot game
-    #Given Chrome browser, valid URL, valid login details, Bouncing Fruits game, bet type as 0.02 and bet value as 0.4,0.8,2,4 & 8
-    #When Open the Bouncing Fruits slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.02 and check the bet value should be 0.4,0.8,2,4 & 8
-    #Then Bet value should get changed to 0.4,0.8,2,4 & 8 if the bet type selected as 0.02 from the drop down 1 in Bouncing Fruits slot game
+	Scenario: Select the bet type as 0.01 from the drop down and check the bet value should be 0.2,0.4,1,2,4 in Bouncing Fruits game
+    Given Chrome browser, valid URL, valid login details, Bouncing Fruits slot game, bet type as 0.01 and bet value as 0.2,0.4,1,2,4
+    When Open the Bouncing Fruits slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.01 and check the bet value should be 0.2,0.4,1,2,4
+    Then Bet value should get changed to 0.2,0.4,1,2,4 if the bet type selected as 0.01 from the drop down in Bouncing Fruits slot game
 	
-#	Scenario: Select the bet type as 0.05 from the drop down and check the bet value should be 1,2,5,10 & 20 in Bouncing Fruits slot game
-    #Given Chrome browser, valid URL, valid login details, Bouncing Fruits slot game, bet type as 0.05 from down 2 and bet value as 1,2,5,10 & 20
-    #When Open the Bouncing Fruits slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.05 from down  and check the bet value should be 1,2,5,10 & 20
-    #Then Bet value should get changed to 1,2,5,10 & 20 if the bet type selected as 0.05 from the drop down two in Bouncing Fruits slot game
-#	
-#	Scenario: Select the bet type as 0.5 from the drop down and check the bet value should be 10,20,50,100 & 200 in Bouncing Fruits slot game
-    #Given Chrome browser, valid URL, valid login details, Bouncing Fruits slot game, bet type as 0.5 from drop down and bet value as 10,20,50,100 & 200
-    #When Open the Bouncing Fruits slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.5 from drop down and check the bet value should be 10,20,50,100 & 200
-    #Then Bet value should get changed to 10,20,50,100 & 200 if the bet type selected as 0.5 from the drop down three in Bouncing Fruits slot game
+	
+	Scenario: Select the bet type as 0.02 from the drop down and check the bet value should be 0.4,0.8,2,4 & 8 in Bouncing Fruits slot game
+    Given Chrome browser, valid URL, valid login details, Bouncing Fruits game, bet type as 0.02 and bet value as 0.4,0.8,2,4 & 8
+    When Open the Bouncing Fruits slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.02 and check the bet value should be 0.4,0.8,2,4 & 8
+    Then Bet value should get changed to 0.4,0.8,2,4 & 8 if the bet type selected as 0.02 from the drop down 1 in Bouncing Fruits slot game
+	
+	Scenario: Select the bet type as 0.05 from the drop down and check the bet value should be 1,2,5,10 & 20 in Bouncing Fruits slot game
+    Given Chrome browser, valid URL, valid login details, Bouncing Fruits slot game, bet type as 0.05 from down 2 and bet value as 1,2,5,10 & 20
+    When Open the Bouncing Fruits slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.05 from down  and check the bet value should be 1,2,5,10 & 20
+    Then Bet value should get changed to 1,2,5,10 & 20 if the bet type selected as 0.05 from the drop down two in Bouncing Fruits slot game
+	
+	Scenario: Select the bet type as 0.5 from the drop down and check the bet value should be 10,20,50,100 & 200 in Bouncing Fruits slot game
+    Given Chrome browser, valid URL, valid login details, Bouncing Fruits slot game, bet type as 0.5 from drop down and bet value as 10,20,50,100 & 200
+    When Open the Bouncing Fruits slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.5 from drop down and check the bet value should be 10,20,50,100 & 200
+    Then Bet value should get changed to 10,20,50,100 & 200 if the bet type selected as 0.5 from the drop down three in Bouncing Fruits slot game
 #	
 #	
 #
@@ -453,11 +453,11 @@ Feature: Test all the functionalities of Bouncing Fruits Slot Game
 #	Then  On resuming to gamble screen, collect the amount and verify with main  balance addition and win meter amount same as gamble amount in gamble page in  Bouncing Fruits slot game
 #	
 #	
-	Scenario: Check whether on resume feature is enabled in Gamble screen, user can play further left over attempts and check the attempts before and after resuming to gamble screen in Bouncing Fruits slot game
-	Given chrome browser, valid URL, valid login details, Bouncing Fruits slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble attempts, gamble play
-	When Open the Bouncing Fruits slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on black button and close the browser and again login to the game with new browser
-	Then  Resume feature should be enabled and land on the game screen and verify with the left out gamble attempts of Bouncing Fruits slot game
-	Then Left over attempts should be  between 4 to 1 and the user is enabled to play the remaining attempts in Bouncing Fruits slot game
+#	Scenario: Check whether on resume feature is enabled in Gamble screen, user can play further left over attempts and check the attempts before and after resuming to gamble screen in Bouncing Fruits slot game
+#	Given chrome browser, valid URL, valid login details, Bouncing Fruits slot slot game, bet type, denomination, balance, spin button, Gamble screen, Gamble attempts, gamble play
+#	When Open the Bouncing Fruits slot slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, select bet type & denomination, click on spin button till win appears and gamble screen in switched and click on black button and close the browser and again login to the game with new browser
+#	Then  Resume feature should be enabled and land on the game screen and verify with the left out gamble attempts of Bouncing Fruits slot game
+#	Then Left over attempts should be  between 4 to 1 and the user is enabled to play the remaining attempts in Bouncing Fruits slot game
 #	
 #	
 #	

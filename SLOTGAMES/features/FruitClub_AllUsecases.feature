@@ -1,32 +1,18 @@
 Feature: Test all the functionalities of Fruit Club Slot Game
    
 
-	Scenario: Change the bet value as 0.1, do the spin and check whether balance is deducting according to the changed bet type in Fruit Club slot game
-    Given Chrome browser, valid URL, valid login details, Fruit Club slot game, bet type as 0.02, bet value as 0.1, balance and spin button, balance after spin
-    When Open the Fruit Club slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.02, select the bet value as 0.1, click on spin button and check the balance after spin
-    Then Balance should get deducted by 0.1 after spin as bet type is selected as 0.02 and bet value as 0.1 in Fruit Club game
+	Scenario: Checking whether win amount is displaying as gamble amount in gamble page of Fruit Club slot game 
+    Given Chrome browser, valid URL, valid login details, Fruit Club slot game, balance, spin button, win amount, gamble button and gamble amount
+    When Open the Fruit Club slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on spin button till player wins, click on gamble button and check the gamble amount
+    Then Win amount should be displayed as Gamble amount in the gamble page of the Fruit Club slot game
 	
+	Scenario: Checking Gamble to Win amount should be double than gamble amount in gamble page of Fruit Club slot game 
+    Given Chrome browser, valid URL, valid login details, Fruit Club slot game, balance, spin button, win amount, gamble button, gamble amount and gamble to win amount
+    When Open the Fruit Club slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on golden hot slot game, click on spin button till player wins, click on gamble button and check the gamble to win amount
+    Then Gamble To Win amount should be double than Gamble amount in the gamble page of the Fruit Club slot game
 	
-	Scenario: Change the bet value as 0.2, do the spin and check whether balance is deducting according to the changed bet type in Fruit Club slot game
-    Given Chrome browser, valid URL, valid login details, Fruit Club game, bet type as 0.02, bet value as 0.2, balance and spin button
-    When Open the Fruit Club slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.02, select the bet value as 0.2, click on spin button and check the balance
-    Then Balance should get deducted by 0.2 as bet type is selected as 0.02 in Fruit Club game
+	Scenario: Check whether gamble win amount is getting added to the balance after win in Fruit Club slot game 
+    Given Chrome browser, valid URL, valid login details, Fruit Club slot game, balance, spin button, win amount, gamble button, gamble amount, red button, black button and gamble status
+    When Open the Fruit Club slot game by entering the valid URL in browser, enter the valid login details, click on spin button till player wins, click on gamble button, click on red or black button and check the balance after win
+    Then Gamble Win amount should get added to main balance after status displayed as WIN and gamble page should get closed in Fruit Club slot game 
 	
-	
-	Scenario: Change the bet value to 0.5, click on spin button and check whether current balance is deducting according to changed bet type in Fruit Club slot game
-    Given Chrome browser, valid URL, valid login details, Fruit Club slot game, bet type as 0.02, bet value as 0.5, balance, spin button and win amount
-    When Open the Fruit Club slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.02, select the bet value as 0.5, click on spin button, check the win amount and check the balance
-    Then Current Balance should get deducted by 0.5 as bet type is selected as 0.02 and bet value as 0.5 in Fruit Club game
-	
-
-	Scenario: Change the bet value as ONE, click on spin and check whether existing balance is deducting according to changed bet type in Fruit Club slot game
-    Given Chrome browser, valid URL, valid login details, Fruit Club game, bet type as 0.02, bet value as ONE, balance and spin button
-    When Open the Fruit Club slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.02, select the bet value to ONE, click on spin button and check the slot game balance
-    Then Existing Balance should get deducted by ONE as bet type is selected as 0.02 and bet value as ONE in Fruit Club slot game
-
-	
-	Scenario: Change the bet value as TWO, do the spin and check whether balance is deducting according to changed bet type in Fruit Club slot game
-    Given Chrome browser, valid URL, valid login details, Fruit Club slot game, bet type as 0.02, bet value as TWO, balance and spin button
-    When Open the Fruit Club slot game by entering the valid URL in browser, enter the valid login details, select the bet type as 0.02, select the bet value as TWO, click on spin button and check the balance
-    Then Current Balance should get deducted by TWO as bet type is selected as 0.02 and bet value as 2 in Fruit Club game
-    

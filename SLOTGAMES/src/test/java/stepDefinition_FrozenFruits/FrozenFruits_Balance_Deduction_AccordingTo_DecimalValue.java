@@ -157,7 +157,7 @@ public class FrozenFruits_Balance_Deduction_AccordingTo_DecimalValue {
         System.out.println("Balance before adding win amount is: "+"  "+pt);
 
 		//Deducting bet value from the preSpin and formating string to double
-		double fValue1 = Double.parseDouble(str) - Double.parseDouble(betValue);
+		double fValue1 = Double.parseDouble(str11) - Double.parseDouble(betValue);
 		String dbi1 = String.format("%.2f", fValue);  
 		System.out.println("Final balance after deducting bet amount from the balance : "+dbi1);
 		Assert.assertEquals(dbi1,pt);

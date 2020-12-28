@@ -10,14 +10,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import stepDefinition_BouncingFruits.BouncingFruits_URL_Login;
 
 public class FrozenFruits_Balance_Check_WinAmount_AddedToBalance_InCredits {
 	AppiumDriver<MobileElement> driver;
 
 	public FrozenFruits_Balance_Check_WinAmount_AddedToBalance_InCredits() throws InterruptedException {
-		this.driver = BouncingFruits_URL_Login.getDriver();
-		//this.driver = BouncingFruits_URL_TryNow.getDriver();
+		this.driver = FrozenFruits_URL_Login.getDriver();
+		//this.driver = FrozenFruits_URL_TryNow.getDriver();
 		}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Frozen Fruits slot game, balance, transfer button, credit balance form, spin button and win amount in credits$")
@@ -65,30 +64,29 @@ public class FrozenFruits_Balance_Check_WinAmount_AddedToBalance_InCredits {
 		start.click();
 		Thread.sleep(2000);
 
-		
-		//Getting win amount
-		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
-		
-		String winTex = winE.getText();
-		while(winTex.isEmpty())
+		while(driver.findElements(By.id("hud_btnGamble")).size() != 0){
 		 {
 			start.click();
-			Thread.sleep(8000);
-			winTex=	winE.getText();
-			System.out.println(winTex.isEmpty());
+			Thread.sleep(7000);
+			//System.out.println(winE.isEmpty());
 		 }
-		Thread.sleep(2000);
+		}
+		//Thread.sleep(2000);
+		//Getting win amount
+		MobileElement winE = driver.findElement(By.id("hud_Hud_txtWin1"));
+		String winTex = winE.getText();
+
 		System.out.println("The Win is : "+"  "+winTex);
-		System.out.println(winTex.isEmpty());
+		//System.out.println(winE.isEmpty());
 		
 		String postWin = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		String str1 = postWin.replaceAll(",", "");
         String str22 = ".00";
         String pt = str1 + str22;
 		System.out.println("Balance before adding win amount is: "+"  "+pt);
-		Thread.sleep(2000);
+		//Thread.sleep(4000);
 		
-		driver.findElement(By.id("hud_btnGamble")).click();
+		
 		Thread.sleep(3000);
 
 		//Clicking on Collect button
