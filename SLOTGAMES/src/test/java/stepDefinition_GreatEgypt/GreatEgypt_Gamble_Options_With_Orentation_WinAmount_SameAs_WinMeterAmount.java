@@ -52,6 +52,7 @@ public class GreatEgypt_Gamble_Options_With_Orentation_WinAmount_SameAs_WinMeter
 		String balance1 = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("Balance amount before clicking on gamble link :"+balance1);
 		String bal1 = balance1.replaceAll(",", "");
+		Thread.sleep(2000);
 		driver.findElement(By.id("hud_btnGamble")).click();	
 		Thread.sleep(2000);
 

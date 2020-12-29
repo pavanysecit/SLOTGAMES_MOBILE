@@ -26,7 +26,7 @@ public class GreatEgypt_AutoSpin_TwentySpins {
 
 	@When("^Open the Great Egypt slot game by entering the valid URL in browser, enter the valid login details, transfer the balance, click on twenty spin option under auto spin drop down and check the number of spins left message$")
 	public void open_the_Great_Egypt_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_transfer_the_balance_click_on_twenty_spin_option_under_auto_spin_drop_down_and_check_the_number_of_spins_left_message() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("AutoSpinListItem_undefined")));
 		driver.findElement(By.id("AutoSpinListItem_undefined")).click();
 		Thread.sleep(3000);

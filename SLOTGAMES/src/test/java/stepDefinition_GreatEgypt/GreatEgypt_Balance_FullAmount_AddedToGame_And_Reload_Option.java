@@ -28,12 +28,13 @@ public class GreatEgypt_Balance_FullAmount_AddedToGame_And_Reload_Option {
 	public void chrome_browser_valid_URL_valid_login_details_Great_Egypt_slot_game_Full_amount_transfer_from_account_to_game() throws Throwable {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("deviceName", "ASUS X00TD");
-		cap.setCapability("udid", "J9AAGF10J33379E");
+		cap.setCapability("udid", "JAAAGF10Z743V8H");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("browserName", "Chrome");
+		cap.setCapability("ignoreUnimportantViews", true);
 		
-		URL url=new URL("http://0.0.0.0:4723/wd/hub");
+		URL url=new URL("http://10.10.13.84:4723/wd/hub");
 		
 		driver=new AndroidDriver<MobileElement>(url,cap);
 		
@@ -43,7 +44,7 @@ public class GreatEgypt_Balance_FullAmount_AddedToGame_And_Reload_Option {
 		driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div")).click();
+		driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[3]/div[1]/div")).click();
 		Thread.sleep(2000);
 				 
 		driver.findElement(By.name("email")).sendKeys("test6692");
@@ -58,7 +59,7 @@ public class GreatEgypt_Balance_FullAmount_AddedToGame_And_Reload_Option {
 		Thread.sleep(5000);
 		
 		WebDriverWait wait = new WebDriverWait(driver, 40);
-		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[39]/div[1]/div"));
+		WebElement  login_button=  driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[3]/div[1]/div"));
         wait.until(ExpectedConditions.elementToBeClickable(login_button));
         login_button.click();
         
@@ -92,7 +93,7 @@ public class GreatEgypt_Balance_FullAmount_AddedToGame_And_Reload_Option {
 
 	@When("^Open the Great Egypt slot game by entering the valid URL in browser, enter the valid login details, select game and transfer full amount same amount has to reflect in game balance, play and reload the game$")
 	public void open_the_Great_Egypt_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_select_game_and_transfer_full_amount_same_amount_has_to_reflect_in_game_balance_play_and_reload_the_game() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The balance is equal to"+" "+balance);
@@ -107,7 +108,7 @@ public class GreatEgypt_Balance_FullAmount_AddedToGame_And_Reload_Option {
 		menu.click();
 		Thread.sleep(2000);
 		// Select the refresh button
-		MobileElement refresh = driver. findElement(MobileBy. AccessibilityId("Refresh page"));
+		MobileElement refresh = driver. findElement(MobileBy.AccessibilityId("Refresh page"));
 		refresh.click();
 		Thread.sleep(2000);
 		// Validation message on refreshing the game page
@@ -131,12 +132,13 @@ public class GreatEgypt_Balance_FullAmount_AddedToGame_And_Reload_Option {
 		Thread.sleep(4000);
 
 		// Validating it has redirected to game selection screen
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@name='Suribet"))); 
 		MobileElement logo = driver.findElement(By.xpath("//img[@name='Suribet']"));
 		Assert.assertTrue(logo.isDisplayed());
 		System.out.println("User is redirected to game selection screen");
 
 		// Again login to game to validate autospin is not continued
-		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[33]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]/div[1]/div[1]")).click();
 		Thread.sleep(3000);
 
 		// Validation on balance is transferred to main account balance and available for the user.

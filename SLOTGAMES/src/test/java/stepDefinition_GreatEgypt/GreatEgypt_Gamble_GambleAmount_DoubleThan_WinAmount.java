@@ -42,7 +42,7 @@ public class GreatEgypt_Gamble_GambleAmount_DoubleThan_WinAmount {
 		                       
 		while(prewin.isEmpty()){
 			start.click();	
-			Thread.sleep(4000);	
+			Thread.sleep(8000);	
 			winTex = winE.getText();
 			prewin= prewin+winTex;
 			System.out.println(winTex.isEmpty());		
@@ -84,7 +84,7 @@ public class GreatEgypt_Gamble_GambleAmount_DoubleThan_WinAmount {
 		System.out.println("Actual value is : "+" "+poi);
 		//Assert.assertEquals(expected, actual, DELTA);
 		Assert.assertEquals(Double.doubleToLongBits(expected), Double.doubleToLongBits(actual));
-		driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[3]/android.view.View[13]")).click();
+		driver.findElement(By.id("gamble_btnCollect")).click();
                                  		
 		System.out.println("The testcase has passed");		
 	}

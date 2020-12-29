@@ -70,7 +70,7 @@ public class GreatEgypt_AutoSpin_Reload_Option {
 		System.out.println("User is redirected to game selection screen");
 
 		// Again login to game to validate autospin is not continued
-		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[33]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]/div[1]/div[1]")).click();
 		Thread.sleep(3000);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
@@ -93,8 +93,8 @@ public class GreatEgypt_AutoSpin_Reload_Option {
 			System.out.println(cont);
 		}
 		driver.context("NATIVE_APP");
-		Thread.sleep(4000);
-
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("AutoSpinListItem_undefined"))); 
 		if(driver.findElements(By.id("AutoSpinListItem_undefined")).size() != 0){
 			System.out.println("Autospin list drop values is Present");
 			Assert.assertTrue(driver.findElements(By.id("AutoSpinListItem_undefined")).size() != 0);

@@ -32,7 +32,7 @@ public class GreatEgypt_Balance_InsufficiantBalance_Validation_Bet_And_CreditVal
 		cap.setCapability("platformVersion", "9");
 		cap.setCapability("browserName", "Chrome");
 		
-		URL url=new URL("http://10.10.13.84:4723/wd/hub");
+		URL url=new URL("http://10.10.13.84:4724/wd/hub");
 		
 		driver=new AndroidDriver<MobileElement>(url,cap);
 		

@@ -1,7 +1,13 @@
 package stepDefinition_GreatEgypt;
 
+
+import java.sql.Connection;
+import java.util.List;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.mobile.NetworkConnection;
+import org.openqa.selenium.mobile.NetworkConnection.ConnectionType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -29,7 +35,7 @@ public class GreatEgypt_AutoSpin_Validations_NetworkInteruptions {
 
 	@When("^Open the Great Egypt slot game by entering the valid URL in browser, enter the valid login details, and launch the game, spin autospin and turn OFF wifi and check for valid message\\. and turn on wifi for autospin to continued$")
 	public void open_the_Great_Egypt_slot_game_by_entering_the_valid_URL_in_browser_enter_the_valid_login_details_and_launch_the_game_spin_autospin_and_turn_OFF_wifi_and_check_for_valid_message_and_turn_on_wifi_for_autospin_to_continued() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hud_Hud_txtBalance1"))); 
 		String balance = driver.findElement(By.id("hud_Hud_txtBalance1")).getText();
 		System.out.println("The balance in first session"+" "+balance);
@@ -40,26 +46,42 @@ public class GreatEgypt_AutoSpin_Validations_NetworkInteruptions {
 		((AndroidDriver<MobileElement>) driver).openNotifications();
 		Thread.sleep(3000);
 		//Turn OFF the wifi for network interruptions
-		MobileElement wifiOFF = driver.findElement(By.xpath("//android.widget.Switch[@content-desc=\"Wi-Fi,Wifi signal full.,YsecIT\"]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ImageView"));
-		wifiOFF.click();
-		Thread.sleep(1000);
+		((AndroidDriver) driver).toggleWifi();
+
+		
+//		MobileElement wifiOFF = driver.findElement(By.xpath("//android.widget.Switch[@content-desc=\"Wi-Fi,Wifi signal full.,YsecIT\"]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ImageView"));
+//		wifiOFF.click();
+//		Thread.sleep(1000);
 		((AndroidDriver<MobileElement>) driver).pressKey(new KeyEvent(AndroidKey.BACK));
 		Thread.sleep(5000);
 
-		//No Internet valid message to the user
-		MobileElement msg1 = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[4]/android.view.View[2]/android.view.View"));
-		String actual1 = msg1.getText();
-		System.out.println("No internet valid message to user:"+actual1);
+//		//No Internet valid message to the user
+//		MobileElement msg1 = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[4]/android.view.View[2]/android.view.View"));
+//		String actual1 = msg1.getText();
+//		System.out.println("No internet valid message to user:"+actual1);
+//		String expected1 = "No Internet.";
+//		Assert.assertEquals(actual1, expected1);
+//		System.out.println("Valid message is compared");
+
+		List<MobileElement> balance1 = driver.findElementsByClassName("android.view.View");
+		String msg1="";
+		for(MobileElement cr:balance1){
+			//System.out.println(cr.getId()+"  "+cr.getText());
+			if(cr.getText().equals("No Internet.")){
+				 msg1 = cr.getText();
+				 //System.out.println("No internet valid message to user:: " +cr.getText());			
+			}
+		}
+		System.out.println("No internet valid message to user: " +msg1);
+		String actual1 = msg1;
 		String expected1 = "No Internet.";
 		Assert.assertEquals(actual1, expected1);
-		System.out.println("Valid message is compared");
-
+		
 		//Open the notification bar
 		((AndroidDriver<MobileElement>) driver).openNotifications();
 		Thread.sleep(3000);
 		//Turn ON the wifi for network interruptions
-		MobileElement wifiON = driver.findElement(By.xpath("//android.widget.Switch[@content-desc=\"Wi-Fi,\"]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ImageView"));
-		wifiON.click();
+		((AndroidDriver) driver).toggleWifi();
 		Thread.sleep(1000);
 		((AndroidDriver<MobileElement>) driver).pressKey(new KeyEvent(AndroidKey.BACK));
 		Thread.sleep(1000);
@@ -76,30 +98,44 @@ public class GreatEgypt_AutoSpin_Validations_NetworkInteruptions {
 		Thread.sleep(3000);
 		
 		//Turn OFF the wifi for network interruptions
-		wifiOFF.click();
+		//wifiOFF.click();
 		Thread.sleep(10000);
 		((AndroidDriver<MobileElement>) driver).pressKey(new KeyEvent(AndroidKey.BACK));
 		Thread.sleep(30000);
 		
 		//Disconnected from server valid message to the user
-		MobileElement msg2 = driver.findElement(By.xpath("	/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[6]/android.view.View[2]/android.view.View"));
-		String actual11 = msg2.getText();
-		System.out.println("Disconnected from Server valid message to user:"+actual11);
-		String expected11 = "Disconnected from Server.";
-		Assert.assertEquals(actual11, expected11);
-		System.out.println("Valid message is compared");
+//		MobileElement msg2 = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[3]/android.view.View[6]/android.view.View[2]/android.view.View"));
+//		String actual11 = msg2.getText();
+//		System.out.println("Disconnected from Server valid message to user:"+actual11);
+//		String expected11 = "Disconnected from Server.";
+//		Assert.assertEquals(actual11, expected11);
+//		System.out.println("Valid message is compared");
 
+		String msg2="";
+		for(MobileElement cr1:balance1){
+			//System.out.println(cr.getId()+"  "+cr.getText());
+			if(cr1.getText().equals("Disconnected from Server.")){
+				 msg2 = cr1.getText();
+			System.out.println("Disconnected from Server valid message to user: " +cr1.getText());
+			Thread.sleep(2000);
+			}
+		}
+		System.out.println("Disconnected from Server valid message to user: " +msg2);
+		String actual2 = msg2;
+		String expected2 = "Disconnected from Server.";
+		Assert.assertEquals(actual2, expected2);
+		
 		//Open the notification bar
 		((AndroidDriver<MobileElement>) driver).openNotifications();
 		Thread.sleep(3000);
-		wifiON.click();
+		((AndroidDriver) driver).toggleWifi();
 		Thread.sleep(1000);
 		((AndroidDriver<MobileElement>) driver).pressKey(new KeyEvent(AndroidKey.BACK));
 		Thread.sleep(5000);
 
 		//Validation autospin is not continued after Longer duration network fluctuations
-		System.out.println(msg2.isDisplayed());
-		Assert.assertTrue(msg2.isDisplayed());
+//		System.out.println(actual2.isDisplayed());
+//		Assert.assertTrue(msg2.isDisplayed());
 		Thread.sleep(5000);
 		System.out.println("Disconnected from Server message still available on the screen");
 		System.out.println("After network OFF and ON with longer duration Autospin is not resumed");

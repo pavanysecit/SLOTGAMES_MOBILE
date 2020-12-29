@@ -33,7 +33,7 @@ public class GreatEgypt_Balance_Deduction_AccordingTo_DecimalValue {
 		cap.setCapability("browserName", "Chrome");
 		cap.setCapability("ignoreUnimportantViews", true);
 		
-		URL url=new URL("http://10.10.13.84:4723/wd/hub");
+		URL url=new URL("http://10.10.13.84:4724/wd/hub");
 		
 		driver=new AndroidDriver<MobileElement>(url,cap);
 		

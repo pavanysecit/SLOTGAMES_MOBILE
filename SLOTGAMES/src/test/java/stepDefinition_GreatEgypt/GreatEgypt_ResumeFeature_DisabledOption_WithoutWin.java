@@ -60,7 +60,7 @@ public class GreatEgypt_ResumeFeature_DisabledOption_WithoutWin {
 		driver.context("CHROMIUM");
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[39]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/ui-view[1]/section[1]/section[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]/div[1]/div[1]")).click();
 		Thread.sleep(4000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("transferInput")));
 		MobileElement balT = driver.findElement(By.id("transferInput"));
