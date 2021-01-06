@@ -42,7 +42,7 @@ public class EmeraldDice_Balance_CreditBalance_For_IncrementalAndDecremental_Cre
 		MobileElement postConvert = driver.findElement(By.id("hud_Hud_txtBalance1"));
 		String Postconv = postConvert.getText();
 		String pconvert = Postconv.replaceAll(",", "");
-		System.out.println("Current  balance in credit: "+Postconv);
+		System.out.println("Current balance in credit: "+Postconv);
 
 		//Getting the credit value
 		MobileElement creditValue = driver.findElement(By.id("hud_txtCredit"));

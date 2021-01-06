@@ -16,8 +16,8 @@ public class BlazingHot_Check_BetType_BetValue_DropDown2 {
 	AppiumDriver<MobileElement> driver;
 
 	public BlazingHot_Check_BetType_BetValue_DropDown2() throws InterruptedException {
-		this.driver = BlazingHot_URL_Login.getDriver();
-		//this.driver = BlazingHot_URL_TryNow.getDriver();
+		//this.driver = BlazingHot_URL_Login.getDriver();
+		this.driver = BlazingHot_URL_TryNow.getDriver();
 	}
 	
 	@Given("^Chrome browser, valid URL, valid login details, Blazing Hot game, bet type as (\\d+)\\.(\\d+) and bet value as (\\d+)\\.(\\d+),(\\d+),(\\d+),(\\d+) & (\\d+)$")
@@ -42,54 +42,54 @@ public class BlazingHot_Check_BetType_BetValue_DropDown2 {
 		//Selecting the bet amount as 0.8 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup10.8")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_BetPopup10.8")).click();
+//		Thread.sleep(2000);
 		
-		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String actual1 = driver.findElement(By.id("hud_BetPopup10.8")).getText();
 		String expected1 = "0.8";
 		System.out.println("Available bet amounts under credit 0.02 are : " +"\n" +actual1);
 		Assert.assertEquals(actual1, expected1);
 		
 		//Selecting bet amount as 1.6
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup21.6")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_txtBetAmount")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_BetPopup21.6")).click();
+//		Thread.sleep(2000);
 		
-		String actual2 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String actual2 = driver.findElement(By.id("hud_BetPopup21.6")).getText();
 		String expected2 = "1.6";
 		System.out.println("\n" +actual2);
 		Assert.assertEquals(actual2, expected2);
 		
 		//Selecting bet amount as 4
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup34")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_txtBetAmount")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_BetPopup34")).click();
+//		Thread.sleep(2000);
 		
-		String actual3 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String actual3 = driver.findElement(By.id("hud_BetPopup34")).getText();
 		String expected3 = "4";
 		System.out.println("\n" +actual3);
 		Assert.assertEquals(actual3, expected3);
 		
 		//Selecting bet amount as 8
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup48")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_txtBetAmount")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_BetPopup48")).click();
+//		Thread.sleep(2000);
 		
-		String actual4 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String actual4 = driver.findElement(By.id("hud_BetPopup48")).getText();
 		String expected4 = "8";
 		System.out.println("\n" +actual4);
 		Assert.assertEquals(actual4, expected4);
 
 		//Selecting bet amount as 16
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup516")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_txtBetAmount")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_BetPopup516")).click();
+//		Thread.sleep(2000);
 		
-		String actual5 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String actual5 = driver.findElement(By.id("hud_BetPopup516")).getText();
 		String expected5 = "16";
 		System.out.println("\n" +actual5);
 		Assert.assertEquals(actual5, expected5);

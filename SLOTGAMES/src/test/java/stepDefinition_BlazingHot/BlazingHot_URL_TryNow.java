@@ -17,7 +17,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class BlazingHot_URL_TryNow {
 private static AppiumDriver<MobileElement> driver;
 	
-	//@Before
+	@Before
 	public static void  BlazingHot_URL_TryNow() throws InterruptedException, MalformedURLException, FindFailed {
 	DesiredCapabilities cap=new DesiredCapabilities();
 	cap.setCapability("deviceName", "ASUS X00TD");
@@ -36,7 +36,7 @@ private static AppiumDriver<MobileElement> driver;
 	driver.get("http://demo.ysecit.in:82/SlotGames/slotsgame");
 	Thread.sleep(3000);
 
-	driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[33]/div[2]/div[2]")).click();
+	driver.findElement(By.xpath("/html/body/div[2]/div[1]/ui-view/section/section[1]/div/div/div[2]/div[3]/ul/li[41]/div[2]/div[2]")).click();
 	Thread.sleep(5000);	
 	
 	String parent1=driver.getWindowHandle();

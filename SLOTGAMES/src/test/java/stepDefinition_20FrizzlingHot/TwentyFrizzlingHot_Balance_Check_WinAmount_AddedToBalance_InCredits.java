@@ -2,6 +2,7 @@ package stepDefinition_20FrizzlingHot;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -46,6 +47,21 @@ public class TwentyFrizzlingHot_Balance_Check_WinAmount_AddedToBalance_InCredits
 		System.out.println("Selected credit value is : " +actual);
 		String expected = "0.5";
 		Assert.assertEquals(actual, expected);
+		
+		// Get the current orientation 
+		String PORTRAIT = driver.getOrientation().name();
+		Assert.assertEquals("PORTRAIT", PORTRAIT);
+		System.out.println(" Current screen orientation Is : " + PORTRAIT);
+		Thread.sleep(2000);
+
+		// change the orientation of the screen
+		driver.rotate(ScreenOrientation.LANDSCAPE);
+
+		// Get the orientation of the screen
+		String LANDSCAPE = driver.getOrientation().name();
+		Assert.assertEquals("LANDSCAPE", LANDSCAPE);
+		Thread.sleep(2000);
+		System.out.println(" Current screen orientation Is : " + LANDSCAPE);
 		
 		//Selecting the bet amount as 40 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
