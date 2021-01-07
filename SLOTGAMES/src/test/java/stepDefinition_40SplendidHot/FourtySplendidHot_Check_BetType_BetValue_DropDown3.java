@@ -41,54 +41,54 @@ public class FourtySplendidHot_Check_BetType_BetValue_DropDown3 {
 		//Selecting the bet amount as 1.2 from the drop down
 		driver.findElement(By.id("hud_txtBetAmount")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup11.2")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_BetPopup11.2")).click();
+//		Thread.sleep(2000);
 		
-		String actual1 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String actual1 = driver.findElement(By.id("hud_BetPopup11.2")).getText();
 		String expected1 = "1.2";
 		System.out.println("Available bet amounts under credit 0.03 are : " +"\n" +actual1);
 		Assert.assertEquals(actual1, expected1);
 		
 		//Selecting bet amount as 2.4
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup22.4")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_txtBetAmount")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_BetPopup22.4")).click();
+//		Thread.sleep(2000);
 		
-		String actual2 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String actual2 = driver.findElement(By.id("hud_BetPopup22.4")).getText();
 		String expected2 = "2.4";
 		System.out.println("\n" +actual2);
 		Assert.assertEquals(actual2, expected2);
 		
 		//Selecting bet amount as 6
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup36")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_txtBetAmount")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_BetPopup36")).click();
+//		Thread.sleep(2000);
 		
-		String actual3 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String actual3 = driver.findElement(By.id("hud_BetPopup36")).getText();
 		String expected3 = "6";
 		System.out.println("\n" +actual3);
 		Assert.assertEquals(actual3, expected3);
 		
 		//Selecting bet amount as 12
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup412")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_txtBetAmount")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_BetPopup412")).click();
+//		Thread.sleep(2000);
 		
-		String actual4 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String actual4 = driver.findElement(By.id("hud_BetPopup412")).getText();
 		String expected4 = "12";
 		System.out.println("\n" +actual4);
 		Assert.assertEquals(actual4, expected4);
 
 		//Selecting bet amount as 24
-		driver.findElement(By.id("hud_txtBetAmount")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("hud_BetPopup524")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_txtBetAmount")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("hud_BetPopup524")).click();
+//		Thread.sleep(2000);
 		
-		String actual5 = driver.findElement(By.id("hud_txtBetAmount")).getText();
+		String actual5 = driver.findElement(By.id("hud_BetPopup524")).getText();
 		String expected5 = "24";
 		System.out.println("\n" +actual5);
 		Assert.assertEquals(actual5, expected5);
